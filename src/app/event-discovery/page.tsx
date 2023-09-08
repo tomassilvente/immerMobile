@@ -1,5 +1,7 @@
+// components
 import Title from "./components/Title";
 import CardHorizontal from "./components/CardHorizontal";
+// styles
 import styles from "./styles.module.css";
 
 function Container({ children }: { children: React.ReactNode }) {
@@ -8,7 +10,7 @@ function Container({ children }: { children: React.ReactNode }) {
 
 function EventDiscovery() {
 	return (
-		<>
+		<main>
 			<Container>
         <div className="flex justify-between">
           <div>
@@ -48,9 +50,9 @@ function EventDiscovery() {
 			</Container>
 			<Container>
 				<Title>Popular Events</Title>
-				<CardHorizontal />
+				<CardHorizontal className={styles.cardHorizontal} />
 			</Container>
-		</>
+		</main>
 	);
 }
 
