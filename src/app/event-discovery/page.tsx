@@ -1,68 +1,57 @@
-import React from 'react'
+import Title from "./components/Title";
+import CardHorizontal from "./components/CardHorizontal";
+import styles from "./styles.module.css";
+
+function Container({ children }: { children: React.ReactNode }) {
+	return <div className={styles.container}>{children}</div>;
+}
 
 function EventDiscovery() {
-  return (
-    <>
-      <div>
-        <div>
-          <span></span>
-          <span>New York City, USA</span>
-        </div>
-        <div>
-          <span></span>
-          <span>Dec 15</span>
-        </div>
-      </div>
-      <div>
-        <span></span>
-        <input />
-      </div>
-      <div>
-        <div>
-          <div>Nearby Events (9)</div>
-          <div>See All</div>
-        </div>
-        <div>
-          <img src="" alt="" />
-          <div>Brooks Davis Live</div>
-          <div>15th Dec, 2023</div>
+	return (
+		<>
+			<Container>
+        <div className="flex justify-between">
           <div>
-            <span>10.00pm</span>
-            <span>$98</span>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div>Browse by Category</div>
-        <div>
-          <img src="" alt="" />
-        </div>        
-      </div>
-      <div>
-        <div>Popular Events</div>
-        <div>
-          <div>
-            <img src="" alt="" />
+            <span></span>
+            <span>New York City, USA</span>
           </div>
           <div>
-            <div>Brooks Davis Live</div>
-            <div>
-              <span></span>
-              <span>Sat, 15 Sept, 2023</span>
-            </div>
-            <div>
-              <span></span>
-              <span>6:25pm-10.00pm</span>
-            </div>
-            <div>Price: $98</div>
-          </div>
-          <div>
-            :
+            <span></span>
+            <span>Dec 15</span>
           </div>
         </div>
-      </div>
-    </>
-  )
+			</Container>
+			<Container>
+				<span></span>
+				<input />
+			</Container>
+			<Container>
+				<div className="flex justify-between">
+					<Title>Nearby Events (9)</Title>
+					<div>See All</div>
+				</div>
+				<div>
+					<img src="" alt="" />
+					<div>Brooks Davis Live</div>
+					<div>15th Dec, 2023</div>
+					<div className="flex justify-between">
+						<span>10.00pm</span>
+						<span>$98</span>
+					</div>
+				</div>
+			</Container>
+			<Container>
+				<Title>Browse by Category</Title>
+				<div>
+					<img src="" alt="" />
+				</div>
+			</Container>
+			<Container>
+				<Title>Popular Events</Title>
+				<CardHorizontal />
+			</Container>
+		</>
+	);
 }
 
 export default EventDiscovery;
