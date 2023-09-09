@@ -2,6 +2,32 @@
   padding: 14px;
 }
 
+.cardVertical {
+  margin-top: 15px;
+}
+
 .cardHorizontal {
   margin-top: 15px;
+}
+
+.eventLocation {
+  color: var(--light-color-base-primary-normal, #333232);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.056px;
+  line-height: 150%; /* 21px */
+}
+
+.eventDate {
+  color: var(--light-color-base-primary-normal, #333232);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.056px;
+  line-height: 150%; /* 21px */
+}
+
+.main {
+  background-color: #ffffff;
 }

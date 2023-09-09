@@ -1,0 +1,57 @@
+.card {
+  background: #FFF;
+  border: 0.5px solid #CCC;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.cardImage {
+  height: 82px;
+  object-fit: cover;
+  object-position: center;
+  width: 114px;
+}
+
+.cardBody {
+  padding: 8px;
+}
+
+.cardTitle {
+	color: #333;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+
+.cardDate {
+  color: #666;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 4px;
+}
+
+.cardTimePrice {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.cardTime {
+  color: #666;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+
+.cardPrice {
+  color: #F71;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

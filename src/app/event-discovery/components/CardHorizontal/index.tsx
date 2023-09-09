@@ -5,7 +5,12 @@ function CardHorizontal({ className }: { className?: string }) {
 	return (
 		<div className={`${styles.card} ${className}`}>
 			<div className={styles.cardImage}>
-				<img src="/assets/event-carnival.svg" alt="" />
+				<Image
+					width={94}
+					height={94}
+					src="/assets/event-carnival.svg"
+					alt="card-image"
+				/>
 			</div>
 			<div className={styles.cardData}>
 				<div className={styles.cardTitle}>Brooks Davis Live</div>

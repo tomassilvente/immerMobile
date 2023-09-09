@@ -1,8 +1,11 @@
+// styles
+import styles from "./styles.module.css";
 // components
 import Title from "./components/Title";
 import CardHorizontal from "./components/CardHorizontal";
-// styles
-import styles from "./styles.module.css";
+import CardVertical from "./components/CardVertical";
+import Input from "./components/Input";
+import NextLink from "./components/Link";
 
 function Container({ children }: { children: React.ReactNode }) {
 	return <div className={styles.container}>{children}</div>;
@@ -10,37 +13,31 @@ function Container({ children }: { children: React.ReactNode }) {
 
 function EventDiscovery() {
 	return (
-		<main>
+		<main className={styles.main}>
 			<Container>
-        <div className="flex justify-between">
-          <div>
-            <span></span>
-            <span>New York City, USA</span>
-          </div>
-          <div>
-            <span></span>
-            <span>Dec 15</span>
-          </div>
-        </div>
+				<div className="flex justify-between">
+					<div>
+						<span></span>
+						<span className={styles.eventLocation}>
+							New York City, USA
+						</span>
+					</div>
+					<div>
+						<span></span>
+						<span className={styles.eventDate}>Dec 15</span>
+					</div>
+				</div>
 			</Container>
 			<Container>
 				<span></span>
-				<input />
+				<Input placeholder="Search for artists, venues, and events" />
 			</Container>
 			<Container>
 				<div className="flex justify-between">
 					<Title>Nearby Events (9)</Title>
-					<div>See All</div>
+					<NextLink href="">See All</NextLink>
 				</div>
-				<div>
-					<img src="" alt="" />
-					<div>Brooks Davis Live</div>
-					<div>15th Dec, 2023</div>
-					<div className="flex justify-between">
-						<span>10.00pm</span>
-						<span>$98</span>
-					</div>
-				</div>
+				<CardVertical className={styles.cardVertical} />
 			</Container>
 			<Container>
 				<Title>Browse by Category</Title>
