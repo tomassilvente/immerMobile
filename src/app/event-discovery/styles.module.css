@@ -11,6 +11,15 @@
 }
 
 .eventLocation {
+  align-items: center;
+  display: flex;
+}
+
+.eventLocationIcon {
+  margin-right: 8px;
+}
+
+.eventLocationText {
   color: var(--light-color-base-primary-normal, #333232);
   font-size: 14px;
   font-style: normal;
@@ -20,6 +29,15 @@
 }
 
 .eventDate {
+  align-items: center;
+  display: flex;
+}
+
+.eventDateIcon {
+  margin-right: 8px;
+}
+
+.eventDateText {
   color: var(--light-color-base-primary-normal, #333232);
   font-size: 14px;
   font-style: normal;
@@ -28,6 +46,9 @@
   line-height: 150%; /* 21px */
 }
 
-.main {
-  background-color: #ffffff;
+.eventCategory {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 15px;
 }
