@@ -27,6 +27,16 @@
 }
 
 .cardDate {
+  align-items: center;
+  display: flex;
+  margin-top: 8px;
+}
+
+.cardDateIcon {
+  margin-right: 5px;
+}
+
+.cardDateText {
   color: #666;
   font-size: 12px;
   font-style: normal;
@@ -35,6 +45,16 @@
 }
 
 .cardTime {
+  align-items: center;
+  display: flex;
+  margin-top: 8px;
+}
+
+.cardTimeIcon {
+  margin-right: 5px;
+}
+
+.cardTimeText {
   color: #666;
   font-size: 12px;
   font-style: normal;
@@ -49,5 +69,9 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-top: 8px;
+  margin-top: 10px;
+}
+
+.cardOptions {
+  cursor: pointer;
 }

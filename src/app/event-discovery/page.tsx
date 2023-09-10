@@ -1,6 +1,7 @@
 // styles
 import styles from "./styles.module.css";
 // assets
+import carnivalJPG from "./assets/carnival.jpg";
 import locationSVG from "./assets/location.svg";
 import calendarSVG from "./assets/calendar.svg";
 // components
@@ -87,7 +88,14 @@ function EventDiscovery() {
 			</Container>
 			<Container>
 				<Title>Popular Events</Title>
-				<CardHorizontal className={styles.cardHorizontal} />
+				<CardHorizontal
+					className={styles.cardHorizontal}
+					image="/assets/event-carnival.svg"
+					title="Brooks Davis Live"
+					date="Sat, 15 Sept, 2023"
+					time="6:25pm-10.00pm"
+					price="$98"
+				/>
 			</Container>
 		</main>
 	);
