@@ -51,39 +51,93 @@ function EventDiscovery() {
 					<Title>Nearby Events (9)</Title>
 					<NextLink href="">See All</NextLink>
 				</div>
-				<CardVertical className={styles.cardVertical} />
+				<div className={styles.sliderNearby}>
+					<CardVertical
+						className={`${styles.cardVertical} ${styles.sliderNearbyItem}`}
+						image="/assets/event-music-2.svg"
+						title="Brooks Davis Live 1"
+						date="15th Dec, 2023"
+						time="10.00pm"
+						price="$98"
+					/>
+					<CardVertical
+						className={`${styles.cardVertical} ${styles.sliderNearbyItem}`}
+						image="/assets/event-music-2.svg"
+						title="Brooks Davis Live 2"
+						date="15th Dec, 2023"
+						time="10.00pm"
+						price="$98"
+					/>
+					<CardVertical
+						className={`${styles.cardVertical} ${styles.sliderNearbyItem}`}
+						image="/assets/event-music-2.svg"
+						title="Brooks Davis Live 3"
+						date="15th Dec, 2023"
+						time="10.00pm"
+						price="$98"
+					/>
+					<CardVertical
+						className={`${styles.cardVertical} ${styles.sliderNearbyItem}`}
+						image="/assets/event-music-2.svg"
+						title="Brooks Davis Live 4"
+						date="15th Dec, 2023"
+						time="10.00pm"
+						price="$98"
+					/>
+					<CardVertical
+						className={`${styles.cardVertical} ${styles.sliderNearbyItem}`}
+						image="/assets/event-music-2.svg"
+						title="Brooks Davis Live 5"
+						date="15th Dec, 2023"
+						time="10.00pm"
+						price="$98"
+					/>
+				</div>
 			</Container>
 			<Container>
 				<Title>Browse by Category</Title>
-				<div className={styles.eventCategory}>
-					<ImageBottomText
-						src="/assets/event-music.jpg"
-						width={132}
-						height={97}
-						alt="image-bottom-text"
-						text="Music"
-					/>
-					<ImageBottomText
-						src="/assets/event-comedy.jpg"
-						width={132}
-						height={97}
-						alt="image-bottom-text"
-						text="Comedy"
-					/>
-					<ImageBottomText
-						src="/assets/event-sport.jpg"
-						width={132}
-						height={97}
-						alt="image-bottom-text"
-						text="Sport"
-					/>
-					<ImageBottomText
-						src="/assets/event-theater.jpg"
-						width={132}
-						height={97}
-						alt="image-bottom-text"
-						text="Theater"
-					/>
+				<div className={styles.sliderCategory}>
+					<div className={styles.sliderCategoryItem}>
+						<ImageBottomText
+							src="/assets/event-music.jpg"
+							width={132}
+							height={97}
+							alt="image-bottom-text"
+							text="Music"
+						/>
+						<ImageBottomText
+							src="/assets/event-theater.jpg"
+							width={132}
+							height={97}
+							alt="image-bottom-text"
+							text="Theater"
+						/>
+					</div>
+					<div className={styles.sliderCategoryItem}>
+						<ImageBottomText
+							src="/assets/event-comedy.jpg"
+							width={132}
+							height={97}
+							alt="image-bottom-text"
+							text="Comedy"
+						/>
+						<ImageBottomText
+							src="/assets/event-sport.jpg"
+							width={132}
+							height={97}
+							alt="image-bottom-text"
+							text="Sport"
+						/>
+					</div>
+					<div className={styles.sliderCategoryItem}>
+						<ImageBottomText
+							src="/assets/event-circus.jpg"
+							width={132 * 2}
+							height={97}
+							alt="image-bottom-text"
+							text="Circus"
+						/>
+					</div>
 				</div>
 			</Container>
 			<Container>

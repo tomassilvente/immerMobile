@@ -23,8 +23,8 @@ function ImageBottomText({
 			<img
 				className={styles.imageSrc}
 				src={src}
-				// width={width}
-				// height={height}
+				width={width}
+				height={height}
 				alt={alt}
 			/>
 			<div className={styles.imageText}>{text}</div>

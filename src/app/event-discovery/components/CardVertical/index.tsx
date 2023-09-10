@@ -1,22 +1,40 @@
-import Image from "next/image";
+// styles
 import styles from "./styles.module.css";
+// components
+import Image, { StaticImageData } from "next/image";
 
-function CardVertical({ className }: { className: string }) {
+type Props = {
+	className: string;
+	image: string | StaticImageData;
+	title: string;
+	date: string;
+	time: string;
+	price: string;
+};
+
+function CardVertical({
+	className,
+	image,
+	title,
+	date,
+	time,
+	price,
+}: Props) {
 	return (
 		<div className={`${styles.card} ${className}`}>
 			<Image
 				className={styles.cardImage}
 				width={144}
 				height={82}
-				src="/assets/event-music-2.svg"
+				src={image}
 				alt="card-image"
 			/>
 			<div className={styles.cardBody}>
-				<div className={styles.cardTitle}>Brooks Davis Live</div>
-				<div className={styles.cardDate}>15th Dec, 2023</div>
+				<div className={styles.cardTitle}>{title}</div>
+				<div className={styles.cardDate}>{date}</div>
 				<div className={styles.cardTimePrice}>
-					<span className={styles.cardTime}>10.00pm</span>
-					<span className={styles.cardPrice}>$98</span>
+					<span className={styles.cardTime}>{time}</span>
+					<span className={styles.cardPrice}>{price}</span>
 				</div>
 			</div>
 		</div>
