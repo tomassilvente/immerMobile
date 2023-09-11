@@ -7,7 +7,11 @@ import styles from "./styles.module.css";
 import locationSVG from "./assets/location.svg";
 import calendarSVG from "./assets/calendar.svg";
 import EventCarnivalJPG from "../assets/event-carnival.jpg";
+import EventCircusJPG from "../assets/event-circus.jpg";
+import EventComedyJPG from "../assets/event-comedy.jpg";
 import EventMusicJPG from "../assets/event-music.jpg";
+import EventSportJPG from "../assets/event-sport.jpg";
+import EventTheaterJPG from "../assets/event-theater.jpg";
 // components
 import Image from "next/image";
 import Container from "../components/Container";
@@ -113,7 +117,7 @@ function Discovery() {
 						<ImageBottomText
 							onClick={() => router.push("/discovery/theater")}
 							className={styles.sliderCategoryComponent}
-							src="/assets/event-theater.jpg"
+							src={EventTheaterJPG}
 							width={132}
 							height={97}
 							alt="image-bottom-text"
@@ -124,7 +128,7 @@ function Discovery() {
 						<ImageBottomText
 							onClick={() => router.push("/discovery/theater")}
 							className={styles.sliderCategoryComponent}
-							src="/assets/event-comedy.jpg"
+							src={EventComedyJPG}
 							width={132}
 							height={97}
 							alt="image-bottom-text"
@@ -134,6 +138,7 @@ function Discovery() {
 							onClick={() => router.push("/discovery/sport")}
 							className={styles.sliderCategoryComponent}
 							src="/assets/event-sport.jpg"
+							src={EventSportJPG}
 							width={132}
 							height={97}
 							alt="image-bottom-text"
@@ -144,7 +149,7 @@ function Discovery() {
 						<ImageBottomText
 							onClick={() => router.push("/discovery/circus")}
 							className={styles.sliderCategoryComponent}
-							src="/assets/event-circus.jpg"
+							src={EventCircusJPG}
 							width={132 * 2}
 							height={97}
 							alt="image-bottom-text"
