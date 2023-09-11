@@ -1,3 +1,6 @@
+"use client";
+// hooks
+import { useRouter } from "next/navigation";
 // styles
 import styles from "./styles.module.css";
 // assets
@@ -17,7 +20,9 @@ function Container({ children }: { children: React.ReactNode }) {
 	return <div className={styles.container}>{children}</div>;
 }
 
-function EventDiscovery() {
+function Discovery() {
+	const router = useRouter();
+
 	return (
 		<main className={styles.main}>
 			<Container>
@@ -99,6 +104,8 @@ function EventDiscovery() {
 				<div className={styles.sliderCategory}>
 					<div className={styles.sliderCategoryItem}>
 						<ImageBottomText
+							onClick={() => router.push("/discovery/music")}
+							className={styles.sliderCategoryComponent}
 							src="/assets/event-music.jpg"
 							width={132}
 							height={97}
@@ -106,6 +113,8 @@ function EventDiscovery() {
 							text="Music"
 						/>
 						<ImageBottomText
+							onClick={() => router.push("/discovery/theater")}
+							className={styles.sliderCategoryComponent}
 							src="/assets/event-theater.jpg"
 							width={132}
 							height={97}
@@ -115,6 +124,8 @@ function EventDiscovery() {
 					</div>
 					<div className={styles.sliderCategoryItem}>
 						<ImageBottomText
+							onClick={() => router.push("/discovery/theater")}
+							className={styles.sliderCategoryComponent}
 							src="/assets/event-comedy.jpg"
 							width={132}
 							height={97}
@@ -122,6 +133,8 @@ function EventDiscovery() {
 							text="Comedy"
 						/>
 						<ImageBottomText
+							onClick={() => router.push("/discovery/sport")}
+							className={styles.sliderCategoryComponent}
 							src="/assets/event-sport.jpg"
 							width={132}
 							height={97}
@@ -131,6 +144,8 @@ function EventDiscovery() {
 					</div>
 					<div className={styles.sliderCategoryItem}>
 						<ImageBottomText
+							onClick={() => router.push("/discovery/circus")}
+							className={styles.sliderCategoryComponent}
 							src="/assets/event-circus.jpg"
 							width={132 * 2}
 							height={97}
@@ -155,4 +170,4 @@ function EventDiscovery() {
 	);
 }
 
-export default EventDiscovery;
+export default Discovery;

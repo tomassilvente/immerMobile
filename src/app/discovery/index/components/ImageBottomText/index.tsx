@@ -1,26 +1,31 @@
-import Image from "next/image";
+import { MouseEventHandler } from "react";
+// styles
 import styles from "./styles.module.css";
+// components
+import Image from "next/image";
 
 type ImageBottomTextProps = {
+	className?: string;
 	src: string;
 	width: number;
 	height: number;
 	alt: string;
 	text: string;
-	className?: string;
+	onClick?: MouseEventHandler;
 };
 
 function ImageBottomText({
+	className = "",
 	src,
 	width,
 	height,
 	alt,
 	text,
-	className,
+	onClick,
 }: ImageBottomTextProps) {
 	return (
-		<div className={`${styles.image} ${className}`}>
-			<img
+		<div onClick={onClick} className={`${styles.image} ${className}`}>
+			<Image
 				className={styles.imageSrc}
 				src={src}
 				width={width}

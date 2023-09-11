@@ -75,12 +75,13 @@
   flex-shrink: 0;
 }
 
-.sliderCategoryItem > * {
+.sliderCategoryItem .sliderCategoryComponent {
+  cursor: pointer;
   flex-basis: 97px;
   flex-grow: 1;
   flex-shrink: 0;
 }
 
-.sliderCategoryItem > *:nth-child(2) {
+.sliderCategoryItem .sliderCategoryComponent:nth-child(2) {
   margin-top: 8px;
 }
