@@ -14,8 +14,9 @@
 
 .cardImage {
   border-radius: 10px;
+  border-radius: 10px;
   height: 94px;
-  width: 94px;
+  width: 94px; 
 }
 
 .cardTitle {

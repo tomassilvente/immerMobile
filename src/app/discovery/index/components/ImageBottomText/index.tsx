@@ -2,11 +2,11 @@ import { MouseEventHandler } from "react";
 // styles
 import styles from "./styles.module.css";
 // components
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 type ImageBottomTextProps = {
 	className?: string;
-	src: string;
+	src: string | StaticImageData;
 	width: number;
 	height: number;
 	alt: string;

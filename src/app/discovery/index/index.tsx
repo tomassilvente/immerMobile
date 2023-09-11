@@ -4,27 +4,25 @@ import { useRouter } from "next/navigation";
 // styles
 import styles from "./styles.module.css";
 // assets
-import carnivalJPG from "./assets/carnival.jpg";
 import locationSVG from "./assets/location.svg";
 import calendarSVG from "./assets/calendar.svg";
+import EventCarnivalJPG from "../assets/event-carnival.jpg";
+import EventMusicJPG from "../assets/event-music.jpg";
 // components
 import Image from "next/image";
-import Title from "./components/Title";
-import CardHorizontal from "./components/CardHorizontal";
+import Container from "../components/Container";
+import Title from "../components/Title";
+import CardHorizontal from "../components/CardHorizontal";
 import CardVertical from "./components/CardVertical";
 import Input from "./components/Input";
 import NextLink from "./components/Link";
 import ImageBottomText from "./components/ImageBottomText";
 
-function Container({ children }: { children: React.ReactNode }) {
-	return <div className={styles.container}>{children}</div>;
-}
-
 function Discovery() {
 	const router = useRouter();
 
 	return (
-		<main className={styles.main}>
+		<>
 			<Container>
 				<div className="flex justify-between">
 					<div className={styles.eventLocation}>
@@ -106,7 +104,7 @@ function Discovery() {
 						<ImageBottomText
 							onClick={() => router.push("/discovery/music")}
 							className={styles.sliderCategoryComponent}
-							src="/assets/event-music.jpg"
+							src={EventMusicJPG}
 							width={132}
 							height={97}
 							alt="image-bottom-text"
@@ -159,14 +157,14 @@ function Discovery() {
 				<Title>Popular Events</Title>
 				<CardHorizontal
 					className={styles.cardHorizontal}
-					image="/assets/event-carnival.svg"
+					image={EventCarnivalJPG}
 					title="Brooks Davis Live"
 					date="Sat, 15 Sept, 2023"
 					time="6:25pm-10.00pm"
 					price="$98"
 				/>
 			</Container>
-		</main>
+		</>
 	);
 }
 

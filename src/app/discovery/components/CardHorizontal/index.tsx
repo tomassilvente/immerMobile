@@ -26,9 +26,13 @@ function CardHorizontal({
 }: Props) {
 	return (
 		<div className={`${styles.card} ${className}`}>
-			<div className={styles.cardImage}>
-				<Image width={94} height={94} src={image} alt="card-image" />
-			</div>
+			<Image
+				className={styles.cardImage}
+				width={94}
+				height={94}
+				src={image}
+				alt="card-image"
+			/>
 			<div className={styles.cardData}>
 				<div className={styles.cardTitle}>{title}</div>
 				<div className={styles.cardDate}>
