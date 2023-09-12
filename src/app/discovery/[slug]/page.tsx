@@ -1,5 +1,7 @@
 "use client";
 // assets
+import FilterSVG from "./assets/filter.svg";
+import ChevronLeftSVG from "./assets/chevron-left.svg";
 import EventMusicJPG from "../assets/event-music.jpg";
 import EventCarnivalJPG from "../assets/event-carnival.jpg";
 // styles
@@ -21,9 +23,23 @@ function DiscoveryCategory() {
 					alt="image-jumbo"
 				/>
 				<div className={styles.imageText}>Music</div>
+				<Image
+					className={styles.imageIconLeft}
+					src={ChevronLeftSVG}
+					alt="chevron-left.svg"
+				/>
 			</Container>
 			<Container>
 				<Title>All Concerts</Title>
+			</Container>
+			<Container>
+				<div className={styles.filterWrapper}>
+					<div className={styles.filterCalendar}>See calendar</div>
+					<div className={styles.filterButton}>
+						<span>Filters</span>
+						<Image src={FilterSVG} alt="filter.svg" />
+					</div>
+				</div>
 			</Container>
 			<Container>
 				<CardHorizontal

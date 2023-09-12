@@ -9,6 +9,7 @@ import calendarSVG from "./assets/calendar.svg";
 import EventCarnivalJPG from "../assets/event-carnival.jpg";
 import EventCircusJPG from "../assets/event-circus.jpg";
 import EventComedyJPG from "../assets/event-comedy.jpg";
+import EventMusic2JPG from "../assets/event-music-2.jpg";
 import EventMusicJPG from "../assets/event-music.jpg";
 import EventSportJPG from "../assets/event-sport.jpg";
 import EventTheaterJPG from "../assets/event-theater.jpg";
@@ -61,7 +62,7 @@ function Discovery() {
 				<div className={styles.sliderNearby}>
 					<CardVertical
 						className={`${styles.cardVertical} ${styles.sliderNearbyItem}`}
-						image="/assets/event-music-2.svg"
+						image={EventMusic2JPG}
 						title="Brooks Davis Live 1"
 						date="15th Dec, 2023"
 						time="10.00pm"
@@ -69,7 +70,7 @@ function Discovery() {
 					/>
 					<CardVertical
 						className={`${styles.cardVertical} ${styles.sliderNearbyItem}`}
-						image="/assets/event-music-2.svg"
+						image={EventMusic2JPG}
 						title="Brooks Davis Live 2"
 						date="15th Dec, 2023"
 						time="10.00pm"
@@ -77,7 +78,7 @@ function Discovery() {
 					/>
 					<CardVertical
 						className={`${styles.cardVertical} ${styles.sliderNearbyItem}`}
-						image="/assets/event-music-2.svg"
+						image={EventMusic2JPG}
 						title="Brooks Davis Live 3"
 						date="15th Dec, 2023"
 						time="10.00pm"
@@ -85,7 +86,7 @@ function Discovery() {
 					/>
 					<CardVertical
 						className={`${styles.cardVertical} ${styles.sliderNearbyItem}`}
-						image="/assets/event-music-2.svg"
+						image={EventMusic2JPG}
 						title="Brooks Davis Live 4"
 						date="15th Dec, 2023"
 						time="10.00pm"
@@ -93,7 +94,7 @@ function Discovery() {
 					/>
 					<CardVertical
 						className={`${styles.cardVertical} ${styles.sliderNearbyItem}`}
-						image="/assets/event-music-2.svg"
+						image={EventMusic2JPG}
 						title="Brooks Davis Live 5"
 						date="15th Dec, 2023"
 						time="10.00pm"
@@ -137,7 +138,6 @@ function Discovery() {
 						<ImageBottomText
 							onClick={() => router.push("/discovery/sport")}
 							className={styles.sliderCategoryComponent}
-							src="/assets/event-sport.jpg"
 							src={EventSportJPG}
 							width={132}
 							height={97}
