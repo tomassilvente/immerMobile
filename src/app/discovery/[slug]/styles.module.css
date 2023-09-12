@@ -1,5 +1,5 @@
 .imageCover {
-  padding-top: 0;  
+  padding: 0;  
   position: relative;
 }
 
@@ -26,7 +26,7 @@
   border: 1px solid rgba(255, 255, 255, 0.20);
   border-radius: 100px;
   cursor: pointer;
-  left: 25px;
+  left: 15px;
   position: absolute;
   top: 17px;
 }
@@ -35,6 +35,7 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+  margin-top: 15px;
 }
 
 .filterCalendar {
@@ -72,6 +73,14 @@
 .filterButton SVG {
   height: 24px;
   width: 24px;
+}
+
+.sliderDate {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  overflow-x: auto;
 }
 
 .cardHorizontal {

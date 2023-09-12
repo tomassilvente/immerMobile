@@ -11,6 +11,7 @@ import Container from "../components/Container";
 import Title from "../components/Title";
 import CardHorizontal from "../components/CardHorizontal";
 import Image from "next/image";
+import Date from "./components/Date";
 
 function DiscoveryCategory() {
 	return (
@@ -31,8 +32,6 @@ function DiscoveryCategory() {
 			</Container>
 			<Container>
 				<Title>All Concerts</Title>
-			</Container>
-			<Container>
 				<div className={styles.filterWrapper}>
 					<div className={styles.filterCalendar}>See calendar</div>
 					<div className={styles.filterButton}>
@@ -40,8 +39,23 @@ function DiscoveryCategory() {
 						<Image src={FilterSVG} alt="filter.svg" />
 					</div>
 				</div>
-			</Container>
-			<Container>
+				<div className={styles.sliderDate}>
+					<Date
+						className={styles.sliderDateItem}
+						day="Sun"
+						date="16 Sep"
+					/>
+					<Date className={styles.sliderDateItem} day="Mon" date="1 Oct" />
+					<Date className={styles.sliderDateItem} day="Tue" date="2 Oct" />
+
+					<Date
+						className={styles.sliderDateItem}
+						day="Sun"
+						date="16 Sep"
+					/>
+					<Date className={styles.sliderDateItem} day="Mon" date="1 Oct" />
+					<Date className={styles.sliderDateItem} day="Tue" date="2 Oct" />
+				</div>
 				<CardHorizontal
 					className={styles.cardHorizontal}
 					image={EventCarnivalJPG}
