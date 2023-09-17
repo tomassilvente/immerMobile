@@ -1,10 +1,9 @@
 // styles
 import styles from "./styles.module.css";
 // components
-import Title from "../Title";
-import NextLink from "../Link";
-import CardVertical from "../CardVertical";
-import { StaticImageData } from "next/image";
+import { Title } from "../Title";
+import { NextLink } from "../Link";
+import { CardVertical, CardVerticalProps } from "../CardVertical";
 
 type Props = {
 	title: string;
@@ -12,16 +11,14 @@ type Props = {
 		text: string;
 		href: string;
 	};
-	cardData: Array<{
-		image: string | StaticImageData;
-		title: string;
-		date: string;
-		time: string;
-		price: string;
-	}>;
+	cardData: Array<CardVerticalProps>;
 };
 
-function CardVerticalSection({ title, linkData, cardData }: Props) {
+export const CardVerticalSection = ({
+	title,
+	linkData,
+	cardData,
+}: Props) => {
 	return (
 		<>
 			<div className={styles.sliderHeader}>
@@ -45,6 +42,4 @@ function CardVerticalSection({ title, linkData, cardData }: Props) {
 			</div>
 		</>
 	);
-}
-
-export default CardVerticalSection;
+};

@@ -2,14 +2,18 @@
 import EventMusic2JPG from "../../assets/event-music-2.jpg";
 import EventCarnivalJPG from "../../assets/event-carnival.jpg";
 // components
-import Container from "@/app/components/Container";
-import Title from "@/app/components/Title";
-import CardVerticalSection from "@/app/components/CardVerticalSection";
-import CardHorizontalSection from "@/app/components/CardHorizontalSection";
+import { Container } from "@/app/components/Container";
+import { Title } from "@/app/components/Title";
+import { CardVerticalSection } from "@/app/components/CardVerticalSection";
+import { CardHorizontalSection } from "@/app/components/CardHorizontalSection";
+import { PostSection } from "./components/PostSection";
 
 function Home() {
 	return (
 		<>
+			<Container>
+				<PostSection></PostSection>
+			</Container>
 			<Container>
 				<CardVerticalSection
 					title="New Events"

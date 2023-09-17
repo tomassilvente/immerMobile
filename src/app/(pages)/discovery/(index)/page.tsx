@@ -15,12 +15,12 @@ import EventSportJPG from "../assets/event-sport.jpg";
 import EventTheaterJPG from "../assets/event-theater.jpg";
 // components
 import Image from "next/image";
-import Container from "../../../components/Container";
-import Title from "../../../components/Title";
-import CardVerticalSection from "@/app/components/CardVerticalSection";
-import CardHorizontalSection from "@/app/components/CardHorizontalSection";
-import Input from "../../../components/Input";
-import ImageBottomText from "./components/ImageBottomText";
+import { Container } from "../../../components/Container";
+import { Title } from "../../../components/Title";
+import { CardVerticalSection } from "@/app/components/CardVerticalSection";
+import { CardHorizontalSection } from "@/app/components/CardHorizontalSection";
+import { Input } from "../../../components/Input";
+import { ImageBottomText } from "./components/ImageBottomText";
 
 function Discovery() {
 	const router = useRouter();

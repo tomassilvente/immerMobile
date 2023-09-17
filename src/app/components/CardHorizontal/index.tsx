@@ -7,8 +7,8 @@ import moreSVG from "./assets/more.svg";
 // components
 import Image, { StaticImageData } from "next/image";
 
-type Props = {
-	className: string;
+export type CardHorizontalProps = {
+	className?: string;
 	image: string | StaticImageData;
 	title: String;
 	date: String;
@@ -16,14 +16,14 @@ type Props = {
 	price: String;
 };
 
-function CardHorizontal({
+export const CardHorizontal = ({
 	className,
 	image,
 	title,
 	date,
 	time,
 	price,
-}: Props) {
+}: CardHorizontalProps) => {
 	return (
 		<div className={`${styles.card} ${className}`}>
 			<Image
@@ -60,6 +60,4 @@ function CardHorizontal({
 			</div>
 		</div>
 	);
-}
-
-export default CardHorizontal;
+};

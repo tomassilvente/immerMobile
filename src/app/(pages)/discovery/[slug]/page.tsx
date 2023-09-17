@@ -7,11 +7,11 @@ import EventCarnivalJPG from "../assets/event-carnival.jpg";
 // styles
 import styles from "./styles.module.css";
 // components
-import Container from "../../../components/Container";
-import Title from "../../../components/Title";
-import CardHorizontal from "../../../components/CardHorizontal";
 import Image from "next/image";
-import Date from "./components/Date";
+import { Container } from "../../../components/Container";
+import { Title } from "../../../components/Title";
+import { CardHorizontal } from "../../../components/CardHorizontal";
+import { Date } from "./components/Date";
 
 function DiscoveryCategory() {
 	return (

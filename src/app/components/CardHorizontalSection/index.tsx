@@ -1,22 +1,15 @@
 // assets
 import styles from "./style.module.css";
 // components
-import { StaticImageData } from "next/image";
-import Title from "../Title";
-import CardHorizontal from "../CardHorizontal";
+import { Title } from "../Title";
+import { CardHorizontal, CardHorizontalProps } from "../CardHorizontal";
 
 type Props = {
 	title: string;
-	cardData: Array<{
-		image: string | StaticImageData;
-		title: string;
-		date: string;
-		time: string;
-		price: string;
-	}>;
+	cardData: Array<CardHorizontalProps>;
 };
 
-function CardHorizontalSection({ title, cardData }: Props) {
+export const CardHorizontalSection = ({ title, cardData }: Props) => {
 	return (
 		<>
 			<Title>{title}</Title>
@@ -35,6 +28,4 @@ function CardHorizontalSection({ title, cardData }: Props) {
 			})}
 		</>
 	);
-}
-
-export default CardHorizontalSection;
+};

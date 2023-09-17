@@ -1,3 +1,4 @@
+// styles
 import styles from "./styles.module.css";
 
 type Props = {
@@ -6,7 +7,7 @@ type Props = {
 	date: string;
 };
 
-function Date({ className = "", day, date }: Props) {
+export const Date = ({ className = "", day, date }: Props) => {
 	return (
 		<>
 			<div className={`${styles.date} ${className} ${styles.dateActive}`}>
@@ -15,6 +16,6 @@ function Date({ className = "", day, date }: Props) {
 			</div>
 		</>
 	);
-}
+};
 
 export default Date;

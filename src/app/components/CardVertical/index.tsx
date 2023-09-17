@@ -3,8 +3,8 @@ import styles from "./styles.module.css";
 // components
 import Image, { StaticImageData } from "next/image";
 
-type Props = {
-	className: string;
+export type CardVerticalProps = {
+	className?: string;
 	image: string | StaticImageData;
 	title: string;
 	date: string;
@@ -12,14 +12,14 @@ type Props = {
 	price: string;
 };
 
-function CardVertical({
-	className,
+export const CardVertical = ({
+	className = "",
 	image,
 	title,
 	date,
 	time,
 	price,
-}: Props) {
+}: CardVerticalProps) => {
 	return (
 		<div className={`${styles.card} ${className}`}>
 			<Image
@@ -39,6 +39,4 @@ function CardVertical({
 			</div>
 		</div>
 	);
-}
-
-export default CardVertical;
+};

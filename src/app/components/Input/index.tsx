@@ -9,13 +9,11 @@ type InputProps = {
 	placeholder?: string;
 };
 
-function Input({ placeholder }: InputProps) {
+export const Input = ({ placeholder }: InputProps) => {
 	return (
 		<div className={styles.inputGroup}>
 			<Image className={styles.icon} src={magnifySVG} alt="magnify.svg" />
 			<input className={styles.input} placeholder={placeholder} />
 		</div>
 	);
-}
-
-export default Input;
+};

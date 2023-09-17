@@ -14,7 +14,7 @@ type ImageBottomTextProps = {
 	onClick?: MouseEventHandler;
 };
 
-function ImageBottomText({
+export const ImageBottomText = ({
 	className = "",
 	src,
 	width,
@@ -22,7 +22,7 @@ function ImageBottomText({
 	alt,
 	text,
 	onClick,
-}: ImageBottomTextProps) {
+}: ImageBottomTextProps) => {
 	return (
 		<div onClick={onClick} className={`${styles.image} ${className}`}>
 			<Image
@@ -35,6 +35,4 @@ function ImageBottomText({
 			<div className={styles.imageText}>{text}</div>
 		</div>
 	);
-}
-
-export default ImageBottomText;
+};
