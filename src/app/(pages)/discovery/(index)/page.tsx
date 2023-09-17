@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 // assets
 import locationSVG from "./assets/location.svg";
 import calendarSVG from "./assets/calendar.svg";
-import EventCarnivalJPG from "../assets/event-carnival.jpg";
+import EventCarnivalJPG from "../../../assets/event-carnival.jpg";
 import EventCircusJPG from "../assets/event-circus.jpg";
 import EventComedyJPG from "../assets/event-comedy.jpg";
 import EventMusic2JPG from "../../../assets/event-music-2.jpg";
@@ -17,8 +17,8 @@ import EventTheaterJPG from "../assets/event-theater.jpg";
 import Image from "next/image";
 import Container from "../../../components/Container";
 import Title from "../../../components/Title";
-import CardHorizontal from "../../../components/CardHorizontal";
 import CardVerticalSection from "@/app/components/CardVerticalSection";
+import CardHorizontalSection from "@/app/components/CardHorizontalSection";
 import Input from "../../../components/Input";
 import ImageBottomText from "./components/ImageBottomText";
 
@@ -146,14 +146,17 @@ function Discovery() {
 				</div>
 			</Container>
 			<Container>
-				<Title>Popular Events</Title>
-				<CardHorizontal
-					className={styles.cardHorizontal}
-					image={EventCarnivalJPG}
-					title="Brooks Davis Live"
-					date="Sat, 15 Sept, 2023"
-					time="6:25pm-10.00pm"
-					price="$98"
+				<CardHorizontalSection
+					title="Popular Events"
+					cardData={[
+						{
+							image: EventCarnivalJPG,
+							title: "Brooks Davis Live",
+							date: "Sat, 15 Sept, 2023",
+							time: "6:25pm-10.00pm",
+							price: "$98",
+						},
+					]}
 				/>
 			</Container>
 		</>
