@@ -15,9 +15,9 @@ import EventSportJPG from "../assets/event-sport.jpg";
 import EventTheaterJPG from "../assets/event-theater.jpg";
 // components
 import Image from "next/image";
-import Container from "../components/Container";
-import Title from "../components/Title";
-import CardHorizontal from "../components/CardHorizontal";
+import Container from "../../../components/Container";
+import Title from "../../../components/Title";
+import CardHorizontal from "../../../components/CardHorizontal";
 import CardVertical from "./components/CardVertical";
 import Input from "./components/Input";
 import NextLink from "./components/Link";
