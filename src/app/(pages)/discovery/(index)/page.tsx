@@ -9,7 +9,7 @@ import calendarSVG from "./assets/calendar.svg";
 import EventCarnivalJPG from "../assets/event-carnival.jpg";
 import EventCircusJPG from "../assets/event-circus.jpg";
 import EventComedyJPG from "../assets/event-comedy.jpg";
-import EventMusic2JPG from "../assets/event-music-2.jpg";
+import EventMusic2JPG from "../../../assets/event-music-2.jpg";
 import EventMusicJPG from "../assets/event-music.jpg";
 import EventSportJPG from "../assets/event-sport.jpg";
 import EventTheaterJPG from "../assets/event-theater.jpg";
@@ -18,9 +18,8 @@ import Image from "next/image";
 import Container from "../../../components/Container";
 import Title from "../../../components/Title";
 import CardHorizontal from "../../../components/CardHorizontal";
-import CardVertical from "./components/CardVertical";
-import Input from "./components/Input";
-import NextLink from "./components/Link";
+import CardVerticalSection from "@/app/components/CardVerticalSection";
+import Input from "../../../components/Input";
 import ImageBottomText from "./components/ImageBottomText";
 
 function Discovery() {
@@ -55,52 +54,40 @@ function Discovery() {
 				<Input placeholder="Search for artists, venues, and events" />
 			</Container>
 			<Container>
-				<div className="flex justify-between">
-					<Title>Nearby Events (9)</Title>
-					<NextLink href="">See All</NextLink>
-				</div>
-				<div className={styles.sliderNearby}>
-					<CardVertical
-						className={`${styles.cardVertical} ${styles.sliderNearbyItem}`}
-						image={EventMusic2JPG}
-						title="Brooks Davis Live 1"
-						date="15th Dec, 2023"
-						time="10.00pm"
-						price="$98"
-					/>
-					<CardVertical
-						className={`${styles.cardVertical} ${styles.sliderNearbyItem}`}
-						image={EventMusic2JPG}
-						title="Brooks Davis Live 2"
-						date="15th Dec, 2023"
-						time="10.00pm"
-						price="$98"
-					/>
-					<CardVertical
-						className={`${styles.cardVertical} ${styles.sliderNearbyItem}`}
-						image={EventMusic2JPG}
-						title="Brooks Davis Live 3"
-						date="15th Dec, 2023"
-						time="10.00pm"
-						price="$98"
-					/>
-					<CardVertical
-						className={`${styles.cardVertical} ${styles.sliderNearbyItem}`}
-						image={EventMusic2JPG}
-						title="Brooks Davis Live 4"
-						date="15th Dec, 2023"
-						time="10.00pm"
-						price="$98"
-					/>
-					<CardVertical
-						className={`${styles.cardVertical} ${styles.sliderNearbyItem}`}
-						image={EventMusic2JPG}
-						title="Brooks Davis Live 5"
-						date="15th Dec, 2023"
-						time="10.00pm"
-						price="$98"
-					/>
-				</div>
+				<CardVerticalSection
+					title="Nearby Events (9)"
+					linkData={{ text: "See all", href: "" }}
+					cardData={[
+						{
+							image: EventMusic2JPG,
+							title: "Brooks Davis Live 1",
+							date: "15th Dec, 2023",
+							time: "10.00pm",
+							price: "$98",
+						},
+						{
+							image: EventMusic2JPG,
+							title: "Brooks Davis Live 2",
+							date: "15th Dec, 2023",
+							time: "10.00pm",
+							price: "$98",
+						},
+						{
+							image: EventMusic2JPG,
+							title: "Brooks Davis Live 3",
+							date: "15th Dec, 2023",
+							time: "10.00pm",
+							price: "$98",
+						},
+						{
+							image: EventMusic2JPG,
+							title: "Brooks Davis Live 4",
+							date: "15th Dec, 2023",
+							time: "10.00pm",
+							price: "$98",
+						},
+					]}
+				/>
 			</Container>
 			<Container>
 				<Title>Browse by Category</Title>
