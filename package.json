@@ -6,6 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "cap:sync": "npx cap sync",
+    "cap:android:open": "npx cap android open",
+    "serve:static": "npx serve@latest out",
     "lint": "next lint"
   },
   "dependencies": {

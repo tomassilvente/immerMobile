@@ -5,7 +5,9 @@ const config: CapacitorConfig = {
   appName: 'immer',
   webDir: 'out',
   server: {
-    androidScheme: 'https'
+    androidScheme: 'https',
+    url: "http://192.168.0.13:3000",
+    cleartext: true
   }
 };
 
