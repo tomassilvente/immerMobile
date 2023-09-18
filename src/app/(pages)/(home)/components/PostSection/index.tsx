@@ -1,8 +1,7 @@
+// styles
 import styles from "./styles.module.css";
-
-export const Avatar = () => {
-	return <div></div>;
-};
+// components
+import { Avatar } from "../Avatar";
 
 export const PostSection = () => {
 	return (

@@ -1,0 +1,19 @@
+.avatar {
+  align-items: center;
+  border: 2px solid #F71;
+  border-radius: 50%;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  padding: 3.333px 3.117px 3.334px 3.55px;
+  width: 40px;
+}
+
+.avatarImage {
+  border-radius: 50%;
+  height: 33.333px;
+  min-height: 33.333px;
+  min-width: 33.333px;
+  object-fit: cover;
+  width: 33.333px;
+}

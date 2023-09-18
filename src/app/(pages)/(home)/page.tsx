@@ -12,7 +12,7 @@ function Home() {
 	return (
 		<>
 			<Container>
-				<PostSection></PostSection>
+				<PostSection />
 			</Container>
 			<Container>
 				<CardVerticalSection
