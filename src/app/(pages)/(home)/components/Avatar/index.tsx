@@ -1,7 +1,7 @@
 // styles
 import styles from "./styles.module.css";
 // assets
-import avatarJPG from "../../assets/avatar.jpg";
+import avatarJPG from "./assets/avatar.jpg";
 // components
 import Image from "next/image";
 

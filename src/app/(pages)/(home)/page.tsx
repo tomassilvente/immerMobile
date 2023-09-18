@@ -1,3 +1,5 @@
+// styles
+import styles from "./styles.module.css";
 // assets
 import EventMusic2JPG from "../../assets/event-music-2.jpg";
 import EventCarnivalJPG from "../../assets/event-carnival.jpg";
@@ -6,13 +8,13 @@ import { Container } from "@/app/components/Container";
 import { Title } from "@/app/components/Title";
 import { CardVerticalSection } from "@/app/components/CardVerticalSection";
 import { CardHorizontalSection } from "@/app/components/CardHorizontalSection";
-import { PostSection } from "./components/PostSection";
+import { Post } from "./components/Post";
 
 function Home() {
 	return (
 		<>
-			<Container>
-				<PostSection />
+			<Container className={styles.postContainer}>
+				<Post />
 			</Container>
 			<Container>
 				<CardVerticalSection

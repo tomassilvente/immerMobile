@@ -1,0 +1,29 @@
+.postContainer {
+  border-bottom: 0.5px solid rgba(102, 102, 102, 0.5);
+  border-top: 0.5px solid rgba(102, 102, 102, 0.5);
+  padding-bottom: 25px !important;
+  padding-top: 25px !important;
+  position: relative;
+}
+
+.postContainer::after {
+  background-color: rgba(255, 119, 17, 0.22);
+  bottom: 25px;
+  content: "";
+  filter: blur(50px);
+  height: 55px;
+  position: absolute;
+  right: 0;
+  width: 164px;
+}
+
+.postContainer::before {
+  background-color: rgba(255, 119, 17, 0.22);
+  content: "";
+  filter: blur(50px);
+  height: 55px;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 164px;
+}
