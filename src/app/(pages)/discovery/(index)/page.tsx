@@ -15,11 +15,11 @@ import EventSportJPG from "../assets/event-sport.jpg";
 import EventTheaterJPG from "../assets/event-theater.jpg";
 // components
 import Image from "next/image";
-import { Container } from "../../../components/Container";
-import { Title } from "../../../components/Title";
-import { CardVerticalSection } from "@/app/components/CardVerticalSection";
-import { CardHorizontalSection } from "@/app/components/CardHorizontalSection";
-import { Input } from "../../../components/Input";
+import { Container } from "components/Container";
+import { Title } from "components/Title";
+import { CardSmallSection } from "components/Card/CardSmallSection";
+import { CardFlexSection } from "components/Card/CardFlexSection";
+import { Input } from "components/Input";
 import { ImageBottomText } from "./components/ImageBottomText";
 
 function Discovery() {
@@ -54,7 +54,7 @@ function Discovery() {
 				<Input placeholder="Search for artists, venues, and events" />
 			</Container>
 			<Container>
-				<CardVerticalSection
+				<CardSmallSection
 					title="Nearby Events (9)"
 					linkData={{ text: "See all", href: "" }}
 					cardData={[
@@ -146,7 +146,7 @@ function Discovery() {
 				</div>
 			</Container>
 			<Container>
-				<CardHorizontalSection
+				<CardFlexSection
 					title="Popular Events"
 					cardData={[
 						{

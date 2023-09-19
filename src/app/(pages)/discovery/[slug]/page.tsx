@@ -8,9 +8,9 @@ import EventCarnivalJPG from "../assets/event-carnival.jpg";
 import styles from "./styles.module.css";
 // components
 import Image from "next/image";
-import { Container } from "../../../components/Container";
-import { Title } from "../../../components/Title";
-import { CardHorizontal } from "../../../components/CardHorizontal";
+import { Container } from "components/Container";
+import { Title } from "components/Title";
+import { CardFlex } from "components/Card/CardFlex";
 import { Date } from "./components/Date";
 
 function DiscoveryCategory() {
@@ -56,24 +56,24 @@ function DiscoveryCategory() {
 					<Date className={styles.sliderDateItem} day="Mon" date="1 Oct" />
 					<Date className={styles.sliderDateItem} day="Tue" date="2 Oct" />
 				</div>
-				<CardHorizontal
-					className={styles.cardHorizontal}
+				<CardFlex
+					className={styles.cardFlex}
 					image={EventCarnivalJPG}
 					title="Brooks Davis Live"
 					date="Sat, 15 Sept, 2023"
 					time="6:25pm-10.00pm"
 					price="$98"
 				/>
-				<CardHorizontal
-					className={styles.cardHorizontal}
+				<CardFlex
+					className={styles.cardFlex}
 					image={EventCarnivalJPG}
 					title="Brooks Davis Live"
 					date="Sat, 15 Sept, 2023"
 					time="6:25pm-10.00pm"
 					price="$98"
 				/>
-				<CardHorizontal
-					className={styles.cardHorizontal}
+				<CardFlex
+					className={styles.cardFlex}
 					image={EventCarnivalJPG}
 					title="Brooks Davis Live"
 					date="Sat, 15 Sept, 2023"

@@ -7,7 +7,7 @@ import moreSVG from "./assets/more.svg";
 // components
 import Image, { StaticImageData } from "next/image";
 
-export type CardHorizontalProps = {
+export type CardFlexProps = {
 	className?: string;
 	image: string | StaticImageData;
 	title: String;
@@ -16,14 +16,14 @@ export type CardHorizontalProps = {
 	price: String;
 };
 
-export const CardHorizontal = ({
+export const CardFlex = ({
 	className,
 	image,
 	title,
 	date,
 	time,
 	price,
-}: CardHorizontalProps) => {
+}: CardFlexProps) => {
 	return (
 		<div className={`${styles.card} ${className}`}>
 			<Image

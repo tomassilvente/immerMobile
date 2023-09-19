@@ -1,0 +1,20 @@
+.card {
+  margin-top: 15px;
+}
+
+.sliderHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider {
+  display: flex;
+  gap: 8px;
+  overflow-x: scroll;
+}
+
+.sliderItem {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+}

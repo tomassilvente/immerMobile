@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 // components
 import Image, { StaticImageData } from "next/image";
 
-export type CardVerticalProps = {
+export type CardSmallProps = {
 	className?: string;
 	image: string | StaticImageData;
 	title: string;
@@ -12,14 +12,14 @@ export type CardVerticalProps = {
 	price: string;
 };
 
-export const CardVertical = ({
+export const CardSmall = ({
 	className = "",
 	image,
 	title,
 	date,
 	time,
 	price,
-}: CardVerticalProps) => {
+}: CardSmallProps) => {
 	return (
 		<div className={`${styles.card} ${className}`}>
 			<Image

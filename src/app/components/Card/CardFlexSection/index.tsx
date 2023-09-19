@@ -1,23 +1,23 @@
 // assets
 import styles from "./style.module.css";
 // components
-import { Title } from "../Title";
-import { CardHorizontal, CardHorizontalProps } from "../CardHorizontal";
+import { Title } from "../../Title";
+import { CardFlex, CardFlexProps } from "../CardFlex";
 
 type Props = {
 	title: string;
-	cardData: Array<CardHorizontalProps>;
+	cardData: Array<CardFlexProps>;
 };
 
-export const CardHorizontalSection = ({ title, cardData }: Props) => {
+export const CardFlexSection = ({ title, cardData }: Props) => {
 	return (
 		<>
 			<Title>{title}</Title>
 			{cardData.map((card, i) => {
 				return (
-					<CardHorizontal
+					<CardFlex
 						key={i}
-						className={styles.cardHorizontal}
+						className={styles.cardFlex}
 						image={card.image}
 						title={card.title}
 						date={card.date}

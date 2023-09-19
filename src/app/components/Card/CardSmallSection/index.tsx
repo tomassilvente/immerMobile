@@ -1,9 +1,9 @@
 // styles
 import styles from "./styles.module.css";
 // components
-import { Title } from "../Title";
-import { NextLink } from "../Link";
-import { CardVertical, CardVerticalProps } from "../CardVertical";
+import { Title } from "../../Title";
+import { NextLink } from "../../Link";
+import { CardSmall, CardSmallProps } from "../CardSmall";
 
 type Props = {
 	title: string;
@@ -11,14 +11,10 @@ type Props = {
 		text: string;
 		href: string;
 	};
-	cardData: Array<CardVerticalProps>;
+	cardData: Array<CardSmallProps>;
 };
 
-export const CardVerticalSection = ({
-	title,
-	linkData,
-	cardData,
-}: Props) => {
+export const CardSmallSection = ({ title, linkData, cardData }: Props) => {
 	return (
 		<>
 			<div className={styles.sliderHeader}>
@@ -28,9 +24,9 @@ export const CardVerticalSection = ({
 			<div className={styles.slider}>
 				{cardData.map((card, i) => {
 					return (
-						<CardVertical
+						<CardSmall
 							key={i}
-							className={`${styles.cardVertical} ${styles.sliderItem}`}
+							className={`${styles.card} ${styles.sliderItem}`}
 							image={card.image}
 							title={card.title}
 							date={card.date}

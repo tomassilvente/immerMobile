@@ -1,23 +1,56 @@
 // styles
 import styles from "./styles.module.css";
 // assets
-import EventMusic2JPG from "../../assets/event-music-2.jpg";
-import EventCarnivalJPG from "../../assets/event-carnival.jpg";
+import EventMusic2JPG from "../assets/event-music-2.jpg";
+import EventCarnivalJPG from "../assets/event-carnival.jpg";
 // components
-import { Container } from "@/app/components/Container";
-import { Title } from "@/app/components/Title";
-import { CardVerticalSection } from "@/app/components/CardVerticalSection";
-import { CardHorizontalSection } from "@/app/components/CardHorizontalSection";
-import { Post } from "./components/Post";
+import { Container } from "components/Container";
+import { Title } from "components/Title";
+import { CardSmallSection } from "components/Card/CardSmallSection";
+import { CardFlexSection } from "components/Card/CardFlexSection";
+import { Post } from "components/Post";
+import { CardLargeSection } from "components/Card/CardLargeSection";
 
 function Home() {
 	return (
 		<>
+			<Container>
+				<CardLargeSection
+					title="Recommended"
+					linkData={{ text: "See all", href: "" }}
+					cardData={[
+						{
+							image: EventMusic2JPG,
+							title: "Brooks Davis Live 1",
+							date: "Sat, 15 Sept, 2023",
+							time: "6:25pm-10.00pm",
+							price: "$98",
+							location: "6391 Elgin St. Celina, Del...",
+						},
+						{
+							image: EventMusic2JPG,
+							title: "Brooks Davis Live 1",
+							date: "Sat, 15 Sept, 2023",
+							time: "6:25pm-10.00pm",
+							price: "$98",
+							location: "6391 Elgin St. Celina, Del...",
+						},
+						{
+							image: EventMusic2JPG,
+							title: "Brooks Davis Live 1",
+							date: "Sat, 15 Sept, 2023",
+							time: "6:25pm-10.00pm",
+							price: "$98",
+							location: "6391 Elgin St. Celina, Del...",
+						},
+					]}
+				/>
+			</Container>
 			<Container className={styles.postContainer}>
 				<Post />
 			</Container>
 			<Container>
-				<CardVerticalSection
+				<CardSmallSection
 					title="New Events"
 					linkData={{ text: "See all", href: "" }}
 					cardData={[
@@ -53,7 +86,7 @@ function Home() {
 				/>
 			</Container>
 			<Container>
-				<CardHorizontalSection
+				<CardFlexSection
 					title="Event Near You"
 					cardData={[
 						{
