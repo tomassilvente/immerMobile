@@ -1,0 +1,39 @@
+.sliderHeader {
+  align-items: end;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider {
+  display: flex;
+  gap: 8px;
+  overflow-x: scroll;
+}
+
+.sliderItem {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-align: center;
+  width: 70px;
+}
+
+.avatarWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar {
+  height: 70px;
+  margin-top: 15px;
+  width: 70px;
+}
+
+.avatarName {
+  color: #333;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 133.333% */
+  margin-top: 10px;
+}

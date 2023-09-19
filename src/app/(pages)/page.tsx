@@ -10,11 +10,28 @@ import { CardSmallSection } from "components/Card/CardSmallSection";
 import { CardFlexSection } from "components/Card/CardFlexSection";
 import { Post } from "components/Post";
 import { CardLargeSection } from "components/Card/CardLargeSection";
+import { InputSearch } from "app/components/Input/InputSearch";
+import { EventLocation } from "app/components/EventLocation";
+import { EventNotification } from "app/components/EventNotification";
+import { AvatarSection } from "app/components/Avatar/AvatarSection";
 
 function Home() {
 	return (
 		<>
+			<Container className={styles.headerContainer}>
+				<EventLocation />
+				<EventNotification />
+			</Container>
 			<Container>
+				<InputSearch placeholder="Search for artists, venues, and events" />
+			</Container>
+			<Container>
+				<AvatarSection
+					title="Subscriptions"
+					linkData={{ text: "See All", href: "" }}
+				/>
+			</Container>
+			<Container className={styles.recommendedContainer}>
 				<CardLargeSection
 					title="Recommended"
 					linkData={{ text: "See all", href: "" }}
@@ -47,7 +64,17 @@ function Home() {
 				/>
 			</Container>
 			<Container className={styles.postContainer}>
-				<Post />
+				<Post
+					name="Richard Wallace"
+					address="Signal Hill Park · Signal Hill, CA"
+					postDate="20/11/2023"
+					postComment="Thank you to all of my subscribers for making this tour
+					spectacular. I will be adding a private show next week, just for
+					you guys! Stay tuned for details!. #WallaceOnTour #W24"
+					likeStats={328}
+					shareStats={328}
+					commentStats={463}
+				/>
 			</Container>
 			<Container>
 				<CardSmallSection

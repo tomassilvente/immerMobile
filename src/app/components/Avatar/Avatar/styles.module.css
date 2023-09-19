@@ -11,9 +11,9 @@
 
 .avatarImage {
   border-radius: 50%;
-  height: 33.333px;
-  min-height: 33.333px;
-  min-width: 33.333px;
+  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
   object-fit: cover;
-  width: 33.333px;
+  width: 100%;
 }

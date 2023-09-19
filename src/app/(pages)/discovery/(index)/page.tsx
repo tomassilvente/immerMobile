@@ -19,7 +19,7 @@ import { Container } from "components/Container";
 import { Title } from "components/Title";
 import { CardSmallSection } from "components/Card/CardSmallSection";
 import { CardFlexSection } from "components/Card/CardFlexSection";
-import { Input } from "components/Input";
+import { Input } from "app/components/Input/InputSearch";
 import { ImageBottomText } from "./components/ImageBottomText";
 
 function Discovery() {

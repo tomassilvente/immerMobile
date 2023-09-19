@@ -9,7 +9,7 @@ type InputProps = {
 	placeholder?: string;
 };
 
-export const Input = ({ placeholder }: InputProps) => {
+export const InputSearch = ({ placeholder }: InputProps) => {
 	return (
 		<div className={styles.inputGroup}>
 			<Image className={styles.icon} src={magnifySVG} alt="magnify.svg" />

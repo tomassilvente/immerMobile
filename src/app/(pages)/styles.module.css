@@ -1,3 +1,12 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recommendedContainer {
+  margin-bottom: 25px !important;
+}
+
 .postContainer {
   border-bottom: 0.5px solid rgba(102, 102, 102, 0.5);
   border-top: 0.5px solid rgba(102, 102, 102, 0.5);
