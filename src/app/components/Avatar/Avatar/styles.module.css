@@ -51,7 +51,8 @@
 }
 
 .feedShow {
-  display: block;
+  align-items: center;
+  display: flex;
 }
 
 .feedClose {

@@ -52,7 +52,10 @@ export const Avatar = ({ className = "", labelData }: AvatarProps) => {
 
 			<div className={`${styles.feed} ${isFeedOpen && styles.feedShow}`}>
 				<video ref={videoRef}>
-					<source src="/assets/test.mp4" type="video/mp4" />
+					<source
+						src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"
+						type="video/mp4"
+					/>
 					Your browser does not support the video tag.
 				</video>
 				<Image
