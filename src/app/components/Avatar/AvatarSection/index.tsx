@@ -29,9 +29,12 @@ export const AvatarSection = ({ title, linkData }: Props) => {
 				</div>
 				<div className={styles.sliderItem}>
 					<div className={styles.avatarWrapper}>
-						<Avatar className={`${styles.avatar}`} />
+						<Avatar
+							className={`${styles.avatar}`}
+							labelData={{ text: "LIVE" }}
+						/>
 					</div>
-					<div className={styles.avatarName}>Sheryl Green GreenGreen</div>
+					<div className={styles.avatarName}>Sheryl Green</div>
 				</div>
 				<div className={styles.sliderItem}>
 					<div className={styles.avatarWrapper}>

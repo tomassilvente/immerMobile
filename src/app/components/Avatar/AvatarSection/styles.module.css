@@ -1,5 +1,5 @@
 .sliderHeader {
-  align-items: end;
+  align-items: flex-end;
   display: flex;
   justify-content: space-between;
 }
@@ -36,4 +36,11 @@
   font-weight: 500;
   line-height: 16px; /* 133.333% */
   margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.avatarLabel {
+  
 }

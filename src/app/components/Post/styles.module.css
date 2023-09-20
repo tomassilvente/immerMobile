@@ -1,6 +1,11 @@
 .personLayout {
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
+}
+
+.personDataLayout {
+  align-self: center;
+  flex-grow: 1;  
 }
 
 .personDataName {

@@ -3,7 +3,7 @@
 }
 
 .sliderHeader {
-  align-items: end;
+  align-items: flex-end;
   display: flex;
   justify-content: space-between;
 }
