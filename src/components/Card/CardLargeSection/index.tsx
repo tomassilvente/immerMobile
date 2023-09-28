@@ -1,7 +1,7 @@
 // styles
 import styles from "./styles.module.css";
 // components
-import { Title } from "../../Title";
+import { Title } from "../../../common/titles"; 
 import { NextLink } from "../../Link";
 import { CardLarge, CardLargeProps } from "../CardLarge";
 

@@ -1,8 +1,8 @@
 // styles
 import styles from "./styles.module.css";
 // components
-import { Title } from "components/Title";
-import { NextLink } from "components/Link";
+import { Title } from "../../../common/titles"; 
+import { NextLink } from "../../Link"; 
 import { Avatar } from "../Avatar";
 
 type Props = {

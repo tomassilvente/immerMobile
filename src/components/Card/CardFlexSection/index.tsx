@@ -1,7 +1,7 @@
 // assets
 import styles from "./style.module.css";
 // components
-import { Title } from "../../Title";
+import { Title } from "../../../common/titles"; 
 import { CardFlex, CardFlexProps } from "../CardFlex";
 
 type Props = {
