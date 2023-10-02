@@ -1,0 +1,23 @@
+.date {
+  background: var(--light-color-base-tertiary-light, #FFF);
+  border: 1px solid var(--primary-color-primary-main-500, #F71);
+  border-radius: 10px;
+  color: var(--light-color-base-primary-normal, #333232);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  height: 67px;
+  letter-spacing: 0.035px;
+  line-height: 150%; /* 21px */
+  min-width: max-content;
+  padding: 10px;
+  text-align: center;
+}
+
+.dateActive {
+  background: var(--primary-color-primary-main-100, #FFD6B8);
+  border: 1px solid var(--primary-color-primary-main-500, #F71);
+  border-radius: 10px;
+}

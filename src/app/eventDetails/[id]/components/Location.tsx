@@ -1,11 +1,12 @@
-import Image from "next/image"
+//Icons
+import SvgLocationLight from "../../../../../public/assets/Icons/LocationLight"
 
 export default function Location ({eventLocation}:any){
     return (
         <div className="p-5">
                 <h1 className="text-2xl my-4">Location</h1>
                 <div className="flex">
-                    <Image alt={'...'}  src={'../assets/location.svg'} width={24} height={24}/>
+                    <SvgLocationLight width={24} height={24}/>
                     <p className="ml-4 font-light"> {eventLocation} </p>
                 </div>
                 {/* We need this API_KEY to get google maps working */}

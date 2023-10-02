@@ -1,7 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
 
-
 export default function Subscriptions({stories}:any){
     return(
     <div className="mt-10">

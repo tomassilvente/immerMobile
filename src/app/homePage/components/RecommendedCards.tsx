@@ -1,5 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
+//Icons
+import SvgCalendarOrange from "../../../../public/assets/Icons/CalendarOrange";
+import SvgClock from "../../../../public/assets/Icons/Clock";
+import SvgLocationOrange from "../../../../public/assets/Icons/LocationOrange";
 
 type CardProps ={
     eventDay: string,
@@ -14,15 +18,15 @@ return(
             <Link className="" href='/'>
             <Image className="mb-3 rounded-t-xl " src={eventImg} alt={'...'}  width={300} height={94}/>
             <div className="flex ml-4">
-                <Image src='../../assets/calendar-orange.svg' alt={'...'} width={20} height={20}/>
+                <SvgCalendarOrange  width={20} height={30}/>
                 <p className="my-1 ml-3 font-light">{eventDay}</p>
             </div>
             <div className="flex ml-4">
-                <Image src='../../assets/clock.svg' alt={'...'} width={20} height={20}/>
+                <SvgClock  width={20} height={30}/>
                 <p className="my-1 ml-3 font-light">{eventTime}</p>
             </div>
             <div className="flex ml-4">
-                <Image src='../../assets/location-orange.svg' alt={'...'} width={20} height={20}/>
+                <SvgLocationOrange width={20} height={34}/>
                 <p className=" my-1 ml-3 font-light">{eventLocation}</p>
             </div>
             </Link>

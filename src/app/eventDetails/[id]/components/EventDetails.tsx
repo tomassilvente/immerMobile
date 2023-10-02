@@ -1,5 +1,7 @@
-import Image from "next/image"
 import Pricing from "./Pricing"
+//Icons
+import SvgCalendarOrange from "../../../../../public/assets/Icons/CalendarOrange"
+import SvgClock from "../../../../../public/assets/Icons/Clock"
 
 type detailProps ={
     eventName: string,
@@ -15,11 +17,11 @@ export default function eventDetails({eventName, eventDay, eventPrice, eventTime
         <div className="col-start-1 col-end-3 ">
             <h1 className="text-2xl ">{eventName} </h1>
             <div className=" my-5 flex">
-                <Image alt={'...'} src={'../assets/calendar-orange.svg'} width={24} height={24}/>
+                <SvgCalendarOrange width={24} height={26}/>
                 <p className="ml-3 text-lg font-light">{eventDay}</p>
             </div>
             <div className=" flex"> 
-                <Image alt={'...'} src={'../assets/clock.svg'} width={24} height={24}/>
+                <SvgClock width={24} height={28}/>
                 <p className="ml-3 text-lg font-light">{eventTime}</p>
              </div>
         </div>

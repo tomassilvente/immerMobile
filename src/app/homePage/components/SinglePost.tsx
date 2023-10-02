@@ -1,6 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
 
+//Icons
+import SVGShare from "../../../../public/assets/Icons/shareButton"
+import SvgCommentButton from "../../../../public/assets/Icons/CommentButton"
+import SvgLikeButtonOrange from "../../../../public/assets/Icons/LikeButtonOrange"
+
 export default function SinglePost({profilePic, eventOrganizer, postLocation, postDate, post, postLikes, postComments, postShareds}:any){
     return(
         <div className="m-8">
@@ -16,11 +21,11 @@ export default function SinglePost({profilePic, eventOrganizer, postLocation, po
             </div>
             <p className="mt-6 font-light text-lg text-[#767676]">{post}</p>
             <div className="flex mt-6">
-                <Image src={'../../assets/likeButton-orange.svg'} alt={'...'} width={22} height={22}/>
+                <SvgLikeButtonOrange width={25} height={25}/>
                 <p className="font-light ml-3">{postLikes}</p>
-                <Image className="ml-20" src={'../../assets/commentButton.svg'} alt={'...'} width={22} height={22}/>
+                <SvgCommentButton className="ml-20" width={25} height={25}/>
                 <p className="font-light ml-3">{postComments}</p>
-                <Image className="ml-20" src={'../../assets/shareButton.svg'} alt={'...'} width={22} height={22}/>
+                <SVGShare className="ml-20"/>
                 <p className="font-light ml-3">{postShareds}</p>
             </div>
         </div>

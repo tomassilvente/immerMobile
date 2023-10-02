@@ -1,5 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
+//Icons
+import SvgFollowButton from "../../../../../public/assets/Icons/FollowButton"
+import SvgMessageButton from "../../../../../public/assets/Icons/MessageButton"
 
 export default function Organized({eventOrganizer} : any) {
 
@@ -11,8 +14,8 @@ export default function Organized({eventOrganizer} : any) {
                 <p>{eventOrganizer}</p>
                 <span className="text-sm font-light text-[#767676]">Posted on 12 No 2023</span>
             </div>
-            <Link href='/' className="col-start-5 mt-6"><Image  alt={'...'} src={'../assets/followButton.svg'} width={100} height={24}/></Link>
-            <Link href='/' className="col-start-6 mt-6 ml-6"><Image  alt={'...'} src={'../assets/messageButton.svg'} width={44} height={24}/></Link>
+            <Link href='/' className="col-start-5 mt-6"><SvgFollowButton width={100} height={46}/></Link>
+            <Link href='/' className="col-start-6 mt-6 ml-6"><SvgMessageButton width={44} height={46}/></Link>
         </div>
 )}
 

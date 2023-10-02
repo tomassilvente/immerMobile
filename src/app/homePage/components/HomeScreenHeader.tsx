@@ -1,4 +1,7 @@
-import Image from "next/image"
+//Icons
+import SvgLocationLight from "../../../../public/assets/Icons/LocationLight"
+import SvgNotification1 from "../../../../public/assets/Icons/Notification1"
+import SvgMagnify from "../../../../public/assets/Icons/Magnify"
 
 type homeScreenProps ={
     location: string
@@ -11,7 +14,7 @@ export default function HomeScreenHeader({location}:homeScreenProps){
         <>
             <div className="grid grid-cols-6 m-5 mt-10">
                 <div className="col-start-1 col-end-4 flex">
-                    <Image  src='../../../assets/location-light.svg' width={25} height={10} alt={'...'}/>
+                    <SvgLocationLight width={25} height={25}/>
                     <p className="ml-2">{location}</p>
                 </div>
                 <div className="col-start-6 ml-12">
@@ -25,12 +28,12 @@ export default function HomeScreenHeader({location}:homeScreenProps){
                         className="bg-[#ff2a2a] absolute text-center rounded-full ml-3 h-[16px] w-[16px] text-xs text-white">
                             {notifications}
                         </p>
-                        <Image src='../../../assets/notification1.svg' width={25} height={10} alt={'...'}/>
+                        <SvgNotification1 width={25} height={25}/>
                     </div>
                 </div>
             </div>
             <div className="border flex rounded-3xl h-[40px] m-5 mr-8 mt-10 pl-[20px]">
-                <Image width={15} height={10} src='../../../assets/magnify.svg' alt="magnify.svg" />
+                <SvgMagnify className="mt-2" width={15} height={20} />
                 <input className="text-sm pl-5 w-[100%]" placeholder={'Search for arttistts, venues and evens'} />
 		    </div>
         </>
