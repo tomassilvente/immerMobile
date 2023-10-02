@@ -8,36 +8,18 @@ import messageCircleSVG from "./assets/message-circle.svg";
 import Image from "next/image";
 import { Avatar } from "../Avatar/Avatar";
 
-type PostProps = {
-	name: string;
-	address: string;
-	postDate: string;
-	postComment: string;
-	likeStats: number;
-	shareStats: number;
-	commentStats: number;
-};
-
-export const Post = ({
-	name,
-	address,
-	postDate,
-	postComment,
-	likeStats,
-	shareStats,
-	commentStats,
-}: PostProps) => {
+export const Post = ({post}: any) => {
 	return (
 		<div className={styles.section}>
 			<div className={styles.personLayout}>
 				<Avatar />
 				<div className={styles.personDataLayout}>
-					<div className={styles.personDataName}>{name}</div>
-					<div className={styles.personDataAddress}>{address}</div>
+					<div className={styles.personDataName}>{post.username}</div>
+					<div className={styles.personDataAddress}>{post.postLocation}</div>
 				</div>
-				<div className={styles.personPostDate}>{postDate}</div>
+				<div className={styles.personPostDate}>{post.postDate}</div>
 			</div>
-			<div className={styles.postComment}>{postComment}</div>
+			<div className={styles.postComment}>{post.post}</div>
 			<div className={styles.actionLayout}>
 				<div className={styles.action}>
 					<Image
@@ -45,7 +27,7 @@ export const Post = ({
 						className={styles.actionIcon}
 						alt="thumbs-up.svg"
 					/>
-					<span className={styles.actionStats}>{likeStats}</span>
+					<span className={styles.actionStats}>{post.postLikes}</span>
 				</div>
 				<div className={styles.action}>
 					<Image
@@ -53,7 +35,7 @@ export const Post = ({
 						className={styles.actionIcon}
 						alt="share.svg"
 					/>
-					<span className={styles.actionStats}>{shareStats}</span>
+					<span className={styles.actionStats}>{post.postComments}</span>
 				</div>
 				<div className={styles.action}>
 					<Image
@@ -61,7 +43,7 @@ export const Post = ({
 						className={styles.actionIcon}
 						alt="message-circle.svg"
 					/>
-					<span className={styles.actionStats}>{commentStats}</span>
+					<span className={styles.actionStats}>{post.postShareds}</span>
 				</div>
 			</div>
 		</div>

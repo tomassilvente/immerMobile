@@ -9,11 +9,11 @@
     "eventAvailability": 14,
     "eventImg": "./eventDetails.jpeg",
     "profiles": [
-        {"id":0, "pic": "/../../assets/mobile/mobile-icons/randomProfile1.png"},
-        {"id":1, "pic": "/../../assets/mobile/mobile-icons/randomProfile2.png"},
-        {"id":2, "pic": "/../../assets/mobile/mobile-icons/randomProfile3.png"},
-        {"id":3, "pic": "/../../assets/mobile/mobile-icons/randomProfile5.png"},
-        {"id":4, "pic": "/../../assets/mobile/mobile-icons/randomProfile4.png"}
+        {"id":0, "pic": "/../../assets/randomProfile1.png"},
+        {"id":1, "pic": "/../../assets/randomProfile2.png"},
+        {"id":2, "pic": "/../../assets/randomProfile3.png"},
+        {"id":3, "pic": "/../../assets/randomProfile5.png"},
+        {"id":4, "pic": "/../../assets/randomProfile4.png"}
     ],
     "companionImg": "./assets/event.jpeg",
     "eventCompanionName":"Traditional Music Festival",
@@ -80,5 +80,39 @@
         "postLikes": "17,328",
         "postComments":171,
         "postShareds":463
-    }
+    },
+    "cardData":[
+        {
+          "image": "./assets/event-music-2.jpg",
+          "title": "Brooks Davis Live 1",
+          "date": "Sat, 15 Sept, 2023",
+          "time": "6:25pm-10.00pm",
+          "price": "$98",
+          "location": "6391 Elgin St. Celina, Del..."
+        },
+        {
+          "image": "./assets/event-music-2.jpg",
+          "title": "Brooks Davis Live 1",
+          "date": "Sat, 15 Sept, 2023",
+          "time": "6:25pm-10.00pm",
+          "price": "$98",
+          "location": "6391 Elgin St. Celina, Del..."
+        },
+        {
+          "image": "./assets/event-music-2.jpg",
+          "title": "Brooks Davis Live 1",
+          "date": "Sat, 15 Sept, 2023",
+          "time": "6:25pm-10.00pm",
+          "price": "$98",
+          "location": "6391 Elgin St. Celina, Del..."
+        },
+        {
+          "image": "./assets/event-music-2.jpg",
+          "title": "Brooks Davis Live 1",
+          "date": "Sat, 15 Sept, 2023",
+          "time": "6:25pm-10.00pm",
+          "price": "$98",
+          "location": "6391 Elgin St. Celina, Del..."
+        }
+      ]
 }

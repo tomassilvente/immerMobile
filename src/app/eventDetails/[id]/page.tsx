@@ -1,4 +1,3 @@
-
 import Link from "next/link"
 //components
 import Location from "./components/Location"
