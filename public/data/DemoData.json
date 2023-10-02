@@ -7,13 +7,13 @@
     "eventDescription": "Join 900+ lovers of traditional music at Adelaide Entretainment Centre. Dive deep into inciteful...",
     "eventPrice": 98,
     "eventAvailability": 14,
-    "eventImg": "./eventDetails.jpeg",
+    "eventImg": "../assets/eventDetails.jpeg",
     "profiles": [
-        {"id":0, "pic": "/../../assets/randomProfile1.png"},
-        {"id":1, "pic": "/../../assets/randomProfile2.png"},
-        {"id":2, "pic": "/../../assets/randomProfile3.png"},
-        {"id":3, "pic": "/../../assets/randomProfile5.png"},
-        {"id":4, "pic": "/../../assets/randomProfile4.png"}
+        {"id":0, "pic": "../assets/randomProfile1.png"},
+        {"id":1, "pic": "../assets/randomProfile2.png"},
+        {"id":2, "pic": "../assets/randomProfile3.png"},
+        {"id":3, "pic": "../assets/randomProfile5.png"},
+        {"id":4, "pic": "../assets/randomProfile4.png"}
     ],
     "companionImg": "./assets/event.jpeg",
     "eventCompanionName":"Traditional Music Festival",
@@ -52,27 +52,27 @@
     ],
     "stories":[{
         "user":"Sheryl Green",
-        "profilePic": "/../../assets/mobile/mobile-icons/randomProfile1.png",
+        "profilePic": "/../../assets/randomProfile1.png",
         "live":false
     },{
         "user":"Brooks Davis",
-        "profilePic": "/../../assets/mobile/mobile-icons/randomProfile2.png",
+        "profilePic": "/../../assets/randomProfile2.png",
         "live":false
     },{
         "user":"Rich Wallace",
-        "profilePic": "/../../assets/mobile/mobile-icons/randomProfile3.png",
+        "profilePic": "/../../assets/randomProfile3.png",
         "live":true
     },{
         "user":"Am Scoba",
-        "profilePic": "/../../assets/mobile/mobile-icons/randomProfile4.png",
+        "profilePic": "/../../assets/randomProfile4.png",
         "live":false
     },{
         "user":"Glender Lender",
-        "profilePic": "/../../assets/mobile/mobile-icons/randomProfile5.png",
+        "profilePic": "/../../assets/randomProfile5.png",
         "live":false
     }],
     "post":{
-        "profilePic":"/../../assets/mobile/mobile-icons/randomProfile2.png",
+        "profilePic":"/../../assets/randomProfile2.png",
         "username":"Richard Wallace",
         "postLocation":"Signal Hill Park - Signal Hill, CA",
         "postDate":"20/11/2023",

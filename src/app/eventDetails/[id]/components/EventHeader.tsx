@@ -10,9 +10,9 @@ export default function EventHeader({eventImg}: any){
                     backgroundPosition: "center",
                     backgroundSize: "cover",
                 }}>
-                    <Link href='/' className="col-start-2 mr-10  w-[45px]"><Image alt={'...'}  src={'../../assets/mobile/mobile-icons/backButton.svg'} width={45} height={45}/></Link>
-                    <Link href='/' className="col-start-11 mt-4 mr-10 w-[45px]"><Image alt={'...'}  src={'../../assets/mobile/mobile-icons/likeButton.svg'} width={45} height={45}/></Link>
-                    <Link href='/' className="col-start-12 mr-8 w-[45px]"><Image alt={'...'}  src={'../../assets/mobile/mobile-icons/shareButton.svg'} width={45} height={45}/></Link>
+                    <Link href='/' className="col-start-2 mr-10  w-[45px]"><Image alt={'...'}  src={'../assets/backButton.svg'} width={45} height={45}/></Link>
+                    <Link href='/' className="col-start-11 mt-4 mr-10 w-[45px]"><Image alt={'...'}  src={'../assets/likeButton.svg'} width={45} height={45}/></Link>
+                    <Link href='/' className="col-start-12 mr-8 w-[45px]"><Image alt={'...'}  src={'../assets/shareButton.svg'} width={45} height={45}/></Link>
             </div>
     )
 }
