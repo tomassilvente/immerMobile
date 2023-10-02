@@ -1,6 +1,7 @@
 import CompanionHeader from "./components/CompanionHeader";
 import CompanionDetails from "./components/CompaionDetails";
 import CompanionRecomendaions from "./components/CompanionRecomendations";
+//data
 import data from "../../../public/data/DemoData.json" // All this data should come as params, including the links or the actions that every button should do
 
 const eventCompanion = () =>{
