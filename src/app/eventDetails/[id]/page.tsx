@@ -11,7 +11,6 @@ import data from "../../../../public/data/DemoData.json" // All this data should
 
 export default function eventDetail(){ 
     return (
-       
         <div className="h-screen bg-white text-black sm:invisible overflow-scroll">
             <EventHeader eventImg={data.eventImg} />
             <EventDetails eventName={data.eventName} eventDay={data.eventDay} eventPrice={data.eventPrice} eventTime={data.eventTime} eventAvailability={data.eventAvailability}/>
@@ -27,5 +26,15 @@ export default function eventDetail(){
                 Book Now
             </Link>        
         </div>
-        
 )}
+
+// ! This is only a momentary function, but it should be work diferently.
+export async function getStaticPaths() {
+    const eventIds = ["1", "2", "3"]; 
+
+    const paths = eventIds.map((id) => ({
+        params: { id: id.toString() },
+    }));
+
+    return { paths, fallback: true }; 
+}
