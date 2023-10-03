@@ -1,0 +1,84 @@
+{
+    "eventDay" :"Sat, 15 Sept, 2023",
+    "eventLocation": "6391 Elgin St. Celina, Delaware 10299",
+    "eventTime": "6:25pm - 10:00pm",
+    "eventName": "Brooks Davis Live",
+    "eventOrganizer": "Zayne Adams",
+    "eventDescription": "Join 900+ lovers of traditional music at Adelaide Entretainment Centre. Dive deep into inciteful...",
+    "eventPrice": 98,
+    "eventAvailability": 14,
+    "eventImg": "./eventDetails.jpeg",
+    "profiles": [
+        {"id":0, "pic": "/../../assets/mobile/mobile-icons/randomProfile1.png"},
+        {"id":1, "pic": "/../../assets/mobile/mobile-icons/randomProfile2.png"},
+        {"id":2, "pic": "/../../assets/mobile/mobile-icons/randomProfile3.png"},
+        {"id":3, "pic": "/../../assets/mobile/mobile-icons/randomProfile5.png"},
+        {"id":4, "pic": "/../../assets/mobile/mobile-icons/randomProfile4.png"}
+    ],
+    "companionImg": "./assets/event.jpeg",
+    "eventCompanionName":"Traditional Music Festival",
+    "eventCompanionOrganizer":"Brooks Davis",
+    "events":[
+        {
+            "name": "Shop",
+            "img":"../../assets/shop.jpeg",
+            "link": "/"
+        },
+        {
+            "name": "Q&A",
+            "img":"../../assets/Q&A.png",
+            "link": "/"
+        },
+        {
+            "name": "Social",
+            "img":"../../assets/social.jpeg",
+            "link": "/"
+        },
+        {
+            "name": "Event",
+            "img":"../../assets/event.jpeg",
+            "link": "/"
+        },
+        {
+            "name": "Camera",
+            "img":"../../assets/camera.jpeg",
+            "link":"/"
+        },
+        {
+            "name":"Venue",
+            "img":"../../assets/venue.jpeg",
+            "link": "/"
+        }
+    ],
+    "stories":[{
+        "user":"Sheryl Green",
+        "profilePic": "/../../assets/mobile/mobile-icons/randomProfile1.png",
+        "live":false
+    },{
+        "user":"Brooks Davis",
+        "profilePic": "/../../assets/mobile/mobile-icons/randomProfile2.png",
+        "live":false
+    },{
+        "user":"Rich Wallace",
+        "profilePic": "/../../assets/mobile/mobile-icons/randomProfile3.png",
+        "live":true
+    },{
+        "user":"Am Scoba",
+        "profilePic": "/../../assets/mobile/mobile-icons/randomProfile4.png",
+        "live":false
+    },{
+        "user":"Glender Lender",
+        "profilePic": "/../../assets/mobile/mobile-icons/randomProfile5.png",
+        "live":false
+    }],
+    "post":{
+        "profilePic":"/../../assets/mobile/mobile-icons/randomProfile2.png",
+        "username":"Richard Wallace",
+        "postLocation":"Signal Hill Park - Signal Hill, CA",
+        "postDate":"20/11/2023",
+        "post":"Thank you to all of my subscribers for making this tour spectacular. I will be adding a private show next week, just for you guys! Stay tuned for details!. #WallaceOnTour #W24",
+        "postLikes": "17,328",
+        "postComments":171,
+        "postShareds":463
+    }
+}
