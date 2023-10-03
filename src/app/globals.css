@@ -15,3 +15,12 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+
+@layer components {
+  .action-button {
+    @apply bg-[#fff]/30 p-1 rounded
+  }
+  .flexed {
+    @apply flex items-center gap-2
+  }
+}
