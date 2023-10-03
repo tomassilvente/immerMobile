@@ -1,13 +1,11 @@
 import Image from "next/image"
-import Link from "next/link"
 //Components
 import Details from "./components/details"
+import BottomTicket from "./components/bottomTicket"
 //Icons
 import SvgBackButtonBlack from "../../../public/assets/Icons/BackButtonBlack"
 import SvgShareButtonBlack from "../../../public/assets/Icons/shareButtonBlack"
-import SvgElipseLeft from "../../../public/assets/Icons/ElipseLeft"
-import SvgElipseRigth from "../../../public/assets/Icons/ElipseRigth"
-import SvgTicketLine from "../../../public/assets/Icons/ticketLine"
+
 
 export default function ticketDetails(){
     return(
@@ -22,18 +20,7 @@ export default function ticketDetails(){
                     <Image src='../../../../assets/qr.png' width={500} height={500} alt={'...'}/>
                 </div>
                 <Details/>
-                <div className="flex">
-                    <SvgElipseLeft />
-                    <SvgTicketLine className="mt-6" />
-                    <SvgTicketLine className="mt-6" />
-                    <SvgElipseRigth />
-                </div>
-                <Link
-                    href='/' 
-                    className="grid text-center text-2xl bg-primary text-white mx-8 py-5 rounded-full" 
-                >
-                    Download Ticket
-                </Link>       
+                <BottomTicket />
             </div>
         </div>
     )
