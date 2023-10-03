@@ -3,6 +3,8 @@
     "eventLocation": "6391 Elgin St. Celina, Delaware 10299",
     "eventTime": "6:25pm - 10:00pm",
     "eventName": "Brooks Davis Live",
+    "eventRow":"Row 05",
+    "eventSeat":"Seat 12",
     "eventOrganizer": "Zayne Adams",
     "eventDescription": "Join 900+ lovers of traditional music at Adelaide Entretainment Centre. Dive deep into inciteful...",
     "eventPrice": 98,
@@ -87,7 +89,23 @@
           "title": "Brooks Davis Live 1",
           "date": "Sat, 15 Sept, 2023",
           "time": "6:25pm-10.00pm",
-          "price": "$98",
+          "price": 98,
+          "location": "6391 Elgin St. Celina, Del..."
+        },
+        {
+          "image": "./assets/event-carnival.jpg",
+          "title": "Brooks Davis Live 1",
+          "date": "Sat, 15 Sept, 2023",
+          "time": "6:25pm-10.00pm",
+          "price": 98,
+          "location": "6391 Elgin St. Celina, Del..."
+        },
+        {
+          "image": "./assets/social.jpeg",
+          "title": "Brooks Davis Live 1",
+          "date": "Sat, 15 Sept, 2023",
+          "time": "6:25pm-10.00pm",
+          "price": 98,
           "location": "6391 Elgin St. Celina, Del..."
         },
         {
@@ -95,23 +113,7 @@
           "title": "Brooks Davis Live 1",
           "date": "Sat, 15 Sept, 2023",
           "time": "6:25pm-10.00pm",
-          "price": "$98",
-          "location": "6391 Elgin St. Celina, Del..."
-        },
-        {
-          "image": "./assets/event-music-2.jpg",
-          "title": "Brooks Davis Live 1",
-          "date": "Sat, 15 Sept, 2023",
-          "time": "6:25pm-10.00pm",
-          "price": "$98",
-          "location": "6391 Elgin St. Celina, Del..."
-        },
-        {
-          "image": "./assets/event-music-2.jpg",
-          "title": "Brooks Davis Live 1",
-          "date": "Sat, 15 Sept, 2023",
-          "time": "6:25pm-10.00pm",
-          "price": "$98",
+          "price": 98,
           "location": "6391 Elgin St. Celina, Del..."
         }
       ]

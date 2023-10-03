@@ -1,7 +1,7 @@
+import Search from "../../../components/search"
 //Icons
 import SvgLocationLight from "../../../../public/assets/Icons/LocationLight"
 import SvgNotification1 from "../../../../public/assets/Icons/Notification1"
-import SvgMagnify from "../../../../public/assets/Icons/Magnify"
 
 type homeScreenProps ={
     location: string
@@ -32,9 +32,6 @@ export default function HomeScreenHeader({location}:homeScreenProps){
                     </div>
                 </div>
             </div>
-            <div className="border flex rounded-3xl h-[40px] m-5 mr-8 mt-10 pl-[20px]">
-                <SvgMagnify className="mt-2" width={15} height={20} />
-                <input className="text-sm pl-5 w-[100%]" placeholder={'Search for arttistts, venues and evens'} />
-		    </div>
+            <Search hold='Search for artists, venues and events'/>
         </>
 )}

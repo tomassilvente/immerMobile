@@ -1,5 +1,6 @@
 export { default as FollowButton } from "./FollowButton";
 export { default as BackButton } from "./BackButton";
+export { default as BackVector} from "./BackVector"
 export { default as CalendarOrange } from "./CalendarOrange";
 export { default as Clock } from "./Clock";
 export { default as CommentButton } from "./CommentButton";
@@ -15,6 +16,7 @@ export { default as ImmerLogoOrangeSqWbg } from "./ImmerLogoOrangeSqWbg";
 export { default as ImmerLogoWhite } from "./ImmerLogoWhite";
 export { default as LikeButtonOrange } from "./LikeButtonOrange";
 export { default as LikeButton } from "./LikeButton";
+export { default as LikeHeart } from "./LikeHeart"
 export { default as LocationLight } from "./LocationLight";
 export { default as LocationOrange } from "./LocationOrange";
 export { default as Magnify } from "./Magnify";
