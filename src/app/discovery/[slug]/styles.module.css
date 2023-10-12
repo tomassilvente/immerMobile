@@ -1,0 +1,88 @@
+.imageCover {
+  padding: 0;  
+  position: relative;
+}
+
+.imageSrc {
+  filter: brightness(70%);
+}
+
+.imageText {
+  color: var(--light-color-base-tertiary-light, #FFF);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  left: 0;
+  line-height: normal;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-align: center;
+  top: 20px;
+}
+
+.imageIconLeft {
+  background: rgba(255, 255, 255, 0.30);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 100px;
+  cursor: pointer;
+  left: 15px;
+  position: absolute;
+  top: 17px;
+}
+
+.filterWrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.filterCalendar {
+  color: var(--primary-color-primary-main-500, #F71);
+  cursor: pointer;  
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.048px;
+  line-height: 150%; /* 18px */
+}
+
+.filterButton {
+  align-items: center;
+  background: var(--light-color-base-tertiary-light, #FFF);
+  border: 1px solid var(--primary-color-primary-main-500, #F71);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  padding: 5px 10px;
+  width: 101px;
+}
+
+.filterButton span {
+  color: var(--light-color-base-primary-normal, #333232);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.048px;
+  line-height: 150%; /* 18px */
+}
+
+.filterButton SVG {
+  height: 24px;
+  width: 24px;
+}
+
+.sliderDate {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  overflow-x: auto;
+}
+
+.cardFlex {
+  margin-top: 15px;
+}
