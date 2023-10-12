@@ -8,44 +8,7 @@ const SvgImmerIconOrange = (props: SVGProps<SVGSVGElement>) => (
     viewBox="0 0 338.667 338.667"
     {...props}
   >
-    <text
-      xmlSpace="preserve"
-      x={441.365}
-      y={202.419}
-      style={{
-        fontStyle: "normal",
-        fontVariant: "normal",
-        fontWeight: 400,
-        fontStretch: "normal",
-        fontSize: "86.70230865px",
-        lineHeight: 1.25,
-        fontFamily: "&quot",
-        InkscapeFontSpecification: "&quot",
-        letterSpacing: 0,
-        wordSpacing: 0,
-        fill: "#000",
-        fillOpacity: 1,
-        stroke: "none",
-        strokeWidth: 1.80629802,
-      }}
-      transform="translate(0 41.667)"
-    >
-      <tspan
-        x={441.365}
-        y={202.419}
-        style={{
-          fontStyle: "normal",
-          fontVariant: "normal",
-          fontWeight: 400,
-          fontStretch: "normal",
-          fontFamily: "OldSansBlack",
-          InkscapeFontSpecification: "OldSansBlack",
-          strokeWidth: 1.80629802,
-        }}
-      >
-        {"immer"}
-      </tspan>
-    </text>
+    
     <path
       d="M392.77-412.034a155.901 155.901 0 0 0-155.9 155.902 155.901 155.901 0 0 0 155.9 155.901 155.901 155.901 0 0 0 155.902-155.901 155.901 155.901 0 0 0-155.901-155.902zm-118.414 76.49h47.877v15.541h-23.565v127.741h23.565v15.541h-47.877zm188.952 0h47.878v158.823h-47.878v-15.54h23.565v-127.742h-23.565zm-144.32 26.105h32.748v10.49h-16.119v86.222h16.119v10.49h-32.749zm114.817 0h32.75v107.202h-32.75v-10.49h16.12v-86.222h-16.12zm-78.779 17.43h75.49v72.343h-75.49z"
       style={{
