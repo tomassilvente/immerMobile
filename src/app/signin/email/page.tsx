@@ -5,6 +5,8 @@ import SvgCheckBoxUnaccepted from "../../../../public/assets/Icons/CheckBoxUnacc
 import Link from "next/link"
 import SvgAlertIcon from "../../../../public/assets/Icons/AlertIcon"
 import SvgWarningIconBig from "../../../../public/assets/Icons/WarningIconBig"
+import Feed from "../components/Feed"
+import SignButton from "app/signup/components/SignButton"
 
 export default function signInWithEmail(){ 
 
@@ -122,47 +124,9 @@ export default function signInWithEmail(){
                     <label className="ml-2 mt-[1px] text-sm font-light text-[#767676]">Remember me</label>
                     <Link className="ml-[43%] text-sm font-semibold" href={'/signin/password-forgot'}>Forgot Password?</Link>
                 </div>
-                {
-                    able
-                    ? <button
-                        onClick={setFeedOpen}
-                        type="submit"
-                        className="w-[100%] text-center text-2xl bg-primary text-white mt-12  py-5 rounded-full" 
-                    >
-                        Sign Up
-                    </button>  
-                    :
-                    <div
-                        className="w-[100%] text-center text-2xl bg-[#b8b8b8] text-white mt-12  py-5 rounded-full" 
-                    >
-                        Sign Up
-                    </div> 
-                }
+                <SignButton title='Sign In' able={able} onClick={setFeedOpen}/>
             </form>
-            <div
-            className={`bg-[#000000d8] bottom-0 h-[100vh] left-0 fixed right-0 top-0 w-[100%] z-10`}
-            style={{
-                        alignItems:
-                            isFeedOpen? "center"
-                            :   '',
-                        display:
-                            isFeedOpen? "flex"
-                            : 'none'
-                    }}>
-                    <div className="bg-white grid content-center place-items-center m-14 p-10 mx-20 rounded-[40px]">
-                        <SvgWarningIconBig />
-                        <p className="text-3xl mt-16 font-semibold">Account blocked</p>
-                        <p className="font-light mt-16">This account has been blocked for XX minutes because of too many login attempts. 
-                            Please, try again later or contact us.  
-                        </p>
-                        <button
-                        onClick={setFeedClose}
-                        className="w-[100%] text-center text-2xl bg-primary text-white mt-24 py-5 rounded-3xl" 
-                        >
-                            Close
-                        </button> 
-                    </div>
-			    </div>
+            <Feed title={'Account blocked'} title2={"check your email and try again or sign up if you don't have an account."} isFeedOpen={isFeedOpen} setFeedClose={setFeedClose} buttonText={'close'} link={false}/>
     </div>
         
     )}
