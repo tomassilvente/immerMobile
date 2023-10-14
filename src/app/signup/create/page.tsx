@@ -3,6 +3,7 @@
 import { useState } from "react"
 import SvgCheckBoxUnaccepted from "../../../../public/assets/Icons/CheckBoxUnaccepted"
 import SvgCheckBoxAccepted from "../../../../public/assets/Icons/CheckoxAccepted"
+import SignButton from "../components/SignButton"
 
 export default function create(){ 
 
@@ -190,22 +191,7 @@ export default function create(){
                     }
                     <label className="ml-2 mt-[1px] text-sm font-light text-[#767676]">I agree to Immer Terms of Service and Privacy Policy by creating my account.</label>
                 </div>
-                {
-                    able
-                    ? <button
-                        type="submit"
-                        className="w-[100%] text-center text-2xl bg-primary text-white mt-12  py-5 rounded-full" 
-                    >
-                        Sign Up
-                    </button>  
-                    :
-                    <div
-                        className="w-[100%] text-center text-2xl bg-[#b8b8b8] text-white mt-12  py-5 rounded-full" 
-                    >
-                        Sign Up
-                    </div> 
-                }
-                
+                <SignButton able={able} title="Sign Up" />
             </form>
         </div>
 )}

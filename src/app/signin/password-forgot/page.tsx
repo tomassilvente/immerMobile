@@ -3,6 +3,9 @@ import { useState } from "react"
 import SvgWarningIconBig from "../../../../public/assets/Icons/WarningIconBig";
 import Link from "next/link";
 import SvgAlertIcon from "../../../../public/assets/Icons/AlertIcon";
+import SignButton from "app/signup/components/SignButton";
+import Feed from "../components/Feed";
+import SimpleButton from "../components/SimpleButton";
 
 export default function passwordForgot(){ 
 
@@ -68,21 +71,7 @@ return(
                             : ''
                             )
                     }
-                {
-                    emailCompleted
-                    ? <div
-                        onClick={setFeedOpen}
-                        className="w-[100%] text-center text-2xl bg-primary text-white mt-12  py-5 rounded-full" 
-                    >
-                        Reset my password
-                    </div>  
-                    :
-                    <div
-                        className="w-[100%] text-center text-2xl bg-[#b8b8b8] text-white mt-12  py-5 rounded-full" 
-                    >
-                        Reset my password
-                    </div> 
-                }    
+                <SignButton title="Reset my password" able={emailCompleted} onClick={setFeedOpen}/>
         </form>
         <div
             className={`bg-[#000000d8] bottom-0 h-[100vh] left-0 fixed right-0 top-0 w-[100%] z-10`}
@@ -98,14 +87,9 @@ return(
                         <SvgWarningIconBig />
                         <p className="text-3xl mt-8 font-semibold">No account was found</p>
                         <p className="font-light mt-16">Check your email and try again or sign up if you don't have an account.</p>
-                        <button
-                        onClick={setFeedClose}
-                        className="w-[100%] text-center text-2xl bg-primary text-white mt-24 py-5 rounded-3xl" 
-                        >
-                            Try again
-                        </button> 
-                        <Link className="text-primary font-semibold mt-12 mb-5" href='/signin'>Sign up</Link>
+                        <SimpleButton text={'Ty again'} onClick={setFeedClose} />
                     </div>
 			    </div>
+        <Feed buttonText={'Try again'} title={'No account was found'} title2={"check your email and try again or sign up if you don't have an account."} isFeedOpen={isFeedOpen} setFeedClose={setFeedClose} link={true}/>
     </div>
 )}

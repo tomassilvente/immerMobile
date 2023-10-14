@@ -1,10 +1,6 @@
+import SignButton from "app/signup/components/SignButton";
 import Link from "next/link";
-
-
-
-let able = true
    
-
 export default function submitted(){
     return(
         <div className="m-14 text-center bg-white text-black sm:invisible overflow-scroll ">
@@ -21,21 +17,7 @@ export default function submitted(){
                     <input required type="text" maxLength='1' className="border border-black w-[60px] h-[60px] ml-5 rounded-lg p-5 text-2xl"/>
                     <input required type="text" maxLength='1' className="border border-black w-[60px] h-[60px] ml-5 rounded-lg p-5 text-2xl"/>
                 </div>
-                {
-                    able
-                    ? <button
-                        type="submit"
-                        className="w-[100%] text-center text-2xl bg-primary text-white mt-32  py-5 rounded-full" 
-                    >
-                        Change password
-                    </button>  
-                    :
-                    <div
-                        className="w-[100%] text-center text-2xl bg-[#b8b8b8] text-white mt-32  py-5 rounded-full" 
-                    >
-                        Change password
-                    </div> 
-                }
+                <SignButton able={true} title="Sign In"/>
             </form>
             <p className="text-lg font-light text-[#767676] mt-12">Didn't reveice email.</p>
             <Link className="text-primary font-semibold" href='/'>Resend email.</Link>
