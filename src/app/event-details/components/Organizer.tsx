@@ -1,8 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 //Icons
-import SvgFollowButton from "../../../../../public/assets/Icons/FollowButton"
-import SvgMessageButton from "../../../../../public/assets/Icons/MessageButton"
+import SvgFollowButton from "../../../../public/assets/Icons/FollowButton"
+import SvgMessageButton from "../../../../public/assets/Icons/MessageButton"
 
 export default function Organized({eventOrganizer} : any) {
 

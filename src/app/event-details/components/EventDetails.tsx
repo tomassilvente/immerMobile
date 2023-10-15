@@ -1,7 +1,7 @@
 import Pricing from "./Pricing"
 //Icons
-import SvgCalendarOrange from "../../../../../public/assets/Icons/CalendarOrange"
-import SvgClock from "../../../../../public/assets/Icons/Clock"
+import SvgCalendarOrange from "../../../../public/assets/Icons/CalendarOrange"
+import SvgClock from "../../../../public/assets/Icons/Clock"
 
 type detailProps ={
     eventName: string,
