@@ -16,11 +16,23 @@
   }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.action-button:hover .dropdown {
+  display: flex;
+}
+
 @layer components {
   .action-button {
     @apply bg-[#fff]/30 p-1 rounded
   }
+  .input-field {
+    @apply border border-[#EBEBEB] rounded-md py-3 px-2 focus:outline-none
+  }
   .flexed {
     @apply flex items-center gap-2
+  }
+  .bordered {
+    @apply border-2 border-[red]
   }
 }

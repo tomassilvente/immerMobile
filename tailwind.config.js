@@ -6,9 +6,15 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+
+
     extend: {
       colors: {
-        bgTicket: '#FFD6B8'
+        bgTicket: '#FFD6B8',
+        primary: '#ff6c00'
+      },
+      fontFamily: {
+        Inter: ['Inter', 'sans-serif']
       }
     },
   },

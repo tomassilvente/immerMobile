@@ -1,5 +1,4 @@
 import styles from "./styles.module.css";
-import { Container } from "../Container";
 import { BottomNav } from "./BottomNav";
 
 export const MobileLayout = ({
@@ -10,10 +9,10 @@ export const MobileLayout = ({
 	className?: string;
 }) => {
 	return (
-		<div className={`relative max-w-[480px] m-auto`}>
-            <Container className={`${className} min-h-screen`}>
+		<div className={`font-Inter relative max-w-[480px] m-auto`}>
+            <div className={`${className} min-h-screen`}>
                 {children}
-            </Container>
+            </div>
             <BottomNav />
         </div>
 	);

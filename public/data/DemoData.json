@@ -3,17 +3,19 @@
     "eventLocation": "6391 Elgin St. Celina, Delaware 10299",
     "eventTime": "6:25pm - 10:00pm",
     "eventName": "Brooks Davis Live",
+    "eventRow":"Row 05",
+    "eventSeat":"Seat 12",
     "eventOrganizer": "Zayne Adams",
     "eventDescription": "Join 900+ lovers of traditional music at Adelaide Entretainment Centre. Dive deep into inciteful...",
     "eventPrice": 98,
     "eventAvailability": 14,
-    "eventImg": "./eventDetails.jpeg",
+    "eventImg": "../assets/eventDetails.jpeg",
     "profiles": [
-        {"id":0, "pic": "/../../assets/mobile/mobile-icons/randomProfile1.png"},
-        {"id":1, "pic": "/../../assets/mobile/mobile-icons/randomProfile2.png"},
-        {"id":2, "pic": "/../../assets/mobile/mobile-icons/randomProfile3.png"},
-        {"id":3, "pic": "/../../assets/mobile/mobile-icons/randomProfile5.png"},
-        {"id":4, "pic": "/../../assets/mobile/mobile-icons/randomProfile4.png"}
+        {"id":0, "pic": "../assets/randomProfile1.png"},
+        {"id":1, "pic": "../assets/randomProfile2.png"},
+        {"id":2, "pic": "../assets/randomProfile3.png"},
+        {"id":3, "pic": "../assets/randomProfile5.png"},
+        {"id":4, "pic": "../assets/randomProfile4.png"}
     ],
     "companionImg": "./assets/event.jpeg",
     "eventCompanionName":"Traditional Music Festival",
@@ -52,27 +54,27 @@
     ],
     "stories":[{
         "user":"Sheryl Green",
-        "profilePic": "/../../assets/mobile/mobile-icons/randomProfile1.png",
+        "profilePic": "/../../assets/randomProfile1.png",
         "live":false
     },{
         "user":"Brooks Davis",
-        "profilePic": "/../../assets/mobile/mobile-icons/randomProfile2.png",
+        "profilePic": "/../../assets/randomProfile2.png",
         "live":false
     },{
         "user":"Rich Wallace",
-        "profilePic": "/../../assets/mobile/mobile-icons/randomProfile3.png",
+        "profilePic": "/../../assets/randomProfile3.png",
         "live":true
     },{
         "user":"Am Scoba",
-        "profilePic": "/../../assets/mobile/mobile-icons/randomProfile4.png",
+        "profilePic": "/../../assets/randomProfile4.png",
         "live":false
     },{
         "user":"Glender Lender",
-        "profilePic": "/../../assets/mobile/mobile-icons/randomProfile5.png",
+        "profilePic": "/../../assets/randomProfile5.png",
         "live":false
     }],
     "post":{
-        "profilePic":"/../../assets/mobile/mobile-icons/randomProfile2.png",
+        "profilePic":"/../../assets/randomProfile2.png",
         "username":"Richard Wallace",
         "postLocation":"Signal Hill Park - Signal Hill, CA",
         "postDate":"20/11/2023",
@@ -80,5 +82,39 @@
         "postLikes": "17,328",
         "postComments":171,
         "postShareds":463
-    }
+    },
+    "cardData":[
+        {
+          "image": "./assets/event-music-2.jpg",
+          "title": "Brooks Davis Live 1",
+          "date": "Sat, 15 Sept, 2023",
+          "time": "6:25pm-10.00pm",
+          "price": 98,
+          "location": "6391 Elgin St. Celina, Del..."
+        },
+        {
+          "image": "./assets/event-carnival.jpg",
+          "title": "Brooks Davis Live 1",
+          "date": "Sat, 15 Sept, 2023",
+          "time": "6:25pm-10.00pm",
+          "price": 98,
+          "location": "6391 Elgin St. Celina, Del..."
+        },
+        {
+          "image": "./assets/social.jpeg",
+          "title": "Brooks Davis Live 1",
+          "date": "Sat, 15 Sept, 2023",
+          "time": "6:25pm-10.00pm",
+          "price": 98,
+          "location": "6391 Elgin St. Celina, Del..."
+        },
+        {
+          "image": "./assets/event-music-2.jpg",
+          "title": "Brooks Davis Live 1",
+          "date": "Sat, 15 Sept, 2023",
+          "time": "6:25pm-10.00pm",
+          "price": 98,
+          "location": "6391 Elgin St. Celina, Del..."
+        }
+      ]
 }
