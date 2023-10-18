@@ -1,5 +1,5 @@
-import SvgCopyLink from "../../../../../public/assets/Icons/CopyLink";
-import SvgMagnify from "../../../../../public/assets/Icons/Magnify";
+import SvgCopyLink from "../../../../public/assets/Icons/CopyLink";
+import SvgMagnify from "../../../../public/assets/Icons/Magnify";
 
 export default function share(){
     return(

@@ -18,7 +18,7 @@ export default function myEvents(){
             <hr className="my-5"/>
             <p className="text-2xl my-10 font-semibold col-start-3 col-end-6">Past Events</p>
             {DemoData.cardData.map(event=>(
-                <LargeCard eventImg={event.image} eventOrganizer={event.title} eventDay={event.date} eventTime={event.time} eventPrice={event.price} liked={true}/>
+                <LargeCard key={event.title} eventImg={event.image} eventOrganizer={event.title} eventDay={event.date} eventTime={event.time} eventPrice={event.price} liked={true}/>
             ))}
         </div>
 )}

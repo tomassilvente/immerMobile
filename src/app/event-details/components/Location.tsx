@@ -1,5 +1,5 @@
 //Icons
-import SvgLocationLight from "../../../../../public/assets/Icons/LocationLight"
+import SvgLocationLight from "../../../../public/assets/Icons/LocationLight"
 
 export default function Location ({eventLocation}:any){
     return (

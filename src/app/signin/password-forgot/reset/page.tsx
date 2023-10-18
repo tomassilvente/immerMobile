@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import Link from "next/link"
+import SignButton from "app/signup/components/SignButton"
 
 export default function passwordChange(){ 
 
@@ -95,21 +96,7 @@ export default function passwordChange(){
                                 )
                     }}
                     className="font-light text-[#767676]">Both passowrds must match</span>   
-                {
-                    able
-                    ? <button
-                        type="submit"
-                        className="w-[100%] text-center text-2xl bg-primary text-white mt-12  py-5 rounded-full" 
-                    >
-                        Change password
-                    </button>  
-                    :
-                    <div
-                        className="w-[100%] text-center text-2xl bg-[#b8b8b8] text-white mt-12  py-5 rounded-full" 
-                    >
-                        Change password
-                    </div> 
-                }
+                <SignButton title={'Change Password'} able={able} />
             </form>
         </div>
     )}
