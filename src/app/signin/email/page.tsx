@@ -7,6 +7,7 @@ import SvgAlertIcon from "../../../../public/assets/Icons/AlertIcon"
 import SvgWarningIconBig from "../../../../public/assets/Icons/WarningIconBig"
 import Feed from "../components/Feed"
 import SignButton from "app/signup/components/SignButton"
+import SvgEyeClose from "../../../../public/assets/Icons/EyeClose"
 
 export default function signInWithEmail(){ 
 
@@ -97,24 +98,29 @@ export default function signInWithEmail(){
                             )
                     }
                 <p className="text-xl mt-5">Password</p>
-                <input
-                    onChange={(e)=> setIsCorrect(e.target.value)}
-                    style={{
-                        borderColor:
-                            wrong
-                            ? 'red'
-                            :''
-                            
-                    }}
-                    className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black after:border-[5px]" placeholder="Enter Your Password" id="password" name="password" type="password"/>
-                {
-                wrong
-                    ? <span className="text-sm font-light text-[#ff3c3c] mt-3">Invalid Password</span>
-                    : ''
-                }
-                <br />
-                <span className="font-light text-[#767676]">At least 8 characters, 1 uppercase letter, 1 number, 1 symbol</span>   
-                
+                <div>
+                    
+                    <input
+                        onChange={(e)=> setIsCorrect(e.target.value)}
+                        style={{
+                            borderColor:
+                                wrong
+                                ? 'red'
+                                :''
+                                
+                        }}
+                        className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black after:border-[5px]" placeholder="Enter Your Password" id="password" name="password" type="password">
+                   
+                    </input>    
+                    {
+                    wrong
+                        ? <span className="text-sm font-light text-[#ff3c3c] mt-3">Invalid Password</span>
+                        : ''
+                    }
+                    <br />
+                    <span className="font-light text-[#767676]">At least 8 characters, 1 uppercase letter, 1 number, 1 symbol</span>   
+                    
+                </div>
                 <div className="flex mt-8">
                     {
                         accepted

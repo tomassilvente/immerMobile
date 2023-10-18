@@ -116,5 +116,63 @@
           "price": 98,
           "location": "6391 Elgin St. Celina, Del..."
         }
-      ]
+      ],
+    "ticketDetails":[
+        {
+            "id": 1,
+            "price": 198,
+            "section": "B, Row AB",
+            "location":"Floor - Front Standing"
+        },
+        {
+            "id": 2,
+            "price": 175,
+            "section": "114, Row RD",
+            "location":"Plaza - Level 1 Side View"
+        },
+        {
+            "id": 3,
+            "price": 120,
+            "section": "106, Row JN",
+            "location":"Club, Level 2 Side View"
+        },
+        {
+            "id": 4,
+            "price": 98,
+            "section": "312, Row XR",
+            "location":"Mezzanine - Level 3 Front View"
+        },
+        {
+            "id": 5,
+            "price": 98,
+            "section": "312, Row XR",
+            "location":"Mezzanine - Level 3 Front View"
+        }
+],
+    "DemoTicketLocation":[
+        {
+            "Location": "Floor",
+            "Color": "#778DAC"
+        },
+        {
+            "Location": "Plaza",
+            "Color": "#B23535"
+        },
+        {
+            "Location": "Club",
+            "Color": "#FFC552"
+        },
+        {
+            "Location": "Mezzanine",
+            "Color": "#428CBD"
+        },
+        {
+            "Location": "Unavailable",
+            "Color": "#948C8C"
+        },
+        {
+            "Location": "Accesible",
+            "Color": "#778DAC"
+        }
+    ]
 }
