@@ -9,9 +9,9 @@ export default function confirmation(){
         <div className="bg-white text-center m-10 text-black sm:invisible overflow-scroll">
             <p className="text-2xl ">Payment Confirmed</p>
             <p className=" font-light mt-2">Booking ID #2126GHC</p>
-            <SvgSuccessIcon className="ml-[33%] mt-[125px] mb-20"/>
+            <SvgSuccessIcon className="ml-[29%] mt-[125px] mb-20"/>
             <p className="text-2xl">Thank you for your purchase!</p>
-            <TicketCard marginTop={50} eventName={DemoData.eventName} eventDay={DemoData.eventDay} eventTime={DemoData.eventTime} eventSeat={DemoData.eventSeat} eventRow={DemoData.eventRow}/>
+            <TicketCard marginTop={20} eventName={DemoData.eventName} eventDay={DemoData.eventDay} eventTime={DemoData.eventTime} eventSeat={DemoData.eventSeat} eventRow={DemoData.eventRow}/>
             <Link href='/ticket-details'><p className="mt-5 text-lg text-primary">View Ticket</p></Link>
             <Link href='/'>
                 <button

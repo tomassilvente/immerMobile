@@ -6,10 +6,11 @@ import SvgTicket from "../../../../../public/assets/Icons/Ticket";
 
 export default function TicketCard({eventName, eventDay, eventRow, eventTime, eventSeat, marginTop}:any){
 return(
-    <div className="border rounded-3xl w-[75%] p-6 ml-[12%] bg-white"
+    <div className="border rounded-3xl w-[75%]  p-6 ml-[12%] bg-white"
         style={{
-            marginTop: marginTop
-        }}>
+            marginTop: `${marginTop}%`
+        }} 
+        >
                         <p className="text-xl">{eventName}</p>
                         <div className="grid grid-cols-2 mt-5 font-light">
                             <div className="flex mt-2"> 
