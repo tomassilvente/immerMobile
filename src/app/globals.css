@@ -18,7 +18,6 @@
 }
 
 
-
 .action-button:hover .dropdown {
   display: flex;
 }
@@ -40,7 +39,7 @@
 
 
 .h-screen {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 

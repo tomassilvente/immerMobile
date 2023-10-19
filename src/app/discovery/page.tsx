@@ -1,5 +1,5 @@
 import LargeCard from '../../components/LargeCard'
-import EventHeader from "app/event-details/[id]/components/EventHeader";
+import EventHeader from "../../components/EventHeader";
 import DemoData from '../../../public/data/DemoData.json'
 import Link from "next/link";
 import SvgFilterIcon from "../../../public/assets/Icons/FilterIcon";
@@ -48,7 +48,7 @@ export default function discovery(){
                 <div className="">
                     {
                         DemoData.cardData.map( DemoData=> (
-                            <LargeCard eventImg={DemoData.image} eventOrganizer={DemoData.title} eventDay={DemoData.date} eventTime={DemoData.time} eventPrice={DemoData.price} liked={false}/>
+                            <LargeCard key={DemoData.title} eventImg={DemoData.image} eventOrganizer={DemoData.title} eventDay={DemoData.date} eventTime={DemoData.time} eventPrice={DemoData.price} liked={false}/>
                         ))
                     }
                 </div>

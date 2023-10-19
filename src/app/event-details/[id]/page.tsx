@@ -5,7 +5,7 @@ import Location from "../components/Location"
 import Organized from "../components/Organizer"
 import AboutEvent from "../components/AboutEvent"
 import EventDetails from "../components/EventDetails"
-import EventHeader from "../components/EventHeader"
+import EventHeader from "../../../components/EventHeader"
 import Share from "../components/Share"
 //Demo Data
 import data from "../../../../public/data/DemoData.json" // All this data should come as params, including the links or the actions that every button should do
