@@ -9,11 +9,13 @@ module.exports = {
 
 
     extend: {
-
-      colors:{
+      colors: {
+        bgTicket: '#FFD6B8',
         primary: '#ff6c00'
-
       },
+      fontFamily: {
+        Inter: ['Inter', 'sans-serif']
+      }
     },
   },
   plugins: [],
