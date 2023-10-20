@@ -1,12 +1,12 @@
 "use client"
 import Link from "next/link"
 //components
-import Location from "./components/Location"
-import Organized from "./components/Organizer"
-import AboutEvent from "./components/AboutEvent"
-import EventDetails from "./components/EventDetails"
-import EventHeader from "./components/EventHeader"
-import Share from "./components/Share"
+import Location from "../components/Location"
+import Organized from "../components/Organizer"
+import AboutEvent from "../components/AboutEvent"
+import EventDetails from "../components/EventDetails"
+import EventHeader from "../../../components/EventHeader"
+import Share from "../components/Share"
 //Demo Data
 import data from "../../../../public/data/DemoData.json" // All this data should come as params, including the links or the actions that every button should do
 import { useState } from "react"
@@ -49,12 +49,10 @@ export default function eventDetail(){
 )}
 
 // ! This is only a momentary function, but it should be work diferently.
-export async function getStaticPaths() {
-    const eventIds = ["1", "2", "3"]; 
-
-    const paths = eventIds.map((id) => ({
-        params: { id: id.toString() },
+export async function generateStaticParams() {
+    const eventIds = ["1", "2", "3"];
+  
+    return eventIds.map((id) => ({
+      params: { id: id.toString() },
     }));
-
-    return { paths, fallback: true }; 
-}
+  }
