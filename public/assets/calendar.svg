@@ -1,0 +1,13 @@
+<svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="calendar" clip-path="url(#clip0_4144_8676)">
+<path id="Vector" d="M11.0824 2.69299H2.91569C2.27136 2.69299 1.74902 3.21533 1.74902 3.85966V12.0263C1.74902 12.6707 2.27136 13.193 2.91569 13.193H11.0824C11.7267 13.193 12.249 12.6707 12.249 12.0263V3.85966C12.249 3.21533 11.7267 2.69299 11.0824 2.69299Z" stroke="#333232" stroke-width="1.14" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M9.33301 1.52588V3.85921" stroke="#333232" stroke-width="1.14" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M4.66602 1.52588V3.85921" stroke="#333232" stroke-width="1.14" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M1.75 6.19226H12.25" stroke="#333232" stroke-width="1.14" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_4144_8676">
+<rect width="14" height="14" fill="white" transform="translate(0 0.359497)"/>
+</clipPath>
+</defs>
+</svg>
