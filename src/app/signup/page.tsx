@@ -40,7 +40,7 @@ export default function signUp(){
             <SvgOrLine className="mt-10"/>
             <Link
                 style={{position: "sticky"}}
-                href='/signup/create' 
+                href='/signin/email' 
                 className="grid text-center text-2xl bg-primary text-white mt-12 mx-8 py-5 mb-16 rounded-full" 
             >
                 Sign In with my Account

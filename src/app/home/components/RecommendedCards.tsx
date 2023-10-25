@@ -15,7 +15,7 @@ type CardProps ={
 export default function RecommendedCards({eventDay, eventTime, eventLocation, eventImg}:CardProps){
 return(
     <div className="rounded-xl shadow-xl mb-10 w-[300px] flex-none mr-6">
-            <Link className="" href='/'>
+            <Link className="" href='/event-details/1'>
             <Image className="mb-3 rounded-t-xl " src={eventImg} alt={'...'}  width={300} height={94}/>
             <div className="flex ml-4">
                 <SvgCalendarOrange  width={20} height={30}/>
