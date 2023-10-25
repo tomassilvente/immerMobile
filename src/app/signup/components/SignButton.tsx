@@ -9,13 +9,12 @@ export default function SignButton({title, able, onClick}: ButtonProps){
         <div>
         {
             able
-            ? <button
+            ? <div
                 onClick={onClick}
-                type="submit"
                 className="w-[100%] text-center text-2xl bg-primary text-white mt-12  py-5 rounded-full" 
             >
                 {title}
-            </button>  
+            </div>  
             :
             <div
                 className="w-[100%] text-center text-2xl bg-[#b8b8b8] text-white mt-12  py-5 rounded-full" 

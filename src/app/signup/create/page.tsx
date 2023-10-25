@@ -4,10 +4,52 @@ import { useState } from "react"
 import SvgCheckBoxUnaccepted from "../../../../public/assets/Icons/CheckBoxUnaccepted"
 import SvgCheckBoxAccepted from "../../../../public/assets/Icons/CheckoxAccepted"
 import SignButton from "../components/SignButton"
+import { redirect } from "next/navigation"
 
 export default function create(){ 
+    
+    const formControl = async() =>{
+        let formulario = document.getElementById('form')
+        let data = {
+            username: username,
+            fullname: fullname,
+            email:email,
+            password: password,
+            passwordConfirm: password
+        }
+        let response = await fetch('https://immer-backend-dev-kenx.2.us-1.fl0.io/api/auth/register',{
+            method: 'POST',
+            headers: {
+                'Accept':'aplication/json',
+                'Content-Type': 'aplication/json'
+            },
+            body: JSON.stringify(data)
+        })
+        response = response.json()
+        if(response.status === 200) redirect('/signin')
+    }
+
+    // function getCircularReplacer() {
+    //     const ancestors = [];
+    //     return function ({key, value}:any) {
+    //       if (typeof value !== "object" || value === null) {
+    //         return value;
+    //       }
+    //       // `this` is the object that value is contained in,
+    //       // i.e., its direct parent.
+    //       while (ancestors.length > 0 && ancestors.at(-1) !== this) {
+    //         ancestors.pop();
+    //       }
+    //       if (ancestors.includes(value)) {
+    //         return "[Circular]";
+    //       }
+    //       ancestors.push(value);
+    //       return value;
+    //     };
+    //   }
 
     //First Password Validations
+
     const [wrong, setWrong] = useState(false)
     const [correct, setCorrect] = useState(false)
     const [password, setPassword] = useState('')
@@ -41,11 +83,13 @@ export default function create(){
     
     //Name Validation
     const [nameCompleted, setNameCompleted] = useState(false)
+    const [fullname, setFullname] = useState('')
     const [nameIncompleted, setNameInompleted] = useState(false)
 
     const isNameCompleted = (name: string) =>{
         if(name.length > 1){
             setNameCompleted(true)
+            setFullname(name)
             setNameInompleted(false)
         }
         else {
@@ -56,12 +100,14 @@ export default function create(){
 
     //Last Name Validation
     const [lastCompleted, setLastCompleted] = useState(false)
+    const [username, setusername] = useState('')
     const [lastIncompleted, setLastIncompleted] = useState(false)
 
     const isLastCompleted = (last: string) =>{
         if(last.length > 2){
             setLastCompleted(true)
             setLastIncompleted(false)
+            setusername(last)
         }
         else {
             setLastCompleted(false)
@@ -71,11 +117,13 @@ export default function create(){
 
     //Email Validation
     const [emailCompleted, setEmailCompleted] = useState(false)
+    const [email, setEmail] = useState('')
     const [emailIncompleted, setEmailIncompleted] = useState(false)
 
     const isEmailCompleted = (email: string) =>{
         if(email.length > 2 && email.includes('@' && '.')){
             setEmailCompleted(true)
+            setEmail(email)
             setEmailIncompleted(false)
         }
         else {
@@ -96,10 +144,10 @@ export default function create(){
             <p className="text-2xl mt-8 font-semibold">Create your account</p>
             <p className="text-lg font-light text-[#767676] mt-3">Create your personal account now to access all the  exclusive benefits  we have to offer.</p>
             <form className="text-start mt-10" id='form'>
-                <p className="text-xl mt-5">First Name</p>
+                <p className="text-xl mt-5">Full Name</p>
                 <input 
                     onChange={(e)=> isNameCompleted(e.target.value)}
-                    className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black" placeholder="Enter Your First Name" id="name" name="name" type="text"/>
+                    className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black" placeholder="Enter Your Full Name" id="name" name="name" type="text"/>
                 {
                     nameCompleted
                         ? ''
@@ -109,10 +157,10 @@ export default function create(){
                             : ''
                             )
                     }
-                <p className="text-xl mt-5">Last Name</p>
+                <p className="text-xl mt-5">Username</p>
                 <input 
                      onChange={(e)=> isLastCompleted(e.target.value)}
-                    className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black" placeholder="Enter Your Last Name" id="last" name="last" type="text"/>
+                    className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black" placeholder="Enter Your username" id="last" name="last" type="text"/>
                 {
                     lastCompleted
                         ? ''
@@ -191,7 +239,7 @@ export default function create(){
                     }
                     <label className="ml-2 mt-[1px] text-sm font-light text-[#767676]">I agree to Immer Terms of Service and Privacy Policy by creating my account.</label>
                 </div>
-                <SignButton able={able} title="Sign Up" />
+                <SignButton onClick={formControl} able={able} title="Sign Up" />
             </form>
         </div>
 )}

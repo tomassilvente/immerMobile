@@ -8,10 +8,10 @@ export default function QuantityCard({price}:any){
     const [quant, setQuant] = useState(1)
 
     function less(){
-        if(quant>0) setQuant(quant - 1)
+        if(quant>1) setQuant(quant - 1)
     }
     function plus(){
-        setQuant(quant + 1)
+        if(quant<6) setQuant(quant + 1)
     }
 
     return(
