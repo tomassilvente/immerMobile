@@ -34,7 +34,7 @@ export default function TicketSelection(){
             </div>
             {
                 DemoData.ticketDetails.map(ticket =>(
-                    <TicketCard price={ticket.price * tickets} location={ticket.location} section={ticket.section} />
+                    <TicketCard price={ticket.price * tickets} location={ticket.location} section={ticket.section} key={ticket.id}/>
                 ))
             }
         </div>
