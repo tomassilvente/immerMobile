@@ -35,6 +35,12 @@
   .bordered {
     @apply border-2 border-[red]
   }
+  .check-input {
+    @apply font-semibold flex items-center gap-3 accent-[#FF6C00]
+  }
+  .check-input input {
+    @apply h-5 w-5
+  }
 }
 
 
