@@ -1,197 +1,139 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation";
 import SvgCheckBoxUnaccepted from "../../../../public/assets/Icons/CheckBoxUnaccepted"
 import SvgCheckBoxAccepted from "../../../../public/assets/Icons/CheckoxAccepted"
 import SignButton from "../components/SignButton"
+import { registerUser } from "../../../api/auth/registerUser";
 
 export default function create(){ 
-
-    //First Password Validations
-    const [wrong, setWrong] = useState(false)
-    const [correct, setCorrect] = useState(false)
-    const [password, setPassword] = useState('')
     
-    const setIsCorrect = (password : string) =>{
-        if(password.length > 7  ){
-            setCorrect(true)
-            setWrong(false)
-            setPassword(password)
-        }
-        else {
-            setWrong(true)
-            setCorrect(false)
-        }
+    interface FormData {
+        fullName: string;
+        username: string;
+        email: string;
+        password: string;
+        passwordConfirm: string;
     }
-    
-    //Password match Validation
-    const [differents, setDifferents] = useState(false)
-    const [equals, setEquals] = useState(false)
-    
-    const passwordMatch = (confirmation:string) =>{
-        if(password == confirmation){
-            setEquals(true)
-            setDifferents(false)
-        }
-        else {
-            setEquals(false)
-            setDifferents(true)
-        }
+   
+    interface FormErrors {
+        [key: string]: string;
     }
-    
-    //Name Validation
-    const [nameCompleted, setNameCompleted] = useState(false)
-    const [nameIncompleted, setNameInompleted] = useState(false)
-
-    const isNameCompleted = (name: string) =>{
-        if(name.length > 1){
-            setNameCompleted(true)
-            setNameInompleted(false)
+   
+    const router = useRouter();
+ 
+    const [formData, setFormData] = useState({
+        fullName: "",
+        username: "",
+        email: "",
+        password: "",
+        passwordConfirm: "",
+    });
+ 
+    const [errors, setErrors] = useState({});
+ 
+    const validateField = (name: any, value: string | string[]) => {
+        let error = "";
+        switch (name) {
+            case "fullName":
+                error = value.length < 2 ? "Valid name required" : "";
+                break;
+            case "username":
+                error = value.length < 3 ? "Valid username required" : "";
+                break;
+            case "email":
+                error = !value.includes("@") || value.length < 3 ? "Valid email required" : "";
+                break;
+            case "password":
+                error = value.length < 8 ? "Invalid password" : "";
+                break;
+            case "passwordConfirm":
+                error = value !== formData.password ? "Passwords must match" : "";
+                break;
+            default:
+                break;
         }
-        else {
-            setNameCompleted(false)
-            setNameInompleted(true)
+        setErrors(prev => ({ ...prev, [name]: error }));
+    };
+ 
+    const handleChange = (e: { target: { name: any; value: any; }; }) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+        validateField(name, value);
+    };
+ 
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        const response = await registerUser(formData);
+ 
+        if (response.statusCode === 500) {
+            router.push("/signin/email");
         }
-    }
-
-    //Last Name Validation
-    const [lastCompleted, setLastCompleted] = useState(false)
-    const [lastIncompleted, setLastIncompleted] = useState(false)
-
-    const isLastCompleted = (last: string) =>{
-        if(last.length > 2){
-            setLastCompleted(true)
-            setLastIncompleted(false)
-        }
-        else {
-            setLastCompleted(false)
-            setLastIncompleted(true)
-        }
-    }
-
-    //Email Validation
-    const [emailCompleted, setEmailCompleted] = useState(false)
-    const [emailIncompleted, setEmailIncompleted] = useState(false)
-
-    const isEmailCompleted = (email: string) =>{
-        if(email.length > 2 && email.includes('@' && '.')){
-            setEmailCompleted(true)
-            setEmailIncompleted(false)
-        }
-        else {
-            setEmailCompleted(false)
-            setEmailIncompleted(true)
-        }
-    }
+    };
 
     const [accepted, setAccepted] = useState(false)
-    let able = false
-    if(equals && correct && accepted && nameCompleted && lastCompleted && emailCompleted)
-        able = true
-    else able=false
-    
     
     return (
         <div className="m-5 text-center bg-white text-black sm:invisible overflow-scroll">
             <p className="text-2xl mt-8 font-semibold">Create your account</p>
             <p className="text-lg font-light text-[#767676] mt-3">Create your personal account now to access all the  exclusive benefits  we have to offer.</p>
-            <form className="text-start mt-10" id='form'>
-                <p className="text-xl mt-5">First Name</p>
+            <form className="text-start mt-10" onSubmit={handleSubmit}>
+                <p className="text-xl mt-5">Full Name</p>
                 <input 
-                    onChange={(e)=> isNameCompleted(e.target.value)}
-                    className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black" placeholder="Enter Your First Name" id="name" name="name" type="text"/>
-                {
-                    nameCompleted
-                        ? ''
-                        :(
-                            nameIncompleted
-                            ? <span className="text-sm font-light text-[#ff3c3c] mt-3">Valid name Required</span>
-                            : ''
-                            )
-                    }
-                <p className="text-xl mt-5">Last Name</p>
-                <input 
-                     onChange={(e)=> isLastCompleted(e.target.value)}
-                    className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black" placeholder="Enter Your Last Name" id="last" name="last" type="text"/>
-                {
-                    lastCompleted
-                        ? ''
-                        :(
-                            lastIncompleted
-                            ? <span className="text-sm font-light text-[#ff3c3c] mt-3">Valid Last name Required</span>
-                            : ''
-                            )
-                    }
-                <p className="text-xl mt-5">Email</p>
-                <input
                     style={{
                         borderColor:
-                            emailCompleted
-                            ? ''
-                            : (emailIncompleted 
-                                ? 'red'
-                                : ''
-                            )
+                            errors.fullName
+                            ? 'red'
+                            : ''       
                     }}
-                    onChange={(e)=> isEmailCompleted(e.target.value)}
-                    className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black " placeholder="Enter Your Email" id="email" name="email" type="email"/>
-                {
-                    emailCompleted
-                        ? ''
-                        :(
-                            emailIncompleted
-                            ? <span className="text-sm font-light text-[#ff3c3c] mt-3">Valid email Required</span>
-                            : ''
-                            )
-                    }
+                    name="fullName" value={formData.fullname} onChange={handleChange} className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black" placeholder="Enter Your Full Name" type="text" />
+                {errors.fullname && <span className="text-sm font-light text-[#ff3c3c] mt-3">{errors.fullname}</span>}
+                <p className="text-xl mt-5">Username</p>
+                <input 
+                    style={{
+                        borderColor:
+                            errors.username
+                            ? 'red'
+                            : ''       
+                    }}
+                    name="username" value={formData.username} onChange={handleChange} className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black" placeholder="Enter Your username" type="text" />
+                {errors.username && <span className="text-sm font-light text-[#ff3c3c] mt-3">{errors.username}</span>}
+                <p className="text-xl mt-5">Email</p>
+                <input name="email"  value={formData.email} onChange={handleChange} className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black" placeholder="Enter Your Email" type="email" 
+                    style={{
+                        borderColor:
+                            errors.email
+                            ? 'red'
+                            : ''       
+                    }}
+                    />
+                {errors.email && <span className="text-sm font-light text-[#ff3c3c] mt-3">{errors.email}</span>}
                 <p className="text-xl mt-5">Password</p>
                 <input
-                    onChange={(e)=> setIsCorrect(e.target.value)}
                     style={{
                         borderColor:
-                            correct
-                            ? 'green'
-                            : (wrong 
-                                ? 'red'
-                                : ''
-                            )
+                            errors.password
+                            ? 'red'
+                            : ''
                     }}
-                    className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black after:border-[5px]" placeholder="Enter Your Password" id="password" name="password" type="password"/>
-                {
-                correct
-                    ?<span className="text-sm font-light text-[#439829] mt-3">Valid Password</span>
-                    :(wrong
-                        ? <span className="text-sm font-light text-[#ff3c3c] mt-3">Invalid Password</span>
-                        : '')
-                }   
+                    name="password" value={formData.password} onChange={handleChange} className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black" placeholder="Enter Your Password" type="password" />
+                    {errors.password && <span className="text-sm font-light text-[#ff3c3c] mt-3">{errors.password}</span>}
                 <p className="text-xl mt-5">Confirm Password</p>
                 <input 
-                    onChange={ e => passwordMatch(e.target.value)}
-                    
-                    style={{
-                        borderColor:
-                            equals
-                            ? 'green'
-                            : (differents 
-                                ? 'red'
-                                : ''
-                            )
-                    }}
-                    className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black" placeholder="Enter Your Password" id="confirmPassword" name="confirmPassword" type="password"/>
-                {
-                differents
-                    ?<><span className="text-sm font-light text-[#ff3c3c] mt-3">Passwords must match</span><br/></>
-                    :<br/>
-                } 
-                <div className="flex mt-8">
-                    {
-                        accepted
-                        ? <SvgCheckBoxAccepted onClick={e=> e.target.addEventListener('click', setAccepted(false) )} id='acceptedBox' height={25} width={25} className="ml-1"/>
-                        : <SvgCheckBoxUnaccepted onClick={e=> e.target.addEventListener('click', setAccepted(true) )} id='unAcceptedBox' height={25} width={25} className="ml-1"/>
-                    }
+                   style={{
+                    borderColor:
+                        errors.passwordConfirm
+                        ? 'red'
+                        : ''       
+                }}
+                    name="passwordConfirm" value={formData.passwordConfirm} onChange={handleChange} className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black" placeholder="Confirm Your Password" type="password" />
+                  {errors.passwordConfirm && <span className="text-sm font-light text-[#ff3c3c] mt-3">{errors.confirmPassword}</span>}
+                  <div className="flex mt-8" onClick={() => setAccepted(!accepted)}>
+                    {accepted ? <SvgCheckBoxAccepted height={25} width={25} className="ml-1" /> : <SvgCheckBoxUnaccepted height={25} width={25} className="ml-1" />}
                     <label className="ml-2 mt-[1px] text-sm font-light text-[#767676]">I agree to Immer Terms of Service and Privacy Policy by creating my account.</label>
                 </div>
-                <SignButton able={able} title="Sign Up" />
+                <SignButton onClick={handleSubmit} able={!Object.values(errors).some(Boolean) && accepted} title="Sign In" />
             </form>
         </div>
 )}

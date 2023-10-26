@@ -3,63 +3,76 @@ import { useState } from "react"
 import SvgCheckBoxAccepted from "../../../../public/assets/Icons/CheckoxAccepted"
 import SvgCheckBoxUnaccepted from "../../../../public/assets/Icons/CheckBoxUnaccepted"
 import Link from "next/link"
+import {loginUser} from '../../../api/auth/loginUser'
 import SvgAlertIcon from "../../../../public/assets/Icons/AlertIcon"
-import SvgWarningIconBig from "../../../../public/assets/Icons/WarningIconBig"
 import Feed from "../components/Feed"
 import SignButton from "app/signup/components/SignButton"
-import SvgEyeClose from "../../../../public/assets/Icons/EyeClose"
+import { useRouter } from "next/navigation"
 
 export default function signInWithEmail(){ 
 
-    //Email Validation
-    const [emailCompleted, setEmailCompleted] = useState(false)
-    const [emailIncompleted, setEmailIncompleted] = useState(false)
-
-    const isEmailCompleted = (email: string) =>{
-        if(email.length > 2 && email.includes('@' && '.')){
-            setEmailCompleted(true)
-            setEmailIncompleted(false)
-        }
-        else {
-            setEmailCompleted(false)
-            setEmailIncompleted(true)
-        }
+    interface FormData {
+        email: string;
+        password: string;
     }
-
-     //First Password Validations
-     const [wrong, setWrong] = useState(false)
-     const [passwordCompleted, setPasswordCompleted] = useState(false)
-
-     const setIsCorrect = (password : string) =>{
-        if(password.length > 2) setPasswordCompleted(true)
-        else setPasswordCompleted(false)
-         if(password == 'aaaaaaaa'){
-            setWrong(false)
-         }
-         else {
-            setWrong(true)
-         }
+   
+    interface FormErrors {
+        [key: string]: string;
     }
+   
+    const router = useRouter();
+ 
+    const [formData, setFormData] = useState({
+        email: "",
+        password: "",
+    });
+ 
+    const [errors, setErrors] = useState({});
+ 
+    const validateField = (name: any, value: string | string[]) => {
+        let error = "";
+        switch (name) {
+            case "email":
+                error = !value.includes("@") || value.length < 3 ? "Valid email required" : "";
+                break;
+            case "password":
+                error = value.length < 8 ? "Invalid password" : "";
+                break;
+            default:
+                break;
+        }
+        setErrors(prev => ({ ...prev, [name]: error }));
+    };
+ 
+    const handleChange = (e: { target: { name: any; value: any; }; }) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+        validateField(name, value);
+    };
+ 
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        const response = await loginUser(formData);
+        console.log(response)
+ 
+        if (response.message === "Logged in successfully") {
+            router.push("/home");
+        }
+        else setFeedOpen()
+    };
 
     const [accepted, setAccepted] = useState(false)
-
-
-
     const [isFeedOpen, setIsFeedOpen] = useState(false)
+    const [wrong, setWrong] = useState(false)
 
 	const setFeedOpen = () => {
 		setIsFeedOpen(true);
-        setWrong(true)
 	};
 
 	const setFeedClose = () => {
 		setIsFeedOpen(false);
+        setWrong(true)
 	};
-
-    let able = false
-    if(passwordCompleted && emailCompleted)
-        able = true
-    else able=false
 
     return (
         <div className="m-14 text-center bg-white text-black sm:invisible overflow-scroll ">
@@ -74,49 +87,15 @@ export default function signInWithEmail(){
                     </div>
                 :''
         }
-            <form className="text-start mt-10">
+            <form className="text-start mt-10" onSubmit={handleSubmit}>
                 <p className="text-xl mt-5">Email</p>
-                <input
-                    style={{
-                        borderColor:
-                            emailCompleted
-                            ? ''
-                            : (emailIncompleted 
-                                ? 'red'
-                                : ''
-                            )
-                    }}
-                    onChange={(e)=> isEmailCompleted(e.target.value)}
-                    className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black " placeholder="Enter Your Email" id="email" name="email" type="email"/>
-                {
-                    emailCompleted
-                        ? ''
-                        :(
-                            emailIncompleted
-                            ? <span className="text-sm font-light text-[#ff3c3c] mt-3">Valid email Required</span>
-                            : ''
-                            )
-                    }
+                <input name="email"  value={formData.email} onChange={handleChange} className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black" placeholder="Enter Your Email" type="email" 
+                    />
                 <p className="text-xl mt-5">Password</p>
                 <div>
-                    
                     <input
-                        onChange={(e)=> setIsCorrect(e.target.value)}
-                        style={{
-                            borderColor:
-                                wrong
-                                ? 'red'
-                                :''
-                                
-                        }}
-                        className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black after:border-[5px]" placeholder="Enter Your Password" id="password" name="password" type="password">
-                   
-                    </input>    
-                    {
-                    wrong
-                        ? <span className="text-sm font-light text-[#ff3c3c] mt-3">Invalid Password</span>
-                        : ''
-                    }
+                        name="password" value={formData.password} onChange={handleChange} className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black" placeholder="Enter Your Password" type="password" />
+                    {errors.password && <span className="text-sm font-light text-[#ff3c3c] mt-3">{errors.password}</span>}
                     <br />
                     <span className="font-light text-[#767676]">At least 8 characters, 1 uppercase letter, 1 number, 1 symbol</span>   
                     
@@ -130,7 +109,7 @@ export default function signInWithEmail(){
                     <label className="ml-2 mt-[1px] text-sm font-light text-[#767676]">Remember me</label>
                     <Link className="ml-[43%] text-sm font-semibold" href={'/signin/password-forgot'}>Forgot Password?</Link>
                 </div>
-                <SignButton title='Sign In' able={able} onClick={setFeedOpen}/>
+                <SignButton onClick={handleSubmit} able={!Object.values(errors).some(Boolean)} title="Sign Up"/>
             </form>
             <Feed title={'Account blocked'} title2={"check your email and try again or sign up if you don't have an account."} isFeedOpen={isFeedOpen} setFeedClose={setFeedClose} buttonText={'close'} link={false}/>
     </div>
