@@ -11,7 +11,7 @@ import Share from "../components/Share"
 import data from "../../../../public/data/DemoData.json" // All this data should come as params, including the links or the actions that every button should do
 import { useState } from "react"
 
-export default function eventDetail(){ 
+export default function EventDetail(){ 
 
     const [isShareOpen, setIsShareOpen] = useState(false)
 

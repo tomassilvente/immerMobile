@@ -47,16 +47,20 @@ const OnboardingPage: React.FC = () => {
 
   return (
     <div className="h-screen relative">
-      <div 
-        className={`h-screen absolute top-0 left-0 w-full ${currentPage === 0 ? "slide-active" : "slide-exit"}`}
+      <div
+        className={`h-screen absolute top-0 left-0 w-full ${
+          currentPage === 0 ? "slide-active" : "slide-exit"
+        }`}
       >
         <WelcomeScreen />
       </div>
-  
+
       {onboardingData.map((data, index) => (
-        <div 
-          key={index} 
-          className={`h-screen absolute top-0 left-0 w-full ${currentPage === index + 1 ? "slide-active" : "slide-exit"}`}
+        <div
+          key={index}
+          className={`h-screen absolute top-0 left-0 w-full ${
+            currentPage === index + 1 ? "slide-active" : "slide-exit"
+          }`}
         >
           <OnboardingScreen
             title={data.title}
@@ -72,7 +76,6 @@ const OnboardingPage: React.FC = () => {
       ))}
     </div>
   );
-  
 };
 
 export default OnboardingPage;
