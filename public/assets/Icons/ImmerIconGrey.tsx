@@ -20,7 +20,6 @@ const SvgImmerIconGrey = (props: SVGProps<SVGSVGElement>) => (
         fontSize: "86.70230865px",
         lineHeight: 1.25,
         fontFamily: "&quot",
-        InkscapeFontSpecification: "&quot",
         letterSpacing: 0,
         wordSpacing: 0,
         fill: "#000",
@@ -39,7 +38,6 @@ const SvgImmerIconGrey = (props: SVGProps<SVGSVGElement>) => (
           fontWeight: 400,
           fontStretch: "normal",
           fontFamily: "OldSansBlack",
-          InkscapeFontSpecification: "OldSansBlack",
           strokeWidth: 1.80629802,
         }}
       >
@@ -75,7 +73,6 @@ const SvgImmerIconGrey = (props: SVGProps<SVGSVGElement>) => (
         fontSize: "86.70230865px",
         lineHeight: 1.25,
         fontFamily: "OldSansBlack",
-        InkscapeFontSpecification: "OldSansBlack",
         letterSpacing: 0,
         wordSpacing: 0,
         fill: "#ff2a2a",

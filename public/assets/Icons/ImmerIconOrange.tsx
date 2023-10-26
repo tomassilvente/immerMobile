@@ -38,7 +38,6 @@ const SvgImmerIconOrange = (props: SVGProps<SVGSVGElement>) => (
         fontSize: "86.70230865px",
         lineHeight: 1.25,
         fontFamily: "OldSansBlack",
-        InkscapeFontSpecification: "OldSansBlack",
         letterSpacing: 0,
         wordSpacing: 0,
         fill: "#ff2a2a",
