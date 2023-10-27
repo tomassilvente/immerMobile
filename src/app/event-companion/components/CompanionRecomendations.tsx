@@ -3,7 +3,7 @@ import CompanionCards from "./CompanionCards";
 
 export default function CompanionRecomendaions({ events }: any) {
   return (
-    <div className=" mx-14 py-7 columns-3 ">
+    <div className="pt-7 columns-3 ">
       {events.map(
         (event: {
           name: string;

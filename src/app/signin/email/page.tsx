@@ -66,7 +66,8 @@ export default function SignInWithEmail() {
   const toggleAccepted = () => setAccepted((prev) => !prev);
 
   return (
-    <div className="m-14 text-center bg-white text-black sm:invisible overflow-scroll ">
+    <div className="font-Inter relative max-w-[480px] m-auto">
+    <div className="m-5 text-center">
       <p className="text-4xl mt-8 font-semibold">Welcome back!</p>
       <p className="text-lg font-light text-[#767676] mt-10">
         Login to your account.
@@ -112,7 +113,7 @@ export default function SignInWithEmail() {
             At least 8 characters, 1 uppercase letter, 1 number, 1 symbol
           </span>
         </div>
-        <div className="flex mt-8">
+        <div className="flex mt-10">
           {accepted ? (
             <SvgCheckBoxAccepted
               onClick={toggleAccepted}
@@ -128,7 +129,7 @@ export default function SignInWithEmail() {
               className="ml-1"
             />
           )}
-          <label className="ml-2 mt-[1px] text-sm font-light text-[#767676]">
+          <label className="ml-2 text-sm font-light text-[#767676]">
             Remember me
           </label>
           <Link
@@ -154,6 +155,7 @@ export default function SignInWithEmail() {
         buttonText={"close"}
         link={false}
       />
+    </div>
     </div>
   );
 }

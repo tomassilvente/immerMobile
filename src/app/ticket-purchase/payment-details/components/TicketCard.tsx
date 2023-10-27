@@ -13,28 +13,29 @@ export default function TicketCard({
 }: any) {
   return (
     <div
-      className="border rounded-3xl w-[75%]  p-6 ml-[12%] bg-white"
+      className="border rounded-3xl w-[85%] p-6 ml-[6%] bg-white"
       style={{
         marginTop: `${marginTop}%`,
       }}
     >
       <p className="text-xl">{eventName}</p>
-      <div className="grid grid-cols-2 mt-5 font-light">
+      <hr className="mt-4"/>
+      <div className="grid grid-cols-2 mt-2 text-sm font-light">
         <div className="flex mt-2">
-          <SvgCalendar height={25} width={20} />
-          <p className="ml-3">{eventDay}</p>
+          <SvgCalendar height={19} width={20} />
+          <p className="ml-3 mt-[1px]">{eventDay}</p>
+        </div>
+        <div className="flex mt-2 ml-4">
+          <SvgTicket height={19} width={20} />
+          <p className="ml-4 mt-[1px]" >{eventRow}</p>
         </div>
         <div className="flex mt-2">
-          <SvgTicket height={25} width={20} />
-          <p className="ml-4">{eventRow}</p>
+          <SvgClockBlack height={19} width={20} />
+          <p className="ml-3 ">{eventTime}</p>
         </div>
-        <div className="flex mt-2">
-          <SvgClockBlack height={25} width={20} />
-          <p className="ml-3">{eventTime}</p>
-        </div>
-        <div className="flex mt-2">
-          <SvgSeat height={25} width={20} />
-          <p className="ml-4">{eventSeat}</p>
+        <div className="flex mt-2 ml-4">
+          <SvgSeat height={19} width={20} />
+          <p className="ml-4 mt-[1px]">{eventSeat}</p>
         </div>
       </div>
     </div>

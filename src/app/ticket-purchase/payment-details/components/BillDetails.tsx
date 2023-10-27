@@ -6,12 +6,12 @@ import SvgNextVector from "../../../../../public/assets/Icons/NextVector";
 
 export default function BillDetails() {
   return (
-    <div className=" m-10 mt-28 ">
+    <div className=" m-2 mt-28 ">
       <p className="text-lg">Contact Details</p>
       <p className="font-light">John Doe</p>
       <p className="font-light">John.doe@gmail.com</p>
       <p className="font-light">765-822-9130</p>
-      <div className="mt-5 p-3 border border-primary rounded-xl shadow-2xl bg-[#fdf5f0]">
+      <div className="mt-8 p-3 border border-primary rounded-xl shadow-2xl bg-[#fdf5f0]">
         <p className="text-xl  ml-1">Choose Payment Method</p>
         <div className="grid grid-cols-12 mt-4">
           <SvgGPayIcon height={40} width={50} className="ml-3 mt-1 col-end-2" />

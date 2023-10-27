@@ -5,12 +5,14 @@ import DemoData from "../../../public/data/DemoData.json";
 import SinglePost from "./components/SinglePost";
 import NewEvents from "./components/NewEvents";
 import EventsNear from "./components/EventsNear";
+import { MobileLayout } from "../../components/MobileLayout";
 
 const location = "New York City, USA";
 
 export default function HomePage() {
   return (
-    <div className="h-screen bg-white text-black sm:invisible overflow-scroll">
+    <MobileLayout>
+    {/* <div className="h-screen bg-white text-black sm:invisible overflow-scroll"> */}
       <HomeScreenHeader location={location} />
       <Subscriptions stories={DemoData.stories} />
       <HomePageRecommended />
@@ -28,6 +30,7 @@ export default function HomePage() {
       <hr />
       <NewEvents />
       <EventsNear />
-    </div>
+    {/* </div> */}
+    </MobileLayout>
   );
 }

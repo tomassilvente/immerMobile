@@ -1,9 +1,11 @@
 import SvgBackButtonBlack from "../../../../../public/assets/Icons/BackButtonBlack";
 import SvgCloseButton from "../../../../../public/assets/Icons/CloseButton";
+import { MobileLayout } from "../../../../components/MobileLayout";
 
 export default function checkout() {
   return (
-    <div className=" bg-white text-black sm:invisible overflow-scroll">
+    <MobileLayout>
+    {/* <div className=" bg-white text-black sm:invisible overflow-scroll"> */}
       <div className="grid grid-cols-12 m-5">
         <SvgBackButtonBlack
           height={35}
@@ -16,7 +18,7 @@ export default function checkout() {
         </div>
         <SvgCloseButton height={30} width={25} className="col-start-12 mt-3" />
       </div>
-      <div className="border border-primary bg-[#fdf5f0] p-8 shadow-xl rounded-3xl m-16 text-center">
+      <div className="border border-primary bg-[#fdf5f0] py-5 shadow-xl rounded-3xl mx-5 my-16 text-center">
         <p className="text-xl font-semibold mb-3"> Brooks Davis Live</p>
         <hr />
         <p className="text-sm font-light mt-3">Payment Amount: 408 USD</p>
@@ -87,6 +89,7 @@ export default function checkout() {
           </button>
         </form>
       </div>
-    </div>
+    {/* </div> */}
+    </MobileLayout>
   );
 }

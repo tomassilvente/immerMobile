@@ -6,6 +6,7 @@ import SignButton from "../components/SignButton";
 import { registerUser } from "../../../api/auth/registerUser";
 import { InputField } from "./components/InputField";
 import { CheckboxAgreement } from "./components/CheckboxAgreement";
+import { MobileLayout } from "../../../components/MobileLayout";
 
 export default function Create() {
   const router = useRouter();
@@ -71,7 +72,8 @@ export default function Create() {
   const [accepted, setAccepted] = useState(false);
 
   return (
-    <div className="m-5 text-center bg-white text-black sm:invisible overflow-scroll">
+    <div className="font-Inter relative max-w-[480px] m-auto">
+    <div className="text-center">
       <p className="text-2xl mt-8 font-semibold">Create your account</p>
       <p className="text-lg font-light text-[#767676] mt-3">
         Create your personal account now to access all the exclusive benefits we
@@ -133,6 +135,7 @@ export default function Create() {
           title="Sign In"
         />
       </form>
+    </div>
     </div>
   );
 }

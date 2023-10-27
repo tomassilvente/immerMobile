@@ -5,6 +5,7 @@ import SvgInboxCheck from "../../../../../public/assets/Icons/InboxCheck";
 
 export default function submitted() {
   return (
+    <div className="font-Inter relative max-w-[480px] m-auto">
     <div className="m-14 text-center bg-white text-black sm:invisible overflow-scroll grid content-center place-items-center">
       <SvgImmerIconOrange width={50} height={50} className="mx-[45%]" />
       <p className="text-4xl mt-8 font-semibold">Almost Done!</p>
@@ -18,6 +19,7 @@ export default function submitted() {
       <Link className="text-primary font-semibold" href="/">
         Resend email.
       </Link>
+    </div>
     </div>
   );
 }

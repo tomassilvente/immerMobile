@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const BottomNav = ({
 	className = "",
@@ -15,10 +16,14 @@ export const BottomNav = ({
                         <Image width={80} height={80}  src="/assets/explore.svg" alt="explore" />
                     </li>
                     <li>
-                        <Image width={80} height={80}  src="/assets/ticket-icon.svg" alt="ticket"/>
+                        <Link href='ticket-details'>
+                            <Image width={80} height={80}  src="/assets/ticket-icon.svg" alt="ticket"/>
+                        </Link>
                     </li>
                     <li>
-                        <Image width={80} height={80}  src="/assets/profile.svg" alt="profile"/>
+                        <Link href='/attendee-profile'>
+                            <Image width={80} height={80}  src="/assets/profile.svg" alt="profile"/>
+                        </Link>
                     </li>
                     <li>
                         <Image width={80} height={80}  src="/assets/hamburger.svg" alt="menu"/>

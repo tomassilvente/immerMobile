@@ -2,10 +2,12 @@
 import Link from "next/link";
 import SvgImmerIconOrange from "../../../../../public/assets/Icons/ImmerIconOrange";
 import SvgInboxCheck from "../../../../../public/assets/Icons/InboxCheck";
+import { MobileLayout } from "../../../../components/MobileLayout";
 
 export default function submitted() {
   return (
-    <div className="m-14 text-center bg-white text-black sm:invisible overflow-scroll grid content-center place-items-center">
+   <div className="font-Inter relative max-w-[480px] m-auto">
+    <div className="m-5 text-center grid content-center place-items-center">
       <SvgImmerIconOrange width={50} height={50} className="mx-[45%]" />
       <p className="text-4xl mt-8 font-semibold">Welcome to Immer</p>
       <p className="text-lg font-light text-[#767676] mt-10">
@@ -22,5 +24,6 @@ export default function submitted() {
         Let's get started!
       </Link>
     </div>
+  </div>
   );
 }

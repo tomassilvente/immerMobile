@@ -36,7 +36,8 @@ export default function PasswordForgot() {
   };
 
   return (
-    <div className="m-14 text-center bg-white text-black sm:invisible overflow-scroll ">
+    <div className="font-Inter relative max-w-[480px] m-auto">
+    <div className="m-5 text-center ">
       <p className="text-2xl mt-8 font-semibold">Forgot your password?</p>
       <p className="text-lg font-light text-[#767676] mt-10">
         If you need help resetting your password, enter your email and we will
@@ -93,6 +94,7 @@ export default function PasswordForgot() {
         setFeedClose={setFeedClose}
         link={true}
       />
+    </div>
     </div>
   );
 }

@@ -4,18 +4,20 @@ import LargeCard from "../../components/LargeCard";
 import SvgBackVector from "../../../public/assets/Icons/BackVector";
 //Data
 import DemoData from "../../../public/data/DemoData.json";
+import { MobileLayout } from "../../components/MobileLayout";
 
 export default function myEvents() {
   return (
-    <div className="h-screen bg-white text-black sm:invisible overflow-scroll  m-5">
+    <MobileLayout>
+    <div className=" mt-5">
       <div className="grid grid-cols-6">
         <SvgBackVector className="col-start-1 col-end-1 mt-7" />
-        <p className="text-2xl my-5 font-semibold ml-5 col-start-3 col-end-6">
+        <p className="text-2xl my-5 ml-5 col-start-3 col-end-6">
           My events
         </p>
       </div>
       <Search hold={"Search for artists, venues and events"} />
-      <p className="text-2xl my-10 font-semibold col-start-3 col-end-6">
+      <p className="text-2xl my-5 col-start-3 col-end-6">
         Upcoming
       </p>
       <LargeCard
@@ -27,7 +29,7 @@ export default function myEvents() {
         liked={true}
       />
       <hr className="my-5" />
-      <p className="text-2xl my-10 font-semibold col-start-3 col-end-6">
+      <p className="text-2xl my-5 col-start-3 col-end-6">
         Past Events
       </p>
       {DemoData.cardData.map((event) => (
@@ -42,5 +44,6 @@ export default function myEvents() {
         />
       ))}
     </div>
+    </MobileLayout>
   );
 }

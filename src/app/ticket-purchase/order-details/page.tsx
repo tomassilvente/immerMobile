@@ -3,10 +3,12 @@ import DemoData from "../../../../public/data/DemoData.json";
 import ConfirmationDetails from "./components/ConfirmationDetails";
 import ConfirmationHeader from "./components/ConfirmationHeader";
 import QuantityCard from "./components/QuantityCard";
+import { MobileLayout } from "../../../components/MobileLayout";
 
 export default function orderDetails() {
   return (
-    <div className=" m-5 bg-white text-black sm:invisible overflow-scroll">
+    <MobileLayout>
+    {/* <div className=" m-5 bg-white text-black sm:invisible overflow-scroll"> */}
       <ConfirmationHeader
         eventName={DemoData.eventName}
         location="Floor - Front Standing"
@@ -31,11 +33,12 @@ export default function orderDetails() {
         <p className="text-center text-primary mt-4">See more</p>
       </Link>
       <Link
-        href="/"
+        href="/ticket-purchase/payment-details"
         className="w-[100%] grid text-center text-2xl bg-primary text-white mt-12  py-5 rounded-full"
       >
         Confirm Selection
       </Link>
-    </div>
+    {/* </div> */}
+    </MobileLayout>
   );
 }

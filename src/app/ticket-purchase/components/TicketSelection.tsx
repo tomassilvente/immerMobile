@@ -13,7 +13,7 @@ export default function TicketSelection() {
   }
 
   return (
-    <div className="bg-white text-black rounded-t-[50px] mt-14 p-5 overflow-scroll ">
+    <div className="bg-white text-black rounded-t-[50px] mt-4 p-5 overflow-scroll ">
       <SvgDropDownIcon className="ml-[45%] " />
       <p className="text-2xl font-semibold my-5">Select your tickets</p>
       <div className="flex">

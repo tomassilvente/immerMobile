@@ -3,22 +3,25 @@ import SvgSuccessIcon from "../../../../../../public/assets/Icons/SuccessIcon";
 
 import DemoData from "../../../../../../public/data/DemoData.json";
 import Link from "next/link";
+import { MobileLayout } from "../../../../../components/MobileLayout";
 
 export default function confirmation() {
   return (
-    <div className="bg-white text-center m-10 text-black sm:invisible overflow-scroll">
+    <MobileLayout>
+    <div className="text-center pt-5">
       <p className="text-2xl ">Payment Confirmed</p>
       <p className=" font-light mt-2">Booking ID #2126GHC</p>
       <SvgSuccessIcon className="ml-[29%] mt-[125px] mb-20" />
       <p className="text-2xl">Thank you for your purchase!</p>
       <TicketCard
-        marginTop={20}
+        marginTop={4}
         eventName={DemoData.eventName}
         eventDay={DemoData.eventDay}
         eventTime={DemoData.eventTime}
         eventSeat={DemoData.eventSeat}
         eventRow={DemoData.eventRow}
       />
+    
       <Link href="/ticket-details">
         <p className="mt-5 text-lg text-primary">View Ticket</p>
       </Link>
@@ -31,5 +34,6 @@ export default function confirmation() {
         </button>
       </Link>
     </div>
+    </MobileLayout>
   );
 }

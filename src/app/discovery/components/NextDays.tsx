@@ -21,7 +21,7 @@ export default function NextDays({ Days }: NextDaysProps) {
           className={`border mr-3 shadow-lg rounded-md border-primary p-4 px-9 text-center text-lg 
                      ${
                        activeDayIndex === index
-                         ? "bg-FFD6B8"
+                         ? "bg-[#FFD6B8]"
                          : "hover:cursor-pointer"
                      }`}
           key={index}

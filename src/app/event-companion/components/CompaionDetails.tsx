@@ -5,13 +5,13 @@ import SvgClock from "../../../../public/assets/Icons/Clock"
 export default function CompanionDetails({eventDay, eventTime, eventName, eventDescription, eventOrganizer}:any){
     return(
     <div>
-        <div className=" m-7 grid grid-cols-12 ">
+        <div className=" my-7 ml-2 grid grid-cols-12 ">
             <div className=" col-start-1 col-end-6 flex">
                 <SvgCalendarOrange width={25} height={25}/>
                 <p className="ml-2  font-light">{eventDay}</p>
             </div>
-            <div className="col-start-8 col-end-12 flex"> 
-                <SvgClock width={25} height={25}/>
+            <div className="col-start-7 col-end-12 flex"> 
+                <SvgClock className="ml-7" width={25} height={25}/>
                 <p className="ml-2 font-light">{eventTime}</p>
             </div>
         </div>
