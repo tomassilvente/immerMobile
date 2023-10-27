@@ -6,7 +6,7 @@ import SVGShare from "../../public/assets/Icons/shareButton";
 export default function EventHeader({ eventImg, setShareOpen }: any) {
   return (
     <div
-      className="h-[40%] grid grid-cols-12 place-items-end content-start"
+      className="h-[300px] grid grid-cols-12 place-items-end content-start"
       style={{
         backgroundImage: `url(${eventImg})`,
         backgroundRepeat: "no-repeat",
@@ -15,17 +15,17 @@ export default function EventHeader({ eventImg, setShareOpen }: any) {
       }}
     >
       <SvgBackButton
-        className="col-start-2 mr-10"
+        className="col-start-2 mr-5"
         onClick={setShareOpen}
         width={45}
         height={45}
       />
       <SvgLikeButton
-        className="col-start-11 mt-4 mr-10 "
+        className="col-start-11 mt-4 mr-6 "
         width={45}
         height={45}
       />
-      <SVGShare className="col-start-12 mr-8 " width={45} height={45} />
+      <SVGShare className="col-start-12 mr-3 " width={45} height={45} />
     </div>
   );
 }
