@@ -20,18 +20,18 @@ export default function SinglePost({
     <div className="m-8">
       <div className="grid grid-cols-12">
         <Link
-          className="border-primary rounded-full border-[4px] col-start-1 col-end-3 mr-7"
+          className="border-primary rounded-full  border-[4px] col-start-1 col-end-3 mr-2"
           href="/"
         >
           <Image
             className="border-white border-[3px] rounded-full"
             src={profilePic}
-            width={60}
-            height={50}
+            width={120}
+            height={60}
             alt={"..."}
           />
         </Link>
-        <div className=" text-lg col-start-3 col-end-11">
+        <div className=" text-lg col-start-3 col-end-11 ml-3">
           <p>{eventOrganizer}</p>
           <span className="text-regular font-light text-[#767676]">
             {postLocation}

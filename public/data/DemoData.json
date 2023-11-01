@@ -174,5 +174,27 @@
             "Location": "Accesible",
             "Color": "#778DAC"
         }
+    ],
+   "cards":[
+        {
+            "title": "Brooks Davis Live",
+            "price": 19.99,
+            "image":"../assets/Vert2.png"
+        },
+        {
+            "title": "Brooks Davis Live",
+            "price": 9.99,
+            "image": "../assets/Vert2.png"
+        },
+        {
+            "title": "Brooks Davis Live",
+            "price": 24.99,
+            "image": "../assets/Vert3.png"
+        },
+        {
+            "title": "Brooks Davis Live",
+            "price": 14.99,
+            "image": "../assets/Vert4.png"
+        }
     ]
 }
