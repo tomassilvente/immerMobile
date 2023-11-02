@@ -15,7 +15,7 @@ function contacts(SendData: shareDataType){
     )
 }
 
-function share(){
+function Share(){
     return(
         <div className="h-[60%] align-bottom absolute bottom-0 bg-white w-full overflow-x-hidden">
             <div className="w-[26px] h-[3px] rounded-[2.5px] bg-[#ABABAB] mx-auto my-[16px]"></div>
@@ -107,4 +107,4 @@ export async function getStaticPaths() {
 
     return { paths, fallback: true }; 
 }
-export default share;
+export default Share;
