@@ -6,19 +6,19 @@ interface Option {
   }
   
   interface OptionProps {
-    options: Option[];
+    options: Option[],
+    activeDayIndex: any,
+    setActiveDayIndex: any,
   }
 
-export default function DisplaySelection({options}:OptionProps){
+export default function DisplaySelection({options, activeDayIndex, setActiveDayIndex}:OptionProps){
 
-
-const [activeDayIndex, setActiveDayIndex] = useState<number | null>(null);
     return(
         <div className="flex overflow-x-scroll">
                 {options.map((option, index) => (
                     <div
                     onClick={() => setActiveDayIndex(index)}
-                    className={`border mr-3 mt-5 rounded-full font-light p-2 px-4 text-center 
+                    className={`border flex-none mr-3 mt-5 rounded-full font-light p-1 px-4 text-center 
                                 ${
                                 activeDayIndex === index
                                     ? "bg-primary text-white"
