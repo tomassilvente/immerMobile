@@ -13,7 +13,6 @@ export default function VideoCards({title, image, days, views}:CardProps){
                 <div className="mt-4 ml-4">
                     <p className="text-lg">{title}</p>
                     <p className="font-light text-gray-500 text-sm mt-3">{views} | {days} days ago</p>
-                    
                 </div>
         </div>
     )

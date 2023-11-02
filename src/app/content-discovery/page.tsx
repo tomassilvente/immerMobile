@@ -8,6 +8,7 @@ import EventCards from "./components/EventCards";
 import EventOptions from "./components/eventOptions";
 import StreamCards from "./components/StreamCards";
 import VideoCards from "./components/VideoCards";
+import PodcastCards from "./components/PodcastCard";
 
 let options = [
     {option:'All'},
@@ -65,6 +66,39 @@ let videoCards = [
     },
 ]
 
+let podcastCards = [
+    {
+        title: 'Brooks Davis',
+        creator: 'Brooks Davis',
+        image: '../assets/Vert3.png',
+        description: 'Lorem ipsum dolor sit amet consectetur. Mauris in integer consequat id sed a sit interdum tortor. At proin bibendum urna diam praesent donec. Diam eget in quisque quis a ...',
+        release: 'Yesterday',
+        duration: 52
+    },
+    {
+        title: 'Brooks Davis',
+        creator: 'Brooks Davis',
+        image: '../assets/Vert3.png',
+        description: 'Lorem ipsum dolor sit amet consectetur. Mauris in integer consequat id sed a sit interdum tortor. At proin bibendum urna diam praesent donec. Diam eget in quisque quis a ...',
+        release: 'Yesterday',
+        duration: 40
+    },{
+        title: 'Brooks Davis',
+        creator: 'Brooks Davis',
+        image: '../assets/Vert3.png',
+        description: 'Lorem ipsum dolor sit amet consectetur. Mauris in integer consequat id sed a sit interdum tortor. At proin bibendum urna diam praesent donec. Diam eget in quisque quis a ...',
+        release: 'Yesterday',
+        duration: 20
+    },{
+        title: 'Brooks Davis',
+        creator: 'Brooks Davis',
+        image: '../assets/Vert3.png',
+        description: 'Lorem ipsum dolor sit amet consectetur. Mauris in integer consequat id sed a sit interdum tortor. At proin bibendum urna diam praesent donec. Diam eget in quisque quis a ...',
+        release: 'Yesterday',
+        duration: 100
+    },
+]
+
 let eventCards = [
     {
         stars: 5,
@@ -102,7 +136,7 @@ let eventCards = [
 
 export default function PayPerView(){
 
-    const [activeDayIndex, setActiveDayIndex] = useState<number | null>(null);
+    const [activeDayIndex, setActiveDayIndex] = useState<number | null>(0);
     return(
         
        <MobileLayout>
@@ -140,11 +174,22 @@ export default function PayPerView(){
                                 ))}
                         </div>
                     </>)
-                    :<div className="flex my-4 overflow-x-scroll">
-                    {cards.map(card =>(
-                        <VerticalCards image={card.image} title={card.title} price={card.price} />
-                    ))}
-                    </div>
+                    :
+                    activeDayIndex == 4
+                    ?(  <>
+                        <div className="flex my-4 overflow-x-scroll">
+                        {videoCards.map(card =>(
+                            <VideoCards image={card.image} title={card.title} views={card.views} days={card.days} />
+                        ))}
+                        </div>
+                        <EventOptions />
+                        <div className="flex mt-4 overflow-x-scroll">
+                                {podcastCards.map(card =>(
+                                    <PodcastCards duration={card.duration} creator={card.creator} release={card.release} image={card.image} title={card.title} description={card.description} />
+                                ))}
+                        </div>
+                    </>)
+                    : ''
             }
             
            

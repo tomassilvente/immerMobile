@@ -5,7 +5,7 @@ let options = ['For You', 'New', 'Trending', 'Popular', 'Following']
 
 export default function EventOptions(){
 
-    const [activeDayIndex, setActiveDayIndex] = useState<number | null>(null);
+    const [activeDayIndex, setActiveDayIndex] = useState<number | null>(0);
     return(
             <div className="flex overflow-x-scroll">
                 {options.map((option, index) => (
