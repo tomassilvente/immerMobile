@@ -1,5 +1,5 @@
 import Image from "next/image";
-import search from '../../public/assets/search.svg'
+import search from '../../../../public/assets/search.svg'
 import data, { shareDataType } from './ShareData'
 import Send from './Send'
 import App from "./AppOptions";
