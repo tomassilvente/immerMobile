@@ -35,7 +35,7 @@ export default function content({payment=false}: any){
             {
                 payment
                     ? ''
-                    : <EventHeader eventImg='../../assets/piano.jpeg'/>
+                    : <EventHeader eventImg={isFeedOpen ? '../../assets/black.jpg' : '../../assets/piano.jpeg'}/>
             }
             
             <div className="m-4">
