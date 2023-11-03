@@ -4,7 +4,7 @@ import data, { shareDataType } from './ShareData'
 import Send from './Send'
 import App from "./AppOptions";
 
-function contacts(SendData: shareDataType){
+function Contacts(SendData: shareDataType){
     return(
         <Send 
             key={SendData.id} profilePic={SendData.profilePic} name={SendData.name}/>
@@ -31,7 +31,7 @@ function Share(){
                 <input className="text-sm pl-5 w-[100%] text-black" placeholder={'Search '} />
 		    </div>
             <div>
-                {data.map(contacts)}
+                {data.map(Contacts)}
             </div>
         </div>
 )}
