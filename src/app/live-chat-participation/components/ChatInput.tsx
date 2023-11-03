@@ -7,6 +7,13 @@ interface ChatInputProps {
 const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
   const [message, setMessage] = useState("");
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && message.trim() !== "") {
+      onSendMessage(message);
+      setMessage("");
+    }
+  };
+
   const sendMessage = () => {
     if (message.trim() !== "") {
       onSendMessage(message);
@@ -22,6 +29,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
         placeholder="Type a message..."
         value={message}
         onChange={(e) => setMessage(e.target.value)}
+        onKeyDown={handleKeyDown} // Add this event listener
       />
       <button className={`emoji-button pr-2`} style={{ fontSize: "16px" }}>
         🙂
