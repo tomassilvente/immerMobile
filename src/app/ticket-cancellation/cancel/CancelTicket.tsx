@@ -60,8 +60,8 @@ const CancelTicket = ({id}: Props) => {
                 <p className='text-sm text-[#757575]'>Please select the reason(s) for cancellation.</p>
                 <form onSubmit={(e) => handleSubmit(e)} className='flex flex-col text-[#373737] gap-6 py-10'>
                     {cancelReasons.map((reason, index) => (
-                        <label key={index} onChange={() => addReason(reason)} className='check-input'>
-                            <input  type="checkbox" />
+                        <label key={index} onChange={() => addReason(reason)} className='font-semibold flex items-center gap-3 accent-[#FF6C00]'>
+                            <input className='h-5 w-5' type="checkbox" />
                             {reason}
                         </label>
                     ))}
