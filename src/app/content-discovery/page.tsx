@@ -4,12 +4,16 @@ import DisplaySelection from "../../components/DisplaySelection";
 import { MobileLayout } from "../../components/MobileLayout";
 import Search from "../../components/Search";
 import VerticalCards from "../../components/VerticalCards";
-import EventCards from "./components/EventCards";
 import EventOptions from "./components/eventOptions";
 import StreamCards from "./components/StreamCards";
 import VideoCards from "./components/VideoCards";
 import PodcastCards from "./components/PodcastCard";
 import ReelsCards from "./components/ReelsCard";
+import PayPerView from "./components/PayPerView";
+import Streams from "./components/Streams";
+import Podcasts from "./components/Podcasts";
+import Reels from "./components/Reels";
+import All from "./components/All";
 
 let options = [
     {option:'All'},
@@ -135,7 +139,7 @@ let eventCards = [
     }
 ]
 
-export default function PayPerView(){
+export default function ContentDiscovery(){
 
     const [activeDayIndex, setActiveDayIndex] = useState<number | null>(0);
     return(
@@ -144,66 +148,19 @@ export default function PayPerView(){
             <Search hold='Search for artists, venues, and events'/>
             <DisplaySelection options={options} activeDayIndex={activeDayIndex} setActiveDayIndex={setActiveDayIndex}/>
             {
-                activeDayIndex == 0 ||   activeDayIndex == 6 || activeDayIndex == 1
-                    ?
-                        (  <>
-                            {console.log(activeDayIndex)}
-                            <div className="flex my-4 overflow-x-scroll">
-                            {cards.map(card =>(
-                                <VerticalCards image={card.image} title={card.title} price={card.price} />
-                            ))}
-                            </div>
-                            <EventOptions />
-                            <div className="grid grid-cols-2 mt-4">
-                                    {eventCards.map(card =>(
-                                        <EventCards  stars={card.stars} type={card.type} image={card.image} title={card.title} price={card.price} />
-                                    ))}
-                            </div>
-                        </>)
+                activeDayIndex == 0 
+                    ? <All cards={cards} videoCards={videoCards} eventCards={eventCards}/>
+                    :
+                    activeDayIndex == 6 || activeDayIndex == 1
+                    ?   <PayPerView cards={cards} eventCards={eventCards}/>
                     : 
                     activeDayIndex == 0 || activeDayIndex == 2
-                        ?(  <>
-                        <div className="flex my-4 overflow-x-scroll">
-                        {videoCards.map(card =>(
-                            <VideoCards image={card.image} title={card.title} views={card.views} days={card.days} />
-                        ))}
-                        </div>
-                        <EventOptions />
-                        <div className="flex mt-4 overflow-x-scroll">
-                                {eventCards.map(card =>(
-                                    <StreamCards userImage="../assets/subs1.png" type={card.location} image={card.image} title={card.title} price={card.price} />
-                                ))}
-                        </div>
-                    </>)
+                        ?   <Streams videoCards={videoCards} eventCards={eventCards}/>
                     :
                     activeDayIndex == 4
-                    ?(  <>
-                        <div className="flex my-4 overflow-x-scroll">
-                        {videoCards.map(card =>(
-                            <VideoCards image={card.image} title={card.title} views={card.views} days={card.days} />
-                        ))}
-                        </div>
-                        <EventOptions />
-                        <div className="flex mt-4 overflow-x-scroll">
-                                {podcastCards.map(card =>(
-                                    <PodcastCards duration={card.duration} creator={card.creator} release={card.release} image={card.image} title={card.title} description={card.description} />
-                                ))}
-                        </div>
-                    </>)
+                    ? <Podcasts podcastCards={podcastCards} videoCards={videoCards}/>
                     : activeDayIndex == 5
-                    ?(  <>
-                        <div className="flex my-4 overflow-x-scroll">
-                        {cards.map(card =>(
-                                <VerticalCards image={card.image} title={card.title} price={card.price} />
-                            ))}
-                        </div>
-                        <EventOptions />
-                        <div className="grid grid-cols-3 mt-4">
-                                {videoCards.map(card =>(
-                                    <ReelsCards  image={card.image} views={card.views} />
-                                ))}
-                        </div>
-                    </>)
+                    ? <Reels cards={cards} videoCards={videoCards}/>
                     : ''
             }
             
