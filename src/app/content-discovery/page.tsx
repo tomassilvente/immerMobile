@@ -9,6 +9,7 @@ import EventOptions from "./components/eventOptions";
 import StreamCards from "./components/StreamCards";
 import VideoCards from "./components/VideoCards";
 import PodcastCards from "./components/PodcastCard";
+import ReelsCards from "./components/ReelsCard";
 
 let options = [
     {option:'All'},
@@ -186,6 +187,20 @@ export default function PayPerView(){
                         <div className="flex mt-4 overflow-x-scroll">
                                 {podcastCards.map(card =>(
                                     <PodcastCards duration={card.duration} creator={card.creator} release={card.release} image={card.image} title={card.title} description={card.description} />
+                                ))}
+                        </div>
+                    </>)
+                    : activeDayIndex == 5
+                    ?(  <>
+                        <div className="flex my-4 overflow-x-scroll">
+                        {cards.map(card =>(
+                                <VerticalCards image={card.image} title={card.title} price={card.price} />
+                            ))}
+                        </div>
+                        <EventOptions />
+                        <div className="grid grid-cols-3 mt-4">
+                                {videoCards.map(card =>(
+                                    <ReelsCards  image={card.image} views={card.views} />
                                 ))}
                         </div>
                     </>)
