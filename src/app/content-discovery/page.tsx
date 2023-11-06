@@ -163,8 +163,6 @@ export default function ContentDiscovery(){
                     ? <Reels cards={cards} videoCards={videoCards}/>
                     : ''
             }
-            
-           
        </MobileLayout>
     )
 }
