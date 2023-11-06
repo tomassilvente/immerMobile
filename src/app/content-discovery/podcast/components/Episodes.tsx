@@ -3,6 +3,7 @@ import SvgShareCircles from "../../../../../public/assets/Icons/ShareCircles"
 import SvgDownload from "../../../../../public/assets/Icons/Download"
 import SvgMoreButton from "../../../../../public/assets/Icons/MoreButton"
 import SvgPlayButtonOrange from "../../../../../public/assets/Icons/PlayButtonOrange"
+import Link from "next/link"
 
 type EpisodeProps = {
     title : 'string',
@@ -14,7 +15,7 @@ type EpisodeProps = {
 
 export default function Episodes({title, image, duration, releaseDay, about}: EpisodeProps){
 return(
-    <>
+    <Link href='/content-discovery/podcast/single-episode'>
         <div className="mt-5 flex">
             <Image className="rounded-md " src={image} width={70} height={70} alt={'...'} />
             <div className="ml-5">
@@ -30,6 +31,6 @@ return(
             <SvgPlayButtonOrange className="ml-[300px]" width={23} height={23}/>
         </div>
         <hr className="mt-3"/>
-    </>
+    </Link>
 )
 }

@@ -101,7 +101,7 @@ export default function content({payment=false}: any){
                                             </p>
                                         </div>
                                         <Link
-                                            href="/pay-per-view/content/confirmation"
+                                            href="/content-discovery/content/confirmation"
                                             className="w-[100%] grid text-center text-2xl bg-primary text-white mt-24 py-5 rounded-full"
                                         >
                                             Buy and watch
