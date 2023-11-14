@@ -32,9 +32,6 @@
   .flexed {
     @apply flex items-center gap-2
   }
-  .bordered {
-    @apply border-2 border-[red]
-  }
 }
 
 
