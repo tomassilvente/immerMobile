@@ -8,7 +8,7 @@ const loginUser = async (userData) => {
       body: JSON.stringify(userData),
     });
  
-    return await response.json();
+    return response;
   }
  
   export { loginUser };

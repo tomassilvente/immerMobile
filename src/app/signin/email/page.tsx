@@ -56,11 +56,15 @@ export default function SignInWithEmail() {
 
     const response = await loginUser(formData);
 
-    if (response.message === "Logged in successfully") {
+    if (response.ok) {
       router.push("/home");
     } else {
       setIsFeedOpen(true);
     }
+    const res = await response.json()
+    console.log(res)
+    localStorage.setItem("userId", res.user._id)
+    localStorage.setItem("token", res.token)
   };
 
   const toggleAccepted = () => setAccepted((prev) => !prev);
@@ -142,7 +146,7 @@ export default function SignInWithEmail() {
         <SignButton
           onClick={handleSubmit}
           able={!Object.values(errors).some(Boolean)}
-          title="Sign Up"
+          title="Sign In"
         />
       </form>
       <Feed

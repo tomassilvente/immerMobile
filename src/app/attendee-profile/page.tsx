@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { MobileLayout } from "../../components/MobileLayout";
+import {useFetch} from '../../api/auth/hooks/useFetch'
 import Image from "next/image";
 import Events from "./components/events";
 import Interests from "./components/Interests";
@@ -10,11 +11,18 @@ import Subscriptions from "./components/Subscriptions";
 import BackButton from "../../common/buttons/BackButton";
 import MoreButton from "../../common/buttons/MoreButton";
 
+const userId = localStorage.getItem('userId');
+
 const Page = () => {
   const [selectedTab, setSelectedTab] = useState<number>(0);
+  const {data, isPending, error} = useFetch(`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/users/${userId}`);
   const [auth, setAuth] = useState<boolean>(true);
 
   const tabs = ["Events", "Interests", "Subscriptions"];
+
+  console.log(data);
+
+
 
   return (
     <MobileLayout>

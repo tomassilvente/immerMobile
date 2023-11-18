@@ -53,22 +53,27 @@
         }
     ],
     "stories":[{
+        "storyId": "1",
         "user":"Sheryl Green",
         "profilePic": "/../../assets/randomProfile1.png",
         "live":false
     },{
+        "storyId": "2",
         "user":"Brooks Davis",
         "profilePic": "/../../assets/randomProfile2.png",
         "live":false
     },{
+        "storyId": "3",
         "user":"Rich Wallace",
         "profilePic": "/../../assets/randomProfile3.png",
         "live":true
     },{
+        "storyId": "4",
         "user":"Am Scoba",
         "profilePic": "/../../assets/randomProfile4.png",
         "live":false
     },{
+        "storyId": "5",
         "user":"Glender Lender",
         "profilePic": "/../../assets/randomProfile5.png",
         "live":false
