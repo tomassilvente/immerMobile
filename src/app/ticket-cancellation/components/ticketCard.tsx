@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 
 interface Props {
-    id: string | number  | null | undefined;
+    id: string | number;
     event: string;
     date: string;
     time: string;

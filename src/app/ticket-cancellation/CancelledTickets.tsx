@@ -8,6 +8,7 @@ const CancelledTickets = () => {
         {tickets.map((ticket) => (
             <TicketCard
                 key={ticket.id}
+                id={ticket.id}
                 event={ticket.event}
                 date={ticket.date}
                 time={ticket.time}

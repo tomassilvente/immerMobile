@@ -76,7 +76,7 @@ const Home: React.FC = () => {
     name: "John Doe",
     image: "https://via.placeholder.com/150",
   });
-
+  
   // State for managing the modal's open/close status
   const [isModalOpen, setIsModalOpen] = useState(false);
 

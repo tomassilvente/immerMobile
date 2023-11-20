@@ -7,14 +7,14 @@ const AttendedTickets = () => {
     <div className='flex flex-col gap-2'>
         {tickets.map((ticket) => (
             <TicketCard
-                key={ticket.id}
-                event={ticket.event}
-                date={ticket.date}
-                time={ticket.time}
-                price={ticket.price}
-                img={ticket.img}
-                tab='attended' 
-            />
+            key={ticket.id}
+            id={ticket.id}
+            event={ticket.event}
+            date={ticket.date}
+            time={ticket.time}
+            price={ticket.price}
+            img={ticket.img}
+            tab='attended'       />
         ))}
     </div>
   )

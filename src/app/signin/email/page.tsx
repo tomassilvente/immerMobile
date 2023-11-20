@@ -142,7 +142,7 @@ export default function SignInWithEmail() {
         <SignButton
           onClick={handleSubmit}
           able={!Object.values(errors).some(Boolean)}
-          title="Sign Up"
+          title="Login"
         />
       </form>
       <Feed
