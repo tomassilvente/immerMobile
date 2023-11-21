@@ -1,4 +1,5 @@
 import VerticalCards from "../../../components/VerticalCards";
+import MusicCard from "./MusicCard";
 import ReelsCards from "./ReelsCard";
 import EventOptions from "./eventOptions";
 
@@ -11,12 +12,26 @@ export default function All({cards, videoCards}:any){
                 ))}
             </div>
             <EventOptions />
-        
-            <div className="grid grid-cols-3 mt-4">
-                    {videoCards.map(card =>(
-                        <ReelsCards  image={card.image} views={card.views} />
-                    ))}
+            <div className="grid grid-cols-3 grid-rows-2 ">
+                <div className="grid grid-rows-2 ">
+                    <MusicCard title={cards[0].title} image={cards[0].image} views={cards[0].views} />
+                    <MusicCard title={cards[3].title} image={cards[3].image} views={cards[3].views} />
+                </div>
+                <ReelsCards image={videoCards[0].image} views={videoCards[0].views} />
+                <div className="grid grid-rows-2 ">
+                    <MusicCard title={cards[2].title} image={cards[2].image} views={cards[2].views} />
+                    <MusicCard title={videoCards[3].title} image={videoCards[3].image} views={videoCards[3].views} />
+                </div>
+                <ReelsCards image={videoCards[1].image} views={videoCards[1].views} />
+                <div className="grid grid-rows-2 ">
+                    <MusicCard title={cards[2].title} image={cards[2].image} views={cards[2].views} />
+                    <MusicCard title={videoCards[2].title} image={videoCards[2].image} views={videoCards[2].views} />
+                </div>
+                <div className="grid grid-rows-2 ">
+                    <MusicCard title={cards[1].title} image={cards[1].image} views={cards[1].views} />
+                    <MusicCard title={cards[0].title} image={cards[0].image} views={cards[3].views} />
+                </div>  
             </div>
         </>
     )
-}
+} 

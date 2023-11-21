@@ -7,7 +7,7 @@ type CardProps ={
 
 export default function ReelsCards({image, views}: CardProps){
     return(
-        <div className="h-[280px] w-[150px] mb-1 flex place-items-end content-start text-white"
+        <div className="h-[280px] w-[140px] mb-1 flex place-items-end content-start text-white"
             style={{
                 backgroundImage: `url(${image})`,
                 backgroundRepeat: "no-repeat",

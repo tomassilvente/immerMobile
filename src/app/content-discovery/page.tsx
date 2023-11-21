@@ -14,6 +14,7 @@ import Streams from "./components/Streams";
 import Podcasts from "./components/Podcasts";
 import Reels from "./components/Reels";
 import All from "./components/All";
+import Music from "./components/Music";
 
 let options = [
     {option:'All'},
@@ -139,6 +140,35 @@ let eventCards = [
     }
 ]
 
+let MixCards = [
+    {
+        title: 'Top 100',
+        songs: 55,
+        image: '../assets/video1.jpeg',
+        duration: 150,
+        link: 'content-discovery/mix/top100'
+    },
+    {
+        title: 'Pop Hits',
+        songs: 15,
+        image: '../assets/video2.jpeg',
+        duration: 50,
+        link: 'content-discovery/mix/pop'
+    },{
+        title: 'Hip Hop',
+        songs: 140,
+        image: '../assets/video1.jpeg',
+        duration: 450,
+        link: 'content-discovery/mix/hiphop'
+    },{
+        title: 'Rock & Roll',
+        songs: 42,
+        image: '../assets/video2.jpeg',
+        duration: 130,
+        link: 'content-discovery/mix/rock'
+    },
+]
+
 export default function ContentDiscovery(){
 
     const [activeDayIndex, setActiveDayIndex] = useState<number | null>(0);
@@ -161,7 +191,7 @@ export default function ContentDiscovery(){
                     ? <Podcasts podcastCards={podcastCards} videoCards={videoCards}/>
                     : activeDayIndex == 5
                     ? <Reels cards={cards} videoCards={videoCards}/>
-                    : ''
+                    : <Music videoCards={MixCards} podcastCards={podcastCards}/>
             }
        </MobileLayout>
     )
