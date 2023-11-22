@@ -6,15 +6,15 @@ const SvgPauseOrange = (props: SVGProps<SVGSVGElement>) => (
   width="1em"
   height="1em"
   fill="none"
-  viewBox="0 0 30 30"
+  viewBox="0 0 23 23"
   {...props}
   >
-    <circle cx={15} cy={15} r={15} fill="#F71" />
+    <circle cx={11} cy={11.313} r={11} fill="#F71" />
     <path
       stroke="#fff"
       strokeLinecap="round"
       strokeWidth={3}
-      d="M11 9v12.829M18.617 9v12.829"
+      d="M8.3 6v10.829M13.817 6v10.829"
     />
   </svg>
 )

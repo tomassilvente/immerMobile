@@ -108,7 +108,7 @@ export default function top100({}: any){
                 }}>
                 <SvgBackVector width={20} height={30} className=""/>
                 <SvgMoreButton width={30} height={35} className="col-start-12 mr-[15px] mt-[20px] "/>
-                <p className="text-3xl col-start-1 col-end-4 text-white mt-[220px]">Top 100</p>
+                <p className="text-3xl col-start-1 col-end-4 text-white mt-[220px]">Hip Hop</p>
                 {
                     shuffle
                     ? <SvgShuffleOrange onClick={setShuffleState} width={40} height={50} className="col-start-10 "/>
@@ -122,7 +122,7 @@ export default function top100({}: any){
 
                 }
                 <div className="col-start-1 col-end-5 mr-[24px] font-light text-sm text-white ">
-                    <p >55 songs - 150 min</p>
+                    <p >14 songs - 32 min</p>
                 </div>
             </div>
             <div className="mt-4 overflow-y-scroll">
