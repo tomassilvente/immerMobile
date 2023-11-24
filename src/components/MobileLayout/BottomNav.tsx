@@ -7,7 +7,7 @@ export const BottomNav = ({
 	className?: string;
 }) => {
     return (
-        <nav className={`${className} sticky w-full bottom-0 bg-[#fff]`}>
+        <nav className={`${className} shadow-[0px_-5px_5px_0px_rgba(0,0,0,0.05)] sticky w-full bottom-0 bg-[#fff]`}>
                 <ul className="w-full flex items-center justify-between">
                     <li>
                         <Image width={80} height={80} src="/assets/home.svg" alt="home" />

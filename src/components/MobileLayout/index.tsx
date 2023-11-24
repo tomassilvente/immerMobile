@@ -9,11 +9,11 @@ export const MobileLayout = ({
 	className?: string;
 }) => {
 	return (
-		<div className={`font-Inter relative max-w-[480px] m-auto`}>
-            <div className={`${className} min-h-screen`}>
+		<main className={`font-Inter relative max-w-[480px] m-auto`}>
+            <section className={`${className} min-h-screen`}>
                 {children}
-            </div>
+            </section>
             <BottomNav />
-        </div>
+        </main>
 	);
 };
