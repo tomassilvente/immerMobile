@@ -106,7 +106,7 @@ export default function top100({}: any){
                     backgroundPosition: "center",
                     backgroundSize: "cover",
                 }}>
-                <SvgBackVector width={20} height={30} className=""/>
+                <SvgBackVector href="/content-discovery" width={20} height={30} className=""/>
                 <SvgMoreButton width={30} height={35} className="col-start-12 mr-[15px] mt-[20px] "/>
                 <p className="text-3xl col-start-1 col-end-4 text-white mt-[220px]">Top 100</p>
                 {

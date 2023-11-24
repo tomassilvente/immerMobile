@@ -181,10 +181,10 @@ export default function ContentDiscovery(){
                 activeDayIndex == 0 
                     ? <All cards={cards} videoCards={videoCards} eventCards={eventCards}/>
                     :
-                    activeDayIndex == 6 || activeDayIndex == 1
+                    activeDayIndex == 6 || activeDayIndex == 2
                     ?   <PayPerView cards={cards} eventCards={eventCards}/>
                     : 
-                    activeDayIndex == 0 || activeDayIndex == 2
+                    activeDayIndex == 1
                         ?   <Streams videoCards={videoCards} eventCards={eventCards}/>
                     :
                     activeDayIndex == 4
