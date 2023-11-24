@@ -55,8 +55,9 @@ export default function SignInWithEmail() {
     if (!validateFormData()) return;
 
     const response = await loginUser(formData);
+    console.log(response)
 
-    if (response.message === "Logged in successfully") {
+    if (response.token) {
       router.push("/home");
     } else {
       setIsFeedOpen(true);
