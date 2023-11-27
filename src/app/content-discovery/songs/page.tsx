@@ -11,7 +11,6 @@ import SvgBackSong from "../../../../public/assets/Icons/BackSong"
 import SvgNextSong from "../../../../public/assets/Icons/NextSong"
 import SvgRePlayWhite from "../../../../public/assets/Icons/RePlayWhite"
 import SvgRePlayOrange from "../../../../public/assets/Icons/RePlayOrange"
-import SvgShareCircles from "../../../../public/assets/Icons/ShareCircles"
 import SvgShareCirclesWhite from "../../../../public/assets/Icons/ShareCirclesWhite"
 import SvgList from "../../../../public/assets/Icons/List"
 

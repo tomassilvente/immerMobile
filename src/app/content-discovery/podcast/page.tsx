@@ -4,6 +4,7 @@ import { MobileLayout } from "../../../components/MobileLayout";
 import PodcastHeader from "./components/PodcastHeader";
 import Episodes from "./components/Episodes";
 import About from "./components/About";
+import Link from "next/link";
 
 export default function Podcast(){
 
@@ -36,7 +37,9 @@ export default function Podcast(){
 
     return(
         <MobileLayout>
-            <PodcastHeader eventTitle='Brooks Davis' category='Comedy' listeners='11.2K' eventImg={'../assets/Vert3.png'}/>
+            <Link href={'/content-discovery/podcast/onPlay'}>
+                <PodcastHeader eventTitle='Brooks Davis' category='Comedy' listeners='11.2K' eventImg={'../assets/Vert3.png'}/>
+            </Link>
             <div className="m-3">
 
             <div className="flex overflow-x-scroll">
