@@ -19,7 +19,7 @@ export default function RecommendedCards({
   eventImg,
 }: CardProps) {
   return (
-    <div className="rounded-xl shadow-xl mb-10 w-[300px] flex-none mr-6">
+    <div className="rounded-xl shadow-xl text-sm mb-10 w-[240px] flex-none mr-6">
       <Link className="" href="/event-details/1">
         <Image
           className="mb-3 rounded-t-xl "
@@ -38,7 +38,7 @@ export default function RecommendedCards({
         </div>
         <div className="flex ml-4">
           <SvgLocationOrange width={20} height={34} />
-          <p className=" my-1 ml-3 font-light">{eventLocation}</p>
+          <p className=" mb-1 ml-4 font-light">{eventLocation}</p>
         </div>
       </Link>
     </div>

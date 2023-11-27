@@ -6,10 +6,20 @@ import SinglePost from "./components/SinglePost";
 import NewEvents from "./components/NewEvents";
 import EventsNear from "./components/EventsNear";
 import { MobileLayout } from "../../components/MobileLayout";
+import {getEvents} from '../../api/events/getEvents'
+
 
 const location = "New York City, USA";
 
 export default function HomePage() {
+
+  async function getTheEvents(){
+    const events = await getEvents()
+    console.log(events)
+  }
+
+  getTheEvents()
+
   return (
     <MobileLayout>
     {/* <div className="h-screen bg-white text-black sm:invisible overflow-scroll"> */}
