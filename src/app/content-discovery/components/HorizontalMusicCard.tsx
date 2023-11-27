@@ -1,7 +1,7 @@
 import Image from "next/image";
-import SvgMoreButton from "../../../../public/assets/Icons/MoreButton";
 import SvgPauseButton from "../../../../public/assets/Icons/PauseButton";
 import Link from "next/link";
+import SvgOptions from "../../../../public/assets/Icons/Options";
 
 type CardProps ={
     creator: string,
@@ -24,7 +24,7 @@ export default function HorizontalMusicCard({image, title, creator, play,link}: 
                     {
                         play 
                         ? <SvgPauseButton />
-                        : <SvgMoreButton className="ml-[210px] mt-[40px]" height={25} width={25} />
+                        : <SvgOptions className="ml-[210px] mt-[40px]" height={25} width={25} />
                     }
         </div>
         </Link>

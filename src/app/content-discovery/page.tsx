@@ -15,6 +15,7 @@ import Podcasts from "./components/Podcasts";
 import Reels from "./components/Reels";
 import All from "./components/All";
 import Music from "./components/Music";
+import Videos from "./components/Videos";
 
 let options = [
     {option:'All'},
@@ -181,11 +182,14 @@ export default function ContentDiscovery(){
                 activeDayIndex == 0 
                     ? <All cards={cards} videoCards={videoCards} eventCards={eventCards}/>
                     :
-                    activeDayIndex == 6 || activeDayIndex == 2
-                    ?   <PayPerView cards={cards} eventCards={eventCards}/>
+                    activeDayIndex == 2
+                    ? <Videos videoCards={videoCards} eventCards={eventCards}/>
+                    :
+                    activeDayIndex == 6 
+                    ? <PayPerView cards={cards} eventCards={eventCards}/>
                     : 
                     activeDayIndex == 1
-                        ?   <Streams videoCards={videoCards} eventCards={eventCards}/>
+                    ? <Streams videoCards={videoCards} eventCards={eventCards}/>
                     :
                     activeDayIndex == 4
                     ? <Podcasts podcastCards={podcastCards} videoCards={videoCards}/>
