@@ -54,17 +54,17 @@ export default function top100({}: any){
                 <div className="flex mt-[50px]">
                     {
                         shuffle
-                        ? <p onClick={setShuffleState} className="ml-[50px] w-[30px] mt-[12px] text-[24px] text-primary"> 1.5x </p>
-                        : <p onClick={setShuffleState} className="ml-[50px] w-[30px] mt-[12px] text-[24px] text-white"> 1x </p>
+                        ? <p onClick={setShuffleState} className="ml-[60px] w-[30px] mt-[12px] text-[24px] text-primary"> 1.5x </p>
+                        : <p onClick={setShuffleState} className="ml-[60px] w-[30px] mt-[12px] text-[24px] text-white"> 1x </p>
                     }
-                    <p className="absolute ml-[130px] text-white font-light mt-[19px]">30</p>
-                    <SvgBack30 width={50} height={60} className="ml-[35px] mt-[2px]"/>
+                    <p className="absolute ml-[145px] text-white font-light mt-[19px]">30</p>
+                    <SvgBack30 width={50} height={60} className="ml-[40px] mt-[2px]"/>
                     {
                         play
                         ? <SvgPauseOrange onClick={setPlayState} width={70} height={65} className="ml-[25px]"/>
                         : <SvgPlayButtonOrange onClick={setPlayState} width={70} height={65} className="ml-[25px]"/>
                     }
-                    <p className="absolute ml-[302px] text-white font-light mt-[21px]">30</p>
+                    <p className="absolute ml-[316px] text-white font-light mt-[21px]">30</p>
                     <SvgFoward30 width={50} height={60} className="ml-[25px] mt-1"/>
                     {
                         replay
