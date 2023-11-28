@@ -7,6 +7,9 @@ import SvgLikeButton from "../../../../public/assets/Icons/LikeButton";
 import SvgCommentButton from "../../../../public/assets/Icons/CommentButton";
 import { useState } from "react";
 import SvgRedHeart from "../../../../public/assets/Icons/RedHeart";
+import SvgWhiteCommentButton from "../../../../public/assets/Icons/WhiteCommentButton";
+import SvgLikeButtonWhite from "../../../../public/assets/Icons/LikeButtonWhite";
+import SvgShareCirclesWhite from "../../../../public/assets/Icons/ShareCirclesWhite";
 
 export default function reels(){
 
@@ -35,23 +38,23 @@ export default function reels(){
                         <p>{DemoData.eventOrganizer}</p>
                     </div>
                     <button  className="text-sm w-[70px] text-center mt-[145px] h-[35px] bg-primary text-white rounded-md ml-[28px]"> Follow  </button>
-                    <div className="ml-[140px]">
+                    <div className="ml-[140px] text-center">
                     <div onClick={setLiked}>
                         {
                             LikeButton
                             ?<>
                             <SvgRedHeart width={40} height={40} />
-                            <p className="ml-[4px]">577</p>
+                            <p className="">577</p>
                             </>
                             :<>
-                            <SvgLikeButton width={40} height={40} />
-                            <p className="ml-[4px]"> 576</p>
+                            <SvgLikeButtonWhite width={40} height={40} />
+                            <p className=""> 576</p>
                             </>
                         }
                     </div>
-                        <SvgCommentButton width={35} height={40} />
-                        <p className="ml-[4px]">576</p>
-                        <SvgLikeButton width={35} height={40} />
+                        <SvgWhiteCommentButton  width={40} height={40} />
+                        <p className="text-center">33</p>
+                        <SvgShareCirclesWhite width={32} height={40} />
                     </div>
                 </div>
         <div
