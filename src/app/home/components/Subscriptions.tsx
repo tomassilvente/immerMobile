@@ -1,13 +1,6 @@
 "use client";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import {
-  JSXElementConstructor,
-  Key,
-  PromiseLikeOfReactNode,
-  ReactElement,
-  ReactNode,
-  ReactPortal,
   useRef,
   useState,
 } from "react";
@@ -73,7 +66,7 @@ export default function Subscriptions({ stories }: SubscriptionsProps) {
         >
           <video ref={videoRef} className="m-auto">
             <source
-              src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"
+              src="/assets/TB.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.
