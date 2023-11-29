@@ -6,7 +6,6 @@ import { MobileLayout } from "../../../components/MobileLayout";
 import DemoData from '../../../../public/data/DemoData.json'
 import SvgOpenEye from "../../../../public/assets/Icons/OpenEye";
 import SvgLikeButton from "../../../../public/assets/Icons/LikeButton";
-import SvgLikeButtonBlack from "../../../../public/assets/Icons/LikeButtonBlack";
 import SimpleButton from "app/signin/components/SimpleButton";
 import SvgCommentButton from "../../../../public/assets/Icons/CommentButton";
 import Link from "next/link";
@@ -14,10 +13,17 @@ import { useState } from "react";
 import BillDetails from "app/ticket-purchase/payment-details/components/BillDetails";
 import SvgDropDownIcon from "../../../../public/assets/Icons/DropDownIcon";
 import SvgDropDownVector from "../../../../public/assets/Icons/DropDownVector";
+import SvgRedHeart from "../../../../public/assets/Icons/RedHeart";
 
 export default function content({payment=false}: any){
 
     const [isFeedOpen, setIsFeedOpen] = useState(false);
+
+    const [LikeButton, setLikeButton] = useState(false)
+
+    function setLiked(){
+        setLikeButton(!LikeButton)
+    }
   
     const setFeedOpen = () => {
       setIsFeedOpen(true);
@@ -57,8 +63,19 @@ export default function content({payment=false}: any){
                         <p>223K</p>
                     </div>
                     <div className="ml-10">
-                        <SvgLikeButton width={40} height={40} />
-                        <p>576</p>
+                    <div onClick={setLiked}>
+                        {
+                            LikeButton
+                            ?<>
+                            <SvgRedHeart width={40} height={40} />
+                            <p className="">577</p>
+                            </>
+                            :<>
+                            <SvgLikeButton width={40} height={40} />
+                            <p className=""> 576</p>
+                            </>
+                        }
+                    </div>
                     </div>
                     <div className="ml-10">
                         <SvgCommentButton width={40} height={40} />
