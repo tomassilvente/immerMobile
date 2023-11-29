@@ -11,7 +11,7 @@ export default function Reels({cards, videoCards}:any){
                 ))}
             </div>
             <EventOptions />
-            <div className="grid grid-cols-3 mt-4">
+            <div className="grid grid-cols-3 m-4">
                     {videoCards.map(card =>(
                         <ReelsCards  image={card.image} views={card.views} />
                     ))}

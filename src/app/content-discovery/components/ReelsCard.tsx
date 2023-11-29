@@ -10,7 +10,7 @@ export default function ReelsCards({image, views}: CardProps){
 
     return(
         <Link href={'/content-discovery/reels'}>
-            <div className="h-[280px] w-[140px] mb-1 flex place-items-end content-start text-white"
+            <div className="h-[280px] w-[145px] mb-1 flex place-items-end content-start text-white"
                 style={{
                     backgroundImage: `url(${image})`,
                     backgroundRepeat: "no-repeat",

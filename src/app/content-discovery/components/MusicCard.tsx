@@ -9,7 +9,7 @@ type CardProps ={
 
 export default function VideoCards({title, image, views, link}:CardProps){
     return(
-        <Link href={`${link}`} className="h-[140px] w-[140px] rounded-2xl mr-5 flex-none"
+        <Link href={`${link}`} className="h-[140px] w-[145px] rounded-2xl mr-5 flex-none"
             style={{
                 backgroundImage: `url(${image})`,
                 backgroundRepeat: "no-repeat",

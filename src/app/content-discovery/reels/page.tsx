@@ -3,8 +3,6 @@ import Link from "next/link";
 import { MobileLayout } from "../../../components/MobileLayout";
 import Image from "next/image";
 import DemoData from '../../../../public/data/DemoData.json'
-import SvgLikeButton from "../../../../public/assets/Icons/LikeButton";
-import SvgCommentButton from "../../../../public/assets/Icons/CommentButton";
 import { useState } from "react";
 import SvgRedHeart from "../../../../public/assets/Icons/RedHeart";
 import SvgWhiteCommentButton from "../../../../public/assets/Icons/WhiteCommentButton";
