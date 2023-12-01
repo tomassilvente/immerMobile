@@ -2,6 +2,7 @@
 import { useState } from "react"
 import SvgStar from "../../../../../public/assets/Icons/Star"
 import Image from "next/image"
+import Link from "next/link"
 
 type AboutProps = {
     stars: number,
@@ -25,7 +26,7 @@ export default function About({stars, category, about}:AboutProps){
                 <SvgStar /><p className="ml-1">{stars}</p>
             </div>
             <div className={`border flex-none mr-3 rounded-full font-light p-1 px-4 text-center bg-primary text-white`}>
-                {category}
+                <Link href={'/content-discovery/podcast/category'}>{category}</Link>
             </div>
         </div>
         <p className="font-light text-sm m-5">{about}</p>
