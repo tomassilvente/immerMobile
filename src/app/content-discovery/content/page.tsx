@@ -15,7 +15,7 @@ import SvgDropDownIcon from "../../../../public/assets/Icons/DropDownIcon";
 import SvgDropDownVector from "../../../../public/assets/Icons/DropDownVector";
 import SvgRedHeart from "../../../../public/assets/Icons/RedHeart";
 
-export default function content({payment=false}: any){
+export default function content({payment=true}: any){
 
     const [isFeedOpen, setIsFeedOpen] = useState(false);
 
@@ -40,7 +40,15 @@ export default function content({payment=false}: any){
         <MobileLayout >
             {
                 payment
-                    ? ''
+                    ? 
+                    isFeedOpen? ''
+                    :<video width="480"  className="w-[480px]" controls>
+                        <source
+                        src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+                        type="video/mp4"
+                        />
+                        Your browser does not support the video tag.
+                    </video>
                     : <EventHeader eventImg={isFeedOpen ? '../../assets/black.jpg' : '../../assets/piano.jpeg'}/>
             }
             
