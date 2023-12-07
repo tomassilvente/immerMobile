@@ -1,3 +1,5 @@
+// This component is very desorganized, do not worry. I will fix it later (Manrique)
+
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import io from "socket.io-client";

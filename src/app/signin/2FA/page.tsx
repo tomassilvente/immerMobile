@@ -1,9 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-import SignButton from "app/signup/components/SignButton";
-import Link from "next/link";
-   
-export default function Submitted(){
-    return(
+import React from 'react'
+import SignButton from 'app/signup/components/SignButton'
+import Link from 'next/link'
+
+export default function Submitted (): JSX.Element {
+  return (
         <div className="font-Inter relative max-w-[480px] m-auto">
         <div className="m-5 text-center bg-white text-black sm:invisible overflow-scroll ">
             <p className="text-4xl mt-8 font-semibold">Verification</p>
@@ -25,5 +26,5 @@ export default function Submitted(){
             <Link className="text-primary font-semibold" href='/'>Resend email.</Link>
             </div>
         </div>
-    )
+  )
 }

@@ -1,21 +1,22 @@
-import SvgCalendar from "../../../../../public/assets/Icons/Calendar";
-import SvgClockBlack from "../../../../../public/assets/Icons/ClockBlack";
-import SvgSeat from "../../../../../public/assets/Icons/Seat";
-import SvgTicket from "../../../../../public/assets/Icons/Ticket";
+import React from 'react'
+import SvgCalendar from '../../../../../public/assets/Icons/Calendar'
+import SvgClockBlack from '../../../../../public/assets/Icons/ClockBlack'
+import SvgSeat from '../../../../../public/assets/Icons/Seat'
+import SvgTicket from '../../../../../public/assets/Icons/Ticket'
 
-export default function TicketCard({
+export default function TicketCard ({
   eventName,
   eventDay,
   eventRow,
   eventTime,
   eventSeat,
-  marginTop,
-}: any) {
+  marginTop
+}: any): JSX.Element {
   return (
     <div
       className="border rounded-3xl w-[85%] p-6 ml-[6%] bg-white"
       style={{
-        marginTop: `${marginTop}%`,
+        marginTop: `${marginTop}%`
       }}
     >
       <p className="text-xl">{eventName}</p>
@@ -39,5 +40,5 @@ export default function TicketCard({
         </div>
       </div>
     </div>
-  );
+  )
 }

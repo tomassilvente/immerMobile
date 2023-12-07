@@ -11,7 +11,7 @@
 // import data from "../../../../public/data/DemoData.json" // All this data should come as params, including the links or the actions that every button should do
 // import { useState } from "react"
 
-// export default function EventDetail(){ 
+// export default function EventDetail(){
 
 //     const [isShareOpen, setIsShareOpen] = useState(false)
 
@@ -34,24 +34,24 @@
 //                 <Share />
 //             </div>
 //             <EventDetails eventName={data.eventName} eventDay={data.eventDay} eventPrice={data.eventPrice} eventTime={data.eventTime} eventAvailability={data.eventAvailability}/>
-//             <Organized eventOrganizer={data.eventOrganizer}/>          
+//             <Organized eventOrganizer={data.eventOrganizer}/>
 //             <AboutEvent profiles={data.profiles} eventDescription={data.eventDescription}/>
 //             <Location eventLocation={data.eventLocation}/>
 //             {/* I've been having some trouble with making this button sticked on the screen */}
 //             <Link
 //                 style={{position: "sticky"}}
-//                 href='/' 
-//                 className="grid shadow-2xl text-center text-2xl bg-primary text-white mt-12 mx-8 py-5 mb-16 rounded-full" 
+//                 href='/'
+//                 className="grid shadow-2xl text-center text-2xl bg-primary text-white mt-12 mx-8 py-5 mb-16 rounded-full"
 //             >
 //                 Book Now
-//             </Link>        
+//             </Link>
 //         </div>
 // )}
 
 // // ! This is only a momentary function, but it should be work diferently.
 // export async function generateStaticParams() {
 //     const eventIds = ["1", "2", "3"];
-  
+
 //     return eventIds.map((id) => ({
 //       params: { id: id.toString() },
 //     }));
@@ -61,7 +61,7 @@
 
 import React from 'react'
 
-function page() {
+function page (): JSX.Element {
   return (
     <div>example</div>
   )

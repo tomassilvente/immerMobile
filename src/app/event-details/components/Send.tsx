@@ -1,20 +1,20 @@
-"use client"
+'use client'
 import Image from 'next/image'
 import React from 'react'
 
-type sendDetails = {
-    profilePic: string;
-    name: string;
+interface sendDetails {
+  profilePic: string
+  name: string
 }
 
-export default function send(props: sendDetails) {
+export default function send (props: sendDetails): JSX.Element {
   return (
     <div className='flex justify-between mb-5 w-[21rem] mx-auto'>
         <div className='flex items-center justify-between '>
             <Image
                 className="rounded-[20px] pr-4"
                 src={props.profilePic}
-                alt="Profile Pic" 
+                alt="Profile Pic"
                 width={46}
                 height={46}
                 priority

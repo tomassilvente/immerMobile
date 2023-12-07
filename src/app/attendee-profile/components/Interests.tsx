@@ -1,26 +1,26 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
 
 const interests = [
   {
-    img: "./assets/concert.png",
-    title: "Concerts",
+    img: './assets/concert.png',
+    title: 'Concerts'
   },
   {
-    img: "./assets/djs.png",
-    title: "DJs",
+    img: './assets/djs.png',
+    title: 'DJs'
   },
   {
-    img: "./assets/comedy.png",
-    title: "Comedy",
+    img: './assets/comedy.png',
+    title: 'Comedy'
   },
   {
-    img: "./assets/sports.png",
-    title: "Sports",
-  },
-];
+    img: './assets/sports.png',
+    title: 'Sports'
+  }
+]
 
-const Interests = () => {
+const Interests = (): JSX.Element => {
   return (
     <div className="mt-5 mb-2 flex gap-2 justify-around flex-wrap">
       {interests.map((interest, index) => (
@@ -36,7 +36,7 @@ const Interests = () => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Interests;
+export default Interests

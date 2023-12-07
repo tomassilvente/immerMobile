@@ -1,12 +1,12 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+// Icons
+import SVGShare from '../../../../public/assets/Icons/shareButton'
+import SvgCommentButton from '../../../../public/assets/Icons/CommentButton'
+import SvgLikeButtonOrange from '../../../../public/assets/Icons/LikeButtonOrange'
 
-//Icons
-import SVGShare from "../../../../public/assets/Icons/shareButton";
-import SvgCommentButton from "../../../../public/assets/Icons/CommentButton";
-import SvgLikeButtonOrange from "../../../../public/assets/Icons/LikeButtonOrange";
-
-export default function SinglePost({
+export default function SinglePost ({
   profilePic,
   eventOrganizer,
   postLocation,
@@ -14,8 +14,8 @@ export default function SinglePost({
   post,
   postLikes,
   postComments,
-  postShareds,
-}: any) {
+  postShareds
+}: any): JSX.Element {
   return (
     <div className="m-4">
       <div className="grid grid-cols-12">
@@ -28,7 +28,7 @@ export default function SinglePost({
             src={profilePic}
             width={50}
             height={50}
-            alt={"..."}
+            alt={'...'}
           />
         </Link>
         <div className=" text- col-start-3 col-end-11 ml-3">
@@ -51,5 +51,5 @@ export default function SinglePost({
         <p className=" ml-3">{postShareds}</p>
       </div>
     </div>
-  );
+  )
 }

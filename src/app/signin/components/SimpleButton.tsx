@@ -1,4 +1,6 @@
-export default function SimpleButton({ text, onClick }: any) {
+import React from 'react'
+
+export default function SimpleButton ({ text, onClick }: any): JSX.Element {
   return (
     <button
       onClick={onClick}
@@ -6,5 +8,5 @@ export default function SimpleButton({ text, onClick }: any) {
     >
       {text}
     </button>
-  );
+  )
 }

@@ -1,15 +1,15 @@
-import Image from "next/image"
-//Components
-import Details from "./components/details"
-import BottomTicket from "./components/bottomTicket"
-//Icons
-import SvgBackButtonBlack from "../../../public/assets/Icons/BackButtonBlack"
-import SvgShareButtonBlack from "../../../public/assets/Icons/shareButtonBlack"
-import { MobileLayout } from "../../components/MobileLayout"
+import React from 'react'
+import Image from 'next/image'
+// Components
+import Details from './components/Details'
+import BottomTicket from './components/BottomTicket'
+// Icons
+import SvgBackButtonBlack from '../../../public/assets/Icons/BackButtonBlack'
+import SvgShareButtonBlack from '../../../public/assets/Icons/shareButtonBlack'
+import { MobileLayout } from '../../components/MobileLayout'
 
-
-export default function ticketDetails(){
-    return(
+export default function ticketDetails (): JSX.Element {
+  return (
         <MobileLayout>
         <div className="bg-[#FFD6B8] pb-5">
             <div className="grid grid-cols-6">
@@ -26,5 +26,5 @@ export default function ticketDetails(){
             </div>
         </div>
         </MobileLayout>
-    )
+  )
 }

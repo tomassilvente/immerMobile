@@ -1,6 +1,7 @@
-import Link from "next/link";
+import React from 'react'
+import Link from 'next/link'
 
-export default function Checkout({ ticketPrice, quantity, taxes }: any) {
+export default function Checkout ({ ticketPrice, quantity, taxes }: any): JSX.Element {
   return (
     <div className="bg-[#FFF0E5] mt-16 p-10 rounded-t-xl">
       <div className="grid grid-cols-4 text-2xl">
@@ -27,5 +28,5 @@ export default function Checkout({ ticketPrice, quantity, taxes }: any) {
         Checkout
       </Link>
     </div>
-  );
+  )
 }

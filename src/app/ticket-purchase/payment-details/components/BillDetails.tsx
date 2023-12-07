@@ -1,10 +1,11 @@
-//Icons
-import SvgApplePayIcon from "../../../../../public/assets/Icons/ApplePayIcon";
-import SvgCardIcon from "../../../../../public/assets/Icons/CardIcon";
-import SvgGPayIcon from "../../../../../public/assets/Icons/GPayIcon";
-import SvgNextVector from "../../../../../public/assets/Icons/NextVector";
+// Icons
+import React from 'react'
+import SvgApplePayIcon from '../../../../../public/assets/Icons/ApplePayIcon'
+import SvgCardIcon from '../../../../../public/assets/Icons/CardIcon'
+import SvgGPayIcon from '../../../../../public/assets/Icons/GPayIcon'
+import SvgNextVector from '../../../../../public/assets/Icons/NextVector'
 
-export default function BillDetails() {
+export default function BillDetails (): JSX.Element {
   return (
     <div className=" m-2 mt-28 ">
       <p className="text-lg">Contact Details</p>
@@ -36,5 +37,5 @@ export default function BillDetails() {
         </div>
       </div>
     </div>
-  );
+  )
 }

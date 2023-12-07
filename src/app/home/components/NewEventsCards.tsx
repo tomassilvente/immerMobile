@@ -1,29 +1,30 @@
-import Link from "next/link";
-import Image from "next/image";
+import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 
-type CardProps = {
-  eventDay: string;
-  eventTime: string;
-  eventLocation: string;
-  eventImg: string;
-  eventOrganizer: string;
-  eventPrice: number;
-};
+interface CardProps {
+  eventDay: string
+  eventTime: string
+  eventLocation: string
+  eventImg: string
+  eventOrganizer: string
+  eventPrice: number
+}
 
-export default function NewEventsCards({
+export default function NewEventsCards ({
   eventDay,
   eventOrganizer,
   eventTime,
   eventImg,
-  eventPrice,
-}: CardProps) {
+  eventPrice
+}: CardProps): JSX.Element {
   return (
     <div className="rounded-xl border border-gray-200 mb-10 w-[200px] h-[260px] flex-none mr-6">
       <Link href="/event-companion">
         <Image
           className="mb-3 rounded-t-xl h-[140px]"
           src={eventImg}
-          alt={"..."}
+          alt={'...'}
           width={200}
           height={94}
         />
@@ -39,5 +40,5 @@ export default function NewEventsCards({
         </div>
       </Link>
     </div>
-  );
+  )
 }

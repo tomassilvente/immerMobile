@@ -1,9 +1,9 @@
-/* eslint-disable react/no-unescaped-entities */
-import Link from "next/link";
-import SvgImmerIconOrange from "../../../../../public/assets/Icons/ImmerIconOrange";
-import SvgInboxCheck from "../../../../../public/assets/Icons/InboxCheck";
+import React from 'react'
+import Link from 'next/link'
+import SvgImmerIconOrange from '../../../../../public/assets/Icons/ImmerIconOrange'
+import SvgInboxCheck from '../../../../../public/assets/Icons/InboxCheck'
 
-export default function submitted() {
+export default function Submitted (): JSX.Element {
   return (
     <div className="font-Inter relative max-w-[480px] m-auto">
       <div className="m-5 text-center grid content-center place-items-center">
@@ -15,12 +15,12 @@ export default function submitted() {
         </p>
         <SvgInboxCheck className="mt-20 mr-1" />
         <p className="text-lg font-light text-[#767676] mt-40">
-          Didn't reveice email.
+          Didn&apos;t
         </p>
         <Link className="text-primary font-semibold" href="/">
           Resend email.
         </Link>
       </div>
     </div>
-  );
+  )
 }

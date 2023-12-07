@@ -1,44 +1,34 @@
-"use client";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import Image from "next/image";
-import {
-  JSXElementConstructor,
-  Key,
-  PromiseLikeOfReactNode,
-  ReactElement,
-  ReactNode,
-  ReactPortal,
+'use client'
+import Image from 'next/image'
+import React, {
   useRef,
-  useState,
-} from "react";
+  useState
+} from 'react'
 
 interface Story {
-  storyId?: string;
-  live: boolean;
-  profilePic: string;
-  user: string;
+  storyId?: string
+  live: boolean
+  profilePic: string
+  user: string
 }
 
 interface SubscriptionsProps {
-  stories: Story[];
+  stories: Story[]
 }
 
-export default function Subscriptions({ stories }: SubscriptionsProps) {
-  const [isFeedOpen, setIsFeedOpen] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+export default function Subscriptions ({ stories }: SubscriptionsProps): JSX.Element {
+  const [isFeedOpen, setIsFeedOpen] = useState(false)
+  const videoRef = React.createRef<HTMLVideoElement>()
 
-  const setFeedOpen = () => {
-    videoRef.current?.play();
-    setIsFeedOpen(true);
-  };
+  setIsFeedOpen(true)
 
-  const setFeedClose = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
+  const setFeedClose = (): void => {
+    if (videoRef.current !== null) {
+      videoRef.current.pause()
+      videoRef.current.currentTime = 0
     }
-    setIsFeedOpen(false);
-  };
+    setIsFeedOpen(false)
+  }
 
   return (
     <div className="mt-10">
@@ -46,7 +36,7 @@ export default function Subscriptions({ stories }: SubscriptionsProps) {
       <div className="mt-8 flex overflow-y-scroll px-5">
         {stories.map(story => (
           <div
-            onClick={setFeedOpen}
+            onClick={setIsFeedOpen}
             className="hover:cursor-pointer relative text-center border-primary flex-none rounded-full border-[4px] mr-5 mb-10"
             key={story.storyId}
           >
@@ -81,5 +71,5 @@ export default function Subscriptions({ stories }: SubscriptionsProps) {
         </div>
       )}
     </div>
-  );
+  )
 }

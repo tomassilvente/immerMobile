@@ -1,42 +1,43 @@
-import { MobileLayout } from "../../components/MobileLayout";
-import Link from "next/link";
-import BackButton from "../../common/buttons/BackButton";
-import FAQs from "./components/FAQs";
-import search from "./assets/magnify.svg";
-import mail from "./assets/mail.svg";
-import chat from "./assets/chat.svg";
-import call from "./assets/call.svg";
-import comment from "./assets/comment.svg";
-import { Inter } from "next/font/google";
-const inter = Inter({weight:"400", subsets:["latin"]});
+import React from 'react'
+import { MobileLayout } from '../../components/MobileLayout'
+import Link from 'next/link'
+import BackButton from '../../common/buttons/BackButton'
+import FAQs from './components/FAQs'
+import search from './assets/magnify.svg'
+import mail from './assets/mail.svg'
+import chat from './assets/chat.svg'
+import call from './assets/call.svg'
+import comment from './assets/comment.svg'
+import { Inter } from 'next/font/google'
+const inter = Inter({ weight: '400', subsets: ['latin'] })
 const faqs = [
-    {
-      title:"What should I do if the event has been canceled?",
-      desc:"Lorem ipsum dolor sit amet consectetur. Consectetur habitant sit pellentesque accumsan et aliquam vitae arcu. Nulla eget vitae faucibus donec suspendisse."
-    },
-    {
-      title:"What should I do if the event has been canceled?",
-      desc:"Lorem ipsum dolor sit amet consectetur. Consectetur habitant sit pellentesque accumsan et aliquam vitae arcu. Nulla eget vitae faucibus donec suspendisse."
-    },
-    {
-      title:"What should I do if the event has been canceled?",
-      desc:"Lorem ipsum dolor sit amet consectetur. Consectetur habitant sit pellentesque accumsan et aliquam vitae arcu. Nulla eget vitae faucibus donec suspendisse."
-    },
-    {
-      title:"What should I do if the event has been canceled?",
-      desc:"Lorem ipsum dolor sit amet consectetur. Consectetur habitant sit pellentesque accumsan et aliquam vitae arcu. Nulla eget vitae faucibus donec suspendisse."
-    },
-    {
-      title:"What should I do if the event has been canceled?",
-      desc:"Lorem ipsum dolor sit amet consectetur. Consectetur habitant sit pellentesque accumsan et aliquam vitae arcu. Nulla eget vitae faucibus donec suspendisse."
-    },
-    {
-      title:"What should I do if the event has been canceled?",
-      desc:"Lorem ipsum dolor sit amet consectetur. Consectetur habitant sit pellentesque accumsan et aliquam vitae arcu. Nulla eget vitae faucibus donec suspendisse."
-    },
-  ]
-const Page = ()=>{
-    return (
+  {
+    title: 'What should I do if the event has been canceled?',
+    desc: 'Lorem ipsum dolor sit amet consectetur. Consectetur habitant sit pellentesque accumsan et aliquam vitae arcu. Nulla eget vitae faucibus donec suspendisse.'
+  },
+  {
+    title: 'What should I do if the event has been canceled?',
+    desc: 'Lorem ipsum dolor sit amet consectetur. Consectetur habitant sit pellentesque accumsan et aliquam vitae arcu. Nulla eget vitae faucibus donec suspendisse.'
+  },
+  {
+    title: 'What should I do if the event has been canceled?',
+    desc: 'Lorem ipsum dolor sit amet consectetur. Consectetur habitant sit pellentesque accumsan et aliquam vitae arcu. Nulla eget vitae faucibus donec suspendisse.'
+  },
+  {
+    title: 'What should I do if the event has been canceled?',
+    desc: 'Lorem ipsum dolor sit amet consectetur. Consectetur habitant sit pellentesque accumsan et aliquam vitae arcu. Nulla eget vitae faucibus donec suspendisse.'
+  },
+  {
+    title: 'What should I do if the event has been canceled?',
+    desc: 'Lorem ipsum dolor sit amet consectetur. Consectetur habitant sit pellentesque accumsan et aliquam vitae arcu. Nulla eget vitae faucibus donec suspendisse.'
+  },
+  {
+    title: 'What should I do if the event has been canceled?',
+    desc: 'Lorem ipsum dolor sit amet consectetur. Consectetur habitant sit pellentesque accumsan et aliquam vitae arcu. Nulla eget vitae faucibus donec suspendisse.'
+  }
+]
+const Page = (): JSX.Element => {
+  return (
         <MobileLayout className={inter.className}>
             <div className="relative flex px-[14px] gap-5 items-center py-5">
                 <Link href="" className="action-button">
@@ -66,7 +67,7 @@ const Page = ()=>{
             </div>
             <div className="flex flex-col gap-4 m-2 p-4">
                 <div className="font-semibold text-lg flex items-center justify-between p-2.5">
-                    Most popular FAQs   
+                    Most popular FAQs
                     <p className="text-orange-500 text-sm cursor-pointer">
                         View all
                     </p>
@@ -118,7 +119,7 @@ const Page = ()=>{
                 </div>
             </div>
         </MobileLayout>
-    )
+  )
 }
 
-export default Page;
+export default Page

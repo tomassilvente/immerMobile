@@ -1,152 +1,156 @@
-"use client";
+'use client'
 
 // Home.tsx
 
 // This component represents the main page of the application.
 // It includes a chat window, user information, a back button, and a modal for handling messages.
 
-import React, { useState } from "react";
-import ChatWindow from "./components/ChatWindow";
-import UserInfo from "./components/UserInfo";
-import BackButton from "../../common/buttons/BackButton";
-import ChatMessageModal from "./modals/ChatMessageModal";
-import { ChatMessage } from "./components/types";
+import React, { useState } from 'react'
+import ChatWindow from './components/ChatWindow'
+import UserInfo from './components/UserInfo'
+import BackButton from '../../common/buttons/BackButton'
+import ChatMessageModal from './modals/ChatMessageModal'
+import { type ChatMessage } from './components/types'
 
 const Home: React.FC = () => {
   // State for tracking whether the user has liked the content
-  const [isLiked, setIsLiked] = useState(false);
+  const [isLiked, setIsLiked] = useState(false)
 
   // State for managing blocked messages
-  const [blockedMessages, setBlockedMessages] = useState<number[]>([]);
+  const [blockedMessages, setBlockedMessages] = useState<number[]>([])
 
   // State for storing chat messages
   const [messages, setMessages] = useState<ChatMessage[]>([
     // Example messages with user information, content, and reactions
     {
-      content: "This show is awesome! 😂",
+      content: 'This show is awesome! 😂',
       user: {
         id: 100,
-        name: "Alice",
-        image: "https://via.placeholder.com/150",
+        name: 'Alice',
+        image: 'https://via.placeholder.com/150'
       },
       reportCount: 0,
       isBlocked: false,
       reactions: {
         thumbsUp: 0,
         fire: 1,
-        laughingFace: 0,
-      },
+        laughingFace: 0
+      }
     },
     {
-      content: "Best concert ever! 🔥",
+      content: 'Best concert ever! 🔥',
       user: {
         id: 101,
-        name: "Bob",
-        image: "https://via.placeholder.com/150",
+        name: 'Bob',
+        image: 'https://via.placeholder.com/150'
       },
       reportCount: 0,
       isBlocked: false,
       reactions: {
         thumbsUp: 1,
         fire: 0,
-        laughingFace: 0,
-      },
+        laughingFace: 0
+      }
     },
     {
-      content: "🔥",
+      content: '🔥',
       user: {
         id: 102,
-        name: "Jordan",
-        image: "https://via.placeholder.com/150",
+        name: 'Jordan',
+        image: 'https://via.placeholder.com/150'
       },
       reportCount: 0,
       isBlocked: false,
       reactions: {
         thumbsUp: 1,
         fire: 0,
-        laughingFace: 0,
-      },
-    },
+        laughingFace: 0
+      }
+    }
 
     // Add more messages as needed
-  ]);
+  ])
 
   // State for storing user information
-  const [user, setUser] = useState({
-    name: "John Doe",
-    image: "https://via.placeholder.com/150",
-  });
-  
+  const user = {
+    name: 'John Doe',
+    image: 'https://via.placeholder.com/150'
+  }
+  // const [user, setUser] = useState({
+  //   name: 'John Doe',
+  //   image: 'https://via.placeholder.com/150'
+  // })
+
   // State for managing the modal's open/close status
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   // State for tracking report success and displaying a success message
-  const [reportSuccess, setReportSuccess] = useState(false);
+  const [reportSuccess, setReportSuccess] = useState(false)
 
   // State for tracking the ID and index of the selected message for the modal
   const [selectedMessageId, setSelectedMessageId] = useState<number | null>(
     null
-  );
+  )
   const [selectedMessageIndex, setSelectedMessageIndex] = useState<
-    number | null
-  >(null);
+  number | null
+  >(null)
 
   // Function to toggle the like status
-  const toggleLike = () => {
-    setIsLiked(!isLiked);
-  };
+  const toggleLike = (): void => {
+    setIsLiked(!isLiked)
+  }
 
   // Function to update messages in the chat window
-  const updateMessages = (newMessage: ChatMessage) => {
-    setMessages([...messages, newMessage]);
-  };
+  const updateMessages = (newMessage: ChatMessage): void => {
+    setMessages([...messages, newMessage])
+  }
 
   // Function to open the modal for a specific message
-  const openModal = (id: number, index: number) => {
-    setSelectedMessageId(id);
-    setSelectedMessageIndex(index);
-    setIsModalOpen(true);
-  };
+  const openModal = (id: number, index: number): void => {
+    setSelectedMessageId(id)
+    setSelectedMessageIndex(index)
+    setIsModalOpen(true)
+  }
 
   // Function to close the modal
-  const closeModal = () => {
-    setSelectedMessageId(null);
-    setIsModalOpen(false);
-  };
+  const closeModal = (): void => {
+    setSelectedMessageId(null)
+    setIsModalOpen(false)
+  }
 
   // Function for handling the report action in the modal
-  const handleModalReport = (id: number) => {
-    console.log("Reporting message with id", id);
-    setReportSuccess(true);
-    closeModal();
-    setTimeout(() => setReportSuccess(false), 3000); // Reset after 3 seconds
-  };
+  const handleModalReport = (id: number): void => {
+    console.log('Reporting message with id', id)
+    setReportSuccess(true)
+    closeModal()
+    setTimeout(() => { setReportSuccess(false) }, 3000) // Reset after 3 seconds
+  }
 
   // Function for handling the block action in the modal
-  const handleModalBlock = (id: number) => {
-    const updatedBlockedMessages = [...blockedMessages, id];
-    console.log("Blocked Messages: ", id, updatedBlockedMessages);
-    setBlockedMessages(updatedBlockedMessages);
-    closeModal();
-  };
+  const handleModalBlock = (id: number): void => {
+    const updatedBlockedMessages = [...blockedMessages, id]
+    console.log('Blocked Messages: ', id, updatedBlockedMessages)
+    setBlockedMessages(updatedBlockedMessages)
+    closeModal()
+  }
 
   // Function for handling reactions in the modal
   const handleModalReact = (
     index: number,
-    reaction: keyof ChatMessage["reactions"]
-  ) => {
-    const updatedMessages = [...messages];
-    const reactedMessage = { ...updatedMessages[index] };
-    reactedMessage.reactions[reaction]++;
-    updatedMessages[index] = reactedMessage;
-    setMessages(updatedMessages);
-    closeModal();
-  };
+    reaction: keyof ChatMessage['reactions']
+  ): void => {
+    const updatedMessages = [...messages]
+    const reactedMessage = { ...updatedMessages[index] }
+    reactedMessage.reactions[reaction]++
+    updatedMessages[index] = reactedMessage
+    setMessages(updatedMessages)
+    closeModal()
+  }
 
   // Filter messages to exclude blocked ones
   const filteredMessages = messages.filter(
     (message) => !blockedMessages.includes(message.user.id)
-  );
+  )
 
   return (
     <main className="flex min-h-screen bg-gray-300 flex-col items-start p-2 flex-grow w-full">
@@ -180,7 +184,7 @@ const Home: React.FC = () => {
                     {message.user.name}
                   </span>
                   <p className="text-gray-800 whitespace-normal">
-                    <button onClick={() => openModal(message.user.id, index)}>
+                    <button onClick={() => { openModal(message.user.id, index) }}>
                       {message.content}
                     </button>
                   </p>
@@ -196,9 +200,9 @@ const Home: React.FC = () => {
                         className="rounded-full p-2 ml-1 bg-gray-500"
                       >
                         {count}
-                        {emoji === "thumbsUp" && "👍"}
-                        {emoji === "fire" && "🔥"}
-                        {emoji === "laughingFace" && "😂"}
+                        {emoji === 'thumbsUp' && '👍'}
+                        {emoji === 'fire' && '🔥'}
+                        {emoji === 'laughingFace' && '😂'}
                       </span>
                     )}
                   </span>
@@ -212,10 +216,10 @@ const Home: React.FC = () => {
         <ChatWindow onMessage={updateMessages} />
         <button
           className={`like-button bg-white pl-2 pr-2 rounded-full ml-2 ${
-            isLiked ? "text-orange-500" : "text-black"
+            isLiked ? 'text-orange-500' : 'text-black'
           }`}
           onClick={toggleLike}
-          style={{ fontSize: "24px" }}
+          style={{ fontSize: '24px' }}
         >
           &#10084;
         </button>
@@ -235,7 +239,7 @@ const Home: React.FC = () => {
         />
       )}
     </main>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

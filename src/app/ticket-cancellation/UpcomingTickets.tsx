@@ -1,9 +1,8 @@
-import React from 'react';
-import TicketCard from './components/ticketCard';
-import { tickets } from './components/dummyTickets';
+import React from 'react'
+import TicketCard from './components/ticketCard'
+import { tickets } from './components/dummyTickets'
 
-
-const UpcomingTickets = () => {
+const UpcomingTickets = (): JSX.Element => {
   return (
     <div className='flex flex-col gap-2'>
         {tickets.map((ticket) => (
@@ -15,7 +14,7 @@ const UpcomingTickets = () => {
                 time={ticket.time}
                 price={ticket.price}
                 img={ticket.img}
-                tab='upcoming' 
+                tab='upcoming'
             />
         ))}
     </div>

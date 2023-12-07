@@ -1,13 +1,14 @@
-import Image from "next/image";
+import React from 'react'
+import Image from 'next/image'
 
 interface ProfileImageProps {
-  headerImgSrc: string;
-  avatarImgSrc: string;
+  headerImgSrc: string
+  avatarImgSrc: string
 }
 
 const ProfileImage: React.FC<ProfileImageProps> = ({
   headerImgSrc,
-  avatarImgSrc,
+  avatarImgSrc
 }) => (
   <div className="pb-0 px-[14px] mb-[3.5rem] relative flex flex-col items-start">
     <div className="w-full">
@@ -26,7 +27,7 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
           viewBox="0 0 18 19"
           fill="none"
         >
-          <g clip-path="url(#clip0_5725_14562)">
+          <g clipPath="url(#clip0_5725_14562)">
             <path
               d="M9.75 15.197C9.75 15.722 9.8475 16.2245 10.0125 16.697H3.75C2.925 16.697 2.25 16.0295 2.25 15.197V4.69702C2.25 3.87202 2.925 3.19702 3.75 3.19702H14.25C15.0825 3.19702 15.75 3.87202 15.75 4.69702V10.9595C15.2775 10.7945 14.775 10.697 14.25 10.697V4.69702H3.75V15.197H9.75ZM10.47 10.1645L8.4075 12.8195L6.9375 11.0495L4.875 13.697H10.0125C10.3125 12.857 10.8525 12.1295 11.55 11.6045L10.47 10.1645ZM15 14.447V12.197H13.5V14.447H11.25V15.947H13.5V18.197H15V15.947H17.25V14.447H15Z"
               fill="white"
@@ -69,6 +70,6 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
       </span>
     </div>
   </div>
-);
+)
 
-export default ProfileImage;
+export default ProfileImage

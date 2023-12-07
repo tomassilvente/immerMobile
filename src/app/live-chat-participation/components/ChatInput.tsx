@@ -1,32 +1,32 @@
 // ChatInput.tsx
 // Represents the input area for typing messages in the chat interface
-import React, { useState } from "react";
-import Picker from "emoji-picker-react"; // Emoji picker library
-import { EmojiClickData } from "emoji-picker-react";
+import React, { useState } from 'react'
+import Picker from 'emoji-picker-react' // Emoji picker library
+import { type EmojiClickData } from 'emoji-picker-react'
 
 interface ChatInputProps {
-  onSendMessage: (message: string) => void; // Callback function for sending messages
+  onSendMessage: (message: string) => void // Callback function for sending messages
 }
 
 const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
-  const [message, setMessage] = useState(""); // State for tracking the message being typed
-  const [showEmojiPicker, setShowEmojiPicker] = useState(false); // State for displaying/hiding the emoji picker
+  const [message, setMessage] = useState('') // State for tracking the message being typed
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false) // State for displaying/hiding the emoji picker
 
   // Handler for handling "Enter" key press to send messages
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && message.trim() !== "") {
-      onSendMessage(message);
-      setMessage("");
+    if (e.key === 'Enter' && message.trim() !== '') {
+      onSendMessage(message)
+      setMessage('')
     }
-  };
+  }
 
   // Handler for adding an emoji when clicked from the picker
-  function handleEmojiClick(emoji: EmojiClickData, event: MouseEvent): void {
-    const emojiToAdd = emoji.emoji;
-    setMessage((prevMessage) => prevMessage + emojiToAdd);
+  function handleEmojiClick (emoji: EmojiClickData, event: MouseEvent): void {
+    const emojiToAdd = emoji.emoji
+    setMessage((prevMessage) => prevMessage + emojiToAdd)
 
     // Close the emoji picker after selecting an emoji
-    setShowEmojiPicker(false);
+    setShowEmojiPicker(false)
   }
 
   return (
@@ -37,21 +37,21 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
         className="w-full p-2 rounded-l-lg "
         placeholder="Type a message..."
         value={message}
-        onChange={(e) => setMessage(e.target.value)}
+        onChange={(e) => { setMessage(e.target.value) }}
         onKeyDown={handleKeyDown}
       />
       {/* Button to toggle the emoji picker */}
       <button
-        className={`emoji-button pr-2`}
-        style={{ fontSize: "16px" }}
-        onClick={() => setShowEmojiPicker(!showEmojiPicker)}
+        className={'emoji-button pr-2'}
+        style={{ fontSize: '16px' }}
+        onClick={() => { setShowEmojiPicker(!showEmojiPicker) }}
       >
         🙂
       </button>
       {/* Button to send the message */}
       <button
         className="bg-orange-500 text-white pr-2 pl-2 rounded-full"
-        onClick={() => onSendMessage(message)}
+        onClick={() => { onSendMessage(message) }}
       >
         {/* SVG icon for sending messages */}
         <svg
@@ -71,7 +71,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default ChatInput;
+export default ChatInput
