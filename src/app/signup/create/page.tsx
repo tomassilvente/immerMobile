@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 'use client'
 
 import React, { useState } from 'react'
@@ -26,7 +27,7 @@ export default function Create (): JSX.Element {
     passwordConfirm: ''
   })
 
-  const validateField = (name: any, value: string | string[]) => {
+  const validateField = (name: any, value: string | string[]): void => {
     let error = ''
     switch (name) {
       case 'fullName':
@@ -53,13 +54,15 @@ export default function Create (): JSX.Element {
     setErrors((prev) => ({ ...prev, [name]: error }))
   }
 
-  const handleChange = (e: { target: { name: any, value: any } }) => {
+  const handleChange = (e: { target: { name: any, value: any } }): void => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
     validateField(name, value)
   }
 
-  const handleSubmit = async (e: { preventDefault: () => void }) => {
+  const handleSubmit: (e: {
+    preventDefault: () => void
+  }) => Promise<void> = async (e) => {
     e.preventDefault()
     const response = await registerUser(formData)
 
@@ -72,69 +75,69 @@ export default function Create (): JSX.Element {
 
   return (
     <div className="font-Inter relative max-w-[480px] m-auto">
-    <div className="text-center">
-      <p className="text-2xl mt-8 font-semibold">Create your account</p>
-      <p className="text-lg font-light text-[#767676] mt-3">
-        Create your personal account now to access all the exclusive benefits we
-        have to offer.
-      </p>
-      <form className="text-start mt-10" onSubmit={handleSubmit}>
-        <InputField
-          label="Full Name"
-          name="fullName"
-          value={formData.fullName}
-          error={errors.fullName}
-          onChange={handleChange}
-          placeholder="Enter Your Full Name"
-          type="text"
-        />
-        <InputField
-          label="Username"
-          name="username"
-          value={formData.username}
-          error={errors.username}
-          onChange={handleChange}
-          placeholder="Enter Your Username"
-          type="text"
-        />
-        <InputField
-          label="Email"
-          name="email"
-          value={formData.email}
-          error={errors.email}
-          onChange={handleChange}
-          placeholder="Enter Your Email"
-          type="email"
-        />
-        <InputField
-          label="Password"
-          name="password"
-          value={formData.password}
-          error={errors.password}
-          onChange={handleChange}
-          placeholder="Enter Your Password"
-          type="password"
-        />
-        <InputField
-          label="Confirm Password"
-          name="passwordConfirm"
-          value={formData.passwordConfirm}
-          error={errors.passwordConfirm}
-          onChange={handleChange}
-          placeholder="Confirm Your Password"
-          type="password"
-        />
-        <CheckboxAgreement
-          accepted={accepted}
-          toggleAccepted={() => { setAccepted(!accepted) }}
-        />
-        <SignButton
-          onClick={handleSubmit}
-          able={!Object.values(errors).some(Boolean) && accepted}
-          title="Sign In"
-        />
-      </form>
-    </div>
+      <div className="text-center">
+        <p className="text-2xl mt-8 font-semibold">Create your account</p>
+        <p className="text-lg font-light text-[#767676] mt-3">
+          Create your personal account now to access all the exclusive benefits we
+          have to offer.
+        </p>
+        <form className="text-start mt-10" onSubmit={handleSubmit}>
+          <InputField
+            label="Full Name"
+            name="fullName"
+            value={formData.fullName}
+            error={errors.fullName}
+            onChange={handleChange}
+            placeholder="Enter Your Full Name"
+            type="text"
+          />
+          <InputField
+            label="Username"
+            name="username"
+            value={formData.username}
+            error={errors.username}
+            onChange={handleChange}
+            placeholder="Enter Your Username"
+            type="text"
+          />
+          <InputField
+            label="Email"
+            name="email"
+            value={formData.email}
+            error={errors.email}
+            onChange={handleChange}
+            placeholder="Enter Your Email"
+            type="email"
+          />
+          <InputField
+            label="Password"
+            name="password"
+            value={formData.password}
+            error={errors.password}
+            onChange={handleChange}
+            placeholder="Enter Your Password"
+            type="password"
+          />
+          <InputField
+            label="Confirm Password"
+            name="passwordConfirm"
+            value={formData.passwordConfirm}
+            error={errors.passwordConfirm}
+            onChange={handleChange}
+            placeholder="Confirm Your Password"
+            type="password"
+          />
+          <CheckboxAgreement
+            accepted={accepted}
+            toggleAccepted={() => { setAccepted(!accepted) }}
+          />
+          <SignButton
+            onClick={handleSubmit}
+            able={!Object.values(errors).some(Boolean) && accepted}
+            title="Sign In"
+          />
+        </form>
+      </div>
     </div>
   )
 }

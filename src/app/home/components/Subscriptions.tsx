@@ -1,7 +1,6 @@
 'use client'
 import Image from 'next/image'
 import React, {
-  useRef,
   useState
 } from 'react'
 
@@ -20,8 +19,6 @@ export default function Subscriptions ({ stories }: SubscriptionsProps): JSX.Ele
   const [isFeedOpen, setIsFeedOpen] = useState(false)
   const videoRef = React.createRef<HTMLVideoElement>()
 
-  setIsFeedOpen(true)
-
   const setFeedClose = (): void => {
     if (videoRef.current !== null) {
       videoRef.current.pause()
@@ -36,7 +33,7 @@ export default function Subscriptions ({ stories }: SubscriptionsProps): JSX.Ele
       <div className="mt-8 flex overflow-y-scroll px-5">
         {stories.map(story => (
           <div
-            onClick={setIsFeedOpen}
+            onClick={() => { setIsFeedOpen(true) }}
             className="hover:cursor-pointer relative text-center border-primary flex-none rounded-full border-[4px] mr-5 mb-10"
             key={story.storyId}
           >

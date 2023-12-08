@@ -26,12 +26,12 @@ export const InputField: React.FC<InputFieldProps> = ({
       value={value}
       onChange={onChange}
       className={`border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black ${
-        error ? 'border-red-400' : ''
+        error !== '' ? 'border-red-400' : ''
       }`}
       placeholder={placeholder}
       type={type}
     />
-    {error && (
+    {error !== '' && (
       <span className="text-sm font-light text-[#ff3c3c] mt-3">{error}</span>
     )}
   </div>

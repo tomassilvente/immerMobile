@@ -2,6 +2,15 @@ import React from 'react'
 import Link from 'next/link'
 import SvgWarningIconBig from '../../../../public/assets/Icons/WarningIconBig'
 
+interface FeedProps {
+  buttonText: string
+  title: string
+  title2: string
+  isFeedOpen: boolean
+  setFeedClose: () => void
+  link: boolean
+}
+
 export default function Feed ({
   buttonText,
   title,
@@ -9,7 +18,7 @@ export default function Feed ({
   isFeedOpen,
   setFeedClose,
   link
-}: any): JSX.Element {
+}: FeedProps): JSX.Element {
   return (
     <div
       className={'bg-[#000000d8] bottom-0 h-[100vh] left-0 fixed right-0 top-0 w-[100%] z-10'}

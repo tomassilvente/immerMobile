@@ -5,9 +5,15 @@ import CancelTicket from '../CancelTicket'
 import BackButton from '../../../../common/buttons/BackButton'
 
 export function generateStaticParams (): JSX.Element {
-  return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }]
+  return (
+    <>
+      <div id='1' />
+      <div id='2' />
+      <div id='3' />
+      <div id='4' />
+    </>
+  )
 }
-
 const Page = ({ params }: { params: { id: string } }): JSX.Element => {
   const { id } = params
 

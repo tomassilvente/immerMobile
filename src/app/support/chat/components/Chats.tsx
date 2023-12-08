@@ -6,7 +6,7 @@ interface Data {
   byUser: boolean
 }
 
-interface Chat {
+interface ChatData {
   chat: Data
 }
 
@@ -14,7 +14,7 @@ interface Dataset {
   dataset: Data[]
 }
 
-const Chat = ({ chat }: Chat): JSX.Element => {
+const Chat = ({ chat }: ChatData): JSX.Element => {
   return (
         <div className="mb-7 mx-auto">
             <div className={`p-4 w-fit max-w-[75%] ${chat.byUser ? 'ml-auto rounded-l-lg rounded-tr-lg bg-primary text-white' : 'bg-white text-black rounded-r-lg rounded-tl-lg'}`}>

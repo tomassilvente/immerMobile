@@ -1,8 +1,9 @@
-import SvgBackButtonBlack from "../../../../../public/assets/Icons/BackButtonBlack";
-import SvgCloseButton from "../../../../../public/assets/Icons/CloseButton";
-import { MobileLayout } from "../../../../components/MobileLayout";
+import React from 'react'
+import SvgBackButtonBlack from '../../../../../public/assets/Icons/BackButtonBlack'
+import SvgCloseButton from '../../../../../public/assets/Icons/CloseButton'
+import { MobileLayout } from '../../../../components/MobileLayout'
 
-export default function checkout() {
+export default function Checkout (): JSX.Element {
   return (
     <MobileLayout>
     {/* <div className=" bg-white text-black sm:invisible overflow-scroll"> */}
@@ -91,5 +92,5 @@ export default function checkout() {
       </div>
     {/* </div> */}
     </MobileLayout>
-  );
+  )
 }
