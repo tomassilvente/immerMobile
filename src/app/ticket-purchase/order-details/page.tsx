@@ -1,11 +1,12 @@
-import Link from "next/link";
-import DemoData from "../../../../public/data/DemoData.json";
-import ConfirmationDetails from "./components/ConfirmationDetails";
-import ConfirmationHeader from "./components/ConfirmationHeader";
-import QuantityCard from "./components/QuantityCard";
-import { MobileLayout } from "../../../components/MobileLayout";
+import React from 'react'
+import Link from 'next/link'
+import DemoData from '../../../../public/data/DemoData.json'
+import ConfirmationDetails from './components/ConfirmationDetails'
+import ConfirmationHeader from './components/ConfirmationHeader'
+import QuantityCard from './components/QuantityCard'
+import { MobileLayout } from '../../../components/MobileLayout'
 
-export default function orderDetails() {
+export default function orderDetails (): JSX.Element {
   return (
     <MobileLayout>
     {/* <div className=" m-5 bg-white text-black sm:invisible overflow-scroll"> */}
@@ -40,5 +41,5 @@ export default function orderDetails() {
       </Link>
     {/* </div> */}
     </MobileLayout>
-  );
+  )
 }

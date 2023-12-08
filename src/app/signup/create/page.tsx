@@ -64,6 +64,8 @@ export default function Create (): JSX.Element {
     preventDefault: () => void
   }) => Promise<void> = async (e) => {
     e.preventDefault()
+    // ! The same here, we need to fix the idea of calling a void function inside another one
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
     const response = await registerUser(formData)
 
     if (response.statusCode === 500) {

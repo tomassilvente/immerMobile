@@ -1,15 +1,15 @@
-"use client";
-import { useState } from "react";
-import SvgDropDownIcon from "../../../../public/assets/Icons/DropDownIcon";
-import SvgFilterIcon from "../../../../public/assets/Icons/FilterIcon";
-import DemoData from "../../../../public/data/DemoData.json";
-import TicketCard from "./TicketCard";
+'use client'
+import React, { useState } from 'react'
+import SvgDropDownIcon from '../../../../public/assets/Icons/DropDownIcon'
+import SvgFilterIcon from '../../../../public/assets/Icons/FilterIcon'
+import DemoData from '../../../../public/data/DemoData.json'
+import TicketCard from './TicketCard'
 
-export default function TicketSelection() {
-  const [tickets, setTickets] = useState(1);
+export default function TicketSelection (): JSX.Element {
+  const [tickets, setTickets] = useState(1)
 
-  function ticketQuant(value: number) {
-    setTickets(value);
+  function ticketQuant (value: number): void {
+    setTickets(value)
   }
 
   return (
@@ -18,7 +18,7 @@ export default function TicketSelection() {
       <p className="text-2xl font-semibold my-5">Select your tickets</p>
       <div className="flex">
         <select
-          onChange={(e) => ticketQuant(Number(e.target.value))}
+          onChange={(e) => { ticketQuant(Number(e.target.value)) }}
           className="border-primary shadow-sm flex border w-[60%] h-[30px] rounded-md"
           name="tickets"
           id="tickets"
@@ -50,5 +50,5 @@ export default function TicketSelection() {
         />
       ))}
     </div>
-  );
+  )
 }

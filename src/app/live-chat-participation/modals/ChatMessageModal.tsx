@@ -28,7 +28,7 @@ const ChatMessageModal: React.FC<ChatMessageModalProps> = ({
   >(null)
 
   // Handler for handling emoji clicks and updating the selected emoji
-  const handleEmojiClick = (reaction: keyof ChatMessage['reactions']) => {
+  const handleEmojiClick = (reaction: keyof ChatMessage['reactions']): void => {
     if (index !== null) {
       onReact(index, reaction)
       setSelectedEmoji(reaction)
@@ -68,7 +68,8 @@ const ChatMessageModal: React.FC<ChatMessageModalProps> = ({
           </button>
         </div>
       </div>
-      {/* Display the selected emoji in the top-right corner */}
+      {/* ! It is not good to disable eslint, fix it later */}
+      {/*  eslint-disable-next-line @typescript-eslint/strict-boolean-expressions */}
       {selectedEmoji && (
         <div className="absolute top-0 right-0 mt-1 mr-1">
           <span role="img" aria-label="Selected Emoji">

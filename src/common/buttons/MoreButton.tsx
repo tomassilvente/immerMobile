@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-function MoreButton() {
+function MoreButton (): JSX.Element {
   return (
     <span>
       <svg
@@ -16,7 +16,7 @@ function MoreButton() {
         />
       </svg>
     </span>
-  );
+  )
 }
 
-export default MoreButton;
+export default MoreButton

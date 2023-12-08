@@ -1,30 +1,29 @@
-"use client"
-import Image from "next/image"
-//Icons
-import SvgCalendarOrange from "../../public/assets/Icons/CalendarOrange"
-import SvgClock from "../../public/assets/Icons/Clock"
-import SvgMoreButton from "../../public/assets/Icons/MoreButton"
-import SvgLikeHeart from "../../public/assets/Icons/LikeHeart"
+'use client'
+import React from 'react'
+import Image from 'next/image'
+import SvgCalendarOrange from '../../public/assets/Icons/CalendarOrange'
+import SvgClock from '../../public/assets/Icons/Clock'
+import SvgMoreButton from '../../public/assets/Icons/MoreButton'
+import SvgLikeHeart from '../../public/assets/Icons/LikeHeart'
 
-type CardProps ={
-    eventDay: string,
-    eventTime: string,
-    eventImg: string,
-    eventOrganizer: string,
-    eventPrice: number,
-    liked: boolean
-    
+interface CardProps {
+  eventDay: string
+  eventTime: string
+  eventImg: string
+  eventOrganizer: string
+  eventPrice: number
+  liked: boolean
+
 }
 
-export default function EventsNearCards({eventDay, eventOrganizer, eventTime, eventImg, eventPrice, liked=false}:CardProps){
-    
-    // const [liked, setLiked] = useState(true)
+export default function EventsNearCards ({ eventDay, eventOrganizer, eventTime, eventImg, eventPrice, liked = false }: CardProps): JSX.Element {
+  // const [liked, setLiked] = useState(true)
 
-    // function likeButton(){
-    //     setLiked(!liked)
-    // }
+  // function likeButton(){
+  //     setLiked(!liked)
+  // }
 
-    return(
+  return (
         <div className="px-5 py-3 mt-5 grid grid-cols-12 bg-[#ffbb7720] border border-[#ff80004b] rounded-lg">
             <Image className="col-start-1 col-end-4 h-[115px]  rounded-xl " src={eventImg} alt={'...'} width={130} height={100}/>
             <div className="col-start-5 col-end-11">
@@ -43,12 +42,13 @@ export default function EventsNearCards({eventDay, eventOrganizer, eventTime, ev
             width={25} height={25}
             // onClick={likeButton}
             style={{
-                display:
+              display:
                     liked
-                    ? 'flex'
-                    : 'none'
-            }} 
+                      ? 'flex'
+                      : 'none'
+            }}
             />
             <SvgMoreButton className="col-start-12 ml-2" width={25} height={25}/>
         </div>
-)}
+  )
+}

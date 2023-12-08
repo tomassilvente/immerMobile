@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-function BackButton() {
+function BackButton (): JSX.Element {
   return (
     <span>
       <svg
@@ -13,9 +13,9 @@ function BackButton() {
         <path
           d="M13 15.947L9 11.947L13 7.94702"
           stroke="#555555"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <rect
           x="0.5"
@@ -27,7 +27,7 @@ function BackButton() {
         />
       </svg>
     </span>
-  );
+  )
 }
 
-export default BackButton;
+export default BackButton

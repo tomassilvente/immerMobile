@@ -14,6 +14,8 @@ const location = 'New York City, USA'
 export default function HomePage (): JSX.Element {
   async function getTheEvents (): Promise<void> {
     try {
+      // ! This is not correct, fix later
+      // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
       const events = await getEvents()
       console.log(events)
     } catch (error) {

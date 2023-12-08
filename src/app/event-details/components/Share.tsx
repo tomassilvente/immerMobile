@@ -4,6 +4,7 @@ import search from '../../../../public/assets/search.svg'
 import data, { type shareDataType } from './ShareData'
 import Send from './Send'
 import App from './AppOptions'
+import { type GetStaticPaths } from 'next'
 
 function Contacts (SendData: shareDataType): JSX.Element {
   return (
@@ -39,7 +40,7 @@ function Share (): JSX.Element {
 }
 
 // ! This is only a momentary function, but it should be work diferently.
-export async function getStaticPaths (): Promise<JSX.Element> {
+export const getStaticPaths: GetStaticPaths = async () => {
   const eventIds = ['1', '2', '3']
 
   const paths = eventIds.map((id) => ({
@@ -48,4 +49,5 @@ export async function getStaticPaths (): Promise<JSX.Element> {
 
   return { paths, fallback: true }
 }
+
 export default Share

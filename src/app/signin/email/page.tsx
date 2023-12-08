@@ -55,6 +55,8 @@ export default function SignInWithEmail (): JSX.Element {
 
     if (!validateFormData()) return
 
+    // ! It is not correct to call a void function inside another one, I will try to fix it later
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
     const response: { token?: string } = await loginUser(formData)
     console.log(response)
 

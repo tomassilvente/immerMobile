@@ -1,7 +1,7 @@
 import React from 'react'
 import SvgAlertIcon from '../../../../../public/assets/Icons/AlertIcon'
 
-function ErrorMessage ({ show, message }: { show: boolean, message: string }): JSX.Element {
+function ErrorMessage ({ show, message }: { show: boolean, message: string }): JSX.Element | null {
   if (!show) return null
 
   return (
