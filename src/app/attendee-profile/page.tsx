@@ -1,6 +1,5 @@
 'use client'
 
-<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { MobileLayout } from "../../components/MobileLayout";
@@ -17,27 +16,11 @@ import { useRouter } from "next/navigation";
 const userId = localStorage.getItem('userId');
 
 
-const Page = () => {
-  const router = useRouter();
-  const [selectedTab, setSelectedTab] = useState<number>(0);
-  const {data, isPending, error} = useFetch(`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/users/${userId}`);
-  const [auth, setAuth] = useState<boolean>(false);
-=======
-import React, { useState } from 'react'
-import Link from 'next/link'
-import { MobileLayout } from '../../components/MobileLayout'
-import Image from 'next/image'
-import Events from './components/Events'
-import Interests from './components/Interests'
-import Subscriptions from './components/Subscriptions'
-import BackButton from '../../common/buttons/BackButton'
-import MoreButton from '../../common/buttons/MoreButton'
-
 const Page = (): JSX.Element => {
   const [selectedTab, setSelectedTab] = useState<number>(0)
   const auth = true
-  // const [auth, setAuth] = useState<boolean>(true)
->>>>>>> 0d8341a80a44cc2490b312758b717d8a2a27adb0
+  const router = useRouter();
+  const {data, isPending, error} = useFetch(`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/users/${userId}`);
 
   const TABS = ['Events', 'Interests', 'Subscriptions']
 

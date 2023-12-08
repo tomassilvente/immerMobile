@@ -47,7 +47,7 @@ export const useFetch = (url: string) => {
           }, 
           signal: controller.signal
         })
-        console.log(res)
+        //console.log(res)
         if(!res.ok) {
           throw new Error(res.statusText)
         }

@@ -81,7 +81,7 @@
     @apply text-[0.63rem] leading-[150%] font-normal
   }
   .text-caption-s{
-    @apply text-[0.5rem] leading-150 font-normal
+    @apply text-[0.5rem] leading-[150%] font-normal
   }
 }
 

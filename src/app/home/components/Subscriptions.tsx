@@ -20,7 +20,8 @@ export default function Subscriptions ({ stories }: SubscriptionsProps): JSX.Ele
   const [isFeedOpen, setIsFeedOpen] = useState(false)
   const videoRef = React.createRef<HTMLVideoElement>()
 
-  setIsFeedOpen(true)
+  // setIsFeedOpen(true)
+  //this function causes an infinite loop. please fix.
 
   const setFeedClose = (): void => {
     if (videoRef.current !== null) {
@@ -36,7 +37,8 @@ export default function Subscriptions ({ stories }: SubscriptionsProps): JSX.Ele
       <div className="mt-8 flex overflow-y-scroll px-5">
         {stories.map(story => (
           <div
-            onClick={setIsFeedOpen}
+            onClick={setFeedClose}
+            //please check the onclick function as well
             className="hover:cursor-pointer relative text-center border-primary flex-none rounded-full border-[4px] mr-5 mb-10"
             key={story.storyId}
           >
