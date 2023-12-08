@@ -1,17 +1,15 @@
-import React from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { MobileLayout } from '../../../../components/MobileLayout';
-import CancelTicket from '../CancelTicket';
-import BackButton from '../../../../common/buttons/BackButton';
+import React from 'react'
+import Link from 'next/link'
+import { MobileLayout } from '../../../../components/MobileLayout'
+import CancelTicket from '../CancelTicket'
+import BackButton from '../../../../common/buttons/BackButton'
 
-export function generateStaticParams() {
-    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }]
+export function generateStaticParams (): JSX.Element {
+  return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }]
 }
 
-const Page = ({params}: {params: {id: string}}) => {
-    const {id} = params;
-    
+const Page = ({ params }: { params: { id: string } }): JSX.Element => {
+  const { id } = params
 
   return (
     <MobileLayout>
@@ -28,4 +26,4 @@ const Page = ({params}: {params: {id: string}}) => {
   )
 }
 
-export default Page;
+export default Page

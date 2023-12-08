@@ -1,11 +1,11 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
 
 interface Props {
-  img: string;
+  img: string
 }
 
-const EventCard = ({ img }: Props) => {
+const EventCard = ({ img }: Props): JSX.Element => {
   return (
     <div className="rounded-[10px] w-[7.2em] overflow-hidden border-[#ccc] border-[0.5px]">
       <Image
@@ -24,7 +24,7 @@ const EventCard = ({ img }: Props) => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default EventCard;
+export default EventCard

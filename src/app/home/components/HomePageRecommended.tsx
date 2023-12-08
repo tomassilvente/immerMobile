@@ -1,7 +1,8 @@
-import DemoData from "../../../../public/data/DemoData.json";
-import RecommendedCards from "./RecommendedCards";
+import React from 'react'
+import DemoData from '../../../../public/data/DemoData.json'
+import RecommendedCards from './RecommendedCards'
 
-export default function HomePageHeader() {
+export default function HomePageHeader (): JSX.Element {
   return (
     <div className="">
       <p className="text-2xl my-5 font-semibold ml-5">Recommended</p>
@@ -20,5 +21,5 @@ export default function HomePageHeader() {
         />
       </div>
     </div>
-  );
+  )
 }

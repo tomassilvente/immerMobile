@@ -1,15 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
-import Link from "next/link";
-//Icons
-import SvgAppleLogo from "../../../public/assets/Icons/AppleLogo";
-import SvgImmerIconOrange from "../../../public/assets/Icons/ImmerIconOrange";
-import SvgOrLine from "../../../public/assets/Icons/OrLine";
-import SvgGoogleLogo from "../../../public/assets/Icons/GoogleLogo";
-import SvgFacebookLogo from "../../../public/assets/Icons/FacebookLogo";
-import SvgMailLogo from "../../../public/assets/Icons/MailLogo";
-import { MobileLayout } from "../../components/MobileLayout";
+import React from 'react'
+import Link from 'next/link'
+// Icons
+import SvgAppleLogo from '../../../public/assets/Icons/AppleLogo'
+import SvgImmerIconOrange from '../../../public/assets/Icons/ImmerIconOrange'
+import SvgOrLine from '../../../public/assets/Icons/OrLine'
+import SvgGoogleLogo from '../../../public/assets/Icons/GoogleLogo'
+import SvgFacebookLogo from '../../../public/assets/Icons/FacebookLogo'
+import SvgMailLogo from '../../../public/assets/Icons/MailLogo'
 
-export default function signUp() {
+export default function SignUp (): JSX.Element {
   return (
     <div className="font-Inter relative max-w-[480px] m-auto">
     <div className="m-5 text-center">
@@ -56,7 +56,7 @@ export default function signUp() {
       </Link>
       <SvgOrLine className="mt-10" />
       <Link
-        style={{ position: "sticky" }}
+        style={{ position: 'sticky' }}
         href="/signin/email"
         className="grid text-center text-2xl bg-primary text-white mt-12 mx-8 py-5 mb-16 rounded-full"
       >
@@ -67,5 +67,5 @@ export default function signUp() {
       </p>
     </div>
     </div>
-  );
+  )
 }

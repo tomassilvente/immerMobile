@@ -34,6 +34,57 @@
   }
 }
 
+@layer textUtils{
+  /* Hey There all the Text Styles defined in the figma file are listed below
+  please use them accordingly and if you want to get semibold or bold font weights
+  as per the design prefer using font-semibold and font-bold respectively along
+  with the below mentioned text utility classes 
+  
+  e.g. to get 
+        For Figma Text Value 'Display M - Semibold' use '.text-display-m' class along with '.font-semibold' class
+        For Figma Text Value 'Display XL - Bold' use '.text-display-xl' class along with '.font-bold' class
+        and so on...*/
+  .text-huge{
+    @apply text-[3.5rem] leading-[150%] font-normal
+  }
+  .text-display-xl{
+    @apply text-5xl leading-[150%] font-normal
+  }
+  .text-display-l{
+    @apply text-4xl leading-[150%] font-normal
+  }
+  .text-display-m{
+    @apply text-3xl leading-[150%] font-normal
+  }
+  .text-display-m{
+    @apply text-[1.75rem] leading-[150%] font-normal
+  }
+  .text-h1{
+    @apply text-2xl leading-[150%] font-normal
+  }
+  .text-h2{
+    @apply text-xl leading-[150%] font-normal
+  }
+  .text-h3{
+    @apply text-lg leading-[150%] font-normal
+  }
+  .text-h4{
+    @apply text-base leading-[150%] font-normal
+  }
+  .text-h5{
+    @apply text-sm leading-[150%] font-normal
+  }
+  .text-h6{
+    @apply text-xs leading-[150%] font-normal
+  }
+  .text-caption-m{
+    @apply text-[0.63rem] leading-[150%] font-normal
+  }
+  .text-caption-s{
+    @apply text-[0.5rem] leading-150 font-normal
+  }
+}
+
 
 .h-screen {
   overflow-x: hidden;

@@ -1,12 +1,13 @@
-"use client"
-import Image from "next/image";
-import link from "../../../../public/assets/link-2.svg"
+'use client'
+import React from 'react'
+import Image from 'next/image'
+import link from '../../../../public/assets/link-2.svg'
 import telegram from '../../../../public/assets/telegram.svg'
 import whatsapp from '../../../../public/assets/whatsapp.svg'
 import twitter from '../../../../public/assets/twitter.svg'
 import instagram from '../../../../public/assets/instagram.svg'
 
-function AppOptions() {
+function AppOptions (): JSX.Element {
   return (
     <div className="inline-flex justify-between py-[15px] items-center">
                 <div className="pl-[16px] flex flex-col items-center">
@@ -46,7 +47,7 @@ function AppOptions() {
                     <Image
                         className="rounded-[20px]"
                         src={instagram}
-                        alt="Instagram Logo" 
+                        alt="Instagram Logo"
                         width={46}
                         height={46}
                         priority

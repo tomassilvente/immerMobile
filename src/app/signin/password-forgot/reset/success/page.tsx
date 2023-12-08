@@ -1,8 +1,9 @@
-import Link from "next/link";
-import SvgImmerIconOrange from "../../../../../../public/assets/Icons/ImmerIconOrange";
-import SvgChechedIcon from "../../../../../../public/assets/Icons/CheckedIcon";
+import React from 'react'
+import Link from 'next/link'
+import SvgImmerIconOrange from '../../../../../../public/assets/Icons/ImmerIconOrange'
+import SvgChechedIcon from '../../../../../../public/assets/Icons/CheckedIcon'
 
-export default function success() {
+export default function Success (): JSX.Element {
   return (
     <div className="font-Inter relative max-w-[480px] m-auto">
       <div className="m-5 text-center grid content-center place-items-center">
@@ -21,5 +22,5 @@ export default function success() {
         </Link>
       </div>
     </div>
-  );
+  )
 }

@@ -19,11 +19,11 @@ type InputData = {
   image?:       string;
   is_online:   string;
   phoneNumber?: string;
-  dateOfBirth?: Date;
+  dateOfBirth: Date;
   country?:     string;
   state?:       string;
   city?:        string;
-  interests?:   string[];
+  interests:   string[];
   createdAt:   Date;
   updatedAt:   Date;
 }
@@ -49,7 +49,6 @@ const EditProfile: React.FC = () => {
 }
 
 const formatDate = (date: string) => {
-  const formattedDate = new Date(date);
   const shortDate = date.split("T")[0];
   return shortDate;
 }
@@ -76,7 +75,6 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         </Link>
         <h1 className="font-bold text-lg">Edit Profile</h1>
       </div>
-
       <ProfileImage
         headerImgSrc="/assets/header-img.png"
         avatarImgSrc={data.image}
@@ -87,7 +85,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           <InputField onChange={(e) => {setInputData({...inputData, fullName: e.target.value})}} value={inputData.fullName} type="text" placeholder="Name" />
           <InputField onChange={(e) => {setInputData({...inputData, username: e.target.value})}} value={inputData.username} type="text" placeholder="Username" />
           <InputField onChange={(e) => {setInputData({...inputData, phoneNumber: e.target.value})}}  value={inputData.phoneNumber} type="text" placeholder="Phone number" />
-          <InputField onChange={(e) => {setInputData({...inputData, dateOfBirth: e.target.value})}} value={formatDate(inputData.dateOfBirth)} type="text" placeholder="Date of birth" />
+          <InputField onChange={(e) => {setInputData({...inputData, dateOfBirth: e.target.value})}} value={formatDate(inputData.dateOfBirth.toString())} type="text" placeholder="Date of birth" />
           <InputField onChange={(e) => {setInputData({...inputData, country: e.target.value})}} value={inputData.country} type="text" placeholder="Country" />
           <InputField onChange={(e) => {setInputData({...inputData, state: e.target.value})}} value={inputData.state} type="text" placeholder="State" />
           <InputField onChange={(e) => {setInputData({...inputData, city: e.target.value})}} value={inputData.city} type="text" placeholder="City" />

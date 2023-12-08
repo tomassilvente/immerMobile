@@ -1,10 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import Link from "next/link";
-import SvgImmerIconOrange from "../../../../../public/assets/Icons/ImmerIconOrange";
-import SvgInboxCheck from "../../../../../public/assets/Icons/InboxCheck";
-import { MobileLayout } from "../../../../components/MobileLayout";
+import React from 'react'
+import Link from 'next/link'
+import SvgImmerIconOrange from '../../../../../public/assets/Icons/ImmerIconOrange'
 
-export default function submitted() {
+export default function Submitted (): JSX.Element {
   return (
    <div className="font-Inter relative max-w-[480px] m-auto">
     <div className="m-5 text-center grid content-center place-items-center">
@@ -14,7 +13,7 @@ export default function submitted() {
         Your account is active.
       </p>
       <p className="text-lg font-light text-[#767676] ">
-        {" "}
+        {' '}
         Are you ready to Experience the Evolution of Entertainment?
       </p>
       <Link
@@ -25,5 +24,5 @@ export default function submitted() {
       </Link>
     </div>
   </div>
-  );
+  )
 }

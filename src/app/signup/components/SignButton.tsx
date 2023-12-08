@@ -6,7 +6,7 @@ type ButtonProps = {
 
 export default function SignButton({ title, able, onClick }: ButtonProps) {
   return (
-    <div>
+    <div className="pb-8">
       {able ? (
         <button
           type="submit"

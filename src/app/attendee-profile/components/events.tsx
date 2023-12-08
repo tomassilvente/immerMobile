@@ -1,9 +1,8 @@
-import Image from "next/image";
-import React from "react";
-import EventCard from "./eventCard";
-import AttendedEventCard from "./AttendedEventCard";
+import React from 'react'
+import EventCard from './EventCard'
+import AttendedEventCard from './AttendedEventCard'
 
-const Events = () => {
+const Events = (): JSX.Element => {
   return (
     <div>
       <div className="text-[#333] my-2 flex justify-between">
@@ -12,10 +11,9 @@ const Events = () => {
       </div>
       <div className="max-w-[95vw] overflow-x-auto">
         <div className="w-[fit-content] overflow-hidden my-2 flex gap-2">
-          <EventCard img="./assets/image-event.png" />
-          <EventCard img="./assets/image-event2.png" />
-          <EventCard img="./assets/image-event3.png" />
-          <EventCard img="./assets/image-event3.png" />
+          {[1, 2, 3, 4].map((index) => (
+            <EventCard key={index} img={`./assets/image-event${index}.png`} />
+          ))}
         </div>
       </div>
       <div className="text-[#333] my-2 flex justify-between">
@@ -23,11 +21,12 @@ const Events = () => {
         <p className="underline text-sm">see all</p>
       </div>
       <div className="flex flex-col gap-2">
-        <AttendedEventCard />
-        <AttendedEventCard />
+        {[1, 2].map((index) => (
+          <AttendedEventCard key={index} />
+        ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Events;
+export default Events

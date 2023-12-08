@@ -1,44 +1,34 @@
-"use client";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import Image from "next/image";
-import {
-  JSXElementConstructor,
-  Key,
-  PromiseLikeOfReactNode,
-  ReactElement,
-  ReactNode,
-  ReactPortal,
+'use client'
+import Image from 'next/image'
+import React, {
   useRef,
-  useState,
-} from "react";
+  useState
+} from 'react'
 
 interface Story {
-  storyId?: string;
-  live: boolean;
-  profilePic: string;
-  user: string;
+  storyId?: string
+  live: boolean
+  profilePic: string
+  user: string
 }
 
 interface SubscriptionsProps {
-  stories: Story[];
+  stories: Story[]
 }
 
-export default function Subscriptions({ stories }: SubscriptionsProps) {
-  const [isFeedOpen, setIsFeedOpen] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+export default function Subscriptions ({ stories }: SubscriptionsProps): JSX.Element {
+  const [isFeedOpen, setIsFeedOpen] = useState(false)
+  const videoRef = React.createRef<HTMLVideoElement>()
 
-  const setFeedOpen = () => {
-    videoRef.current?.play();
-    setIsFeedOpen(true);
-  };
+  setIsFeedOpen(true)
 
-  const setFeedClose = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
+  const setFeedClose = (): void => {
+    if (videoRef.current !== null) {
+      videoRef.current.pause()
+      videoRef.current.currentTime = 0
     }
-    setIsFeedOpen(false);
-  };
+    setIsFeedOpen(false)
+  }
 
   return (
     <div className="mt-10">
@@ -46,23 +36,23 @@ export default function Subscriptions({ stories }: SubscriptionsProps) {
       <div className="mt-8 flex overflow-y-scroll px-5">
         {stories.map(story => (
           <div
-            onClick={setFeedOpen}
-            className="hover:cursor-pointer relative text-center border-primary flex-none rounded-full border-[4px] mr-5 mb-20"
+            onClick={setIsFeedOpen}
+            className="hover:cursor-pointer relative text-center border-primary flex-none rounded-full border-[4px] mr-5 mb-10"
             key={story.storyId}
           >
             {story.live && (
-              <p className="absolute mt-24 ml-5 text-center px-5 bg-primary text-white rounded-full z-10">
+              <p className="absolute mt-[66px] ml-[15px] text-sm text-center px-2 bg-primary text-white rounded-full z-10">
                 LIVE
               </p>
             )}
             <Image
-              className="border-white border-[8px] rounded-full h-[110px]"
+              className="border-white border-[4px] rounded-full h-[75px]"
               alt="Profile"
               src={story.profilePic}
-              width={110}
-              height={50}
+              width={75}
+              height={75}
             />
-            <p className="absolute mt-5 ml-2">{story.user}</p>
+            <p className="absolute text-center mt-3 ml-1 text-xs">{story.user}</p>
           </div>
         ))}
       </div>
@@ -81,5 +71,5 @@ export default function Subscriptions({ stories }: SubscriptionsProps) {
         </div>
       )}
     </div>
-  );
+  )
 }

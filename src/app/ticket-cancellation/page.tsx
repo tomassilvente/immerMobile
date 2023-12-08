@@ -1,17 +1,17 @@
-"use client";
-import React, {useState} from 'react';
-import Link from 'next/link';
-import { MobileLayout } from '../../components/MobileLayout';
-import UpcomingTickets from './UpcomingTickets';
-import AttendedTickets from './AttendedTickets';
-import CancelledTickets from './CancelledTickets';
-import BackButton from '../../common/buttons/BackButton';
-import SearchButton from '../../common/buttons/SearchButton';
+'use client'
+import React, { useState } from 'react'
+import Link from 'next/link'
+import { MobileLayout } from '../../components/MobileLayout'
+import UpcomingTickets from './UpcomingTickets'
+import AttendedTickets from './AttendedTickets'
+import CancelledTickets from './CancelledTickets'
+import BackButton from '../../common/buttons/BackButton'
+import SearchButton from '../../common/buttons/SearchButton'
 
-const tabs = ['Upcoming', 'Attended', 'Cancelled'];
+const tabs = ['Upcoming', 'Attended', 'Cancelled']
 
-const Page = () => {
-    const [selectedTab, setSelectedTab] = useState<number>(0);
+const Page = (): JSX.Element => {
+  const [selectedTab, setSelectedTab] = useState<number>(0)
 
   return (
     <MobileLayout>
@@ -28,13 +28,13 @@ const Page = () => {
         <div className='mt-5'>
             <div className='border-b-[1px] border-[#ddd] flex items-center justify-around'>
                 {tabs.map((tab, index) => (
-                    <button 
-                        onClick={() => setSelectedTab(index)} 
-                        key={index} 
-                        className={`font-medium py-3 border-b-[3px] ${selectedTab === index ?'text-[#FF6C00] border-[#FF6C00]': 'text-[#7C7C7C] border-white'}`}>
+                    <button
+                        onClick={() => { setSelectedTab(index) }}
+                        key={index}
+                        className={`font-medium py-3 border-b-[3px] ${selectedTab === index ? 'text-[#FF6C00] border-[#FF6C00]' : 'text-[#7C7C7C] border-white'}`}>
                             {tab}
                     </button>
-                ))}  
+                ))}
             </div>
             <div className='px-[14px] py-5'>
                 {selectedTab === 0 && <UpcomingTickets />}

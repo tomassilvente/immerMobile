@@ -1,5 +1,6 @@
-"use client";
+'use client'
 
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { MobileLayout } from "../../components/MobileLayout";
@@ -21,8 +22,35 @@ const Page = () => {
   const [selectedTab, setSelectedTab] = useState<number>(0);
   const {data, isPending, error} = useFetch(`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/users/${userId}`);
   const [auth, setAuth] = useState<boolean>(false);
+=======
+import React, { useState } from 'react'
+import Link from 'next/link'
+import { MobileLayout } from '../../components/MobileLayout'
+import Image from 'next/image'
+import Events from './components/Events'
+import Interests from './components/Interests'
+import Subscriptions from './components/Subscriptions'
+import BackButton from '../../common/buttons/BackButton'
+import MoreButton from '../../common/buttons/MoreButton'
 
-  const tabs = ["Events", "Interests", "Subscriptions"];
+const Page = (): JSX.Element => {
+  const [selectedTab, setSelectedTab] = useState<number>(0)
+  const auth = true
+  // const [auth, setAuth] = useState<boolean>(true)
+>>>>>>> 0d8341a80a44cc2490b312758b717d8a2a27adb0
+
+  const TABS = ['Events', 'Interests', 'Subscriptions']
+
+  const renderTabContent = (): React.ReactNode => {
+    switch (selectedTab) {
+      case 0:
+        return <Events />
+      case 1:
+        return <Interests />
+      case 2:
+        return <Subscriptions />
+    }
+  }
 
   console.log(data, error);
   if(error){
@@ -74,19 +102,19 @@ const Page = () => {
             <h1 className="text-lg font-semibold text-center">{data?.fullName}</h1>
             <div className="flex px-5 items-center justify-around">
               <p className="flex flex-col items-center font-semibold gap-[2px]">
-                12{" "}
+                12{' '}
                 <span className="text-[#555555] font-normal text-sm">
                   Events
                 </span>
               </p>
               <p className="flex flex-col items-center font-semibold gap-[2px]">
-                868{" "}
+                868{' '}
                 <span className="text-[#555555] font-normal text-sm">
                   Followers
                 </span>
               </p>
               <p className="flex flex-col items-center font-semibold gap-[2px]">
-                348{" "}
+                348{' '}
                 <span className="text-[#555555] font-normal text-sm">
                   Following
                 </span>
@@ -106,30 +134,25 @@ const Page = () => {
         )}
         <div className="mt-5">
           <div className="py-3 border-y-[1px] border-[#7C7C7C] flex items-center justify-around">
-            {tabs.map((tab, index) => (
+            {TABS.map((tab, index) => (
               <button
-                onClick={() => setSelectedTab(index)}
+                onClick={() => { setSelectedTab(index) }}
                 key={index}
-                className={`font-semibold py-[2px] border-b-[3px] ${
-                  selectedTab === index
-                    ? "text-[#FF6C00] border-[#FF6C00]"
-                    : "text-[#7C7C7C] border-white"
-                }`}
+                className={`font-semibold py-[2px] border-b-[3px] ${selectedTab === index
+                    ? 'text-[#FF6C00] border-[#FF6C00]'
+                    : 'text-[#7C7C7C] border-white'
+                  }`}
               >
                 {tab}
               </button>
             ))}
           </div>
-          <div className="px-[14px]">
-            {selectedTab === 0 && <Events />}
-            {selectedTab === 1 && <Interests />}
-            {selectedTab === 2 && <Subscriptions />}
-          </div>
+          <div className="px-[14px]">{renderTabContent()}</div>
         </div>
       </div>}
       {isPending && <SpinnerLoader />}
     </MobileLayout>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

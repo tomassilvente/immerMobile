@@ -1,13 +1,13 @@
-import Link from "next/link";
-//Icons
-import SvgAppleLogo from "../../../public/assets/Icons/AppleLogo";
-import SvgImmerIconOrange from "../../../public/assets/Icons/ImmerIconOrange";
-import SvgOrLine from "../../../public/assets/Icons/OrLine";
-import SvgGoogleLogo from "../../../public/assets/Icons/GoogleLogo";
-import SvgFacebookLogo from "../../../public/assets/Icons/FacebookLogo";
-import SvgMailLogo from "../../../public/assets/Icons/MailLogo";
+import React from 'react'
+import Link from 'next/link'
+// Icons
+import SvgAppleLogo from '../../../public/assets/Icons/AppleLogo'
+import SvgImmerIconOrange from '../../../public/assets/Icons/ImmerIconOrange'
+import SvgGoogleLogo from '../../../public/assets/Icons/GoogleLogo'
+import SvgFacebookLogo from '../../../public/assets/Icons/FacebookLogo'
+import SvgMailLogo from '../../../public/assets/Icons/MailLogo'
 
-export default function signIn() {
+export default function signIn (): JSX.Element {
   return (
     <div className="font-Inter relative max-w-[480px] m-auto">
     <div className="m-14 text-center bg-white text-black sm:invisible overflow-scroll">
@@ -54,5 +54,5 @@ export default function signIn() {
       </Link>
     </div>
     </div>
-  );
+  )
 }

@@ -1,26 +1,26 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
 
 const subs = [
   {
-    img: "./assets/subs1.png",
-    name: "Sheryl Green",
+    img: './assets/subs1.png',
+    name: 'Sheryl Green'
   },
   {
-    img: "./assets/subs2.png",
-    name: "Rich Wallace",
+    img: './assets/subs2.png',
+    name: 'Rich Wallace'
   },
   {
-    img: "./assets/subs3.png",
-    name: "Arn Scoba",
+    img: './assets/subs3.png',
+    name: 'Arn Scoba'
   },
   {
-    img: "./assets/subs4.png",
-    name: "Glenn Marcs",
-  },
-];
+    img: './assets/subs4.png',
+    name: 'Glenn Marcs'
+  }
+]
 
-const Subscriptions = () => {
+const Subscriptions = (): JSX.Element => {
   return (
     <div className="my-5 flex flex-col gap-3">
       {subs.map((sub, index) => (
@@ -42,7 +42,7 @@ const Subscriptions = () => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Subscriptions;
+export default Subscriptions

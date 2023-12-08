@@ -1,12 +1,13 @@
-import Search from "../../components/Search";
-import LargeCard from "../../components/LargeCard";
-//Icons
-import SvgBackVector from "../../../public/assets/Icons/BackVector";
-//Data
-import DemoData from "../../../public/data/DemoData.json";
-import { MobileLayout } from "../../components/MobileLayout";
+import React from 'react'
+import Search from '../../components/Search'
+import LargeCard from '../../components/LargeCard'
+// Icons
+import SvgBackVector from '../../../public/assets/Icons/BackVector'
+// Data
+import DemoData from '../../../public/data/DemoData.json'
+import { MobileLayout } from '../../components/MobileLayout'
 
-export default function myEvents() {
+export default function myEvents (): JSX.Element {
   return (
     <MobileLayout>
     <div className=" mt-5">
@@ -16,7 +17,7 @@ export default function myEvents() {
           My events
         </p>
       </div>
-      <Search hold={"Search for artists, venues and events"} />
+      <Search hold={'Search for artists, venues and events'} />
       <p className="text-2xl my-5 col-start-3 col-end-6">
         Upcoming
       </p>
@@ -45,5 +46,5 @@ export default function myEvents() {
       ))}
     </div>
     </MobileLayout>
-  );
+  )
 }

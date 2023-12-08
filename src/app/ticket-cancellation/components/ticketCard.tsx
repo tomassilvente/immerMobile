@@ -1,18 +1,18 @@
-import Image from 'next/image';
-import React from 'react';
-import Link from 'next/link';
+import Image from 'next/image'
+import React from 'react'
+import Link from 'next/link'
 
 interface Props {
-    id: string | number  | null | undefined;
-    event: string;
-    date: string;
-    time: string;
-    price: string;
-    img: string;
-    tab?: string;
+  id: string | number
+  event: string
+  date: string
+  time: string
+  price: string
+  img: string
+  tab?: string
 }
 
-const TicketCard = ({id, event, date, time, price, img, tab}: Props) => {
+const TicketCard = ({ id, event, date, time, price, img, tab }: Props): JSX.Element => {
   return (
     <div className='flex gap-4 font-Inter p-3 rounded-[6px] bg-[#FFF0E50D]/5 overflow-hidden border border-[#FFD6B899]/60 shadow-[0px_2px_4px_0px_rgba(255,240,229,0.08)]'>
         <Image className='w-[6rem] h-[6rem] rounded-lg' src={img} height={0} width={0} alt='event' />
@@ -25,8 +25,8 @@ const TicketCard = ({id, event, date, time, price, img, tab}: Props) => {
             {tab === 'upcoming' && <div className='flex gap-4 text-xs'>
                 <Link
                     href={{
-                        pathname: `/ticket-cancellation/cancel/${id}`,
-                    }} 
+                      pathname: `/ticket-cancellation/cancel/${id}`
+                    }}
                     className='border border-[#FF6C00] rounded py-1 px-5 text-[#666]'
                 >
                     Cancel
@@ -47,4 +47,4 @@ const TicketCard = ({id, event, date, time, price, img, tab}: Props) => {
   )
 }
 
-export default TicketCard;
+export default TicketCard

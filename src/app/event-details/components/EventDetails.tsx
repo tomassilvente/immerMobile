@@ -1,18 +1,18 @@
-import Pricing from "./Pricing"
-//Icons
-import SvgCalendarOrange from "../../../../public/assets/Icons/CalendarOrange"
-import SvgClock from "../../../../public/assets/Icons/Clock"
+import React from 'react'
+import Pricing from './Pricing'
+import SvgCalendarOrange from '../../../../public/assets/Icons/CalendarOrange'
+import SvgClock from '../../../../public/assets/Icons/Clock'
 
-type detailProps ={
-    eventName: string,
-    eventPrice: number,
-    eventAvailability:number,
-    eventDay: string,
-    eventTime: string
+interface detailProps {
+  eventName: string
+  eventPrice: number
+  eventAvailability: number
+  eventDay: string
+  eventTime: string
 }
 
-export default function eventDetails({eventName, eventDay, eventPrice, eventTime, eventAvailability}:detailProps){
-    return(
+export default function eventDetails ({ eventName, eventDay, eventPrice, eventTime, eventAvailability }: detailProps): JSX.Element {
+  return (
     <div className="grid grid-cols-4 my-12 mx-5">
         <div className="col-start-1 col-end-3 ">
             <h1 className="text-2xl ">{eventName} </h1>
@@ -20,7 +20,7 @@ export default function eventDetails({eventName, eventDay, eventPrice, eventTime
                 <SvgCalendarOrange width={24} height={26}/>
                 <p className="ml-3 text-lg font-light">{eventDay}</p>
             </div>
-            <div className=" flex"> 
+            <div className=" flex">
                 <SvgClock width={24} height={28}/>
                 <p className="ml-3 text-lg font-light">{eventTime}</p>
              </div>
@@ -29,4 +29,5 @@ export default function eventDetails({eventName, eventDay, eventPrice, eventTime
             <Pricing name={eventName} price={eventPrice} availability={eventAvailability}/>
         </div>
     </div>
-)}
+  )
+}

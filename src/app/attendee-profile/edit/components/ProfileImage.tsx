@@ -6,8 +6,8 @@ import { updateProfileImage } from "../../../../api/users/UpdateProfileImage";
 import { useRouter } from "next/navigation";
 
 interface ProfileImageProps {
-  headerImgSrc: string;
-  avatarImgSrc?: string;
+  headerImgSrc: string
+  avatarImgSrc?: string
 }
 
 const ProfileImage: React.FC<ProfileImageProps> = ({
@@ -113,4 +113,4 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
   </div>
 )};
 
-export default ProfileImage;
+export default ProfileImage

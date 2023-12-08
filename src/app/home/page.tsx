@@ -1,15 +1,28 @@
-import HomeScreenHeader from "./components/HomeScreenHeader";
-import Subscriptions from "./components/Subscriptions";
-import HomePageRecommended from "./components/HomePageRecommended";
-import DemoData from "../../../public/data/DemoData.json";
-import SinglePost from "./components/SinglePost";
-import NewEvents from "./components/NewEvents";
-import EventsNear from "./components/EventsNear";
-import { MobileLayout } from "../../components/MobileLayout";
+import React from 'react'
+import HomeScreenHeader from './components/HomeScreenHeader'
+import Subscriptions from './components/Subscriptions'
+import HomePageRecommended from './components/HomePageRecommended'
+import DemoData from '../../../public/data/DemoData.json'
+import SinglePost from './components/SinglePost'
+import NewEvents from './components/NewEvents'
+import EventsNear from './components/EventsNear'
+import { MobileLayout } from '../../components/MobileLayout'
+import { getEvents } from '../../api/events/getEvents'
 
-const location = "New York City, USA";
+const location = 'New York City, USA'
 
-export default function HomePage() {
+export default function HomePage (): JSX.Element {
+  async function getTheEvents (): Promise<void> {
+    try {
+      const events = await getEvents()
+      console.log(events)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  void getTheEvents()
+
   return (
     <MobileLayout>
     {/* <div className="h-screen bg-white text-black sm:invisible overflow-scroll"> */}
@@ -32,5 +45,5 @@ export default function HomePage() {
       <EventsNear />
     {/* </div> */}
     </MobileLayout>
-  );
+  )
 }

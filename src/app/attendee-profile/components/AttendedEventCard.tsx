@@ -1,9 +1,9 @@
-import Image from "next/image";
-import React from "react";
-import SvgCalendar from "../../../../public/assets/Icons/Calendar";
-import SvgClockBlack from "../../../../public/assets/Icons/ClockBlack";
+import Image from 'next/image'
+import React from 'react'
+import SvgCalendar from '../../../../public/assets/Icons/Calendar'
+import SvgClockBlack from '../../../../public/assets/Icons/ClockBlack'
 
-const AttendedEventCard = () => {
+const AttendedEventCard = (): JSX.Element => {
   return (
     <div className="flex gap-3 bg-[#F8F8F8] rounded-lg shadow px-2 py-3">
       <Image
@@ -37,7 +37,7 @@ const AttendedEventCard = () => {
         </svg>
       </span>
     </div>
-  );
-};
+  )
+}
 
-export default AttendedEventCard;
+export default AttendedEventCard
