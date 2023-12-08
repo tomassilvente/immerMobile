@@ -1,14 +1,46 @@
+"use client";
+import React, {useState} from "react";
 import Image from "next/image";
+import SpinnerLoader from "../../../../components/SpinnerLoader";
+import { updateProfileImage } from "../../../../api/users/UpdateProfileImage";
+import { useRouter } from "next/navigation";
 
 interface ProfileImageProps {
   headerImgSrc: string;
-  avatarImgSrc: string;
+  avatarImgSrc?: string;
 }
 
 const ProfileImage: React.FC<ProfileImageProps> = ({
   headerImgSrc,
   avatarImgSrc,
-}) => (
+}) => {
+  const router = useRouter();
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState('')
+
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    let file = null;
+    let data = new FormData()
+    if(e.currentTarget.files !== null){
+      file = e.currentTarget.files[0];
+      data.append("image", file)
+    } else {
+      alert('no image selected')
+      return;
+    }
+    setLoading(true)
+    
+    const response = await updateProfileImage(data);
+    if (response?.ok){
+      router.back()
+    } else {
+      setError('failed')
+    }
+    setLoading(false)
+  }
+
+
+  return (
   <div className="pb-0 px-[14px] mb-[3.5rem] relative flex flex-col items-start">
     <div className="w-full">
       <Image
@@ -26,7 +58,7 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
           viewBox="0 0 18 19"
           fill="none"
         >
-          <g clip-path="url(#clip0_5725_14562)">
+          <g clipPath="url(#clip0_5725_14562)">
             <path
               d="M9.75 15.197C9.75 15.722 9.8475 16.2245 10.0125 16.697H3.75C2.925 16.697 2.25 16.0295 2.25 15.197V4.69702C2.25 3.87202 2.925 3.19702 3.75 3.19702H14.25C15.0825 3.19702 15.75 3.87202 15.75 4.69702V10.9595C15.2775 10.7945 14.775 10.697 14.25 10.697V4.69702H3.75V15.197H9.75ZM10.47 10.1645L8.4075 12.8195L6.9375 11.0495L4.875 13.697H10.0125C10.3125 12.857 10.8525 12.1295 11.55 11.6045L10.47 10.1645ZM15 14.447V12.197H13.5V14.447H11.25V15.947H13.5V18.197H15V15.947H17.25V14.447H15Z"
               fill="white"
@@ -45,14 +77,23 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
         </svg>
       </span>
     </div>
-    <div className="absolute -bottom-10 left-10">
+    <label className="absolute -bottom-10 left-10">
       <Image
         className="h-20 w-20 border-white border-[5px] rounded-full"
-        src={avatarImgSrc}
+        src={`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/users/profile-image/${avatarImgSrc}`}
         alt="avatar"
         width={0}
         height={0}
       />
+      <input
+        style={{display: 'none'}}
+        type="file"
+        name="avatar"
+        onChange={(e) => handleImageChange(e)}
+        accept="image/*"
+        id="avatar"
+        className="hidden"
+        />
       <span className="absolute bottom-3 right-0 cursor-pointer bg-[#E4DFDF] rounded p-[1px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -67,8 +108,9 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
           />
         </svg>
       </span>
-    </div>
+    </label>
+    {loading && <SpinnerLoader />}
   </div>
-);
+)};
 
 export default ProfileImage;
