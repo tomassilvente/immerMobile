@@ -4,6 +4,8 @@ import Image from "next/image";
 import SpinnerLoader from "../../../../components/SpinnerLoader";
 import { updateProfileImage } from "../../../../api/users/UpdateProfileImage";
 import { useRouter } from "next/navigation";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface ProfileImageProps {
   headerImgSrc: string
@@ -16,7 +18,6 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
 }) => {
   const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState('')
 
   const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     let file = null;
@@ -25,18 +26,22 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
       file = e.currentTarget.files[0];
       data.append("image", file)
     } else {
-      alert('no image selected')
+      toast.error('no image selected')
       return;
     }
     setLoading(true)
     
     const response = await updateProfileImage(data);
     if (response?.ok){
-      router.back()
+      toast.success('success! redirecting..')
+      setTimeout(() => {
+        router.back()
+      }, 2000);
+      setLoading(false)
     } else {
-      setError('failed')
+      toast.error('failed')
+      setLoading(false)
     }
-    setLoading(false)
   }
 
 
@@ -110,6 +115,7 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
       </span>
     </label>
     {loading && <SpinnerLoader />}
+    <ToastContainer autoClose={2000} position="top-center" />
   </div>
 )};
 

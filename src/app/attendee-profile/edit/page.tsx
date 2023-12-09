@@ -8,6 +8,7 @@ import ProfileImage from "./components/ProfileImage";
 import InputField from "./components/InputField";
 import BackButton from "../../../common/buttons/BackButton";
 import { useRouter } from "next/navigation";
+import { ToastContainer, toast } from 'react-toastify';
 import SpinnerLoader from "../../../components/SpinnerLoader";
 
 type InputData = {
@@ -58,10 +59,13 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   setLoading(true);
   const response = await updateUser(inputData);
   if(response?.ok){
+    toast.success('successful! Redirecting..')
+    setTimeout(() => {
+      router.push('/attendee-profile') 
+    }, 2000);
     setLoading(false)
-    router.push('/attendee-profile')
   } else {
-    alert('update failed..')
+    toast.error('failed. try again..')
     setLoading(false)
   }
 }
@@ -95,6 +99,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       </div>
     </div>
     {loading && <SpinnerLoader />}
+    <ToastContainer autoClose={2000} position="top-center" />
   </MobileLayout>
   )
 };
