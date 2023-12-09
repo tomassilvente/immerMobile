@@ -9,7 +9,7 @@ function ModalMessage ({
 }: {
   isOpen: boolean
   onClose: () => void
-}) {
+}): JSX.Element {
   const styles = {
     alignItems: isOpen ? 'center' : '',
     display: isOpen ? 'flex' : 'none'

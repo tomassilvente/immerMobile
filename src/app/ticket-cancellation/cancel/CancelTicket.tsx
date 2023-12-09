@@ -25,7 +25,7 @@ const CancelTicket = ({ id }: Props): JSX.Element => {
   }
 
   const addReason = (_reason: string): void => {
-    if (_reason && !reasons.includes(_reason)) {
+    if (_reason !== '' && !reasons.includes(_reason)) {
       setReasons([...reasons, _reason.trim()])
     } else {
       const newReasons = reasons.filter((reason) => reason !== _reason)

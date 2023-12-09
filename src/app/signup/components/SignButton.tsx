@@ -1,13 +1,16 @@
-type ButtonProps = {
-  title: string;
-  able: boolean;
-  onClick?: any;
-};
+import React from 'react'
 
-export default function SignButton({ title, able, onClick }: ButtonProps) {
+interface ButtonProps {
+  title: string
+  able: boolean
+  onClick?: any
+}
+
+export default function SignButton ({ title, able, onClick }: ButtonProps): JSX.Element {
   return (
     <div className="pb-8">
-      {able ? (
+      {able
+        ? (
         <button
           type="submit"
           onClick={onClick}
@@ -15,11 +18,12 @@ export default function SignButton({ title, able, onClick }: ButtonProps) {
         >
           {title}
         </button>
-      ) : (
+          )
+        : (
         <div className="w-[100%] text-center text-2xl bg-[#b8b8b8] text-white mt-12  py-5 rounded-full">
           {title}
         </div>
-      )}
+          )}
     </div>
-  );
+  )
 }

@@ -1,18 +1,19 @@
-//Icons
-import SvgBackButton from "../../../../public/assets/Icons/BackButton";
-import SvgLikeButton from "../../../../public/assets/Icons/LikeButton";
-import SVGShare from "../../../../public/assets/Icons/shareButton";
-import DemoData from "../../../../public/data/DemoData.json";
+// Icons
+import React from 'react'
+import SvgBackButton from '../../../../public/assets/Icons/BackButton'
+import SvgLikeButton from '../../../../public/assets/Icons/LikeButton'
+import SVGShare from '../../../../public/assets/Icons/shareButton'
+import DemoData from '../../../../public/data/DemoData.json'
 
-export default function EventHeader({ eventImg, setShareOpen }: any) {
+export default function EventHeader ({ eventImg, setShareOpen }: any): JSX.Element {
   return (
     <>
       <div
         className=" text-white grid grid-cols-12 place-items-end content-start "
         style={{
           backgroundImage: `url(${eventImg})`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center'
         }}
       >
         <SvgBackButton className="col-start-2 mr-4 " width={45} height={45} />
@@ -43,7 +44,7 @@ export default function EventHeader({ eventImg, setShareOpen }: any) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 // ! Logically the key is not correct, we must change it

@@ -13,7 +13,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false) // State for displaying/hiding the emoji picker
 
   // Handler for handling "Enter" key press to send messages
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === 'Enter' && message.trim() !== '') {
       onSendMessage(message)
       setMessage('')

@@ -1,16 +1,16 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import SvgLessButton from "../../../../../public/assets/Icons/LessButton";
+import React, { useState } from 'react'
+import SvgLessButton from '../../../../../public/assets/Icons/LessButton'
 
-export default function QuantityCard({ price }: any) {
-  const [quant, setQuant] = useState(1);
+export default function QuantityCard ({ price }: any): JSX.Element {
+  const [quant, setQuant] = useState(1)
 
-  function less() {
-    if (quant > 1) setQuant(quant - 1);
+  function less (): void {
+    if (quant > 1) setQuant(quant - 1)
   }
-  function plus() {
-    if (quant < 6) setQuant(quant + 1);
+  function plus (): void {
+    if (quant < 6) setQuant(quant + 1)
   }
 
   return (
@@ -27,5 +27,5 @@ export default function QuantityCard({ price }: any) {
         <SvgLessButton onClick={plus} />
       </div>
     </div>
-  );
+  )
 }

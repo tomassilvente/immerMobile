@@ -1,8 +1,9 @@
-import SvgCalendarOrange from "../../../../../public/assets/Icons/CalendarOrange";
-import SvgClock from "../../../../../public/assets/Icons/Clock";
-import SvgLocationOrange from "../../../../../public/assets/Icons/LocationOrange";
+import React from 'react'
+import SvgCalendarOrange from '../../../../../public/assets/Icons/CalendarOrange'
+import SvgClock from '../../../../../public/assets/Icons/Clock'
+import SvgLocationOrange from '../../../../../public/assets/Icons/LocationOrange'
 
-export default function ConfirmationDetails({ date, time, location }: any) {
+export default function ConfirmationDetails ({ date, time, location }: any): JSX.Element {
   return (
     <div>
       <p className="text-xl ml-3 mt-10">Event Details</p>
@@ -21,5 +22,5 @@ export default function ConfirmationDetails({ date, time, location }: any) {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,16 +1,16 @@
-import Image from "next/image";
-import SvgBackButtonBlack from "../../../../../public/assets/Icons/BackButtonBlack";
+import React from 'react'
+import Image from 'next/image'
+import SvgBackButtonBlack from '../../../../../public/assets/Icons/BackButtonBlack'
+import SvgLikeButtonBlack from '../../../../../public/assets/Icons/LikeButtonBlack'
+import SvgShareButtonBlack from '../../../../../public/assets/Icons/shareButtonBlack'
+import Link from 'next/link'
 
-import SvgLikeButtonBlack from "../../../../../public/assets/Icons/LikeButtonBlack";
-import SvgShareButtonBlack from "../../../../../public/assets/Icons/shareButtonBlack";
-import Link from "next/link";
-
-export default function ConfirmationHeader({
+export default function ConfirmationHeader ({
   eventName,
   location,
   section,
-  details,
-}: any) {
+  details
+}: any): JSX.Element {
   return (
     <>
       <div className="grid grid-cols-12">
@@ -52,5 +52,5 @@ export default function ConfirmationHeader({
         </button>
       </Link>
     </>
-  );
+  )
 }

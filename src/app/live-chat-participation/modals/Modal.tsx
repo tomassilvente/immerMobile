@@ -1,10 +1,10 @@
 // Modal.tsx
 // Represents a generic modal component with a transparent overlay
-import React from "react";
+import React from 'react'
 
 interface ModalProps {
-  onClose: () => void; // Callback function for closing the modal
-  children: React.ReactNode;
+  onClose: () => void // Callback function for closing the modal
+  children: React.ReactNode
 }
 
 // Modal component with a transparent overlay
@@ -18,7 +18,7 @@ const Modal: React.FC<ModalProps> = ({ children, onClose }) => {
       ></div>
       <div className="bg-gray-400 p-1 rounded-full z-10">{children}</div>
     </div>
-  );
-};
+  )
+}
 
-export default Modal;
+export default Modal

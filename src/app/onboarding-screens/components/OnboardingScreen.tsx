@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react'
 
 interface OnboardingScreenProps {
-  title: string;
-  description: string;
-  pageNumber: number;
-  totalPages: number;
-  onNext: () => void;
-  onSkipClick: () => void;
-  isLastScreen: boolean;
-  backgroundImage: string;
+  title: string
+  description: string
+  pageNumber: number
+  totalPages: number
+  onNext: () => void
+  onSkipClick: () => void
+  isLastScreen: boolean
+  backgroundImage: string
 }
 
 const OnboardingScreen: React.FC<OnboardingScreenProps> = ({
@@ -19,7 +19,7 @@ const OnboardingScreen: React.FC<OnboardingScreenProps> = ({
   onSkipClick,
   onNext,
   backgroundImage,
-  isLastScreen,
+  isLastScreen
 }) => {
   return (
     <div
@@ -51,7 +51,7 @@ const OnboardingScreen: React.FC<OnboardingScreenProps> = ({
                 <div
                   key={index}
                   className={`w-2 h-2 bg-orange-500 rounded-full mx-1 ${
-                    index === pageNumber - 1 ? "opacity-100" : "opacity-50"
+                    index === pageNumber - 1 ? 'opacity-100' : 'opacity-50'
                   }`}
                 />
               ))}
@@ -76,7 +76,7 @@ const OnboardingScreen: React.FC<OnboardingScreenProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default OnboardingScreen;
+export default OnboardingScreen

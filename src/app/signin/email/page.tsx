@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 'use client'
 import React, { useState } from 'react'
 import SvgCheckBoxAccepted from '../../../../public/assets/Icons/CheckoxAccepted'
@@ -27,12 +28,12 @@ export default function SignInWithEmail (): JSX.Element {
   const [isFeedOpen, setIsFeedOpen] = useState(false)
   const [wrong, setWrong] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const setFeedClose = () => {
+  const setFeedClose = (): void => {
     setIsFeedOpen(false)
     setWrong(true)
   }
@@ -50,20 +51,22 @@ export default function SignInWithEmail (): JSX.Element {
     return valid
   }
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault()
 
     if (!validateFormData()) return
 
-    const response = await loginUser(formData)
+    // ! It is not correct to call a void function inside another one, I will try to fix it later
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
+    const response: any = await loginUser(formData)
+    console.log(response)
 
     if (response.ok) {
-      router.push("/home");
+      router.push('/home')
     } else {
       setIsFeedOpen(true)
     }
     const res = await response.json()
-    console.log(res)
     localStorage.setItem("userId", res.user._id)
     localStorage.setItem("token", res.token)
   };
@@ -72,99 +75,99 @@ export default function SignInWithEmail (): JSX.Element {
 
   return (
     <div className="font-Inter relative max-w-[480px] m-auto">
-    <div className="m-5 text-center">
-      <p className="text-4xl mt-8 font-semibold">Welcome back!</p>
-      <p className="text-lg font-light text-[#767676] mt-10">
-        Login to your account.
-      </p>
-      {wrong
-        ? (
-        <div className="flex text-start text-white bg-[#ff3030] mt-8 rounded-md">
-          <SvgAlertIcon className="mx-2" width={50} height={50} />
-          <p>
-            Incorrect email or password. 2 login attemps remaining before the
-            account is blocked.
-          </p>
-        </div>
-          )
-        : (
-            ''
-          )}
-      <form className="text-start mt-10" onSubmit={handleSubmit}>
-        <p className="text-xl mt-5">Email</p>
-        <input
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black"
-          placeholder="Enter Your Email"
-          type="email"
-        />
-        <p className="text-xl mt-5">Password</p>
-        <div>
+      <div className="m-5 text-center">
+        <p className="text-4xl mt-8 font-semibold">Welcome back!</p>
+        <p className="text-lg font-light text-[#767676] mt-10">
+          Login to your account.
+        </p>
+        {wrong
+          ? (
+            <div className="flex text-start text-white bg-[#ff3030] mt-8 rounded-md">
+              <SvgAlertIcon className="mx-2" width={50} height={50} />
+              <p>
+                Incorrect email or password. 2 login attemps remaining before the
+                account is blocked.
+              </p>
+            </div>
+            )
+          : (
+              ''
+            )}
+        <form className="text-start mt-10" onSubmit={handleSubmit}>
+          <p className="text-xl mt-5">Email</p>
           <input
-            name="password"
-            value={formData.password}
+            name="email"
+            value={formData.email}
             onChange={handleChange}
             className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black"
-            placeholder="Enter Your Password"
-            type="password"
+            placeholder="Enter Your Email"
+            type="email"
           />
-          {errors.password && (
-            <span className="text-sm font-light text-[#ff3c3c] mt-3">
-              {errors.password}
+          <p className="text-xl mt-5">Password</p>
+          <div>
+            <input
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black"
+              placeholder="Enter Your Password"
+              type="password"
+            />
+            {errors.password !== '' && (
+              <span className="text-sm font-light text-[#ff3c3c] mt-3">
+                {errors.password}
+              </span>
+            )}
+            <br />
+            <span className="font-light text-[#767676]">
+              At least 8 characters, 1 uppercase letter, 1 number, 1 symbol
             </span>
-          )}
-          <br />
-          <span className="font-light text-[#767676]">
-            At least 8 characters, 1 uppercase letter, 1 number, 1 symbol
-          </span>
-        </div>
-        <div className="flex mt-10">
-          {accepted
-            ? (
-            <SvgCheckBoxAccepted
-              onClick={toggleAccepted}
-              height={25}
-              width={25}
-              className="ml-1"
-            />
-              )
-            : (
-            <SvgCheckBoxUnaccepted
-              onClick={toggleAccepted}
-              height={25}
-              width={25}
-              className="ml-1"
-            />
-              )}
-          <label className="ml-2 text-sm font-light text-[#767676]">
-            Remember me
-          </label>
-          <Link
-            className="ml-[43%] text-sm font-semibold"
-            href={'/signin/password-forgot'}
-          >
-            Forgot Password?
-          </Link>
-        </div>
-        <SignButton
-          onClick={handleSubmit}
-          able={!Object.values(errors).some(Boolean)}
-          title="Login"
+          </div>
+          <div className="flex mt-10">
+            {accepted
+              ? (
+                <SvgCheckBoxAccepted
+                  onClick={toggleAccepted}
+                  height={25}
+                  width={25}
+                  className="ml-1"
+                />
+                )
+              : (
+                <SvgCheckBoxUnaccepted
+                  onClick={toggleAccepted}
+                  height={25}
+                  width={25}
+                  className="ml-1"
+                />
+                )}
+            <label className="ml-2 text-sm font-light text-[#767676]">
+              Remember me
+            </label>
+            <Link
+              className="ml-[43%] text-sm font-semibold"
+              href={'/signin/password-forgot'}
+            >
+              Forgot Password?
+            </Link>
+          </div>
+          <SignButton
+            onClick={handleSubmit}
+            able={!Object.values(errors).some(Boolean)}
+            title="Login"
+          />
+        </form>
+        <Feed
+          title={'Account blocked'}
+          title2={
+            "check your email and try again or sign up if you don't have an account."
+          }
+          isFeedOpen={isFeedOpen}
+          setFeedClose={setFeedClose}
+          buttonText={'close'}
+          link={false}
         />
-      </form>
-      <Feed
-        title={'Account blocked'}
-        title2={
-          "check your email and try again or sign up if you don't have an account."
-        }
-        isFeedOpen={isFeedOpen}
-        setFeedClose={setFeedClose}
-        buttonText={'close'}
-        link={false}
-      />
-    </div>
+      </div>
     </div>
   )
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable react/no-unescaped-entities */
 'use client'
 import React, { useState } from 'react'
@@ -15,7 +16,7 @@ export default function PasswordForgot (): JSX.Element {
     setWrong(true)
   }
 
-  const setFeedClose = () => {
+  const setFeedClose = (): void => {
     setIsFeedOpen(false)
   }
 

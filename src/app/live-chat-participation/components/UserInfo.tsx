@@ -1,6 +1,8 @@
+import React from 'react'
+
 interface UserInfoProps {
-  userName: string;
-  userImage: string;
+  userName: string
+  userImage: string
 }
 
 const UserInfo: React.FC<UserInfoProps> = ({ userName, userImage }) => {
@@ -15,7 +17,7 @@ const UserInfo: React.FC<UserInfoProps> = ({ userName, userImage }) => {
       {/* Display user name */}
       <p className="user-name ml-2 font-medium text-white">{userName}</p>
     </div>
-  );
-};
+  )
+}
 
-export default UserInfo;
+export default UserInfo
