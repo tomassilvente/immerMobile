@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import SvgCheckBoxAccepted from '../../../../public/assets/Icons/CheckoxAccepted'
 import SvgCheckBoxUnaccepted from '../../../../public/assets/Icons/CheckBoxUnaccepted'
 import Link from 'next/link'
-import { loginUser } from '../../../api/auth/loginUser'
+import { loginUser, User } from '../../../api/auth/loginUser'
 import SvgAlertIcon from '../../../../public/assets/Icons/AlertIcon'
 import Feed from '../components/Feed'
 import SignButton from 'app/signup/components/SignButton'
@@ -58,17 +58,17 @@ export default function SignInWithEmail (): JSX.Element {
 
     // ! It is not correct to call a void function inside another one, I will try to fix it later
     // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
-    const response: any = await loginUser(formData)
+    const response: { token: string, user: User } = await loginUser(formData)
     console.log(response)
 
-    if (response.ok) {
+    if (response.token !== undefined && response.token !== null) {
       router.push('/home')
     } else {
       setIsFeedOpen(true)
     }
-    const res = await response.json()
-    localStorage.setItem("userId", res.user._id)
-    localStorage.setItem("token", res.token)
+    //const res = await response.json()
+    localStorage.setItem("userId", response.user._id)
+    localStorage.setItem("token", response.token)
   };
 
   const toggleAccepted = (): void => { setAccepted((prev) => !prev) }
