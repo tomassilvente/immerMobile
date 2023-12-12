@@ -1,18 +1,5 @@
 import React from 'react'
-
-interface Data {
-  msg: string
-  time: string
-  byUser: boolean
-}
-
-interface ChatData {
-  chat: Data
-}
-
-interface Dataset {
-  dataset: Data[]
-}
+import { type ChatData, type Dataset } from '../../types/support.interfaces'
 
 const Chat = ({ chat }: ChatData): JSX.Element => {
   return (

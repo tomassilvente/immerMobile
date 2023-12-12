@@ -9,11 +9,7 @@ import SvgAlertIcon from '../../../../public/assets/Icons/AlertIcon'
 import Feed from '../../../components/SignIn/Feed'
 import SignButton from '../../../components/SignUp/SignButton'
 import { useRouter } from 'next/navigation'
-
-interface FormData {
-  email: string
-  password: string
-}
+import { type FormData } from '../../../types/signin.interfaces'
 
 export default function SignInWithEmail (): JSX.Element {
   const router = useRouter()

@@ -1,10 +1,7 @@
 import React from 'react'
 import FAQ from './FAQ'
+import { type faqs } from '../../types/support.interfaces'
 
-interface faqs {
-  title: string
-  desc: string
-}
 const FAQs = ({ dataset }: { dataset: faqs[] }): JSX.Element => {
   return (
         <div className=" flex flex-col gap-2">

@@ -1,13 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-
-interface CategoryCardsProps {
-  img: string
-  social: string
-  link: string
-  w: number
-  h: number
-}
+import { type CategoryCardsProps } from '../../types/eventcompanion.interfaces'
 
 export default function CompanionCards ({
   img,

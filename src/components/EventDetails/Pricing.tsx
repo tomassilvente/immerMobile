@@ -1,11 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-
-interface pricingProps {
-  name: string
-  price: number
-  availability: number
-}
+import { type pricingProps } from '../../types/event.details'
 
 export default function CompanionCards ({ name, price, availability }: pricingProps): JSX.Element {
   return (

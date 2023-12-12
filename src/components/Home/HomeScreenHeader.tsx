@@ -1,12 +1,9 @@
 import React from 'react'
-import Search from '../Search'
+import Search from '../_common/components/Search'
 // Icons
 import SvgLocationLight from '../../../public/assets/Icons/LocationLight'
 import SvgNotification1 from '../../../public/assets/Icons/Notification1'
-
-interface homeScreenProps {
-  location: string
-}
+import { type homeScreenProps } from '../../types/home.interfaces'
 
 const notifications = 2
 

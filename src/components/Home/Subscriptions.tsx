@@ -3,17 +3,7 @@ import Image from 'next/image'
 import React, {
   useState
 } from 'react'
-
-interface Story {
-  storyId?: string
-  live: boolean
-  profilePic: string
-  user: string
-}
-
-interface SubscriptionsProps {
-  stories: Story[]
-}
+import { type SubscriptionsProps } from '../../types/home.interfaces'
 
 export default function Subscriptions ({ stories }: SubscriptionsProps): JSX.Element {
   const [isFeedOpen, setIsFeedOpen] = useState(false)

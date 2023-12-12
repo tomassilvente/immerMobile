@@ -1,5 +1,5 @@
 import React from 'react'
-import TicketCard from './ticketCard'
+import TicketCard from './TicketCard'
 import { tickets } from './dummyTickets'
 
 const UpcomingTickets = (): JSX.Element => {

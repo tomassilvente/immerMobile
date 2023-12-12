@@ -5,20 +5,14 @@ import Image from 'next/image'
 import SvgCalendarOrange from '../../../public/assets/Icons/CalendarOrange'
 import SvgClock from '../../../public/assets/Icons/Clock'
 import SvgLocationOrange from '../../../public/assets/Icons/LocationOrange'
-
-interface CardProps {
-  eventDay: string
-  eventTime: string
-  eventLocation: string
-  eventImg: string
-}
+import { type CardRecommendedProps } from '../../types/home.interfaces'
 
 export default function RecommendedCards ({
   eventDay,
   eventTime,
   eventLocation,
   eventImg
-}: CardProps): JSX.Element {
+}: CardRecommendedProps): JSX.Element {
   return (
     <div className="rounded-xl shadow-xl text-sm mb-10 w-[240px] flex-none mr-6">
       <Link className="" href="/event-details/1">

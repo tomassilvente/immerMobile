@@ -1,25 +1,5 @@
 import React from 'react'
-
-interface Message {
-  _id: string
-  senderId: string
-  receiverId: string
-  content: string
-  message: string
-}
-
-interface Chat {
-  userId: string
-  username: string
-  messages: Message[]
-}
-
-interface ChatWindowProps {
-  currentChat: Chat | null
-  messageInput: string
-  setMessageInput: React.Dispatch<React.SetStateAction<string>>
-  handleSendButtonClick: () => void
-}
+import { type ChatWindowProps } from '../../types/livechat.interfaces'
 
 const ChatWindow: React.FC<ChatWindowProps> = ({
   currentChat,

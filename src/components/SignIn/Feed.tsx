@@ -1,15 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import SvgWarningIconBig from '../../../public/assets/Icons/WarningIconBig'
-
-interface FeedProps {
-  buttonText: string
-  title: string
-  title2: string
-  isFeedOpen: boolean
-  setFeedClose: () => void
-  link: boolean
-}
+import { type FeedProps } from '../../types/signin.interfaces'
 
 export default function Feed ({
   buttonText,

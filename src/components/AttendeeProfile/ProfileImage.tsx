@@ -1,10 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-
-interface ProfileImageProps {
-  headerImgSrc: string
-  avatarImgSrc: string
-}
+import { type ProfileImageProps } from '../../types/attendeeprofile.interfaces'
 
 const ProfileImage: React.FC<ProfileImageProps> = ({
   headerImgSrc,

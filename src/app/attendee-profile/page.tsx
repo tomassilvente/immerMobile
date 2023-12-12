@@ -30,7 +30,6 @@ const Page = (): JSX.Element => {
 
   return (
     <MobileLayout>
-      <div>
         <div className="relative flex px-[14px] gap-5 items-center py-5">
           <Link href="" className="action-button">
             <BackButton />
@@ -114,7 +113,6 @@ const Page = (): JSX.Element => {
           </div>
           <div className="px-[14px]">{renderTabContent()}</div>
         </div>
-      </div>
     </MobileLayout>
   )
 }

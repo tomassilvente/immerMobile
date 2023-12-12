@@ -1,5 +1,5 @@
 import React from 'react'
-import LargeCard from '../LargeCard'
+import LargeCard from '../_common/components/LargeCard'
 import DemoData from '../../../public/data/DemoData.json'
 
 export default function EventsNear (): JSX.Element {

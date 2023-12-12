@@ -1,14 +1,5 @@
 import React from 'react'
-
-interface InputFieldProps {
-  label: string
-  name: string
-  value: string
-  error: string
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-  placeholder: string
-  type: 'text' | 'password' | 'email'
-}
+import { type InputFieldProps } from '../../types/signup.interfaces'
 
 export const InputField: React.FC<InputFieldProps> = ({
   label,

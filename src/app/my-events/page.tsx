@@ -1,6 +1,6 @@
 import React from 'react'
-import Search from '../../components/Search'
-import LargeCard from '../../components/LargeCard'
+import Search from '../../components/_common/components/Search'
+import LargeCard from '../../components/_common/components/LargeCard'
 // Icons
 import SvgBackVector from '../../../public/assets/Icons/BackVector'
 // Data

@@ -1,8 +1,5 @@
 import React from 'react'
-
-interface CommentInputProps {
-  placeholder: string
-}
+import { type CommentInputProps } from '../../types/support.interfaces'
 
 const CommentInput = ({ placeholder }: CommentInputProps): JSX.Element => {
   return (

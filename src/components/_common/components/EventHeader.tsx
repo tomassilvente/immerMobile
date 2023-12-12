@@ -1,8 +1,8 @@
 // Icons
 import React from 'react'
-import SvgBackButton from '../../public/assets/Icons/BackButton'
-import SvgLikeButton from '../../public/assets/Icons/LikeButton'
-import SVGShare from '../../public/assets/Icons/shareButton'
+import SvgBackButton from '../../../../public/assets/Icons/BackButton'
+import SvgLikeButton from '../../../../public/assets/Icons/LikeButton'
+import SVGShare from '../../../../public/assets/Icons/shareButton'
 
 export default function EventHeader ({ eventImg, setShareOpen }: any): JSX.Element {
   return (

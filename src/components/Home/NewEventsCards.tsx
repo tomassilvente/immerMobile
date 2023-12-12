@@ -1,15 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-
-interface CardProps {
-  eventDay: string
-  eventTime: string
-  eventLocation: string
-  eventImg: string
-  eventOrganizer: string
-  eventPrice: number
-}
+import { type CardProps } from '../../types/home.interfaces'
 
 export default function NewEventsCards ({
   eventDay,

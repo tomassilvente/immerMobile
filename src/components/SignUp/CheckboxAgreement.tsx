@@ -1,11 +1,7 @@
 import React from 'react'
 import SvgCheckBoxUnaccepted from '../../../public/assets/Icons/CheckBoxUnaccepted'
 import SvgCheckBoxAccepted from '../../../public/assets/Icons/CheckoxAccepted'
-
-interface CheckboxAgreementProps {
-  accepted: boolean
-  toggleAccepted: () => void
-}
+import { type CheckboxAgreementProps } from '../../types/signup.interfaces'
 
 export const CheckboxAgreement: React.FC<CheckboxAgreementProps> = ({
   accepted,

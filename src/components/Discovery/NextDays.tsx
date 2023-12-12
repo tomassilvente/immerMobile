@@ -1,14 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-
-interface Day {
-  day: string
-  number: string
-}
-
-interface NextDaysProps {
-  Days: Day[]
-}
+import { type NextDaysProps } from '../../types/discovery.interfaces'
 
 export default function NextDays ({ Days }: NextDaysProps): JSX.Element {
   const [activeDayIndex, setActiveDayIndex] = useState<number | null>(null)

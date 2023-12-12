@@ -1,6 +1,6 @@
 // Icons
 import React from 'react'
-import SvgMagnify from '../../public/assets/Icons/Magnify'
+import SvgMagnify from '../../../../public/assets/Icons/Magnify'
 
 export default function Search ({ hold }: any): JSX.Element {
   return (

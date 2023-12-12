@@ -1,5 +1,8 @@
-// types.ts
-// Defines the ChatMessage type for representing chat messages
+export interface UserInfoProps {
+  userName: string
+  userImage: string
+}
+
 export interface ChatMessage {
   content: string
   user: {

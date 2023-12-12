@@ -1,11 +1,7 @@
 'use client'
 import Image from 'next/image'
 import React from 'react'
-
-interface sendDetails {
-  profilePic: string
-  name: string
-}
+import { type sendDetails } from '../../types/event.details'
 
 export default function send (props: sendDetails): JSX.Element {
   return (

@@ -1,19 +1,5 @@
 import React from 'react'
-
-interface User {
-  _id: string
-  fullName: string
-  email: string
-  image: string
-  is_online: string
-  token: string
-  docs: any
-}
-
-interface UserListProps {
-  users: { docs: User[] } | null
-  handleUserListClick: (id: string) => void
-}
+import { type UserListProps } from '../../types/livechat.interfaces'
 
 const UserList: React.FC<UserListProps> = ({ users, handleUserListClick }) => {
   return (

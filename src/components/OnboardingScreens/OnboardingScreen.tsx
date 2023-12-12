@@ -1,15 +1,5 @@
 import React from 'react'
-
-interface OnboardingScreenProps {
-  title: string
-  description: string
-  pageNumber: number
-  totalPages: number
-  onNext: () => void
-  onSkipClick: () => void
-  isLastScreen: boolean
-  backgroundImage: string
-}
+import { type OnboardingScreenProps } from '../../types/onboardingscreen.interfaces'
 
 const OnboardingScreen: React.FC<OnboardingScreenProps> = ({
   title,

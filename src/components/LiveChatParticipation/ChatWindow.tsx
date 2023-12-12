@@ -2,7 +2,7 @@
 // Represents the main chat window that displays messages and allows sending new messages
 import React, { useState } from 'react'
 import ChatInput from './ChatInput'
-import { type ChatMessage } from './types' // Import the ChatMessage type
+import { type ChatMessage } from '../../types/livechatparticipation.interfaces'
 
 interface ChatWindowProps {
   onMessage: (message: ChatMessage) => void // Callback function for adding a new message

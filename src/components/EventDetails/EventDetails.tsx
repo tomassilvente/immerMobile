@@ -2,14 +2,7 @@ import React from 'react'
 import Pricing from './Pricing'
 import SvgCalendarOrange from '../../../public/assets/Icons/CalendarOrange'
 import SvgClock from '../../../public/assets/Icons/Clock'
-
-interface detailProps {
-  eventName: string
-  eventPrice: number
-  eventAvailability: number
-  eventDay: string
-  eventTime: string
-}
+import { type detailProps } from '../../types/event.details'
 
 export default function eventDetails ({ eventName, eventDay, eventPrice, eventTime, eventAvailability }: detailProps): JSX.Element {
   return (

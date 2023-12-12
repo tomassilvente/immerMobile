@@ -1,14 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
+import { type ModalProps } from '../../../types/ticketcancellation.interfaces'
 
-interface Props {
-  img: string
-  text: string
-  btnText: string
-  btnAction?: () => void
-}
-
-const ModalContent = ({ img, text, btnText, btnAction }: Props): JSX.Element => {
+const ModalContent = ({ img, text, btnText, btnAction }: ModalProps): JSX.Element => {
   return (
     <div className='flex flex-col my-auto items-center gap-7'>
         <Image className='h-32 w-32' src={img} width={0} height={0} alt="img" />

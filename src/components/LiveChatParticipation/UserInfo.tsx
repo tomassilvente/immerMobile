@@ -1,9 +1,5 @@
 import React from 'react'
-
-interface UserInfoProps {
-  userName: string
-  userImage: string
-}
+import { type UserInfoProps } from '../../types/livechatparticipation.interfaces'
 
 const UserInfo: React.FC<UserInfoProps> = ({ userName, userImage }) => {
   return (

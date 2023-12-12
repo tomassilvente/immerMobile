@@ -1,10 +1,5 @@
 import React from 'react'
-
-interface ButtonProps {
-  title: string
-  able: boolean
-  onClick?: any
-}
+import { type ButtonProps } from '../../types/signup.interfaces'
 
 export default function SignButton ({ title, able, onClick }: ButtonProps): JSX.Element {
   return (

@@ -1,56 +1,12 @@
 import React from 'react'
-import LargeCard from '../../components/LargeCard'
-import EventHeader from '../../components/EventHeader'
+import LargeCard from '../../components/_common/components/LargeCard'
+import EventHeader from '../../components/_common/components/EventHeader'
 import DemoData from '../../../public/data/DemoData.json'
 import Link from 'next/link'
 import SvgFilterIcon from '../../../public/assets/Icons/FilterIcon'
-
+import { type CardDataProps, Days } from '../../types/discovery.interfaces'
 import NextDays from '../../components/Discovery/NextDays'
 import { MobileLayout } from '../../components/MobileLayout'
-
-interface Day {
-  day: string
-  number: string
-}
-
-const Days: Day[] = [
-  {
-    day: 'Sat',
-    number: '22 Oct'
-  },
-  {
-    day: 'Sun',
-    number: '23 Oct'
-  },
-  {
-    day: 'Mon',
-    number: '24 Oct'
-  },
-  {
-    day: 'Tue',
-    number: '25 Oct'
-  },
-  {
-    day: 'Wed',
-    number: '26 Oct'
-  },
-  {
-    day: 'Thu',
-    number: '27 Oct'
-  },
-  {
-    day: 'Fri',
-    number: '28 Oct'
-  }
-]
-
-interface CardDataProps {
-  title: string
-  image: string
-  date: string
-  time: string
-  price: number
-}
 
 const Discovery: React.FC = () => {
   return (

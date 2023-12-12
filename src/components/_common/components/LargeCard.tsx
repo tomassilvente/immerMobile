@@ -1,20 +1,11 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import SvgCalendarOrange from '../../public/assets/Icons/CalendarOrange'
-import SvgClock from '../../public/assets/Icons/Clock'
-import SvgMoreButton from '../../public/assets/Icons/MoreButton'
-import SvgLikeHeart from '../../public/assets/Icons/LikeHeart'
-
-interface CardProps {
-  eventDay: string
-  eventTime: string
-  eventImg: string
-  eventOrganizer: string
-  eventPrice: number
-  liked: boolean
-
-}
+import SvgCalendarOrange from '../../../../public/assets/Icons/CalendarOrange'
+import SvgClock from '../../../../public/assets/Icons/Clock'
+import SvgMoreButton from '../../../../public/assets/Icons/MoreButton'
+import SvgLikeHeart from '../../../../public/assets/Icons/LikeHeart'
+import { type CardProps } from '../../../types/common.interfaces'
 
 export default function EventsNearCards ({ eventDay, eventOrganizer, eventTime, eventImg, eventPrice, liked = false }: CardProps): JSX.Element {
   // const [liked, setLiked] = useState(true)

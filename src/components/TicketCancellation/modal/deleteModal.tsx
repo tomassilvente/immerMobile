@@ -2,12 +2,9 @@
 
 import React, { useState } from 'react'
 import ModalContent from './ModalContent'
+import { type DeleteModalProps } from '../../../types/ticketcancellation.interfaces'
 
-interface Props {
-  close: () => void
-}
-
-const DeleteModal = ({ close }: Props): JSX.Element => {
+const DeleteModal = ({ close }: DeleteModalProps): JSX.Element => {
   const [cancelled, setCancelled] = useState<string>('pending')
 
   return (
