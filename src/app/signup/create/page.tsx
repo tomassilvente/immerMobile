@@ -3,10 +3,10 @@
 
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import SignButton from '../components/SignButton'
-import { registerUser } from '../../../api/auth/registerUser'
-import { InputField } from './components/InputField'
-import { CheckboxAgreement } from './components/CheckboxAgreement'
+import SignButton from '../../../components/SignUp/SignButton'
+import { registerUser } from '../../../server-actions/auth/registerUser'
+import { InputField } from '../../../components/SignUp/InputField'
+import { CheckboxAgreement } from '../../../components/SignUp/CheckboxAgreement'
 
 export default function Create (): JSX.Element {
   const router = useRouter()

@@ -4,11 +4,11 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { MobileLayout } from '../../components/MobileLayout'
 import Image from 'next/image'
-import Events from './components/Events'
-import Interests from './components/Interests'
-import Subscriptions from './components/Subscriptions'
-import BackButton from '../../common/buttons/BackButton'
-import MoreButton from '../../common/buttons/MoreButton'
+import Events from '../../components/AttendeeProfile/Events'
+import Interests from '../../components/AttendeeProfile/Interests'
+import Subscriptions from '../../components/AttendeeProfile/Subscriptions'
+import BackButton from '../../components/_common/buttons/BackButton'
+import MoreButton from '../../components/_common/buttons/MoreButton'
 
 const Page = (): JSX.Element => {
   const [selectedTab, setSelectedTab] = useState<number>(0)

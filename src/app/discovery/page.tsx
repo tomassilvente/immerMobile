@@ -5,7 +5,7 @@ import DemoData from '../../../public/data/DemoData.json'
 import Link from 'next/link'
 import SvgFilterIcon from '../../../public/assets/Icons/FilterIcon'
 
-import NextDays from './components/NextDays'
+import NextDays from '../../components/Discovery/NextDays'
 import { MobileLayout } from '../../components/MobileLayout'
 
 interface Day {

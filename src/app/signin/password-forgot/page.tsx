@@ -2,10 +2,10 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client'
 import React, { useState } from 'react'
-import SignButton from 'app/signup/components/SignButton'
-import Feed from '../components/Feed'
-import ErrorMessage from './components/ErrorMessage'
-import ModalMessage from './components/ModalMessage'
+import SignButton from '../../../components/SignUp/SignButton'
+import Feed from '../../../components/SignIn/Feed'
+import ErrorMessage from '../../../components/SignIn/ErrorMessage'
+import ModalMessage from '../../../components/SignIn/ModalMessage'
 
 export default function PasswordForgot (): JSX.Element {
   const [isFeedOpen, setIsFeedOpen] = useState(false)

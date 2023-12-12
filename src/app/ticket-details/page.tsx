@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 // Components
-import Details from './components/Details'
-import BottomTicket from './components/BottomTicket'
+import Details from '../../components/TicketDetails/Details'
+import BottomTicket from '../../components/TicketDetails/BottomTicket'
 // Icons
 import SvgBackButtonBlack from '../../../public/assets/Icons/BackButtonBlack'
 import SvgShareButtonBlack from '../../../public/assets/Icons/shareButtonBlack'

@@ -2,11 +2,11 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { MobileLayout } from '../../components/MobileLayout'
-import UpcomingTickets from './UpcomingTickets'
-import AttendedTickets from './AttendedTickets'
-import CancelledTickets from './CancelledTickets'
-import BackButton from '../../common/buttons/BackButton'
-import SearchButton from '../../common/buttons/SearchButton'
+import UpcomingTickets from '../../components/TicketCancellation/UpcomingTickets'
+import AttendedTickets from '../../components/TicketCancellation/AttendedTickets'
+import CancelledTickets from '../../components/TicketCancellation/CancelledTickets'
+import BackButton from '../../components/_common/buttons/BackButton'
+import SearchButton from '../../components/_common/buttons/SearchButton'
 
 const tabs = ['Upcoming', 'Attended', 'Cancelled']
 

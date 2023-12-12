@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import BackButton from '../../../common/buttons/BackButton'
-import Chats from './components/Chats'
+import BackButton from '../../../components/_common/buttons/BackButton'
+import Chats from '../../../components/Support/Chats'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ weight: '400', subsets: ['latin'] })

@@ -1,9 +1,9 @@
 import React from 'react'
 import { MobileLayout } from '../../../components/MobileLayout'
 import Link from 'next/link'
-import BackButton from '../../../common/buttons/BackButton'
-import CommentInput from '../components/CommentInput'
-import Submit from '../components/Submit'
+import BackButton from '../../../components/_common/buttons/BackButton'
+import CommentInput from '../../../components/Support/CommentInput'
+import Submit from '../../../components/Support/Submit'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ weight: '400', subsets: ['latin'] })

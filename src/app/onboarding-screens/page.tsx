@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import WelcomeScreen from './components/WelcomeScreen'
-import OnboardingScreen from './components/OnboardingScreen'
+import WelcomeScreen from '../../components/OnboardingScreens/WelcomeScreen'
+import OnboardingScreen from '../../components/OnboardingScreens/OnboardingScreen'
 
 const onboardingData = [
   {

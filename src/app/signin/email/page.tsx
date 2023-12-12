@@ -4,10 +4,10 @@ import React, { useState } from 'react'
 import SvgCheckBoxAccepted from '../../../../public/assets/Icons/CheckoxAccepted'
 import SvgCheckBoxUnaccepted from '../../../../public/assets/Icons/CheckBoxUnaccepted'
 import Link from 'next/link'
-import { loginUser } from '../../../api/auth/loginUser'
+import { loginUser } from '../../../server-actions/auth/loginUser'
 import SvgAlertIcon from '../../../../public/assets/Icons/AlertIcon'
-import Feed from '../components/Feed'
-import SignButton from 'app/signup/components/SignButton'
+import Feed from '../../../components/SignIn/Feed'
+import SignButton from '../../../components/SignUp/SignButton'
 import { useRouter } from 'next/navigation'
 
 interface FormData {

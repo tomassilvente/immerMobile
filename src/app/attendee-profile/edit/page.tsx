@@ -1,9 +1,9 @@
 import React from 'react'
 import { MobileLayout } from '../../../components/MobileLayout'
 import Link from 'next/link'
-import ProfileImage from './components/ProfileImage'
-import InputField from './components/InputField'
-import BackButton from '../../../common/buttons/BackButton'
+import ProfileImage from '../../../components/AttendeeProfile/ProfileImage'
+import InputField from '../../../components/AttendeeProfile/InputField'
+import BackButton from '../../../components/_common/buttons/BackButton'
 
 const EditProfile: React.FC = () => {
   const inputFields = [

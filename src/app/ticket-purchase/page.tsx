@@ -1,7 +1,7 @@
 import React from 'react'
 import { MobileLayout } from '../../components/MobileLayout'
-import Header from './components/Header'
-import TicketSelection from './components/TicketSelection'
+import Header from '../../components/TicketPurchase/Header'
+import TicketSelection from '../../components/TicketPurchase/TicketSelection'
 
 export default function Discovery (): JSX.Element {
   return (

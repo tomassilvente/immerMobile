@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
-import SignButton from 'app/signup/components/SignButton'
+import SignButton from '../../../components/SignUp/SignButton'
 import Link from 'next/link'
 
 export default function Submitted (): JSX.Element {
