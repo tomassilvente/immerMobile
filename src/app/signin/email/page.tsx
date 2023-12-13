@@ -4,17 +4,13 @@ import React, { useState } from 'react'
 import SvgCheckBoxAccepted from '../../../../public/assets/Icons/CheckoxAccepted'
 import SvgCheckBoxUnaccepted from '../../../../public/assets/Icons/CheckBoxUnaccepted'
 import Link from 'next/link'
-import { loginUser, User } from '../../../api/auth/loginUser'
+import { loginUser } from '../../../server-actions/auth/loginUser'
 import SvgAlertIcon from '../../../../public/assets/Icons/AlertIcon'
-import Feed from '../components/Feed'
-import SignButton from 'app/signup/components/SignButton'
+import Feed from '../../../components/SignIn/Feed'
+import SignButton from '../../../components/SignUp/SignButton'
 import { useRouter } from 'next/navigation'
-
-
-interface FormData {
-  email: string
-  password: string
-}
+import { type FormData } from '../../../types/signin.interfaces'
+import { type User } from '../../../server-actions/auth/loginUser'
 
 export default function SignInWithEmail (): JSX.Element {
   const router = useRouter()
@@ -62,7 +58,7 @@ export default function SignInWithEmail (): JSX.Element {
     console.log(response)
 
     if (response.token !== undefined && response.token !== null) {
-      router.push('/home')
+      router.push('/')
     } else {
       setIsFeedOpen(true)
     }

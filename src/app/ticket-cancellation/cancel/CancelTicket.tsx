@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import DeleteModal from '../components/modal/deleteModal'
+import DeleteModal from '../../../components/TicketCancellation/modal/DeleteModal'
 
 interface Props {
   id: string

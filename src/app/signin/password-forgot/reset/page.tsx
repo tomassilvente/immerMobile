@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import SignButton from 'app/signup/components/SignButton'
+import SignButton from '../../../../components/SignUp/SignButton'
 
 export default function PasswordChange (): JSX.Element {
   // First Password Validations

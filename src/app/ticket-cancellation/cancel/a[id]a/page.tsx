@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import { MobileLayout } from '../../../../components/MobileLayout'
 import CancelTicket from '../CancelTicket'
-import BackButton from '../../../../common/buttons/BackButton'
+import BackButton from '../../../../components/_common/buttons/BackButton'
 
 const generateStaticParams = (): JSX.Element[] => {
   const ids = [1, 2, 3, 4]

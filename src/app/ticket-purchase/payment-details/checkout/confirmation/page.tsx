@@ -1,5 +1,5 @@
 import React from 'react'
-import TicketCard from '../../components/TicketCard'
+import TicketCard from '../../../../../components/TicketPurchase/PaymentDetails/TicketCard'
 import SvgSuccessIcon from '../../../../../../public/assets/Icons/SuccessIcon'
 import DemoData from '../../../../../../public/data/DemoData.json'
 import Link from 'next/link'

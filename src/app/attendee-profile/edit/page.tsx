@@ -3,10 +3,10 @@
 import React, {useRef, useState} from "react";
 import { MobileLayout } from "../../../components/MobileLayout";
 import Link from "next/link";
-import { updateUser } from "../../../api/users/updateUser";
-import ProfileImage from "./components/ProfileImage";
-import InputField from "./components/InputField";
-import BackButton from "../../../common/buttons/BackButton";
+import { updateUser } from "../../../server-actions/users/updateUser";
+import ProfileImage from "../../../components/AttendeeProfile/ProfileImage";
+import InputField from "../../../components/AttendeeProfile/InputField";
+import BackButton from "../../../components/_common/buttons/BackButton";
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from 'react-toastify';
 import SpinnerLoader from "../../../components/SpinnerLoader";

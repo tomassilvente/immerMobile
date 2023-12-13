@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import DemoData from '../../../../public/data/DemoData.json'
-import ConfirmationDetails from './components/ConfirmationDetails'
-import ConfirmationHeader from './components/ConfirmationHeader'
-import QuantityCard from './components/QuantityCard'
+import ConfirmationDetails from '../../../components/TicketPurchase/OrderDetails/ConfirmationDetails'
+import ConfirmationHeader from '../../../components/TicketPurchase/OrderDetails/ConfirmationHeader'
+import QuantityCard from '../../../components/TicketPurchase/OrderDetails/QuantityCard'
 import { MobileLayout } from '../../../components/MobileLayout'
 
 export default function orderDetails (): JSX.Element {

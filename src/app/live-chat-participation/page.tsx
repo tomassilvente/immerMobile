@@ -1,16 +1,11 @@
 'use client'
 
-// Home.tsx
-
-// This component represents the main page of the application.
-// It includes a chat window, user information, a back button, and a modal for handling messages.
-
 import React, { useState } from 'react'
-import ChatWindow from './components/ChatWindow'
-import UserInfo from './components/UserInfo'
-import BackButton from '../../common/buttons/BackButton'
-import ChatMessageModal from './modals/ChatMessageModal'
-import { type ChatMessage } from './components/types'
+import ChatWindow from '../../components/LiveChatParticipation/ChatWindow'
+import UserInfo from '../../components/LiveChatParticipation/UserInfo'
+import BackButton from '../../components/_common/buttons/BackButton'
+import ChatMessageModal from '../../components/LiveChatParticipation/modals/ChatMessageModal'
+import { type ChatMessage } from '../../components/LiveChatParticipation/types'
 
 const Home: React.FC = () => {
   // State for tracking whether the user has liked the content

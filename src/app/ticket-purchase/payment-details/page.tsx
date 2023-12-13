@@ -1,8 +1,8 @@
 // components
 import React from 'react'
-import PaymentHeader from './components/paymentHeader'
-import Checkout from './components/Checkout'
-import BillDetails from './components/BillDetails'
+import PaymentHeader from '../../../components/TicketPurchase/PaymentDetails/paymentHeader'
+import Checkout from '../../../components/TicketPurchase/PaymentDetails/Checkout'
+import BillDetails from '../../../components/TicketPurchase/PaymentDetails/BillDetails'
 import { MobileLayout } from '../../../components/MobileLayout'
 
 export default function PaymentDetails (): JSX.Element {
