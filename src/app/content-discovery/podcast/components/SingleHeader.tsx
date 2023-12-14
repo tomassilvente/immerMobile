@@ -7,7 +7,7 @@ import SvgDownload from "../../../../../public/assets/Icons/Download"
 import SvgPlayButtonOrange from "../../../../../public/assets/Icons/PlayButtonOrange"
 
 
-export default function SingleHeader({eventImg, eventTitle, releaseDay, duration}: any){
+export default function SingleHeader({eventImg, eventTitle, releaseDay, duration, openShare}: any){
     return(
         <div className="h-[350px] grid grid-cols-12 place-items-end content-start"
             style={{
@@ -21,7 +21,7 @@ export default function SingleHeader({eventImg, eventTitle, releaseDay, duration
                     <p className="text-3xl">{eventTitle}</p>
                     <p className="text-sm font-light">{releaseDay} | {duration} min</p>
                     <div className="flex mt-5">
-                        <SvgShareCircles width={35} height={35}/>
+                        <SvgShareCircles onClick={openShare} width={35} height={35}/>
                         <SvgDownload className="ml-3" width={35} height={35}/>
                         <SvgMoreButton className="ml-3" width={35} height={35}/>
                         <SvgPlayButtonOrange className="absolute ml-[410px]" width={35} height={35}/>

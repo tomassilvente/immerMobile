@@ -1,27 +1,24 @@
-import Prissy from "../../public/assets/prissy-pic.svg"
-import Steve from "../../public/assets/steve.svg"
-import Kaima from "../../public/assets/Kaima.svg"
-import Quraimat from "../../public/assets/Quraimat.svg"
+
 const shareData = [
     {
         id: 1,
         name:"Prissy Davis",
-        profilePic:Prissy
+        profilePic:'../assets/randomProfile1.png'
     },
     {
         id: 1,
         name:"Steve Noah",
-        profilePic:Steve
+        profilePic:'../assets/randomProfile2.png'
     },
     {
         id: 1,
         name:"Kaima Owens",
-        profilePic:Kaima
+        profilePic:'../assets/randomProfile3.png'
     },
     {
         id: 1,
         name:"Quraimat Zen",
-        profilePic:Quraimat
+        profilePic:'../assets/randomProfile4.png'
     }
 ];
 

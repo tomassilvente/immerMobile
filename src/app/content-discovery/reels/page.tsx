@@ -8,8 +8,15 @@ import SvgRedHeart from "../../../../public/assets/Icons/RedHeart";
 import SvgWhiteCommentButton from "../../../../public/assets/Icons/WhiteCommentButton";
 import SvgLikeButtonWhite from "../../../../public/assets/Icons/LikeButtonWhite";
 import SvgShareCirclesWhite from "../../../../public/assets/Icons/ShareCirclesWhite";
+import Share from "../../../components/Share";
 
 export default function reels(){
+
+    const [ShareOpen, setShareOpen] = useState(false)
+
+    function openShare(){
+      setShareOpen(!ShareOpen)
+    }
 
     const [LikeButton, setLikeButton] = useState(false)
 
@@ -52,7 +59,7 @@ export default function reels(){
                     </div>
                         <SvgWhiteCommentButton  width={40} height={40} />
                         <p className="text-center">33</p>
-                        <SvgShareCirclesWhite width={32} height={40} />
+                        <SvgShareCirclesWhite onClick={openShare} width={32} height={40} />
                     </div>
                 </div>
         <div
@@ -66,7 +73,14 @@ export default function reels(){
             Your browser does not support the video tag.
           </video>
         </div>
-       
+        {ShareOpen && (
+                <div
+                   
+                    className="bg-[#000000d8]"
+                    >
+                <Share openShare={openShare}/>
+                </div>
+            )}
         </MobileLayout>
     )
 }

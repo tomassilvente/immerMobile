@@ -1,13 +1,16 @@
+"use client"
 //Icons
 import Link from "next/link";
 import SvgBackButton from "../../public/assets/Icons/BackButton";
 import SvgLikeButton from "../../public/assets/Icons/LikeButton";
 import SVGShare from "../../public/assets/Icons/shareButton";
 
-export default function EventHeader({ eventImg, setShareOpen }: any) {
+export default function EventHeader({ eventImg, openShare}: any) {
+
   return (
+    
     <div
-      className="h-[300px] grid grid-cols-12 place-items-end content-start"
+      className={` h-[300px] grid grid-cols-12 place-items-end content-start`}
       style={{
         backgroundImage: `url(${eventImg})`,
         backgroundRepeat: "no-repeat",
@@ -21,7 +24,7 @@ export default function EventHeader({ eventImg, setShareOpen }: any) {
         width={45}
         height={45}
       />
-      <SVGShare className="col-start-12 mr-3 " width={45} height={45} />
+      <SVGShare onClick={openShare} className="col-start-12 mr-3 " width={45} height={45} />
     </div>
   );
 }

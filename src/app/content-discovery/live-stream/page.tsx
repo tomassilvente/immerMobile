@@ -11,8 +11,15 @@ import SvgBookmark from "../../../../public/assets/Icons/Bookmark";
 import Link from "next/link";
 import Image from "next/image";
 import SvgFollowButton from "../../../../public/assets/Icons/FollowButton";
+import Share from "../../../components/Share";
 
 export default function content(){
+
+    const [ShareOpen, setShareOpen] = useState(false)
+
+    function openShare(){
+      setShareOpen(!ShareOpen)
+    }
 
     const [LikeButton, setLikeButton] = useState(false)
 
@@ -24,7 +31,7 @@ export default function content(){
         <div 
             >
         <MobileLayout >
-            <EventHeader eventImg={'../../assets/piano.jpeg'}/>         
+            <EventHeader shareOpen={ShareOpen} openShare={openShare} eventImg={'../../assets/piano.jpeg'}/>         
             <div className="m-4">
                 <p className="text-xl font-semibold">{DemoData.eventCompanionName}</p>
                 <p className="font-light text-xl">{DemoData.eventOrganizer}</p>
@@ -87,7 +94,13 @@ export default function content(){
                 </div>
                 
             </div>
-            
+            {ShareOpen && (
+                <div
+                    className="bg-[#000000d8]"
+                    >
+                <Share openShare={openShare}/>
+                </div>
+            )}
             </MobileLayout>
         </div>
     )

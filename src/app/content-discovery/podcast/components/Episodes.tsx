@@ -11,10 +11,12 @@ type EpisodeProps = {
     releaseDay : 'string',
     duration : 'number',
     about : 'string',
+    openShare: any
 }
 
-export default function Episodes({title, image, duration, releaseDay, about}: EpisodeProps){
+export default function Episodes({title, image, duration, releaseDay, about, openShare}: EpisodeProps){
 return(
+    <div>
     <Link href='/content-discovery/podcast/single-episode'>
         <div className="mt-5 flex">
             <Image className="rounded-md " src={image} width={70} height={70} alt={'...'} />
@@ -24,13 +26,14 @@ return(
             </div>
         </div>
         <p className="font-light text-sm text-gray-500 mt-3">{releaseDay} | {duration}min</p>
+    </Link>
         <div className="flex mt-4">
-            <SvgShareCircles width={25} height={25}/>
+            <SvgShareCircles onClick={openShare} width={25} height={25}/>
             <SvgDownload className="ml-3" width={28} height={28}/>
             <SvgMoreButton className="ml-3" width={25} height={25}/>
             <SvgPlayButtonOrange className="ml-[300px]" width={23} height={23}/>
         </div>
         <hr className="mt-3"/>
-    </Link>
+    </div>
 )
 }

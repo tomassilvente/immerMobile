@@ -13,8 +13,15 @@ import SvgRePlayWhite from "../../../../public/assets/Icons/RePlayWhite"
 import SvgRePlayOrange from "../../../../public/assets/Icons/RePlayOrange"
 import SvgShareCirclesWhite from "../../../../public/assets/Icons/ShareCirclesWhite"
 import SvgList from "../../../../public/assets/Icons/List"
+import Share from "../../../components/Share"
 
 export default function top100({}: any){
+
+    const [ShareOpen, setShareOpen] = useState(false)
+
+    function openShare(){
+      setShareOpen(!ShareOpen)
+    }
 
     const [play, setPlay] = useState(false)
     const [shuffle, setShuffle] = useState(false)
@@ -67,10 +74,18 @@ export default function top100({}: any){
                     }
                </div>
                <div className="grid grid-cols-12 mt-[50px]">
-                    <SvgShareCirclesWhite width={30} height={30} className="col-start-9 ml-[10px]"/>
+                    <SvgShareCirclesWhite onClick={openShare} width={30} height={30} className="col-start-9 ml-[10px]"/>
                     <SvgList width={27} height={25} className="col-start-10 ml-[30px]"/>
                </div>
             </div>
+            {ShareOpen && (
+                <div
+                   
+                    className="bg-[#000000d8]"
+                    >
+                <Share openShare={openShare}/>
+                </div>
+            )}
         </MobileLayout>
     )
 }

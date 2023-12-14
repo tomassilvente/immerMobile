@@ -10,7 +10,7 @@ import SvgRedHeart from "../../../../public/assets/Icons/RedHeart";
 import SvgBookmark from "../../../../public/assets/Icons/Bookmark";
 import Link from "next/link";
 import Image from "next/image";
-import SvgFollowButton from "../../../../public/assets/Icons/FollowButton";
+import Share from "../../../components/Share";
 
 export default function content(){
 
@@ -20,12 +20,18 @@ export default function content(){
         setLikeButton(!LikeButton)
     }
 
+    const [ShareOpen, setShareOpen] = useState(false)
+
+    function openShare(){
+      setShareOpen(!ShareOpen)
+    }
+  
+
     return(
-        <div 
-            >
+        <div >
         <MobileLayout >
-            <EventHeader eventImg={'../../assets/piano.jpeg'}/>         
-            <div className="m-4">
+            <EventHeader shareOpen={ShareOpen} openShare={openShare} eventImg={'../../assets/piano.jpeg'}/>         
+            <div className={`m-4 `}>
                 <p className="text-xl font-semibold">{DemoData.eventCompanionName}</p>
                 <p className="font-light text-xl">Venue | Dallas 2023 | Oceanic Festival</p>
                 <hr className="w-[35px] border-primary border-[2px] mt-2" /> 
@@ -48,7 +54,6 @@ export default function content(){
                         }
                     </div>
                     <div className="ml-10" >
-                        
                         <SvgCommentButton width={40} height={40} />
                         <p>93</p>
                     </div>
@@ -87,8 +92,16 @@ export default function content(){
                 </div>
                 
             </div>
-            
+            {ShareOpen && (
+                <div
+                   
+                    className="bg-[#000000d8]"
+                    >
+                <Share openShare={openShare}/>
+                </div>
+            )}
             </MobileLayout>
+            
         </div>
     )
 }

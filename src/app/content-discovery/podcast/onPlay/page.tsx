@@ -1,25 +1,26 @@
 "use client"
 import { MobileLayout } from "../../../../components/MobileLayout"
-import SvgShuffleIcon from "../../../../../public/assets/Icons/ShuffleIcon"
 import SvgPlayButtonOrange from "../../../../../public/assets/Icons/PlayButtonOrange"
 import { useState } from "react"
 import SvgPauseOrange from "../../../../../public/assets/Icons/PauseOrange"
-import SvgShuffleOrange from "../../../../../public/assets/Icons/ShuffleOrange"
 import Image from "next/image"
 import SvgMusicLine from "../../../../../public/assets/Icons/MusicLine"
-import SvgBackSong from "../../../../../public/assets/Icons/BackSong"
-import SvgNextSong from "../../../../../public/assets/Icons/NextSong"
-import SvgRePlayWhite from "../../../../../public/assets/Icons/RePlayWhite"
-import SvgRePlayOrange from "../../../../../public/assets/Icons/RePlayOrange"
 import SvgShareCirclesWhite from "../../../../../public/assets/Icons/ShareCirclesWhite"
 import SvgList from "../../../../../public/assets/Icons/List"
 import SvgBack30 from "../../../../../public/assets/Icons/Back30"
 import SvgFoward30 from "../../../../../public/assets/Icons/Foward30"
 import SvgSleep from "../../../../../public/assets/Icons/Sleep"
 import SvgSleepOrange from "../../../../../public/assets/Icons/SleepOrange"
+import Share from "../../../../components/Share"
 
 export default function top100({}: any){
+    const [ShareOpen, setShareOpen] = useState(false)
 
+    function openShare(){
+      setShareOpen(!ShareOpen)
+    }
+
+    
     const [play, setPlay] = useState(false)
     const [shuffle, setShuffle] = useState(false)
     const [replay, setReplay] = useState(false)
@@ -73,10 +74,17 @@ export default function top100({}: any){
                     }
                </div>
                <div className="grid grid-cols-12 mt-[50px]">
-                    <SvgShareCirclesWhite width={30} height={30} className="col-start-9 ml-[10px]"/>
+                    <SvgShareCirclesWhite onClick={openShare} width={30} height={30} className="col-start-9 ml-[10px]"/>
                     <SvgList width={27} height={25} className="col-start-10 ml-[30px]"/>
                </div>
             </div>
+            {ShareOpen && (
+                <div
+                    className="bg-[#000000d8]"
+                    >
+                <Share openShare={openShare}/>
+                </div>
+            )}
         </MobileLayout>
     )
 }

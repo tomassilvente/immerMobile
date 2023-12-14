@@ -5,8 +5,15 @@ import PodcastHeader from "./components/PodcastHeader";
 import Episodes from "./components/Episodes";
 import About from "./components/About";
 import Link from "next/link";
+import Share from "../../../components/Share";
 
 export default function Podcast(){
+
+    const [ShareOpen, setShareOpen] = useState(false)
+
+    function openShare(){
+      setShareOpen(!ShareOpen)
+    }
 
     let options = ['Episodes', 'About'] 
     const [activeDayIndex, setActiveDayIndex] = useState<number | null>(0);
@@ -62,13 +69,21 @@ export default function Podcast(){
                 activeDayIndex == 0
                 ? 
                     podcasts.map(podcast =>(
-                        <Episodes title={podcast.title} image={podcast.image} about={podcast.about} releaseDay={podcast.releaseDay} duration={podcast.duration} />
+                        <Episodes openShare={openShare} title={podcast.title} image={podcast.image} about={podcast.about} releaseDay={podcast.releaseDay} duration={podcast.duration} />
                         ))
                 : (
                     <About category="comedy" stars={4.5} about="Lorem ipsum dolor sit amet consectetur. Euismod non arcu malesuada pharetra nulla eu ut aliquam. Dui purus risus arcu at ac tristique purus. Adipiscing pretium vel pellentesque lectus semper aliquam quis velit. Risus suspendisse gravida felis eget enim ultricies ullamcorper massa. Ultrices nulla id eget vel diam senectus tempus tristique. Viverra at nisl magna mauris neque leo donec."/>
                 )
             }
             </div>
+            {ShareOpen && (
+                <div
+                   
+                    className="bg-[#000000d8]"
+                    >
+                <Share openShare={openShare}/>
+                </div>
+            )}
         </MobileLayout>
     )
 }
