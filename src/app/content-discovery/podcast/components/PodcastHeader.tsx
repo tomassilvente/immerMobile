@@ -2,6 +2,8 @@ import Link from "next/link"
 //Icons
 import SvgMoreButton from "../../../../../public/assets/Icons/MoreButton"
 import SvgBackButton from "../../../../../public/assets/Icons/BackButton"
+import SvgOptionsHorizontal from "../../../../../public/assets/Icons/OptionsHorizontal"
+import SvgBackVectorWhite from "../../../../../public/assets/Icons/BackVectorWhite"
 
 
 export default function PodcastHeader({eventImg, eventTitle, listeners, category}: any){
@@ -13,8 +15,8 @@ export default function PodcastHeader({eventImg, eventTitle, listeners, category
                 backgroundPosition: "center",
                 backgroundSize: "cover",
             }}>
-                <Link href='/content-discovery' className="col-start-2 mr-7 "> <SvgBackButton height={40} width={40}/> </Link>
-                <Link href='/' className="col-start-12 mt-4 mr-2 "><SvgMoreButton width={35} height={35}/></Link>
+                <Link href='/content-discovery' className="col-start-2 mr-9"> <SvgBackVectorWhite height={52} width={30}/> </Link>
+                <Link href='/' className="col-start-12 mt-6 mr-4 "><SvgOptionsHorizontal width={35} height={40}/></Link>
                 <div className="col-start-1 col-end-6 mt-[220px]  text-white">
                     <p className="text-3xl">{eventTitle}</p>
                     <p className="text-sm">{listeners} listeners | {category}</p>
