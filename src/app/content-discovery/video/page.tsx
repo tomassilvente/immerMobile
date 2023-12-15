@@ -12,8 +12,15 @@ import Link from "next/link";
 import Image from "next/image";
 import Share from "../../../components/Share";
 import Comments from "../../../components/Comments";
+import SvgBookmarkOrange from "../../../../public/assets/Icons/BookmarkOrange";
 
 export default function content(){
+
+    const [BookMarked, setBookMarked] = useState(false)
+
+    function setBookmark(){
+      setBookMarked(!BookMarked)
+    }
 
     const [LikeButton, setLikeButton] = useState(false)
 
@@ -64,8 +71,13 @@ export default function content(){
                         <SvgCommentButton onClick={openComments} width={40} height={40} />
                         <p>93</p>
                     </div>
-                    <div className="ml-[200px] mt-1" >
-                        <SvgBookmark width={36} height={36} />
+                    <div onClick={setBookmark}  className="ml-[200px] mt-1" >
+                        {
+                            BookMarked
+                            ? <SvgBookmarkOrange width={36} height={36} />
+                            : <SvgBookmark width={36} height={36} />
+                        }
+                        
                     </div>
                 </div>
                 <div className="flex text-2xl mt-[30px]">
