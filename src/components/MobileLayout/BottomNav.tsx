@@ -1,6 +1,6 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
+import ProfileIconSVG from "../../../public/assets/Icons/ProfileIcon";
 
 export const BottomNav = ({
   className = ''
@@ -23,7 +23,7 @@ export const BottomNav = ({
                     </li>
                     <li>
                         <Link href='/attendee-profile'>
-                            <Image width={80} height={80} src="/assets/profile.svg" alt="profile"/>
+                            <ProfileIconSVG />
                         </Link>
                     </li>
                     <li>

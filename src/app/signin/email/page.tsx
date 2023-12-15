@@ -10,6 +10,7 @@ import Feed from '../../../components/SignIn/Feed'
 import SignButton from '../../../components/SignUp/SignButton'
 import { useRouter } from 'next/navigation'
 import { type FormData } from '../../../types/signin.interfaces'
+import { type User } from '../../../server-actions/auth/loginUser'
 
 export default function SignInWithEmail (): JSX.Element {
   const router = useRouter()
@@ -53,15 +54,18 @@ export default function SignInWithEmail (): JSX.Element {
 
     // ! It is not correct to call a void function inside another one, I will try to fix it later
     // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
-    const response: { token?: string } = await loginUser(formData)
+    const response: { token: string, user: User } = await loginUser(formData)
     console.log(response)
 
     if (response.token !== undefined && response.token !== null) {
-      router.push('/home')
+      router.push('/')
     } else {
       setIsFeedOpen(true)
     }
-  }
+    //const res = await response.json()
+    localStorage.setItem("userId", response.user._id)
+    localStorage.setItem("token", response.token)
+  };
 
   const toggleAccepted = (): void => { setAccepted((prev) => !prev) }
 

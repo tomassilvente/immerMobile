@@ -1,16 +1,52 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import Image from 'next/image'
+import SpinnerLoader from '../../components/SpinnerLoader'
+import { updateProfileImage } from '../../server-actions/users/UpdateProfileImage'
+import { useRouter } from 'next/navigation'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { type ProfileImageProps } from '../../types/attendeeprofile.interfaces'
 
 const ProfileImage: React.FC<ProfileImageProps> = ({
   headerImgSrc,
   avatarImgSrc
-}) => (
+}) => {
+  const router = useRouter()
+  const [loading, setLoading] = useState<boolean>(false)
+
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    let file = null
+    const data = new FormData()
+    if (e.currentTarget.files !== null) {
+      file = e.currentTarget.files[0]
+      data.append('image', file)
+    } else {
+      toast.error('no image selected')
+      return
+    }
+    setLoading(true)
+    
+    const response = await updateProfileImage(data)
+    if (response?.ok) {
+      toast.success('success! redirecting..')
+      setTimeout(() => {
+        router.back()
+      }, 2000)
+      setLoading(false)
+    } else {
+      toast.error('failed')
+      setLoading(false)
+    }
+  }
+
+  return (
   <div className="pb-0 px-[14px] mb-[3.5rem] relative flex flex-col items-start">
     <div className="w-full">
       <Image
         className="w-full h-full"
-        src={headerImgSrc}
+        src={headerImgSrc ?? ''}
         width={0}
         height={0}
         alt="header"
@@ -42,14 +78,23 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
         </svg>
       </span>
     </div>
-    <div className="absolute -bottom-10 left-10">
+    <label className="absolute -bottom-10 left-10">
       <Image
         className="h-20 w-20 border-white border-[5px] rounded-full"
-        src={avatarImgSrc}
+        src={`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/users/profile-image/${avatarImgSrc}`}
         alt="avatar"
         width={0}
         height={0}
       />
+      <input
+        style={{ display: 'none' }}
+        type="file"
+        name="avatar"
+        onChange={(e) => handleImageChange(e)}
+        accept="image/*"
+        id="avatar"
+        className="hidden"
+        />
       <span className="absolute bottom-3 right-0 cursor-pointer bg-[#E4DFDF] rounded p-[1px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -64,8 +109,10 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
           />
         </svg>
       </span>
-    </div>
+    </label>
+    { loading && <SpinnerLoader /> }
+    <ToastContainer autoClose={2000} position="top-center" />
   </div>
-)
+)}
 
 export default ProfileImage

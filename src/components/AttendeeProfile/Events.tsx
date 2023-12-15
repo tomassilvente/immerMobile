@@ -1,5 +1,5 @@
 import React from 'react'
-import EventCard from './EventCard'
+import EventCard from './eventCard'
 import AttendedEventCard from './AttendedEventCard'
 
 const Events = (): JSX.Element => {
@@ -11,7 +11,7 @@ const Events = (): JSX.Element => {
       </div>
       <div className="max-w-[95vw] overflow-x-auto">
         <div className="w-[fit-content] overflow-hidden my-2 flex gap-2">
-          {[1, 2, 3, 4].map((index) => (
+          {[1, 2, 3].map((index) => (
             <EventCard key={index} img={`./assets/image-event${index}.png`} />
           ))}
         </div>
