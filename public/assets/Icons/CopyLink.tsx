@@ -6,7 +6,7 @@ const SvgCopyLink = (props: SVGProps<SVGSVGElement>) => (
     width="1em"
     height="1em"
     fill="none"
-    viewBox="8 6 32 32"
+    viewBox="11 9 25 25"
     {...props}
   >
     <rect width={46} height={46} fill="#ABABAB" rx={20} />

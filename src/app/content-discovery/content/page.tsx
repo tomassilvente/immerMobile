@@ -14,6 +14,7 @@ import BillDetails from "app/ticket-purchase/payment-details/components/BillDeta
 import SvgDropDownIcon from "../../../../public/assets/Icons/DropDownIcon";
 import SvgDropDownVector from "../../../../public/assets/Icons/DropDownVector";
 import SvgRedHeart from "../../../../public/assets/Icons/RedHeart";
+import Comments from "../../../components/Comments";
 
 export default function content({payment=true}: any){
 
@@ -33,6 +34,12 @@ export default function content({payment=true}: any){
       setIsFeedOpen(false);
     };
   
+    const [CommentOpen, setCommentOpen] = useState(false)
+
+    function openComments(){
+      setCommentOpen(!CommentOpen)
+    }
+
 
     return(
         <div 
@@ -86,7 +93,7 @@ export default function content({payment=true}: any){
                     </div>
                     </div>
                     <div className="ml-10">
-                        <SvgCommentButton width={40} height={40} />
+                        <SvgCommentButton onClick={openComments} width={40} height={40} />
                         <p>93</p>
                     </div>
                 </div>
@@ -138,7 +145,13 @@ export default function content({payment=true}: any){
                     : ''
                 }
             </div>
-            
+            {CommentOpen && (
+                <div
+                    className="bg-[#000000d8]"
+                    >
+                <Comments openComments={openComments}/>
+                </div>
+            )}
             </MobileLayout>
         </div>
     )

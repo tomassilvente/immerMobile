@@ -6,11 +6,9 @@ const SvgWhatsApp = (props: SVGProps<SVGSVGElement>) => (
     width="1em"
     height="1em"
     fill="none"
-    viewBox="8 6 32 32"
+    viewBox="10 10 26 26"
     {...props}
   >
-  
-    <rect width={46} height={46} fill="url(#a)" rx={20} />
     <g clipPath="url(#b)">
       <path
         fill="url(#c)"

@@ -196,5 +196,35 @@
             "price": 14.99,
             "image": "../assets/Vert4.png"
         }
+    ],
+    "comments":[
+        {
+            "user":"Jacob James",
+            "pic":"../assets/randomProfile1.png",
+            "comment":"The guest on this episode had such interesting insights",
+            "time": "5 min ago"
+        },
+        {
+            "user":"Cameron Williamson",
+            "pic":"../assets/randomProfile2.png",
+            "comment":"I appreciate how the host tackles difficult subjects",
+            "time": "4 min ago"
+        },
+        {
+            "user":"Alberta Flores",
+            "pic":"../assets/randomProfile3.png",
+            "comment":"The topics covered in this podcast are always relevant",
+            "time": "4 min ago"
+        },{
+            "user":"Jerome Bell",
+            "pic":"../assets/randomProfile4.png",
+            "comment":"This episode really opened my eyes to a new perspective.",
+            "time": "7 min ago"
+        },{
+            "user":"Savannah Nguyen",
+            "pic":"../assets/randomProfile5.png",
+            "comment":"The production quality of this",
+            "time": "9 min ago"
+        }
     ]
 }

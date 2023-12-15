@@ -29,9 +29,9 @@ return(
     </Link>
         <div className="flex mt-4">
             <SvgShareCircles onClick={openShare} width={25} height={25}/>
-            <SvgDownload className="ml-3" width={28} height={28}/>
-            <SvgMoreButton className="ml-3" width={25} height={25}/>
-            <SvgPlayButtonOrange className="ml-[300px]" width={23} height={23}/>
+            <SvgDownload className="ml-2" width={26} height={26}/>
+            <SvgMoreButton className="ml-2" width={22} height={22}/>
+            <SvgPlayButtonOrange className="ml-[320px]" width={23} height={23}/>
         </div>
         <hr className="mt-3"/>
     </div>

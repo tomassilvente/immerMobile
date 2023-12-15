@@ -9,7 +9,7 @@ const SvgInstagram = (props: SVGProps<SVGSVGElement>) => (
     viewBox="8 6 32 32"
     {...props}
   >
-    <rect width={46} height={46} x={0.5} fill="#J123SA" rx={20} />
+   
     <rect width={46} height={46} x={0.5} fill="url(#a)" rx={20} />
     <defs>
       <pattern

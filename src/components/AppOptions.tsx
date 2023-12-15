@@ -3,6 +3,7 @@ import SvgCopyLink from "../../public/assets/Icons/CopyLink";
 import SvgWhatsApp from "../../public/assets/Icons/WhatsApp";
 import SvgTwitter from "../../public/assets/Icons/Twitter";
 import SvgInstagram from "../../public/assets/Icons/Instagram";
+import Image from "next/image";
 
 function AppOptions() {
   return (
@@ -26,17 +27,16 @@ function AppOptions() {
                 <div className="pl-[15px] flex flex-col items-center">
                     <SvgTwitter
                         className="bg-black rounded-[20px] p-[10px]"
-                        
                         width={46}
                         height={46}
-                        
                     />
                     <p className="text-[#ABABAB] text-sm">Twitter</p>
                 </div>
                 <div className="pl-[15px] flex flex-col items-center">
-                    <SvgInstagram
+                    <Image
+                        alt= ''
+                        src='/assets/instagram.png'
                         className="rounded-[20px]"
-                       
                         width={46}
                         height={46}
                        

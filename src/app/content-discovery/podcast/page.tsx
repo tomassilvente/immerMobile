@@ -78,7 +78,6 @@ export default function Podcast(){
             </div>
             {ShareOpen && (
                 <div
-                   
                     className="bg-[#000000d8]"
                     >
                 <Share openShare={openShare}/>

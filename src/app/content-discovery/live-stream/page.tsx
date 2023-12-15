@@ -10,8 +10,8 @@ import SvgRedHeart from "../../../../public/assets/Icons/RedHeart";
 import SvgBookmark from "../../../../public/assets/Icons/Bookmark";
 import Link from "next/link";
 import Image from "next/image";
-import SvgFollowButton from "../../../../public/assets/Icons/FollowButton";
 import Share from "../../../components/Share";
+import Comments from "../../../components/Comments";
 
 export default function content(){
 
@@ -19,6 +19,12 @@ export default function content(){
 
     function openShare(){
       setShareOpen(!ShareOpen)
+    }
+
+    const [CommentOpen, setCommentOpen] = useState(false)
+
+    function openComments(){
+      setCommentOpen(!CommentOpen)
     }
 
     const [LikeButton, setLikeButton] = useState(false)
@@ -56,7 +62,7 @@ export default function content(){
                     </div>
                     <div className="ml-10" >
                         
-                        <SvgCommentButton width={40} height={40} />
+                        <SvgCommentButton onClick={openComments} width={40} height={40} />
                         <p>93</p>
                     </div>
                     <div className="ml-[200px] mt-1" >
@@ -99,6 +105,13 @@ export default function content(){
                     className="bg-[#000000d8]"
                     >
                 <Share openShare={openShare}/>
+                </div>
+            )}
+            {CommentOpen && (
+                <div
+                    className="bg-[#000000d8]"
+                    >
+                <Comments openComments={openComments}/>
                 </div>
             )}
             </MobileLayout>
