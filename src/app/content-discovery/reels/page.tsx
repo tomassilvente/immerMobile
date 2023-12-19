@@ -12,6 +12,9 @@ import Share from "../../../components/Share";
 import Comments from "../../../components/Comments";
 import SvgBackVectorWhite from "../../../../public/assets/Icons/BackVectorWhite";
 import SvgFollowedButton from "../../../../public/assets/Icons/FollowedButton";
+import SvgMagnify from "../../../../public/assets/Icons/Magnify";
+import SvgMoreButton from "../../../../public/assets/Icons/MoreButton";
+import Settings from "../../../components/Settings";
 
 export default function reels(){
 
@@ -39,9 +42,20 @@ export default function reels(){
         setFollow(!Follow)
     }
 
+    const [SettingsOpen, setSettingsOpen] = useState(false)
+
+    function openSettings(){
+      setSettingsOpen(!SettingsOpen)
+    }
+
     return(
         <MobileLayout>
-            <Link href={'/content-discovery'}><SvgBackVectorWhite width={35} height={35} className="absolute mt-14 ml-2"/></Link>
+            <div className="absolute flex mt-14 ">
+                <Link href={'/content-discovery'}><SvgBackVectorWhite width={35} height={35} className="ml-2"/></Link>
+                <p className="text-white text-xl font-light ml-[140px]">Takes/Reels</p>
+                <SvgMagnify width={20} height={25} className="ml-[120px]"/>
+                <SvgMoreButton onClick={openSettings} width={25} height={25} className="ml-[15px]"/>
+            </div>
              <div className="absolute flex mt-[715px] text-white">
                     <Link
                     className="rounded-full mx-5 mt-[120px]"
@@ -106,6 +120,13 @@ export default function reels(){
                     className="bg-[#000000d8]"
                     >
                 <Comments openComments={openComments}/>
+                </div>
+            )}
+        {SettingsOpen && (
+                <div
+                    className="bg-[#000000d8]"
+                    >
+                <Settings openSettings={openSettings}/>
                 </div>
             )}
         </MobileLayout>
