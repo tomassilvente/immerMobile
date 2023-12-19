@@ -1,7 +1,5 @@
 import Link from "next/link"
 //Icons
-import SvgMoreButton from "../../../../../public/assets/Icons/MoreButton"
-import SvgBackButton from "../../../../../public/assets/Icons/BackButton"
 import SvgOptionsHorizontal from "../../../../../public/assets/Icons/OptionsHorizontal"
 import SvgBackVectorWhite from "../../../../../public/assets/Icons/BackVectorWhite"
 
@@ -21,7 +19,6 @@ export default function PodcastHeader({eventImg, eventTitle, listeners, category
                     <p className="text-3xl">{eventTitle}</p>
                     <p className="text-sm">{listeners} listeners | {category}</p>
                 </div>
-                
                 <button  className="text-sm col-start-10 col-end-12 w-[100%] text-center  bg-primary text-white p-2 rounded-md"> Follow  </button>
             </div>
     )

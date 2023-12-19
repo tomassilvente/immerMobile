@@ -9,8 +9,17 @@ import SvgWhiteCommentButton from "../../../../public/assets/Icons/WhiteCommentB
 import SvgLikeButtonWhite from "../../../../public/assets/Icons/LikeButtonWhite";
 import SvgShareCirclesWhite from "../../../../public/assets/Icons/ShareCirclesWhite";
 import Share from "../../../components/Share";
+import Comments from "../../../components/Comments";
+import SvgBackVectorWhite from "../../../../public/assets/Icons/BackVectorWhite";
+import SvgFollowedButton from "../../../../public/assets/Icons/FollowedButton";
 
 export default function reels(){
+
+    const [CommentOpen, setCommentOpen] = useState(false)
+
+    function openComments(){
+      setCommentOpen(!CommentOpen)
+    }
 
     const [ShareOpen, setShareOpen] = useState(false)
 
@@ -24,11 +33,18 @@ export default function reels(){
         setLikeButton(!LikeButton)
     }
 
+    const [Follow, setFollow] = useState(false)
+
+    function setFollowed(){
+        setFollow(!Follow)
+    }
+
     return(
         <MobileLayout>
+            <Link href={'/content-discovery'}><SvgBackVectorWhite width={35} height={35} className="absolute mt-14 ml-2"/></Link>
              <div className="absolute flex mt-[715px] text-white">
                     <Link
-                    className="rounded-full mx-5 mt-[135px]"
+                    className="rounded-full mx-5 mt-[120px]"
                     href="/"
                     >
                         <Image
@@ -39,10 +55,14 @@ export default function reels(){
                             alt={"..."}
                         />
                     </Link>
-                    <div className=" mt-[150px]">
+                    <div className=" mt-[135px]">
                         <p>{DemoData.eventOrganizer}</p>
                     </div>
-                    <button  className="text-sm w-[70px] text-center mt-[145px] h-[35px] bg-primary text-white rounded-md ml-[28px]"> Follow  </button>
+                    
+                    {Follow
+                        ? <SvgFollowedButton width={70} height={35}  className="hover:cursor-pointer text-sm w-[70px] text-center mt-[130px] ml-[28px]" onClick={setFollowed}/>
+                        : <button onClick={setFollowed} className="text-sm w-[70px] text-center mt-[130px] h-[35px] bg-primary text-white rounded-md ml-[28px]"> Follow  </button>
+                    }
                     <div className="ml-[140px] text-center">
                     <div onClick={setLiked}>
                         {
@@ -57,9 +77,9 @@ export default function reels(){
                             </>
                         }
                     </div>
-                        <SvgWhiteCommentButton  width={40} height={40} />
+                        <SvgWhiteCommentButton onClick={openComments} width={40} height={40} />
                         <p className="text-center">33</p>
-                        <SvgShareCirclesWhite onClick={openShare} width={32} height={40} />
+                        <SvgShareCirclesWhite className="ml-[4px] mt-[2px]" onClick={openShare} width={32} height={40} />
                     </div>
                 </div>
         <div
@@ -79,6 +99,13 @@ export default function reels(){
                     className="bg-[#000000d8]"
                     >
                 <Share openShare={openShare}/>
+                </div>
+            )}
+        {CommentOpen && (
+                <div
+                    className="bg-[#000000d8]"
+                    >
+                <Comments openComments={openComments}/>
                 </div>
             )}
         </MobileLayout>

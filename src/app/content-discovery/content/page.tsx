@@ -2,7 +2,6 @@
 
 import EventHeader from "../../../components/EventHeader";
 import { MobileLayout } from "../../../components/MobileLayout";
-
 import DemoData from '../../../../public/data/DemoData.json'
 import SvgOpenEye from "../../../../public/assets/Icons/OpenEye";
 import SvgLikeButton from "../../../../public/assets/Icons/LikeButton";
@@ -15,8 +14,13 @@ import SvgDropDownIcon from "../../../../public/assets/Icons/DropDownIcon";
 import SvgDropDownVector from "../../../../public/assets/Icons/DropDownVector";
 import SvgRedHeart from "../../../../public/assets/Icons/RedHeart";
 import Comments from "../../../components/Comments";
+import SvgBackVectorWhite from "../../../../public/assets/Icons/BackVectorWhite";
+import SvgDownload from "../../../../public/assets/Icons/Download";
+import { ClientRequest } from "http";
 
 export default function content({payment=true}: any){
+
+    console.log(ClientRequest)
 
     const [isFeedOpen, setIsFeedOpen] = useState(false);
 
@@ -49,25 +53,32 @@ export default function content({payment=true}: any){
                 payment
                     ? 
                     isFeedOpen? ''
-                    :<video width="480"  className="w-[480px]" controls>
-                        <source
-                        src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
-                        type="video/mp4"
-                        />
-                        Your browser does not support the video tag.
-                    </video>
+                    :
+                    <>
+                        <Link className="hover:cursor-pointer absolute ml-[10px] mt-[10px] z-1" href={'/content-discovery'}><SvgBackVectorWhite width={30} height={30} className=""/></Link>
+                        <video width="480"  className="w-[480px]" controls>
+                            <source
+                            src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+                            type="video/mp4"
+                            />
+                            Your browser does not support the video tag.
+                        </video>
+                    </>
                     : <EventHeader eventImg={isFeedOpen ? '../../assets/black.jpg' : '../../assets/piano.jpeg'}/>
             }
             
             <div className="m-4">
                 <div className="flex">
                     <p className="text-xl font-semibold">{DemoData.eventCompanionName}</p>
-                    <p className="text-primary ml-20">★ ★ ★ ★ ★ <span className="ml-2 text-gray-400">(4.6)</span></p>
+                    <p className="text-primary ml-14">★ ★ ★ ★ ★ <span className="ml-2 text-gray-400">(4.6)</span></p>
                 </div>
                 <p className="font-light ">{DemoData.eventOrganizer}</p>
                 <p className="text-2xl font-semibold text-gray-600 mt-2">${DemoData.eventPrice}.99</p>
                 <hr className="w-[35px] border-primary border-[2px] mt-2" /> 
-                <p className="mt-10 text-2xl">About</p>
+                <div className="flex mt-10 text-2xl">
+                    <p className="">About</p>
+                    <Link href={'content/download'}><SvgDownload height={40} width={35} className="ml-[355px]"/></Link>
+                </div>
                 <p className="font-light mt-2">{DemoData.eventDescription}</p>
                 <div className="flex font-light mt-3">
                     <p className="text-gray-600"> 58:30 | Valid for 3 months </p>
@@ -97,8 +108,10 @@ export default function content({payment=true}: any){
                         <p>93</p>
                     </div>
                 </div>
-                <SimpleButton text='Buy and watch' onClick={setFeedOpen}/>
-                
+                {payment
+                    ? ''
+                    : <SimpleButton text='Buy and watch' onClick={setFeedOpen}/>
+                }
                 {
                     isFeedOpen
                     ? (
@@ -133,6 +146,7 @@ export default function content({payment=true}: any){
                                             </p>
                                         </div>
                                         <Link
+                                            onClick={() => payment = true}
                                             href="/content-discovery/content/confirmation"
                                             className="w-[100%] grid text-center text-2xl bg-primary text-white mt-24 py-5 rounded-full"
                                         >

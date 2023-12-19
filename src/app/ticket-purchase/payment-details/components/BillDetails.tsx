@@ -6,8 +6,11 @@ import SvgNextVector from "../../../../../public/assets/Icons/NextVector";
 
 export default function BillDetails() {
   return (
-    <div className=" m-2 mt-28 ">
-      <p className="text-lg">Contact Details</p>
+    <div className="m-2 mt-28 ">
+      <div className="flex">
+        <p className="text-lg">Contact Details</p>
+        <p className="text-sm underline text-primary ml-[245px]">Edit</p>
+      </div>
       <p className="font-light">John Doe</p>
       <p className="font-light">John.doe@gmail.com</p>
       <p className="font-light">765-822-9130</p>
@@ -22,7 +25,7 @@ export default function BillDetails() {
         </div>
         <hr />
         <div className="grid grid-cols-12 mt-5">
-          <SvgApplePayIcon height={40} width={50} className="ml-3 col-end-2" />
+          <SvgApplePayIcon height={40} width={40} className="ml-3 col-end-2" />
           <p className="col-start-3 col-end-11 text-xl font-light">Apple Pay</p>
           <SvgNextVector className="mt-2 col-start-12" />
         </div>

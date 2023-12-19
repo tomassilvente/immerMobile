@@ -30,7 +30,7 @@ export default function confirmation() {
           <p className="ml-3 text-sm font-light mt-[1px]">58:30</p>
         </div>
         </div>
-        <Link href="/content-discovery/content">
+        <Link href="/content-discovery/content?payment=true">
         <button
           className="w-[100%] grid text-center text-2xl bg-primary text-white mt-12 mb-10 py-5 rounded-full"
         >

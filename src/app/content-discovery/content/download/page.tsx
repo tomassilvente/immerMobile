@@ -13,14 +13,14 @@ export default function download(){
                 The content has been successfully downloaded
                 </p>
                 <SvgInboxCheck className="mt-20 ml-[20%]" />
-                <Link href="/pay-per-view/content">
+                <Link href="/content-discovery/content">
                     <button
                     className="w-[100%] grid text-center text-2xl bg-primary text-white  mb-10 py-5 rounded-full mt-32"
                     >
                     Watch
                     </button>
                 </Link>
-                <Link className="text-primary font-semibold mt-52" href="/pay-per-view">
+                <Link className="text-primary font-semibold mt-52" href="/content-discovery">
                     Back to Content Discovery.
                 </Link>
             </div>
