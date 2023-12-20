@@ -20,7 +20,7 @@ export default function RecommendedCards({
 }: CardProps) {
   return (
     <div className="rounded-xl shadow-xl text-sm mb-10 w-[240px] flex-none mr-6">
-      <Link className="" href="/event-details/1">
+      <Link className="" href="/event-details">
         <Image
           className="mb-3 rounded-t-xl "
           src={eventImg}
