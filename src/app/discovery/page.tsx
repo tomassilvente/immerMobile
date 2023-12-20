@@ -1,3 +1,4 @@
+"use client"
 import LargeCard from "../../components/LargeCard";
 import EventHeader from "../../components/EventHeader";
 import DemoData from "../../../public/data/DemoData.json";
@@ -6,6 +7,8 @@ import SvgFilterIcon from "../../../public/assets/Icons/FilterIcon";
 
 import NextDays from "./components/NextDays";
 import { MobileLayout } from "../../components/MobileLayout";
+import { useState } from "react";
+import Share from "../../components/Share";
 let Days = [
   {
     day: "Sat",
@@ -46,10 +49,14 @@ interface CardDataProps {
 }
 
 const Discovery: React.FC = () => {
+  const [ShareOpen, setShareOpen] = useState(false)
+
+    function openShare(){
+      setShareOpen(!ShareOpen)
+    }
   return (
     <MobileLayout >
-    {/* <div className="h-screen bg-white text-black sm:invisible overflow-scroll"> */}
-      <EventHeader eventImg={DemoData.eventImg} />
+      <EventHeader openShare={openShare} eventImg={DemoData.eventImg} />
         <p className="text-xl font-semibold my-3">Event Details</p>
         <div className="flex">
           <Link href="/">
@@ -74,8 +81,14 @@ const Discovery: React.FC = () => {
             />
           ))}
         </div>
-      
-    {/* </div> */}
+        {ShareOpen && (
+                <div
+                   
+                    className="bg-[#000000d8]"
+                    >
+                <Share openShare={openShare}/>
+                </div>
+            )}    
     </MobileLayout>
   );
 };
