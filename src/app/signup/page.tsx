@@ -7,7 +7,6 @@ import SvgOrLine from "../../../public/assets/Icons/OrLine";
 import SvgGoogleLogo from "../../../public/assets/Icons/GoogleLogo";
 import SvgFacebookLogo from "../../../public/assets/Icons/FacebookLogo";
 import SvgMailLogo from "../../../public/assets/Icons/MailLogo";
-import { MobileLayout } from "../../components/MobileLayout";
 
 export default function signUp() {
   return (

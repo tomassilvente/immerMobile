@@ -10,7 +10,7 @@ import { MobileLayout } from "../../components/MobileLayout"
 import { useState } from "react"
 import Share from "../../components/Share"
 
-export default function eventDetail (){ 
+export default function eventDetail (): JSX.Element{ 
     const [ShareOpen, setShareOpen] = useState(false)
 
     function openShare(){

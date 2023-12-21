@@ -6,7 +6,7 @@ import SignButton from "../components/SignButton";
 import { registerUser } from "../../../api/auth/registerUser";
 import { InputField } from "./components/InputField";
 import { CheckboxAgreement } from "./components/CheckboxAgreement";
-import { MobileLayout } from "../../../components/MobileLayout";
+
 
 export default function Create() {
   const router = useRouter();
@@ -72,6 +72,7 @@ export default function Create() {
   const [accepted, setAccepted] = useState(false);
 
   return (
+    
     <div className="font-Inter relative max-w-[480px] m-auto">
     <div className="text-center">
       <p className="text-2xl mt-8 font-semibold">Create your account</p>
