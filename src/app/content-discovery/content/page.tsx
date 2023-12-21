@@ -1,24 +1,24 @@
 "use client"
 
-import EventHeader from "../../../components/EventHeader";
+import EventHeader from "../../../components/_common/components/EventHeader";
 import { MobileLayout } from "../../../components/MobileLayout";
 import DemoData from '../../../../public/data/DemoData.json'
 import SvgOpenEye from "../../../../public/assets/Icons/OpenEye";
 import SvgLikeButton from "../../../../public/assets/Icons/LikeButton";
-import SimpleButton from "app/signin/components/SimpleButton";
+import SimpleButton from "../../../components/SignIn/SimpleButton";
 import SvgCommentButton from "../../../../public/assets/Icons/CommentButton";
 import Link from "next/link";
 import { useState } from "react";
-import BillDetails from "app/ticket-purchase/payment-details/components/BillDetails";
+import BillDetails from "../../../components/TicketPurchase/PaymentDetails/BillDetails";
 import SvgDropDownIcon from "../../../../public/assets/Icons/DropDownIcon";
 import SvgDropDownVector from "../../../../public/assets/Icons/DropDownVector";
 import SvgRedHeart from "../../../../public/assets/Icons/RedHeart";
-import Comments from "../../../components/Comments";
+import Comments from "../../../components/_common/components/Comments";
 import SvgBackVectorWhite from "../../../../public/assets/Icons/BackVectorWhite";
 import SvgDownload from "../../../../public/assets/Icons/Download";
 import { ClientRequest } from "http";
 
-export default function content({payment=true}: any){
+export default function content({payment=true}: any): JSX.Element{
 
     console.log(ClientRequest)
 

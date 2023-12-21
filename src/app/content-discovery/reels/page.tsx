@@ -8,15 +8,15 @@ import SvgRedHeart from "../../../../public/assets/Icons/RedHeart";
 import SvgWhiteCommentButton from "../../../../public/assets/Icons/WhiteCommentButton";
 import SvgLikeButtonWhite from "../../../../public/assets/Icons/LikeButtonWhite";
 import SvgShareCirclesWhite from "../../../../public/assets/Icons/ShareCirclesWhite";
-import Share from "../../../components/Share";
-import Comments from "../../../components/Comments";
+import Share from "../../../components/EventDetails/Share";
+import Comments from "../../../components/_common/components/Comments";
 import SvgBackVectorWhite from "../../../../public/assets/Icons/BackVectorWhite";
 import SvgFollowedButton from "../../../../public/assets/Icons/FollowedButton";
 import SvgMagnify from "../../../../public/assets/Icons/Magnify";
 import SvgMoreButton from "../../../../public/assets/Icons/MoreButton";
-import Settings from "../../../components/Settings";
+import Settings from "../../../components/_common/components/Settings";
 
-export default function reels(){
+export default function reels(): JSX.Element{
 
     const [CommentOpen, setCommentOpen] = useState(false)
 

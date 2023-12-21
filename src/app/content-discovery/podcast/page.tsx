@@ -5,9 +5,9 @@ import PodcastHeader from "./components/PodcastHeader";
 import Episodes from "./components/Episodes";
 import About from "./components/About";
 import Link from "next/link";
-import Share from "../../../components/Share";
+import Share from "../../../components/EventDetails/Share";
 
-export default function Podcast(){
+export default function Podcast(): JSX.Element{
 
     const [ShareOpen, setShareOpen] = useState(false)
 

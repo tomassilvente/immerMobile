@@ -3,7 +3,7 @@ import Link from "next/link"
 import { MobileLayout } from "../../../../components/MobileLayout"
 import SvgBackVector from "../../../../../public/assets/Icons/BackVector"
 import SvgMoreButton from "../../../../../public/assets/Icons/MoreButton"
-import HorizontalMusicCard from "app/content-discovery/components/HorizontalMusicCard"
+import HorizontalMusicCard from "../../../../components/ContentDiscovery/HorizontalMusicCard"
 import SvgShuffleIcon from "../../../../../public/assets/Icons/ShuffleIcon"
 import SvgPlayButtonOrange from "../../../../../public/assets/Icons/PlayButtonOrange"
 import { useState } from "react"
@@ -85,7 +85,7 @@ let podcastCards = [
     }
 ]
 
-export default function top100({}: any){
+export default function top100(): JSX.Element{
 
     const [play, setPlay] = useState(false)
     const [shuffle, setShuffle] = useState(false)

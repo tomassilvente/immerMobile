@@ -1,5 +1,5 @@
 "use client"
-import EventHeader from "../../../components/EventHeader";
+import EventHeader from "../../../components/_common/components/EventHeader";
 import { MobileLayout } from "../../../components/MobileLayout";
 import DemoData from '../../../../public/data/DemoData.json'
 import SvgOpenEye from "../../../../public/assets/Icons/OpenEye";
@@ -10,11 +10,11 @@ import SvgRedHeart from "../../../../public/assets/Icons/RedHeart";
 import SvgBookmark from "../../../../public/assets/Icons/Bookmark";
 import Link from "next/link";
 import Image from "next/image";
-import Share from "../../../components/Share";
-import Comments from "../../../components/Comments";
+import Share from "../../../components/EventDetails/Share";
+import Comments from "../../../components/_common/components/Comments";
 import SvgBookmarkOrange from "../../../../public/assets/Icons/BookmarkOrange";
 
-export default function content(){
+export default function content(): JSX.Element{
 
     const [ShareOpen, setShareOpen] = useState(false)
 

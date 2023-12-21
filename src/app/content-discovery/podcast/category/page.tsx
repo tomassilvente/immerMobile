@@ -1,6 +1,6 @@
 import { MobileLayout } from "../../../../components/MobileLayout";
 
-export default function gender(){
+export default function gender(): JSX.Element{
     return(
         <MobileLayout>
             <div className="h-[150px] place-items-end content-start"

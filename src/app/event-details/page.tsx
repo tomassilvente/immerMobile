@@ -1,14 +1,14 @@
 "use client"
 import Link from "next/link"
-import Location from "./components/Location"
-import Organized from "./components/Organizer"
-import AboutEvent from "./components/AboutEvent"
-import EventDetails from "./components/EventDetails"
-import EventHeader from "../../components/EventHeader"
+import Location from "../../components/EventDetails/Location"
+import Organized from "../../components/EventDetails/Organizer"
+import AboutEvent from "../../components/EventDetails/AboutEvent"
+import EventDetails from "../../components/EventDetails/EventDetails"
+import EventHeader from "../../components/_common/components/EventHeader"
 import data from "../../../public/data/DemoData.json" // All this data should come as params, including the links or the actions that every button should do
 import { MobileLayout } from "../../components/MobileLayout"
 import { useState } from "react"
-import Share from "../../components/Share"
+import Share from "../../components/EventDetails/Share"
 
 export default function eventDetail (): JSX.Element{ 
     const [ShareOpen, setShareOpen] = useState(false)
@@ -26,7 +26,7 @@ export default function eventDetail (): JSX.Element{
                 {/* I've been having some trouble with making this button sticked on the screen */}
                 <Link
                     style={{position: "sticky"}}
-                    href='/' 
+                    href='/ticket-purchase' 
                     className="grid shadow-2xl text-center text-2xl bg-primary text-white mt-12 mx-8 py-5 mb-16 rounded-full" 
                 >
                     Book Now

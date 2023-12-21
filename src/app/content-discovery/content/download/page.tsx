@@ -3,7 +3,7 @@ import SvgImmerIconOrange from "../../../../../public/assets/Icons/ImmerIconOran
 import { MobileLayout } from "../../../../components/MobileLayout";
 import SvgInboxCheck from "../../../../../public/assets/Icons/InboxCheck";
 
-export default function download(){
+export default function download(): JSX.Element{
     return(
         <MobileLayout>
             <div className="text-center m-5 content-center place-items-center">

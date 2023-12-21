@@ -8,7 +8,7 @@ import SvgClockBlack from "../../../../../public/assets/Icons/ClockBlack";
 
 import DemoData from "../../../../../public/data/DemoData.json";
 
-export default function confirmation() {
+export default function confirmation(): JSX.Element {
   return (
     <MobileLayout>
     <div className="text-center pt-5">

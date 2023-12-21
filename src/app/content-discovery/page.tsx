@@ -1,15 +1,15 @@
 "use client"
 import { useState } from "react";
-import DisplaySelection from "../../components/DisplaySelection";
+import DisplaySelection from "../../components/_common/components/DisplaySelection";
 import { MobileLayout } from "../../components/MobileLayout";
-import Search from "../../components/Search";
-import PayPerView from "./components/PayPerView";
-import Streams from "./components/Streams";
-import Podcasts from "./components/Podcasts";
-import Reels from "./components/Reels";
-import All from "./components/All";
-import Music from "./components/Music";
-import Videos from "./components/Videos";
+import Search from "../../components/_common/components/Search";
+import PayPerView from "../../components/ContentDiscovery/PayPerView";
+import Streams from "../../components/ContentDiscovery/Streams";
+import Podcasts from "../../components/ContentDiscovery/Podcasts";
+import Reels from "../../components/ContentDiscovery/Reels";
+import All from "../../components/ContentDiscovery/All";
+import Music from "../../components/ContentDiscovery/Music";
+import Videos from "../../components/ContentDiscovery/Videos";
 
 let options = [
     {option:'All'},
@@ -164,7 +164,7 @@ let MixCards = [
     },
 ]
 
-export default function ContentDiscovery(){
+export default function ContentDiscovery(): JSX.Element{
 
     const [activeDayIndex, setActiveDayIndex] = useState<number | null>(0);
     return(

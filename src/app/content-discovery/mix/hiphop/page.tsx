@@ -85,7 +85,7 @@ let podcastCards = [
     }
 ]
 
-export default function top100({}: any){
+export default function top100(): JSX.Element{
 
     const [play, setPlay] = useState(false)
     const [shuffle, setShuffle] = useState(false)

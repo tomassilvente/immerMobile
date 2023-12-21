@@ -13,9 +13,9 @@ import SvgRePlayWhite from "../../../../public/assets/Icons/RePlayWhite"
 import SvgRePlayOrange from "../../../../public/assets/Icons/RePlayOrange"
 import SvgShareCirclesWhite from "../../../../public/assets/Icons/ShareCirclesWhite"
 import SvgList from "../../../../public/assets/Icons/List"
-import Share from "../../../components/Share"
+import Share from "../../../components/EventDetails/Share";
 
-export default function top100({}: any){
+export default function top100(): JSX.Element{
 
     const [ShareOpen, setShareOpen] = useState(false)
 

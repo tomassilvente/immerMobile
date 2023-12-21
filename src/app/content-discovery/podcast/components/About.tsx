@@ -10,7 +10,7 @@ type AboutProps = {
     about: string
 }
 
-export default function About({stars, category, about}:AboutProps){
+export default function About({stars, category, about}:AboutProps): JSX.Element{
 
     const [isRateOpen, setIsRateOpen] = useState(false)
 

@@ -1,10 +1,11 @@
-//components
-import PaymentHeader from "./components/paymentHeader";
-import Checkout from "./components/Checkout";
-import BillDetails from "./components/BillDetails";
-import { MobileLayout } from "../../../components/MobileLayout";
+// components
+import React from 'react'
+import PaymentHeader from '../../../components/TicketPurchase/PaymentDetails/paymentHeader'
+import Checkout from '../../../components/TicketPurchase/PaymentDetails/Checkout'
+import BillDetails from '../../../components/TicketPurchase/PaymentDetails/BillDetails'
+import { MobileLayout } from '../../../components/MobileLayout'
 
-export default function PaymentDetails() {
+export default function PaymentDetails (): JSX.Element {
   return (
     <MobileLayout>
       {/* <div className="h-screen bg-white text-black sm:invisible overflow-scroll"> */}
@@ -13,5 +14,5 @@ export default function PaymentDetails() {
         <Checkout ticketPrice={198} quantity={2} taxes={12} />
       {/* </div> */}
     </MobileLayout>
-  );
+  )
 }

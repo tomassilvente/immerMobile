@@ -4,7 +4,7 @@ import SvgOptionsHorizontal from "../../../../../public/assets/Icons/OptionsHori
 import SvgBackVectorWhite from "../../../../../public/assets/Icons/BackVectorWhite"
 
 
-export default function PodcastHeader({eventImg, eventTitle, listeners, category}: any){
+export default function PodcastHeader({eventImg, eventTitle, listeners, category}: any): JSX.Element{
     return(
         <div className="h-[350px] grid grid-cols-12 place-items-end content-start"
             style={{

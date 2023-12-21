@@ -1,14 +1,14 @@
 "use client"
-import LargeCard from "../../components/LargeCard";
-import EventHeader from "../../components/EventHeader";
+import LargeCard from "../../components/_common/components/LargeCard";
+import EventHeader from "../../components/_common/components/EventHeader";
 import DemoData from "../../../public/data/DemoData.json";
 import Link from "next/link";
 import SvgFilterIcon from "../../../public/assets/Icons/FilterIcon";
 
-import NextDays from "./components/NextDays";
+import NextDays from "../../components/Discovery/NextDays";
 import { MobileLayout } from "../../components/MobileLayout";
 import { useState } from "react";
-import Share from "../../components/Share";
+import Share from "../../components/EventDetails/Share";
 let Days = [
   {
     day: "Sat",

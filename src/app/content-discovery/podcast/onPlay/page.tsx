@@ -11,9 +11,9 @@ import SvgBack30 from "../../../../../public/assets/Icons/Back30"
 import SvgFoward30 from "../../../../../public/assets/Icons/Foward30"
 import SvgSleep from "../../../../../public/assets/Icons/Sleep"
 import SvgSleepOrange from "../../../../../public/assets/Icons/SleepOrange"
-import Share from "../../../../components/Share"
+import Share from "../../../../components/EventDetails/Share";
 
-export default function top100({}: any){
+export default function top100(): JSX.Element{
     const [ShareOpen, setShareOpen] = useState(false)
 
     function openShare(){

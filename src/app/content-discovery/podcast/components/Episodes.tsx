@@ -14,7 +14,7 @@ type EpisodeProps = {
     openShare: any
 }
 
-export default function Episodes({title, image, duration, releaseDay, about, openShare}: EpisodeProps){
+export default function Episodes({title, image, duration, releaseDay, about, openShare}: EpisodeProps): JSX.Element{
 return(
     <div>
     <Link href='/content-discovery/podcast/single-episode'>

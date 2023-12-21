@@ -7,7 +7,7 @@ import SvgDownload from "../../../../../public/assets/Icons/Download"
 import SvgPlayButtonOrange from "../../../../../public/assets/Icons/PlayButtonOrange"
 
 
-export default function SingleHeader({eventImg, eventTitle, releaseDay, duration, openShare}: any){
+export default function SingleHeader({eventImg, eventTitle, releaseDay, duration, openShare}: any): JSX.Element{
     return(
         <div className="h-[350px] grid grid-cols-12 place-items-end content-start"
             style={{

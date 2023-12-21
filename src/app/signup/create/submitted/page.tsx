@@ -1,9 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-import Link from "next/link";
-import SvgImmerIconOrange from "../../../../../public/assets/Icons/ImmerIconOrange";
-import SvgInboxCheck from "../../../../../public/assets/Icons/InboxCheck";
+import React from 'react'
+import Link from 'next/link'
+import SvgImmerIconOrange from '../../../../../public/assets/Icons/ImmerIconOrange'
+import SvgInboxCheck from '../../../../../public/assets/Icons/InboxCheck'
 
-export default function submitted() {
+export default function Submitted (): JSX.Element {
   return (
     <div className="font-Inter relative max-w-[480px] m-auto">
     <div className="m-14 text-center bg-white text-black sm:invisible overflow-scroll grid content-center place-items-center">
@@ -21,5 +22,5 @@ export default function submitted() {
       </Link>
     </div>
     </div>
-  );
+  )
 }

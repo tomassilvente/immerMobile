@@ -3,17 +3,15 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 //Components
-import Details from "./components/details"
-import BottomTicket from "./components/bottomTicket"
+import Details from '../../components/TicketDetails/Details'
+import BottomTicket from '../../components/TicketDetails/BottomTicket'
+import Share from "../../components/EventDetails/Share"
 //Icons
 import SvgBackButtonBlack from "../../../public/assets/Icons/BackButtonBlack"
 import SvgShareButtonBlack from "../../../public/assets/Icons/shareButtonBlack"
 import { MobileLayout } from "../../components/MobileLayout"
-import Share from "../../components/Share"
 
-
-
-export default function ticketDetails(){
+export default function ticketDetails(): JSX.Element{
     const [ShareOpen, setShareOpen] = useState(false)
 
     function openShare(){

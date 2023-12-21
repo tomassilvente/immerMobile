@@ -2,9 +2,9 @@
 import { useState } from "react";
 import { MobileLayout } from "../../../../components/MobileLayout";
 import SingleHeader from "../components/SingleHeader";
-import Share from "../../../../components/Share";
+import Share from "../../../../components/EventDetails/Share";
 
-export default function SingleEpisode(){
+export default function SingleEpisode(): JSX.Element{
     const [ShareOpen, setShareOpen] = useState(false)
 
     function openShare(){

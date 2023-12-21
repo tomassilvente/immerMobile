@@ -1,14 +1,15 @@
-import { MobileLayout } from "../../components/MobileLayout";
-import Header from "./components/Header";
-import TicketSelection from "./components/TicketSelection";
+import React from 'react'
+import { MobileLayout } from '../../components/MobileLayout'
+import Header from '../../components/TicketPurchase/Header'
+import TicketSelection from '../../components/TicketPurchase/TicketSelection'
 
-export default function discovery() {
+export default function Discovery (): JSX.Element {
   return (
     <MobileLayout>
       <div className="h-screen bg-black">
-        <Header eventImg={"./assets/stadium.png"} />
+        <Header eventImg={'./assets/stadium.png'} />
         <TicketSelection />
       </div>
     </MobileLayout>
-  );
+  )
 }

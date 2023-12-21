@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
-import SignButton from "app/signup/components/SignButton";
+import SignButton from "../../../components/SignUp/SignButton";
 import Link from "next/link";
    
-export default function Submitted(){
+export default function Submitted(): JSX.Element{
     return(
         <div className="font-Inter relative max-w-[480px] m-auto">
         <div className="m-5 text-center bg-white text-black sm:invisible overflow-scroll ">
