@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
-import SpinnerLoader from '../../components/SpinnerLoader'
+import SpinnerLoader from '../Chat-Threads/SpinnerLoader'
 import { updateProfileImage } from '../../server-actions/users/UpdateProfileImage'
 import { useRouter } from 'next/navigation'
 import { ToastContainer, toast } from 'react-toastify'

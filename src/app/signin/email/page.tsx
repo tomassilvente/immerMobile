@@ -9,10 +9,11 @@ import SvgAlertIcon from '../../../../public/assets/Icons/AlertIcon'
 import Feed from '../../../components/SignIn/Feed'
 import SignButton from '../../../components/SignUp/SignButton'
 import { useRouter } from 'next/navigation'
+import { useCookies } from 'react-cookie';  // Import useCookies
 import { type FormData } from '../../../types/signin.interfaces'
 import { type User } from '../../../server-actions/auth/loginUser'
 
-export default function SignInWithEmail (): JSX.Element {
+export default function SignInWithEmail(): JSX.Element {
   const router = useRouter()
 
   const [formData, setFormData] = useState<FormData>({
@@ -23,6 +24,8 @@ export default function SignInWithEmail (): JSX.Element {
   const [accepted, setAccepted] = useState(false)
   const [isFeedOpen, setIsFeedOpen] = useState(false)
   const [wrong, setWrong] = useState(false)
+
+  const [cookies, setCookie] = useCookies(['user']);  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target
@@ -52,23 +55,23 @@ export default function SignInWithEmail (): JSX.Element {
 
     if (!validateFormData()) return
 
-    // ! It is not correct to call a void function inside another one, I will try to fix it later
-    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
     const response: { token: string, user: User } = await loginUser(formData)
     console.log(response)
 
     if (response.token !== undefined && response.token !== null) {
-      router.push('/')
+      // Set cookies after successful login
+      setCookie('user', response.token, { path: '/' });
+
+      router.push('/');
     } else {
       setIsFeedOpen(true)
     }
-    //const res = await response.json()
+
     localStorage.setItem("userId", response.user._id)
     localStorage.setItem("token", response.token)
   };
 
   const toggleAccepted = (): void => { setAccepted((prev) => !prev) }
-
   return (
     <div className="font-Inter relative max-w-[480px] m-auto">
       <div className="m-5 text-center">
@@ -85,10 +88,10 @@ export default function SignInWithEmail (): JSX.Element {
                 account is blocked.
               </p>
             </div>
-            )
+          )
           : (
-              ''
-            )}
+            ''
+          )}
         <form className="text-start mt-10" onSubmit={handleSubmit}>
           <p className="text-xl mt-5">Email</p>
           <input
@@ -128,7 +131,7 @@ export default function SignInWithEmail (): JSX.Element {
                   width={25}
                   className="ml-1"
                 />
-                )
+              )
               : (
                 <SvgCheckBoxUnaccepted
                   onClick={toggleAccepted}
@@ -136,7 +139,7 @@ export default function SignInWithEmail (): JSX.Element {
                   width={25}
                   className="ml-1"
                 />
-                )}
+              )}
             <label className="ml-2 text-sm font-light text-[#767676]">
               Remember me
             </label>
