@@ -1,15 +1,15 @@
-import { userProps } from '../../types/live-chat.interfaces'
+import { type userProps } from '../../types/live-chat.interfaces'
 import { SearchIcon } from '../../server-actions/live-chat/icons'
 import Image from 'next/image'
 import React from 'react'
 
-function SearchBar({user}:{user:userProps}) {
+function SearchBar ({ user }: { user: userProps }): JSX.Element {
   return (
     <div className="flex gap-4">
       <div className="avatar online">
         <div className="w-12 rounded-full ring">
           <Image
-            src={user?.imageId || ""}
+            src={((user?.imageId) != null) ? `/${user.imageId}` : '/path/to/default/image.jpg'}
             width={256}
             height={256}
             alt="avatar"
@@ -27,7 +27,7 @@ function SearchBar({user}:{user:userProps}) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default SearchBar
