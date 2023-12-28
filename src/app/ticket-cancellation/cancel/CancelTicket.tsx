@@ -1,7 +1,11 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+<<<<<<< HEAD
 import DeleteModal from '../../../components/TicketCancellation/modal/DeleteModal'
+=======
+import DeleteModal from '../../../components/TicketCancellation/modal/deleteModal'
+>>>>>>> pay-per-view
 
 interface Props {
   id: string

@@ -142,4 +142,8 @@ export default function Create (): JSX.Element {
       </div>
     </div>
   )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> pay-per-view

@@ -1,5 +1,9 @@
 import React from 'react'
+<<<<<<< HEAD
 import TicketCard from './TicketCard'
+=======
+import TicketCard from './ticketCard'
+>>>>>>> pay-per-view
 import { tickets } from './dummyTickets'
 
 const AttendedTickets = (): JSX.Element => {

@@ -6,7 +6,7 @@ const SvgGPayIcon = (props: SVGProps<SVGSVGElement>) => (
     width="1em"
     height="1em"
     fill="none"
-    viewBox="0 0 30 20"
+    viewBox="0 2 35 20"
     {...props}
   >
     <path
