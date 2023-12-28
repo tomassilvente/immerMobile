@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-
-function Page (): JSX.Element {
-  return (
-    <div>page</div>
-  )
-}
-
-export default Page
-=======
 "use client"
 import Link from "next/link"
 import Location from "../../components/EventDetails/Location"
@@ -52,4 +41,3 @@ export default function eventDetail (): JSX.Element{
             )}        
         </MobileLayout>
 )}
->>>>>>> pay-per-view

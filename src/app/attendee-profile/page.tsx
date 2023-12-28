@@ -1,6 +1,4 @@
 'use client'
-<<<<<<< HEAD
-
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { MobileLayout } from '../../components/MobileLayout'
@@ -22,29 +20,6 @@ const Page = (): JSX.Element => {
   const router = useRouter()
   const { data, isPending, error } = useFetch(`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/users/${userId}`)
 
-=======
-import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { MobileLayout } from '../../components/MobileLayout'
-import Image from 'next/image'
-import Events from '../../components/AttendeeProfile/Events'
-import Interests from '../../components/AttendeeProfile/Interests'
-import Subscriptions from '../../components/AttendeeProfile/Subscriptions'
-import BackButton from '../../components/_common/buttons/BackButton'
-import MoreButton from '../../components/_common/buttons/MoreButton'
-import SpinnerLoader from '../../components/SpinnerLoader'
-import { useRouter } from 'next/navigation'
-import { useFetch } from '../../server-actions/hooks/useFetch'
-
-const userId = localStorage.getItem('userId')
-
-const Page = (): JSX.Element => {
-  const [selectedTab, setSelectedTab] = useState<number>(0)
-  const auth = true
-  const router = useRouter()
-  const { data, isPending, error } = useFetch(`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/users/${userId}`)
-
->>>>>>> pay-per-view
   const TABS = ['Events', 'Interests', 'Subscriptions']
 
   const renderTabContent = (): React.ReactNode => {

@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-import Image from 'next/image'
-// Components
-import Details from '../../components/TicketDetails/Details'
-import BottomTicket from '../../components/TicketDetails/BottomTicket'
-// Icons
-import SvgBackButtonBlack from '../../../public/assets/Icons/BackButtonBlack'
-import SvgShareButtonBlack from '../../../public/assets/Icons/shareButtonBlack'
-import { MobileLayout } from '../../components/MobileLayout'
-
-export default function ticketDetails (): JSX.Element {
-  return (
-=======
 "use client"
 import Image from "next/image"
 import Link from "next/link"
@@ -32,7 +18,6 @@ export default function ticketDetails(): JSX.Element{
       setShareOpen(!ShareOpen)
     }
     return(
->>>>>>> pay-per-view
         <MobileLayout>
         <div className="bg-[#FFD6B8] pb-5">
             <div className="grid grid-cols-6">

@@ -47,8 +47,4 @@ export default function myEvents (): JSX.Element {
     </div>
     </MobileLayout>
   )
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> pay-per-view
