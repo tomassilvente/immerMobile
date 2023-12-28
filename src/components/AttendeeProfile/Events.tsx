@@ -1,9 +1,5 @@
 import React from 'react'
-<<<<<<< HEAD
-import EventCard from './eventCard'
-=======
 import EventCard from './EventCard'
->>>>>>> pay-per-view
 import AttendedEventCard from './AttendedEventCard'
 
 const Events = (): JSX.Element => {

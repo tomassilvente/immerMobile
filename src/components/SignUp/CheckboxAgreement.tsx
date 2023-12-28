@@ -1,11 +1,6 @@
 import React from 'react'
-<<<<<<< HEAD
-import SvgCheckBoxUnaccepted from '../../../public/assets/Icons/CheckBoxUnaccepted'
-import SvgCheckBoxAccepted from '../../../public/assets/Icons/CheckoxAccepted'
-=======
 import SvgCheckBoxUnaccepted from '../../../../../pre-production/immer/public/assets/Icons/CheckBoxUnaccepted'
 import SvgCheckBoxAccepted from '../../../../../pre-production/immer/public/assets/Icons/CheckoxAccepted'
->>>>>>> pay-per-view
 import { type CheckboxAgreementProps } from '../../types/signup.interfaces'
 
 export const CheckboxAgreement: React.FC<CheckboxAgreementProps> = ({

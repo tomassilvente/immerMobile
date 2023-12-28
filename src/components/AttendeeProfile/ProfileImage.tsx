@@ -2,11 +2,7 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
-<<<<<<< HEAD
-import SpinnerLoader from '../../components/SpinnerLoader'
-=======
 import SpinnerLoader from '../SpinnerLoader'
->>>>>>> pay-per-view
 import { updateProfileImage } from '../../server-actions/users/UpdateProfileImage'
 import { useRouter } from 'next/navigation'
 import { ToastContainer, toast } from 'react-toastify'

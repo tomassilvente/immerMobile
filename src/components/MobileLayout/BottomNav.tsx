@@ -16,13 +16,9 @@ export const BottomNav = ({
                         </Link>
                     </li>
                     <li>
-<<<<<<< HEAD
-                        <Image width={80} height={80} src="/assets/explore.svg" alt="explore" />
-=======
                         <Link href={'/content-discovery'}>
                             <Image width={80} height={80} src="/assets/explore.svg" alt="explore" />
                         </Link>
->>>>>>> pay-per-view
                     </li>
                     <li>
                         <Link href='ticket-details'>
@@ -31,11 +27,7 @@ export const BottomNav = ({
                     </li>
                     <li>
                         <Link href='/attendee-profile'>
-<<<<<<< HEAD
-                            <ProfileIconSVG />
-=======
                         <Image width={80} height={80}  src="/assets/profile.svg" alt="profile"/>
->>>>>>> pay-per-view
                         </Link>
                     </li>
                     <li>
