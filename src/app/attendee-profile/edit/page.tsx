@@ -30,7 +30,7 @@ type InputData = {
 }
 
 const EditProfile: React.FC = () => {
-  const [data, setData] = useState<InputData>(JSON.parse(window.localStorage.getItem('immerUserData') || ""))
+  const [data, setData] = useState<InputData>(JSON.parse(localStorage.getItem('immerUserData') || ""))
   const ref = useRef<HTMLFormElement>(null)
   const [loading, setLoading] = useState(false);
   const router = useRouter();
