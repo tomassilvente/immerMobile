@@ -12,7 +12,7 @@ import SpinnerLoader from '../../components/SpinnerLoader'
 import { useRouter } from 'next/navigation'
 import { useFetch } from '../../server-actions/hooks/useFetch'
 
-const userId = localStorage.getItem('userId')
+const userId = window.localStorage.getItem('userId')
 
 const Page = (): JSX.Element => {
   const [selectedTab, setSelectedTab] = useState<number>(0)
