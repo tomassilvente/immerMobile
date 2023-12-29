@@ -16,7 +16,7 @@ type CardProps ={
 export default function PodcastCards({image, title, description, creator, release, duration}: CardProps){
     return(
         <div className="rounded-xl mr-5 shadow-lg mb-5 w-[320px] flex-none">
-            <Image className="h-[225px] rounded-t-xl mb-3" width={320} height={1} src={image} alt={title}/>
+            <Image className="h-[225px] rounded-t-xl mb-3" width={320} height={1} src={`${image}`} alt={`${title}`}/>
                 <div className="my-2 px-5">
                     <p className="text-2xl ">{title}</p>
                     <p className="text-lg font-light text-gray-600">{creator}</p>

@@ -11,7 +11,7 @@ type CardProps ={
 export default function EventCards({image, title, price, stars, type}: CardProps){
     return(
         <div className="rounded-xl shadow-xl mb-5 w-[220px] flex-none">
-            <Image className="h-[175px] rounded-t-xl mb-3" width={220} height={1} src={image} alt={title}/>
+            <Image className="h-[175px] rounded-t-xl mb-3" width={220} height={1} src={`${image}`} alt={`${title}`}/>
             <div className="ml-5">
                 <p className="text-primary text-xs">
                     {

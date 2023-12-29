@@ -7,7 +7,7 @@ export default function All({cards, videoCards}:any){
     return (  
         <>
             <div className="flex my-4 overflow-x-scroll">
-            {cards.map(card =>(
+            {cards.map((card :any) =>(
                     <VerticalCards image={card.image} title={card.title} price={card.price} />
                 ))}
             </div>

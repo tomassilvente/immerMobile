@@ -16,7 +16,7 @@ export default function VideosCards({image, title, views, days}: CardProps){
     return(
         <Link href={'/content-discovery/video'}>
             <div className="rounded-xl mr-5 shadow-lg mb-5 w-[350px] flex-none">
-                <Image className="h-[225px] rounded-t-xl mb-3" width={350} height={1} src={image} alt={title}/>
+                <Image className="h-[225px] rounded-t-xl mb-3" width={350} height={1} src={`${image}`} alt={`${title}`}/>
                 <div className="ml-5 flex">
                     <div>
                         <div className="flex"> 

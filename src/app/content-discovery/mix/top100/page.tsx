@@ -127,9 +127,7 @@ export default function top100(): JSX.Element{
             </div>
             <div className="mt-4 overflow-y-scroll">
                         {podcastCards.map(card =>(
-                            <Link href={'/'}>
-                                <HorizontalMusicCard play={false} creator={card.creator} release={card.release} image={card.image} title={card.title} description={card.description} />
-                            </Link>
+                            <HorizontalMusicCard link={'/'} play={false} creator={card.creator} release={card.release} image={card.image} title={card.title} description={card.description} />
                        ))}
             </div>
         </MobileLayout>

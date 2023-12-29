@@ -6,11 +6,11 @@ import SvgPlayButtonOrange from "../../../../../public/assets/Icons/PlayButtonOr
 import Link from "next/link"
 
 type EpisodeProps = {
-    title : 'string',
-    image : 'string',
-    releaseDay : 'string',
-    duration : 'number',
-    about : 'string',
+    title :string,
+    image :string,
+    releaseDay :string,
+    duration : number,
+    about :string,
     openShare: any
 }
 
