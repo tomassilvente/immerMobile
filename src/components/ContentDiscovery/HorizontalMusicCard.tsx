@@ -13,7 +13,7 @@ type CardProps ={
     release:string
 }
 
-export default function HorizontalMusicCard({image, title, creator, play,link, release}: CardProps){
+export default function HorizontalMusicCard({image, title, creator, play, link, release}: CardProps){
     return(
         <Link href={`${link}`}>
         <div className="rounded-xl mr-5 shadow-sm mb-[5px] w-[100%] h-[100px] flex">
