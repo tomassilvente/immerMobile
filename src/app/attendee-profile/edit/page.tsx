@@ -15,6 +15,7 @@ type InputData = {
   _id?:         string;
   username?:    string;
   fullName?:    string;
+  location?:    string;
   email:       string;
   role:        string;
   image?:       string;
