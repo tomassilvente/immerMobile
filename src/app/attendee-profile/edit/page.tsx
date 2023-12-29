@@ -1,5 +1,4 @@
 "use client";
-
 import React, {useEffect, useRef, useState} from "react";
 import { MobileLayout } from "../../../components/MobileLayout";
 import Link from "next/link";
@@ -15,7 +14,6 @@ type InputData = {
   _id?:         string;
   username?:    string;
   fullName?:    string;
-  location?:    string;
   email:       string;
   role:        string;
   image?:       string;
@@ -47,9 +45,12 @@ const EditProfile: React.FC = () => {
   interests: data?.interests
  })
 
- if(!data){
-  router.push("/attendee-profile")
-}
+  useEffect(() => {
+    if (!data) {
+      router.push("/attendee-profile")
+    }
+  }, [data]);
+
 
 const formatDate = (date: string) => {
   const shortDate = date.split("T")[0];
@@ -76,7 +77,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   <MobileLayout>
     <div>
       <div className="relative flex px-[14px] gap-5 items-center py-5">
-        <Link href="">
+        <Link href="/attendee-profile">
           <BackButton />
         </Link>
         <h1 className="font-bold text-lg">Edit Profile</h1>
