@@ -53,7 +53,7 @@ const EditProfile: React.FC = () => {
 
 
 const formatDate = (date: string) => {
-  const shortDate = date.split("T")[0];
+  const shortDate = date?.split("T")[0];
   return shortDate;
 }
 
@@ -96,7 +96,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           <InputField onChange={(e) => {setInputData({...inputData, country: e.target.value})}} value={inputData.country} type="text" placeholder="Country" />
           <InputField onChange={(e) => {setInputData({...inputData, state: e.target.value})}} value={inputData.state} type="text" placeholder="State" />
           <InputField onChange={(e) => {setInputData({...inputData, city: e.target.value})}} value={inputData.city} type="text" placeholder="City" />
-          <InputField onChange={(e) => {setInputData({...inputData, interests: e.target.value?.split(",")})}} value={inputData.interests?.toString()} type="text" placeholder="Interests" />
+          <InputField onChange={(e) => {setInputData({...inputData, interests: e?.target.value.split(",")})}} value={inputData.interests?.toString()} type="text" placeholder="Interests" />
           <button disabled={loading} className="bg-[#FF6C00] text-white px-5 py-2 rounded">Update</button>
         </form>
       </div>
