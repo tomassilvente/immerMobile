@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import { MobileLayout } from "../../../components/MobileLayout";
 import Link from "next/link";
 import { updateUser } from "../../../server-actions/users/updateUser";
@@ -30,7 +30,8 @@ type InputData = {
 }
 
 const EditProfile: React.FC = () => {
-  const [data, setData] = useState<InputData>(JSON.parse(localStorage.getItem('immerUserData') || ""))
+  const [data, setData] = useState<any>("")
+  useEffect(() => { setData(JSON.parse(localStorage.getItem('immerUserData') || ''))} , [])
   const ref = useRef<HTMLFormElement>(null)
   const [loading, setLoading] = useState(false);
   const router = useRouter();

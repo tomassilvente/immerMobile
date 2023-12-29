@@ -12,12 +12,12 @@ import SpinnerLoader from '../../components/SpinnerLoader'
 import { useRouter } from 'next/navigation'
 import { useFetch } from '../../server-actions/hooks/useFetch'
 
-const userId = localStorage.getItem('userId')
-
 const Page = (): JSX.Element => {
   const [selectedTab, setSelectedTab] = useState<number>(0)
+  const [userId, setUserId] = useState<any>('')
   const auth = true
   const router = useRouter()
+  useEffect(() => { setUserId(localStorage.getItem('userId'))} , [])
   const { data, isPending, error } = useFetch(`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/users/${userId}`)
 
   const TABS = ['Events', 'Interests', 'Subscriptions']
