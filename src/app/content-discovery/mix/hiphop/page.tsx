@@ -3,12 +3,13 @@ import Link from "next/link"
 import { MobileLayout } from "../../../../components/MobileLayout"
 import SvgBackVector from "../../../../../public/assets/Icons/BackVector"
 import SvgMoreButton from "../../../../../public/assets/Icons/MoreButton"
-import HorizontalMusicCard from "app/content-discovery/components/HorizontalMusicCard"
+
 import SvgShuffleIcon from "../../../../../public/assets/Icons/ShuffleIcon"
 import SvgPlayButtonOrange from "../../../../../public/assets/Icons/PlayButtonOrange"
 import { useState } from "react"
 import SvgPauseOrange from "../../../../../public/assets/Icons/PauseOrange"
 import SvgShuffleOrange from "../../../../../public/assets/Icons/ShuffleOrange"
+import HorizontalMusicCard from "../../../../components/ContentDiscovery/HorizontalMusicCard"
 
 let podcastCards = [
     {
