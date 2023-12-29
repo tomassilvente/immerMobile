@@ -1,6 +1,6 @@
 import React from 'react'
 import { tickets } from './dummyTickets'
-import TicketCard from './TicketCard'
+import TicketCard from './ticketCard'
 
 const AttendedTickets = (): JSX.Element => {
   return (
