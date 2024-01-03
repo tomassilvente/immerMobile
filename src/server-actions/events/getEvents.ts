@@ -1,4 +1,4 @@
-const getEvents = async (id?: boolean): Promise<void> => {
+const getEvents = async (id?: string): Promise<void> => {
   let url: string
 
   if (id !== undefined) {
@@ -15,6 +15,7 @@ const getEvents = async (id?: boolean): Promise<void> => {
     }
   })
 
+  console.log(response)
   return await response.json()
 }
 
