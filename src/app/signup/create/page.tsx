@@ -76,7 +76,7 @@ export default function Create (): JSX.Element {
   const [accepted, setAccepted] = useState(false)
 
   return (
-    <div className="font-Inter relative max-w-[480px] m-auto">
+    <div className="font-Inter relative max-w-[480px] m-5">
       <div className="text-center">
         <p className="text-2xl mt-8 font-semibold">Create your account</p>
         <p className="text-lg font-light text-[#767676] mt-3">
