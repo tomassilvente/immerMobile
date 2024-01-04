@@ -11,7 +11,7 @@ import SvgMailLogo from '../../../public/assets/Icons/MailLogo'
 
 export default function SignUp (): JSX.Element {
   return (
-    <div className="font-Inter relative max-w-[480px] m-auto">
+    <div className="font-Inter relative max-w-[480px] m-5">
     <div className="m-5 text-center">
       <SvgImmerIconOrange width={50} height={50} className="mx-[45%]" />
       <p className="text-4xl mt-8 font-semibold">Welcome to Immer!</p>
