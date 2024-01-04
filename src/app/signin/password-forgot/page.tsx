@@ -34,7 +34,7 @@ export default function PasswordForgot (): JSX.Element {
   }
 
   return (
-    <div className="font-Inter relative max-w-[480px] m-auto">
+    <div className="font-Inter relative max-w-[480px] m-5">
     <div className="m-5 text-center ">
       <p className="text-2xl mt-8 font-semibold">Forgot your password?</p>
       <p className="text-lg font-light text-[#767676] mt-10">
@@ -62,7 +62,7 @@ export default function PasswordForgot (): JSX.Element {
                 : ''
           }}
           onChange={(e) => { isEmailCompleted(e.target.value) }}
-          className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black "
+          className="border rounded-md w-[100%] mt-3 py-2 pl-3 focus:border-black "
           placeholder="Enter Your Email"
           id="email"
           name="email"
