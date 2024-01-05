@@ -70,7 +70,7 @@ export default function SignInWithEmail (): JSX.Element {
   const toggleAccepted = (): void => { setAccepted((prev) => !prev) }
 
   return (
-    <div className="font-Inter relative max-w-[480px] m-auto">
+    <div className="font-Inter relative max-w-[480px]  m-auto p-5">
       <div className="m-5 text-center">
         <p className="text-4xl mt-8 font-semibold">Welcome back!</p>
         <p className="text-lg font-light text-[#767676] mt-10">

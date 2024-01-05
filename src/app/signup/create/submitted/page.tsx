@@ -6,7 +6,7 @@ import SvgInboxCheck from '../../../../../public/assets/Icons/InboxCheck'
 
 export default function Submitted (): JSX.Element {
   return (
-    <div className="font-Inter relative max-w-[480px] m-auto">
+    <div className="font-Inter relative max-w-[480px] m-auto p-5">
     <div className="m-14 text-center bg-white text-black sm:invisible overflow-scroll grid content-center place-items-center">
       <SvgImmerIconOrange width={50} height={50} className="mx-[45%]" />
       <p className="text-4xl mt-8 font-semibold">Almost Done!</p>

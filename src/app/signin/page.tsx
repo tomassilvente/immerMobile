@@ -8,7 +8,7 @@ import SvgMailLogo from "../../../public/assets/Icons/MailLogo";
 
 export default function signIn():JSX.Element {
   return (
-    <div className="font-Inter relative max-w-[480px] m-auto">
+    <div className="font-Inter relative max-w-[480px]  m-auto p-5">
     <div className="m-14 text-center bg-white text-black sm:invisible overflow-scroll">
       <SvgImmerIconOrange width={50} height={50} className="mx-[45%]" />
       <p className="text-4xl mt-8 font-semibold">Welcome back!</p>
