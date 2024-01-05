@@ -16,7 +16,7 @@ export const InputField: React.FC<InputFieldProps> = ({
       name={name}
       value={value}
       onChange={onChange}
-      className={`border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black ${
+      className={`border rounded-md w-[100%] mt-3 py-2 pl-3 focus:border-black ${
         error !== '' ? 'border-red-400' : ''
       }`}
       placeholder={placeholder}

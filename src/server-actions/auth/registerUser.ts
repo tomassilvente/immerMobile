@@ -3,9 +3,11 @@
 interface UserData {
   username: string
   password: string
+  fullName: string,
+  email: string
 }
 
-const registerUser = async (userData: UserData): Promise<{ statusCode: number }> => {
+const registerUser = async (userData: UserData): Promise<{ message: string }> => {
   const response = await fetch('https://immer-backend-dev-kenx.2.us-1.fl0.io/api/auth/register', {
     method: 'POST',
     headers: {

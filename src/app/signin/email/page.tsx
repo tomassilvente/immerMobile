@@ -58,13 +58,13 @@ export default function SignInWithEmail (): JSX.Element {
     console.log(response)
 
     if (response.token !== undefined && response.token !== null) {
+      localStorage.setItem("userId", response.user._id)
+      localStorage.setItem("token", response.token)
       router.push('/')
     } else {
       setIsFeedOpen(true)
     }
     //const res = await response.json()
-    localStorage.setItem("userId", response.user._id)
-    localStorage.setItem("token", response.token)
   };
 
   const toggleAccepted = (): void => { setAccepted((prev) => !prev) }
@@ -95,7 +95,7 @@ export default function SignInWithEmail (): JSX.Element {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black"
+            className="border rounded-md w-[100%] mt-3 py-2 pl-3 focus:border-black"
             placeholder="Enter Your Email"
             type="email"
           />
@@ -105,7 +105,7 @@ export default function SignInWithEmail (): JSX.Element {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black"
+              className="border rounded-md w-[100%] mt-3 py-2 pl-3 focus:border-black"
               placeholder="Enter Your Password"
               type="password"
             />
