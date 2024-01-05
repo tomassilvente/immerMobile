@@ -1,35 +1,35 @@
-"use client";
-import { useSelectedUser } from "../../server-actions/live-chat/userStore";
-import { SendMsIcon, SmileFaceIcon } from "../../server-actions/live-chat/icons";
-import dynamic from "next/dynamic";
-import React, { useState } from "react";
-import { useCookies } from "react-cookie";
-import { io } from "socket.io-client";
+'use client'
+import { useSelectedUser } from '../../server-actions/live-chat/userStore'
+import { SendMsIcon, SmileFaceIcon } from '../../server-actions/live-chat/icons'
+import dynamic from 'next/dynamic'
+import React, { useState } from 'react'
+import { useCookies } from 'react-cookie'
+import { io } from 'socket.io-client'
 
 const Picker = dynamic(
-    () => {
-        return import("emoji-picker-react");
-    },
-    {ssr:false}
+  async () => {
+    return await import('emoji-picker-react')
+  },
+  { ssr: false }
 )
 
-function MessageInp() {
-  const [inpValue, setInpValue] = useState<string>("");
-    const [showEmojies, setShowEmojies] = useState<boolean>(false);
-    const selectedUser = useSelectedUser((state) => state.selectedUser);
-    const [cookie,setCookie]=useCookies(["user"])
-    const socket=io("http://localhost:4000")
+function MessageInp () {
+  const [inpValue, setInpValue] = useState<string>('')
+  const [showEmojies, setShowEmojies] = useState<boolean>(false)
+  const selectedUser = useSelectedUser((state) => state.selectedUser)
+  const [cookie, setCookie] = useCookies(['user'])
+  const socket = io('https://server-chat-immer-dev-tksm.3.us-1.fl0.io/')
 
-    function handleSubmit(e: { preventDefault: () => void; }) {
-        e.preventDefault();
-        socket.emit("private message",selectedUser.email,inpValue,cookie.user)
-        setInpValue("")
-    }
-    
-    function onEmojiClick(emojiObject:{emoji:string}) {
-        setInpValue(pre=>pre + emojiObject.emoji)
-    }
-    
+  function handleSubmit (e: { preventDefault: () => void }) {
+    e.preventDefault()
+    socket.emit('private message', selectedUser.email, inpValue, cookie.user)
+    setInpValue('')
+  }
+
+  function onEmojiClick (emojiObject: { emoji: string }) {
+    setInpValue(pre => pre + emojiObject.emoji)
+  }
+
   return (
     <form className="mt-auto relative" onSubmit={handleSubmit}>
       <div className="w-full relative">
@@ -37,13 +37,13 @@ function MessageInp() {
           type="text"
           placeholder="Message"
           className="input w-full pl-14 input-bordered"
-          onChange={(e) => setInpValue(e.target.value)}
+          onChange={(e) => { setInpValue(e.target.value) }}
           value={inpValue}
         />
       </div>
       <button
         type="button"
-        onClick={() => setShowEmojies(!showEmojies)}
+        onClick={() => { setShowEmojies(!showEmojies) }}
         className="absolute top-1/2 left-5 -translate-y-1/2">
         <SmileFaceIcon />
       </button>
@@ -58,7 +58,7 @@ function MessageInp() {
         <SendMsIcon />
       </button>
     </form>
-  );
+  )
 }
 
-export default MessageInp;
+export default MessageInp

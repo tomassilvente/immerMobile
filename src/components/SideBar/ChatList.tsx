@@ -12,7 +12,7 @@ function ChatList({ mySelf }: { mySelf: userProps }) {
     (state:any) => ({ users: state.users, setUsers: state.setUsers }),
     shallow
   );
-  const socket = io("http://localhost:4000");
+  const socket = io("https://server-chat-immer-dev-tksm.3.us-1.fl0.io/");
   useEffect(() => {
     socket.on("new-user", () => {
     fetchUsers(mySelf,setUsers)

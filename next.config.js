@@ -1,16 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: {
-    domains: ["robohash.org"],
+    unoptimized: true, 
   },
-  async rewrites() {
-    return [
-      {
-        source: "/:path*",
-        destination:"http://localhost:4000/:path*"
-      }
-    ]
-  }
-};
+}
 
 module.exports = nextConfig

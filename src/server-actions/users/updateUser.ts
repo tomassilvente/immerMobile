@@ -1,26 +1,35 @@
+const API_BASE_URL = 'https://immer-backend-dev-kenx.2.us-1.fl0.io/api'
 
-
-const updateUser = async (userData: any) => {
-    const id = localStorage.getItem('userId');
-    const token = localStorage.getItem('token')
-
-    try {
-        const response = await fetch(`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/users/${id}`, {
-            method: 'PATCH',
-            headers: {
-                "Authorization": `Bearer ${token}`,
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(userData),
-        });
-        const data = await response.json()
-        localStorage.setItem("immerUserData", JSON.stringify(data));
-        return response;
-    } catch(err) {
-        console.log(err)
-    }
-    
+const getHeaders = (): Record<string, string> => {
+  const token = localStorage.getItem('token')
+  return {
+    Authorization: `Bearer ${token}`,
+    Accept: 'application/json',
+    'Content-Type': 'application/json'
   }
- 
-  export { updateUser };
+}
+
+const handleResponse = async (response: Response): Promise<Response> => {
+  const data = await response.json()
+  localStorage.setItem('immerUserData', JSON.stringify(data))
+  return response
+}
+
+const updateUser = async (userData: any): Promise<Response> => {
+  const id = localStorage.getItem('userId')
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/users/${id}`, {
+      method: 'PATCH',
+      headers: getHeaders(),
+      body: JSON.stringify(userData)
+    })
+
+    return await handleResponse(response)
+  } catch (err) {
+    console.error(err)
+    throw err
+  }
+}
+
+export { updateUser }

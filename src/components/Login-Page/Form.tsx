@@ -9,7 +9,7 @@ import { useCookies } from 'react-cookie'
 function Form () {
   const [avatarId, setAvatarId] = useState((Math.random() * 20).toFixed())
   const router = useRouter()
-  const socket = io('http://localhost:4000')
+  const socket = io('https://server-chat-immer-dev-tksm.3.us-1.fl0.io/')
   const [cookie] = useCookies(['user'])
   useEffect(() => {
     if (cookie.user) {
