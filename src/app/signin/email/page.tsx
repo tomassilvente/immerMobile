@@ -9,11 +9,11 @@ import SvgAlertIcon from '../../../../public/assets/Icons/AlertIcon'
 import Feed from '../../../components/SignIn/Feed'
 import SignButton from '../../../components/SignUp/SignButton'
 import { useRouter } from 'next/navigation'
-import { useCookies } from 'react-cookie';  // Import useCookies
+import { useCookies } from 'react-cookie' // Import useCookies
 import { type FormData } from '../../../types/signin.interfaces'
 import { type User } from '../../../server-actions/auth/loginUser'
 
-export default function SignInWithEmail(): JSX.Element {
+export default function SignInWithEmail (): JSX.Element {
   const router = useRouter()
 
   const [formData, setFormData] = useState<FormData>({
@@ -25,7 +25,7 @@ export default function SignInWithEmail(): JSX.Element {
   const [isFeedOpen, setIsFeedOpen] = useState(false)
   const [wrong, setWrong] = useState(false)
 
-  const [cookies, setCookie] = useCookies(['user']);  
+  const [cookies, setCookie] = useCookies(['user']);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target
