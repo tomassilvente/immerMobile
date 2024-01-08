@@ -7,11 +7,11 @@ import SignButton from '../../../components/SignUp/SignButton'
 import { registerUser } from '../../../server-actions/auth/registerUser'
 import { InputField } from '../../../components/SignUp/InputField'
 import { CheckboxAgreement } from '../../../components/SignUp/CheckboxAgreement'
-import { MobileLayout } from '../../../components/MobileLayout'
 
 export default function Create (): JSX.Element {
   const router = useRouter()
 
+  const [message, setMessage] = useState<string>('')
   const [formData, setFormData] = useState({
     fullName: '',
     username: '',
@@ -24,7 +24,7 @@ export default function Create (): JSX.Element {
     fullName: '',
     username: '',
     email: '',
-    password: '',
+    password: 'At least 8 characters, 1 uppercase letter, 1 number, 1 symbol',
     passwordConfirm: ''
   })
 
@@ -44,7 +44,7 @@ export default function Create (): JSX.Element {
             : ''
         break
       case 'password':
-        error = value.length < 8
+        error = value.length < 8 
         ? 'Invalid password' 
         : ''
         break
@@ -71,15 +71,16 @@ export default function Create (): JSX.Element {
     // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
     const response = await registerUser(formData)
     console.log(response)
-    if (response.message === 'User registered successfully') {
+    if (response.status === 201) {
       router.push('/signin/email')
     }
+    else setMessage(response.message)
   }
 
   const [accepted, setAccepted] = useState(false)
 
   return (
-    <div className="font-Inter w-[480px] m-auto p-5">
+    <div className="font-Inter max-w-[480px] m-auto p-5">
       <div className="text-center min-h-screen">
         <p className="text-2xl mt-8 font-semibold">Create your account</p>
         <p className="text-lg font-light text-[#767676] mt-3">
@@ -136,6 +137,10 @@ export default function Create (): JSX.Element {
             accepted={accepted}
             toggleAccepted={() => { setAccepted(!accepted) }}
           />
+          {message
+          ? <p className='text-[#ff3c3c]'>{message}</p>
+          :""
+          }
           <SignButton
             onClick={handleSubmit}
             able={!Object.values(errors).some(Boolean) && accepted}

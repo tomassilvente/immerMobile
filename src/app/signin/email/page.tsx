@@ -9,12 +9,15 @@ import SvgAlertIcon from '../../../../public/assets/Icons/AlertIcon'
 import Feed from '../../../components/SignIn/Feed'
 import SignButton from '../../../components/SignUp/SignButton'
 import { useRouter } from 'next/navigation'
-import { useCookies } from 'react-cookie' // Import useCookies
 import { type FormData } from '../../../types/signin.interfaces'
 import { type User } from '../../../server-actions/auth/loginUser'
 
 export default function SignInWithEmail (): JSX.Element {
   const router = useRouter()
+
+  const [message, setMessage] = useState<string>('')
+  const [quant, setQuant] = useState<number>(1)
+  const [left, setLeft] = useState<number>(3)
 
   const [formData, setFormData] = useState<FormData>({
     email: '',
@@ -25,8 +28,6 @@ export default function SignInWithEmail (): JSX.Element {
   const [isFeedOpen, setIsFeedOpen] = useState(false)
   const [wrong, setWrong] = useState(false)
 
-  const [cookies, setCookie] = useCookies(['user']);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
@@ -34,7 +35,6 @@ export default function SignInWithEmail (): JSX.Element {
 
   const setFeedClose = (): void => {
     setIsFeedOpen(false)
-    setWrong(true)
   }
 
   const validateFormData = (): boolean => {
@@ -55,23 +55,32 @@ export default function SignInWithEmail (): JSX.Element {
 
     if (!validateFormData()) return
 
-    const response: { token: string, user: User } = await loginUser(formData)
+    // ! It is not correct to call a void function inside another one, I will try to fix it later
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
+    const response: {message:string, token: string, user: User } = await loginUser(formData)
     console.log(response)
 
     if (response.token !== undefined && response.token !== null) {
-      // Set cookies after successful login
-      setCookie('user', response.token, { path: '/' });
+      localStorage.setItem("userId", response.user._id)
+      localStorage.setItem("token", response.token)
+      router.push('/')
 
-      router.push('/');
     } else {
+      setMessage(response.message)
+      setQuant(quant + 1)
+      setLeft(left - 1)
+      console.log(quant)
+      setWrong(true)
+    }
+    if(quant === 3){ 
       setIsFeedOpen(true)
+      
     }
     //const res = await response.json()
-    localStorage.setItem("userId", response.user._id)
-    localStorage.setItem("token", response.token)
   };
 
   const toggleAccepted = (): void => { setAccepted((prev) => !prev) }
+
   return (
     <div className="font-Inter relative max-w-[480px]  m-auto p-5">
       <div className="m-5 text-center">
@@ -84,14 +93,14 @@ export default function SignInWithEmail (): JSX.Element {
             <div className="flex text-start text-white bg-[#ff3030] mt-8 rounded-md">
               <SvgAlertIcon className="mx-2" width={50} height={50} />
               <p>
-                Incorrect email or password. 2 login attemps remaining before the
+                Incorrect email or password. {left} login attemps remaining before the
                 account is blocked.
               </p>
             </div>
-          )
+            )
           : (
-            ''
-          )}
+              ''
+            )}
         <form className="text-start mt-10" onSubmit={handleSubmit}>
           <p className="text-xl mt-5">Email</p>
           <input
@@ -131,7 +140,7 @@ export default function SignInWithEmail (): JSX.Element {
                   width={25}
                   className="ml-1"
                 />
-              )
+                )
               : (
                 <SvgCheckBoxUnaccepted
                   onClick={toggleAccepted}
@@ -139,7 +148,7 @@ export default function SignInWithEmail (): JSX.Element {
                   width={25}
                   className="ml-1"
                 />
-              )}
+                )}
             <label className="ml-2 text-sm font-light text-[#767676]">
               Remember me
             </label>
@@ -150,9 +159,13 @@ export default function SignInWithEmail (): JSX.Element {
               Forgot Password?
             </Link>
           </div>
+          {message
+          ? <p className='text-[#ff3c3c]'>{message}</p>
+          :""
+          }
           <SignButton
             onClick={handleSubmit}
-            able={!Object.values(errors).some(Boolean)}
+            able={!Object.values(errors).some(Boolean) && left>0}
             title="Login"
           />
         </form>
