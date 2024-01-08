@@ -5,7 +5,7 @@ import ChatWindow from '../../components/LiveChatParticipation/ChatWindow'
 import UserInfo from '../../components/LiveChatParticipation/UserInfo'
 import BackButton from '../../components/_common/buttons/BackButton'
 import ChatMessageModal from '../../components/LiveChatParticipation/modals/ChatMessageModal'
-import { type ChatMessage } from '../../components/LiveChatParticipation/types'
+import { type ChatMessage } from '../../types/livechatparticipation.interfaces'
 
 const Home: React.FC = () => {
   // State for tracking whether the user has liked the content

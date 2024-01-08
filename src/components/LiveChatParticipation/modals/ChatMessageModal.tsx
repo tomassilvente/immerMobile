@@ -2,7 +2,7 @@
 // Represents a modal for displaying options for a specific chat message
 import React, { useState } from 'react'
 import Modal from './Modal'
-import { type ChatMessage } from '../types' // Import the ChatMessage type
+import { type ChatMessage } from '../../../types/livechatparticipation.interfaces'  // Import the ChatMessage type
 
 interface ChatMessageModalProps {
   message: ChatMessage // The message to display options for

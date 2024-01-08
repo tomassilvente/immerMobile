@@ -1,6 +1,5 @@
 "use client";
-
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import { MobileLayout } from "../../../components/MobileLayout";
 import Link from "next/link";
 import { updateUser } from "../../../server-actions/users/updateUser";
@@ -30,7 +29,8 @@ type InputData = {
 }
 
 const EditProfile: React.FC = () => {
-  const [data, setData] = useState<InputData>(JSON.parse(localStorage.getItem('immerUserData') || ""))
+  const [data, setData] = useState<any>("")
+  useEffect(() => { setData(JSON.parse(localStorage.getItem('immerUserData') || ''))} , [])
   const ref = useRef<HTMLFormElement>(null)
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -45,12 +45,15 @@ const EditProfile: React.FC = () => {
   interests: data?.interests
  })
 
- if(!data){
-  router.push("/attendee-profile")
-}
+  useEffect(() => {
+    if (!data) {
+      router.push("/attendee-profile")
+    }
+  }, [data]);
+
 
 const formatDate = (date: string) => {
-  const shortDate = date.split("T")[0];
+  const shortDate = date?.split("T")[0];
   return shortDate;
 }
 
@@ -74,7 +77,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   <MobileLayout>
     <div>
       <div className="relative flex px-[14px] gap-5 items-center py-5">
-        <Link href="">
+        <Link href="/attendee-profile">
           <BackButton />
         </Link>
         <h1 className="font-bold text-lg">Edit Profile</h1>
@@ -89,11 +92,11 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           <InputField onChange={(e) => {setInputData({...inputData, fullName: e.target.value})}} value={inputData.fullName} type="text" placeholder="Name" />
           <InputField onChange={(e) => {setInputData({...inputData, username: e.target.value})}} value={inputData.username} type="text" placeholder="Username" />
           <InputField onChange={(e) => {setInputData({...inputData, phoneNumber: e.target.value})}}  value={inputData.phoneNumber} type="text" placeholder="Phone number" />
-          <InputField onChange={(e) => {setInputData({...inputData, dateOfBirth: e.target.value})}} value={formatDate(inputData.dateOfBirth.toString())} type="text" placeholder="Date of birth" />
+          <InputField onChange={(e) => {setInputData({...inputData, dateOfBirth: e.target.value})}} value={formatDate(inputData.dateOfBirth?.toString())} type="text" placeholder="Date of birth" />
           <InputField onChange={(e) => {setInputData({...inputData, country: e.target.value})}} value={inputData.country} type="text" placeholder="Country" />
           <InputField onChange={(e) => {setInputData({...inputData, state: e.target.value})}} value={inputData.state} type="text" placeholder="State" />
           <InputField onChange={(e) => {setInputData({...inputData, city: e.target.value})}} value={inputData.city} type="text" placeholder="City" />
-          <InputField onChange={(e) => {setInputData({...inputData, interests: e.target.value.split(",")})}} value={inputData.interests.toString()} type="text" placeholder="Interests" />
+          <InputField onChange={(e) => {setInputData({...inputData, interests: e?.target.value.split(",")})}} value={inputData.interests?.toString()} type="text" placeholder="Interests" />
           <button disabled={loading} className="bg-[#FF6C00] text-white px-5 py-2 rounded">Update</button>
         </form>
       </div>

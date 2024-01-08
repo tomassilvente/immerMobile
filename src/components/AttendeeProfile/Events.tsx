@@ -1,5 +1,5 @@
 import React from 'react'
-import EventCard from './eventCard'
+import EventCard from './EventCard'
 import AttendedEventCard from './AttendedEventCard'
 
 const Events = (): JSX.Element => {

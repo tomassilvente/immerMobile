@@ -66,14 +66,14 @@ export default function SignInWithEmail(): JSX.Element {
     } else {
       setIsFeedOpen(true)
     }
-
+    //const res = await response.json()
     localStorage.setItem("userId", response.user._id)
     localStorage.setItem("token", response.token)
   };
 
   const toggleAccepted = (): void => { setAccepted((prev) => !prev) }
   return (
-    <div className="font-Inter relative max-w-[480px] m-auto">
+    <div className="font-Inter relative max-w-[480px]  m-auto p-5">
       <div className="m-5 text-center">
         <p className="text-4xl mt-8 font-semibold">Welcome back!</p>
         <p className="text-lg font-light text-[#767676] mt-10">
@@ -98,7 +98,7 @@ export default function SignInWithEmail(): JSX.Element {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black"
+            className="border rounded-md w-[100%] mt-3 py-2 pl-3 focus:border-black"
             placeholder="Enter Your Email"
             type="email"
           />
@@ -108,7 +108,7 @@ export default function SignInWithEmail(): JSX.Element {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black"
+              className="border rounded-md w-[100%] mt-3 py-2 pl-3 focus:border-black"
               placeholder="Enter Your Password"
               type="password"
             />
