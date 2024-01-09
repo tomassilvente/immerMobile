@@ -5,7 +5,7 @@ import SvgChechedIcon from '../../../../../../public/assets/Icons/CheckedIcon'
 
 export default function Success (): JSX.Element {
   return (
-    <div className="font-Inter relative max-w-[480px] m-5">
+    <div className="font-Inter relative max-w-[480px]  m-auto p-5">
       <div className="m-5 text-center grid content-center place-items-center">
         <SvgImmerIconOrange width={50} height={50} className="mx-[45%]" />
         <p className="text-4xl mt-8 font-semibold">Password reset</p>

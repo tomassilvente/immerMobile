@@ -5,7 +5,7 @@ import SvgImmerIconOrange from '../../../../../public/assets/Icons/ImmerIconOran
 
 export default function Submitted (): JSX.Element {
   return (
-   <div className="font-Inter relative max-w-[480px] m-5">
+   <div className="font-Inter relative max-w-[480px] m-auto p-5">
     <div className="m-5 text-center grid content-center place-items-center">
       <SvgImmerIconOrange width={50} height={50} className="mx-[45%]" />
       <p className="text-4xl mt-8 font-semibold">Welcome to Immer</p>

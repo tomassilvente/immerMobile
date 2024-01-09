@@ -8,7 +8,7 @@ import InputField from "../../../components/AttendeeProfile/InputField";
 import BackButton from "../../../components/_common/buttons/BackButton";
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from 'react-toastify';
-import SpinnerLoader from "../../../components/SpinnerLoader";
+import SpinnerLoader from "../../../components/Chat-Threads/SpinnerLoader";
 
 type InputData = {
   _id?:         string;

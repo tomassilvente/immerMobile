@@ -15,6 +15,10 @@ import { type User } from '../../../server-actions/auth/loginUser'
 export default function SignInWithEmail (): JSX.Element {
   const router = useRouter()
 
+  const [message, setMessage] = useState<string>('')
+  const [quant, setQuant] = useState<number>(1)
+  const [left, setLeft] = useState<number>(3)
+
   const [formData, setFormData] = useState<FormData>({
     email: '',
     password: ''
@@ -31,7 +35,6 @@ export default function SignInWithEmail (): JSX.Element {
 
   const setFeedClose = (): void => {
     setIsFeedOpen(false)
-    setWrong(true)
   }
 
   const validateFormData = (): boolean => {
@@ -54,23 +57,32 @@ export default function SignInWithEmail (): JSX.Element {
 
     // ! It is not correct to call a void function inside another one, I will try to fix it later
     // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
-    const response: { token: string, user: User } = await loginUser(formData)
+    const response: {message:string, token: string, user: User } = await loginUser(formData)
     console.log(response)
 
     if (response.token !== undefined && response.token !== null) {
+      localStorage.setItem("userId", response.user._id)
+      localStorage.setItem("token", response.token)
       router.push('/')
+
     } else {
+      setMessage(response.message)
+      setQuant(quant + 1)
+      setLeft(left - 1)
+      console.log(quant)
+      setWrong(true)
+    }
+    if(quant === 3){ 
       setIsFeedOpen(true)
+      
     }
     //const res = await response.json()
-    localStorage.setItem("userId", response.user._id)
-    localStorage.setItem("token", response.token)
   };
 
   const toggleAccepted = (): void => { setAccepted((prev) => !prev) }
 
   return (
-    <div className="font-Inter relative max-w-[480px] m-5">
+    <div className="font-Inter relative max-w-[480px]  m-auto p-5">
       <div className="m-5 text-center">
         <p className="text-4xl mt-8 font-semibold">Welcome back!</p>
         <p className="text-lg font-light text-[#767676] mt-10">
@@ -81,7 +93,7 @@ export default function SignInWithEmail (): JSX.Element {
             <div className="flex text-start text-white bg-[#ff3030] mt-8 rounded-md">
               <SvgAlertIcon className="mx-2" width={50} height={50} />
               <p>
-                Incorrect email or password. 2 login attemps remaining before the
+                Incorrect email or password. {left} login attemps remaining before the
                 account is blocked.
               </p>
             </div>
@@ -147,9 +159,13 @@ export default function SignInWithEmail (): JSX.Element {
               Forgot Password?
             </Link>
           </div>
+          {message
+          ? <p className='text-[#ff3c3c]'>{message}</p>
+          :""
+          }
           <SignButton
             onClick={handleSubmit}
-            able={!Object.values(errors).some(Boolean)}
+            able={!Object.values(errors).some(Boolean) && left>0}
             title="Login"
           />
         </form>

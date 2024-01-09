@@ -8,7 +8,7 @@ import Interests from '../../components/AttendeeProfile/Interests'
 import Subscriptions from '../../components/AttendeeProfile/Subscriptions'
 import BackButton from '../../components/_common/buttons/BackButton'
 import MoreButton from '../../components/_common/buttons/MoreButton'
-import SpinnerLoader from '../../components/SpinnerLoader'
+import SpinnerLoader from '../../components/Chat-Threads/SpinnerLoader'
 import { useRouter } from 'next/navigation'
 import { useFetch } from '../../server-actions/hooks/useFetch'
 
