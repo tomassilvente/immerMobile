@@ -1,5 +1,7 @@
+import { DEPLOYMENT_LINKS } from "../../constants/deploymentLinks"
+
 const postContent = async (contentData: object): Promise<{ token: string }> => {
-  const response = await fetch('https://immer-backend-dev-kenx.2.us-1.fl0.io/api/content', {
+  const response = await fetch(`${DEPLOYMENT_LINKS.immerServer}/api/content`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

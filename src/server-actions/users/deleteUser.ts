@@ -1,5 +1,7 @@
+import { DEPLOYMENT_LINKS } from "../../constants/deploymentLinks"
+
 const deleteUser = async (id: string): Promise<void> => {
-  const url = `https://immer-backend-dev-kenx.2.us-1.fl0.io/api/users/${id}`
+  const url = `${DEPLOYMENT_LINKS.immerServer}/api/users/${id}`
 
   const response = await fetch(url, {
     method: 'DELETE',

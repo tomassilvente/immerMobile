@@ -1,7 +1,8 @@
+import { DEPLOYMENT_LINKS } from '../../constants/deploymentLinks'
 import { type eventData } from './postEvent'
 
 const updateEvent = async (contentData: eventData, id: string): Promise<{ token: string }> => {
-  const response = await fetch(`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/content/${id}`, {
+  const response = await fetch(`${DEPLOYMENT_LINKS.immerServer}/api/content/${id}`, {
     method: 'PATCH',
     headers: {
       Accept: 'application/json',

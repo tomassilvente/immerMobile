@@ -1,3 +1,5 @@
+import { DEPLOYMENT_LINKS } from "../../constants/deploymentLinks"
+
 export interface ticketData {
   id: string
   eventId: string
@@ -12,7 +14,7 @@ export interface ticketData {
 }
 
 const postEvent = async (ticketData: ticketData): Promise<{ token: string }> => {
-  const response = await fetch('https://immer-backend-dev-kenx.2.us-1.fl0.io/api/events', {
+  const response = await fetch(`${DEPLOYMENT_LINKS.immerServer}/api/events`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

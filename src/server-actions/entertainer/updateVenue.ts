@@ -1,7 +1,8 @@
+import { DEPLOYMENT_LINKS } from '../../constants/deploymentLinks'
 import { type entertainerData } from './createEntertainer'
 
 const updateEntertainer = async (entertainerData: entertainerData, id: string): Promise<{ token: string }> => {
-  const response = await fetch(`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/entertainer/${id}`, {
+  const response = await fetch(`${DEPLOYMENT_LINKS.immerServer}/api/entertainer/${id}`, {
     method: 'PATCH',
     headers: {
       Accept: 'application/json',

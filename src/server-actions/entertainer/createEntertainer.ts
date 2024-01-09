@@ -1,3 +1,5 @@
+import { DEPLOYMENT_LINKS } from "../../constants/deploymentLinks"
+
 export interface entertainerData {
   id: string
   name: string
@@ -9,7 +11,7 @@ export interface entertainerData {
 }
 
 const createEntertainer = async (entertainerData: entertainerData): Promise<{ token: string }> => {
-  const response = await fetch('https://immer-backend-dev-kenx.2.us-1.fl0.io/api/entertainer', {
+  const response = await fetch(`${DEPLOYMENT_LINKS.immerServer}/api/entertainer`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

@@ -1,10 +1,12 @@
+import { DEPLOYMENT_LINKS } from "../../constants/deploymentLinks"
+
 const getVenues = async (id: string): Promise<void> => {
   let url: string
 
   if (id !== undefined) {
-    url = `https://immer-backend-dev-kenx.2.us-1.fl0.io/api/venues/${id}`
+    url = `${DEPLOYMENT_LINKS.immerServer}/api/venues/${id}`
   } else {
-    url = 'https://immer-backend-dev-kenx.2.us-1.fl0.io/api/venues/all/20/3'
+    url = `${DEPLOYMENT_LINKS.immerServer}/api/venues/all/20/3`
   }
 
   const response = await fetch(url, {

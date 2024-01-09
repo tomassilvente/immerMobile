@@ -5,12 +5,13 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
-import SpinnerLoader from '../Chat-Threads/SpinnerLoader'
+
 import { updateProfileImage } from '../../server-actions/users/UpdateProfileImage'
 import { useRouter } from 'next/navigation'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { type ProfileImageProps } from '../../types/attendeeprofile.interfaces'
+import SpinnerLoader from '../Chat-Threads/SpinnerLoader'
 
 const ProfileImage: React.FC<ProfileImageProps> = ({
   headerImgSrc,

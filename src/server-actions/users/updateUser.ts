@@ -1,4 +1,6 @@
-const API_BASE_URL = 'https://immer-backend-dev-kenx.2.us-1.fl0.io/api'
+import { DEPLOYMENT_LINKS } from "../../constants/deploymentLinks"
+
+const API_BASE_URL = `${DEPLOYMENT_LINKS.immerServer}/api`
 
 const getHeaders = (): Record<string, string> => {
   const token = localStorage.getItem('token')

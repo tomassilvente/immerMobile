@@ -1,5 +1,7 @@
+import { DEPLOYMENT_LINKS } from "../../constants/deploymentLinks"
+
 export const deleteTicket = async (id: string): Promise<void> => {
-  const url = `https://immer-backend-dev-kenx.2.us-1.fl0.io/api/events/${id}`
+  const url = `${DEPLOYMENT_LINKS.immerServer}/api/events/${id}`
 
   const response = await fetch(url, {
     method: 'DELETE',

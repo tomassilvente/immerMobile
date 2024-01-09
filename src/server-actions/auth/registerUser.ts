@@ -1,5 +1,7 @@
 // ! I am sure it does not it correctly defined, we need to check the fields
 
+import { DEPLOYMENT_LINKS } from "../../constants/deploymentLinks"
+
 interface UserData {
   username: string
   password: string
@@ -8,7 +10,7 @@ interface UserData {
 }
 
 const registerUser = async (userData: UserData): Promise<{ message: string }> => {
-  const response = await fetch('https://immer-backend-dev-kenx.2.us-1.fl0.io/api/auth/register', {
+  const response = await fetch(`${DEPLOYMENT_LINKS.immerServer}/api/auth/register`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

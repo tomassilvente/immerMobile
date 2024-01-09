@@ -1,3 +1,5 @@
+import { DEPLOYMENT_LINKS } from "../../constants/deploymentLinks"
+
 interface UserData {
   email: string
   password: string
@@ -24,7 +26,7 @@ export interface User {
 }
 
 const loginUser = async (userData: UserData): Promise<{ token: string, user: User }> => {
-  const response = await fetch('https://immer-backend-dev-kenx.2.us-1.fl0.io/api/auth/login', {
+  const response = await fetch(`${DEPLOYMENT_LINKS.immerServer}/api/auth/login`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

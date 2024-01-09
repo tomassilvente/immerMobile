@@ -1,5 +1,7 @@
+import { DEPLOYMENT_LINKS } from "../../constants/deploymentLinks"
+
 const manageContent = async (id: string, approve: boolean): Promise<{ token: string }> => {
-  const response = await fetch(`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/content/manage/${id}/${approve}`, {
+  const response = await fetch(`${DEPLOYMENT_LINKS.immerServer}/api/content/manage/${id}/${approve}`, {
     method: 'PATCH',
     headers: {
       Accept: 'application/json',

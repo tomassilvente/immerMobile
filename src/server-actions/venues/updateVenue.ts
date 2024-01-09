@@ -1,7 +1,8 @@
+import { DEPLOYMENT_LINKS } from '../../constants/deploymentLinks'
 import { type venueData } from './createVenue'
 
 const updateVenue = async (venueData: venueData, id: string): Promise<{ token: string }> => {
-  const response = await fetch(`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/venues/${id}`, {
+  const response = await fetch(`${DEPLOYMENT_LINKS.immerServer}/api/venues/${id}`, {
     method: 'PATCH',
     headers: {
       Accept: 'application/json',

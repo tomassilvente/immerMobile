@@ -1,3 +1,5 @@
+import { DEPLOYMENT_LINKS } from "../../constants/deploymentLinks"
+
 export interface venueData {
   id: string
   name: string
@@ -9,7 +11,7 @@ export interface venueData {
 }
 
 const postVenue = async (venueData: venueData): Promise<{ token: string }> => {
-  const response = await fetch('https://immer-backend-dev-kenx.2.us-1.fl0.io/api/venues', {
+  const response = await fetch(`${DEPLOYMENT_LINKS.immerServer}/api/venues`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

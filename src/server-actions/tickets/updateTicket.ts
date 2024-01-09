@@ -1,7 +1,8 @@
+import { DEPLOYMENT_LINKS } from '../../constants/deploymentLinks'
 import { type ticketData } from './createTicket'
 
 const updateTicket = async (ticketData: ticketData, id: string): Promise<{ token: string }> => {
-  const response = await fetch(`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/ticket/${id}`, {
+  const response = await fetch(`${DEPLOYMENT_LINKS.immerServer}/api/ticket/${id}`, {
     method: 'PATCH',
     headers: {
       Accept: 'application/json',
