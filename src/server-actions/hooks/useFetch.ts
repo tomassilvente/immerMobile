@@ -18,13 +18,13 @@ interface Data {
   updatedAt: Date
 }
 
-interface ReturnedData {
-  data: Data[]
-  error?: Error | null
-  isPending?: boolean
-}
+// interface ReturnedData {
+//   data: Data[]
+//   error?: Error | null
+//   isPending?: boolean
+// }
 
-export const useFetch = (url: string) => {
+export const useFetch = (url: string): [Data | null, boolean, string | null] => {
   const [data, setData] = useState<Data | null>(null)
   const [isPending, setIsPending] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
@@ -33,12 +33,11 @@ export const useFetch = (url: string) => {
     const controller = new AbortController()
     const token = localStorage.getItem('token')
 
-    const fetchData = async () => {
+    const fetchData = async (): Promise<void> => {
       setIsPending(true)
 
       try {
         const res = await fetch(url, {
-
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -46,10 +45,11 @@ export const useFetch = (url: string) => {
           },
           signal: controller.signal
         })
-        // console.log(res)
+
         if (!res.ok) {
           throw new Error(res.statusText)
         }
+
         const _data = await res.json()
         setData(_data)
         localStorage.setItem('immerUserData', JSON.stringify(_data))
@@ -65,12 +65,12 @@ export const useFetch = (url: string) => {
       }
     }
 
-    fetchData()
+    fetchData().catch((err) => { console.log(err) })
 
     return () => {
       controller.abort()
     }
   }, [url])
 
-  return { data, isPending, error }
+  return [data, isPending, error]
 }

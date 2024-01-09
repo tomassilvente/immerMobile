@@ -13,20 +13,22 @@ const Picker = dynamic(
   { ssr: false }
 )
 
-function MessageInp () {
+function MessageInp (): JSX.Element {
   const [inpValue, setInpValue] = useState<string>('')
   const [showEmojies, setShowEmojies] = useState<boolean>(false)
   const selectedUser = useSelectedUser((state) => state.selectedUser)
+  // ! I am not sure about this, it should be reviewed
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [cookie, setCookie] = useCookies(['user'])
   const socket = io('https://server-chat-immer-dev-tksm.3.us-1.fl0.io/')
 
-  function handleSubmit (e: { preventDefault: () => void }) {
+  function handleSubmit (e: { preventDefault: () => void }): void {
     e.preventDefault()
     socket.emit('private message', selectedUser.email, inpValue, cookie.user)
     setInpValue('')
   }
 
-  function onEmojiClick (emojiObject: { emoji: string }) {
+  function onEmojiClick (emojiObject: { emoji: string }): void {
     setInpValue(pre => pre + emojiObject.emoji)
   }
 

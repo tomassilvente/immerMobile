@@ -1,4 +1,6 @@
-export function FlashIcon () {
+import React from 'react'
+
+export function FlashIcon (): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +19,7 @@ export function FlashIcon () {
 }
 
 // Chat-Threads > MessageInp.tsx
-export function SmileFaceIcon () {
+export function SmileFaceIcon (): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +38,7 @@ export function SmileFaceIcon () {
 }
 
 // Chat-Threads > TopBar.tsx
-export function PhoneIcon () {
+export function PhoneIcon (): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +57,7 @@ export function PhoneIcon () {
 }
 
 // Left-Sidebar > SearchInp.tsx
-export function SearchIcon () {
+export function SearchIcon (): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +74,7 @@ export function SearchIcon () {
     </svg>
   )
 }
-export function SendMsIcon () {
+export function SendMsIcon (): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

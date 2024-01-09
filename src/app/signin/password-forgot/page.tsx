@@ -62,7 +62,7 @@ export default function PasswordForgot (): JSX.Element {
                 : ''
           }}
           onChange={(e) => { isEmailCompleted(e.target.value) }}
-          className="border rounded-md w-[100%] mt-3 py-2 pl-3 focus:border-black "
+          className="border rounded-md w-[100%] mt-3 py-4 pl-3 focus:border-black "
           placeholder="Enter Your Email"
           id="email"
           name="email"

@@ -1,54 +1,53 @@
-"use client"
-import Link from "next/link";
-import { MobileLayout } from "../../../components/MobileLayout";
-import Image from "next/image";
+'use client'
+import Link from 'next/link'
+import { MobileLayout } from '../../../components/MobileLayout'
+import Image from 'next/image'
 import DemoData from '../../../../public/data/DemoData.json'
-import { useState } from "react";
-import SvgRedHeart from "../../../../public/assets/Icons/RedHeart";
-import SvgWhiteCommentButton from "../../../../public/assets/Icons/WhiteCommentButton";
-import SvgLikeButtonWhite from "../../../../public/assets/Icons/LikeButtonWhite";
-import SvgShareCirclesWhite from "../../../../public/assets/Icons/ShareCirclesWhite";
-import Share from "../../../components/EventDetails/Share";
-import Comments from "../../../components/_common/components/Comments";
-import SvgBackVectorWhite from "../../../../public/assets/Icons/BackVectorWhite";
-import SvgFollowedButton from "../../../../public/assets/Icons/FollowedButton";
-import SvgMagnify from "../../../../public/assets/Icons/Magnify";
-import SvgMoreButton from "../../../../public/assets/Icons/MoreButton";
-import Settings from "../../../components/_common/components/Settings";
+import React, { useState } from 'react'
+import SvgRedHeart from '../../../../public/assets/Icons/RedHeart'
+import SvgWhiteCommentButton from '../../../../public/assets/Icons/WhiteCommentButton'
+import SvgLikeButtonWhite from '../../../../public/assets/Icons/LikeButtonWhite'
+import SvgShareCirclesWhite from '../../../../public/assets/Icons/ShareCirclesWhite'
+import Share from '../../../components/EventDetails/Share'
+import Comments from '../../../components/_common/components/Comments'
+import SvgBackVectorWhite from '../../../../public/assets/Icons/BackVectorWhite'
+import SvgFollowedButton from '../../../../public/assets/Icons/FollowedButton'
+import SvgMagnify from '../../../../public/assets/Icons/Magnify'
+import SvgMoreButton from '../../../../public/assets/Icons/MoreButton'
+import Settings from '../../../components/_common/components/Settings'
 
-export default function reels(): JSX.Element{
+export default function reels (): JSX.Element {
+  const [CommentOpen, setCommentOpen] = useState(false)
 
-    const [CommentOpen, setCommentOpen] = useState(false)
+  function openComments (): void {
+    setCommentOpen(!CommentOpen)
+  }
 
-    function openComments(){
-      setCommentOpen(!CommentOpen)
-    }
+  const [ShareOpen, setShareOpen] = useState(false)
 
-    const [ShareOpen, setShareOpen] = useState(false)
+  function openShare (): void {
+    setShareOpen(!ShareOpen)
+  }
 
-    function openShare(){
-      setShareOpen(!ShareOpen)
-    }
+  const [LikeButton, setLikeButton] = useState(false)
 
-    const [LikeButton, setLikeButton] = useState(false)
+  function setLiked (): void {
+    setLikeButton(!LikeButton)
+  }
 
-    function setLiked(){
-        setLikeButton(!LikeButton)
-    }
+  const [Follow, setFollow] = useState(false)
 
-    const [Follow, setFollow] = useState(false)
+  function setFollowed (): void {
+    setFollow(!Follow)
+  }
 
-    function setFollowed(){
-        setFollow(!Follow)
-    }
+  const [SettingsOpen, setSettingsOpen] = useState(false)
 
-    const [SettingsOpen, setSettingsOpen] = useState(false)
+  function openSettings (): void {
+    setSettingsOpen(!SettingsOpen)
+  }
 
-    function openSettings(){
-      setSettingsOpen(!SettingsOpen)
-    }
-
-    return(
+  return (
         <MobileLayout>
             <div className="absolute flex mt-14 ">
                 <Link href={'/content-discovery'}><SvgBackVectorWhite width={35} height={35} className="ml-2"/></Link>
@@ -66,26 +65,26 @@ export default function reels(): JSX.Element{
                             src={DemoData.profiles[0].pic}
                             width={50}
                             height={50}
-                            alt={"..."}
+                            alt={'...'}
                         />
                     </Link>
                     <div className=" mt-[135px]">
                         <p>{DemoData.eventOrganizer}</p>
                     </div>
-                    
+
                     {Follow
-                        ? <SvgFollowedButton width={70} height={35}  className="hover:cursor-pointer text-sm w-[70px] text-center mt-[130px] ml-[28px]" onClick={setFollowed}/>
-                        : <button onClick={setFollowed} className="text-sm w-[70px] text-center mt-[130px] h-[35px] bg-primary text-white rounded-md ml-[28px]"> Follow  </button>
+                      ? <SvgFollowedButton width={70} height={35} className="hover:cursor-pointer text-sm w-[70px] text-center mt-[130px] ml-[28px]" onClick={setFollowed}/>
+                      : <button onClick={setFollowed} className="text-sm w-[70px] text-center mt-[130px] h-[35px] bg-primary text-white rounded-md ml-[28px]"> Follow  </button>
                     }
                     <div className="ml-[140px] text-center">
                     <div onClick={setLiked}>
                         {
                             LikeButton
-                            ?<>
+                              ? <>
                             <SvgRedHeart width={40} height={40} />
                             <p className="">577</p>
                             </>
-                            :<>
+                              : <>
                             <SvgLikeButtonWhite width={40} height={40} />
                             <p className=""> 576</p>
                             </>
@@ -99,7 +98,7 @@ export default function reels(): JSX.Element{
         <div
           className="bg-[#000000d8]  items-center"
         >
-          <video width="480"  className="w-[480px] h-[950px]" controls>
+          <video width="480" className="w-[480px] h-[950px]" controls>
             <source
               src="/assets/TB.mp4"
               type="video/mp4"
@@ -109,26 +108,26 @@ export default function reels(): JSX.Element{
         </div>
         {ShareOpen && (
                 <div
-                   
+
                     className="bg-[#000000d8]"
                     >
                 <Share openShare={openShare}/>
                 </div>
-            )}
+        )}
         {CommentOpen && (
                 <div
                     className="bg-[#000000d8]"
                     >
                 <Comments openComments={openComments}/>
                 </div>
-            )}
+        )}
         {SettingsOpen && (
                 <div
                     className="bg-[#000000d8]"
                     >
                 <Settings openSettings={openSettings}/>
                 </div>
-            )}
+        )}
         </MobileLayout>
-    )
+  )
 }

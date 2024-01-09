@@ -1,3 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+/* eslint-disable @typescript-eslint/no-floating-promises */
+
+// ! It is not a good practise to disable the eslint rules, but this file is in test mode (E.M.)
+
 'use client'
 
 import { fetchUser } from '../../server-actions/live-chat/fetchers'
@@ -8,7 +14,7 @@ import { shallow } from 'zustand/shallow'
 import SearchBar from './SearchBar'
 import ChatList from './ChatList'
 
-function Sidebar () {
+function Sidebar (): JSX.Element {
   const [cookie, setCookie] = useCookies(['user'])
   const { myUser, setUser } = useUser((state) => ({ myUser: state.myUser, setUser: state.setUser }), shallow)
   console.log('myUser:', myUser) // Log the myUser state

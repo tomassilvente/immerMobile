@@ -1,31 +1,30 @@
-"use client"
-import { useState } from "react"
-import SvgStar from "../../../../../public/assets/Icons/Star"
-import Image from "next/image"
-import Link from "next/link"
+'use client'
+import React, { useState } from 'react'
+import SvgStar from '../../../../../public/assets/Icons/Star'
+import Image from 'next/image'
+import Link from 'next/link'
 
-type AboutProps = {
-    stars: number,
-    category: string,
-    about: string
+interface AboutProps {
+  stars: number
+  category: string
+  about: string
 }
 
-export default function About({stars, category, about}:AboutProps): JSX.Element{
+export default function About ({ stars, category, about }: AboutProps): JSX.Element {
+  const [isRateOpen, setIsRateOpen] = useState(false)
 
-    const [isRateOpen, setIsRateOpen] = useState(false)
+  function rating (): void {
+    setIsRateOpen(!isRateOpen)
+  }
 
-    function rating(){
-        setIsRateOpen(!isRateOpen)
-    }
-
-    return(
+  return (
         <div >
         <div
-            className={`flex m-4`}>
-            <div onClick={rating}  className={`border flex mr-3 rounded-full font-light p-1 pl-3 pr-4 text-center bg-primary text-white`}>
+            className={'flex m-4'}>
+            <div onClick={rating} className={'border flex mr-3 rounded-full font-light p-1 pl-3 pr-4 text-center bg-primary text-white'}>
                 <SvgStar /><p className="ml-1">{stars}</p>
             </div>
-            <div className={`border flex-none mr-3 rounded-full font-light p-1 px-4 text-center bg-primary text-white`}>
+            <div className={'border flex-none mr-3 rounded-full font-light p-1 px-4 text-center bg-primary text-white'}>
                 <Link href={'/content-discovery/podcast/category'}>{category}</Link>
             </div>
         </div>
@@ -49,5 +48,5 @@ export default function About({stars, category, about}:AboutProps): JSX.Element{
         </div>
       )}
         </div>
-    )
+  )
 }

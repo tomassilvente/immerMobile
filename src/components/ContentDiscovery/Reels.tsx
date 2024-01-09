@@ -1,21 +1,22 @@
-import VerticalCards from "../../components/_common/components/VerticalCards";
-import ReelsCards from "./ReelsCard";
-import EventOptions from "./eventOptions";
+import React from 'react'
+import VerticalCards from '../../components/_common/components/VerticalCards'
+import ReelsCards from './ReelsCard'
+import EventOptions from './eventOptions'
 
-export default function Reels({cards, videoCards}:any){
-    return (  
+export default function Reels ({ cards, videoCards }: any): JSX.Element {
+  return (
         <>
             <div className="flex my-4 overflow-x-scroll">
-            {cards.map((card :any) =>(
-                    <VerticalCards image={card.image} title={card.title} price={card.price} />
-                ))}
+            {cards.map((card: any) => (
+                    <VerticalCards key={card.id} image={card.image} title={card.title} price={card.price} />
+            ))}
             </div>
             <EventOptions />
             <div className="grid grid-cols-3 m-4">
-                    {videoCards.map((card :any) =>(
-                        <ReelsCards  image={card.image} views={card.views} />
+                    {videoCards.map((card: any) => (
+                        <ReelsCards key={card.id} image={card.image} views={card.views} />
                     ))}
             </div>
         </>
-    )
+  )
 }

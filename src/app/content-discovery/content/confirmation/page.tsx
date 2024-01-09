@@ -1,14 +1,13 @@
-import Link from "next/link";
+import React from 'react'
+import Link from 'next/link'
+import { MobileLayout } from '../../../../components/MobileLayout'
+import SvgSuccessIcon from '../../../../../public/assets/Icons/SuccessIcon'
+import SvgCalendar from '../../../../../public/assets/Icons/Calendar'
+import SvgClockBlack from '../../../../../public/assets/Icons/ClockBlack'
 
-import { MobileLayout } from "../../../../components/MobileLayout";
+import DemoData from '../../../../../public/data/DemoData.json'
 
-import SvgSuccessIcon from "../../../../../public/assets/Icons/SuccessIcon";
-import SvgCalendar from "../../../../../public/assets/Icons/Calendar";
-import SvgClockBlack from "../../../../../public/assets/Icons/ClockBlack";
-
-import DemoData from "../../../../../public/data/DemoData.json";
-
-export default function confirmation(): JSX.Element {
+export default function confirmation (): JSX.Element {
   return (
     <MobileLayout>
     <div className="text-center pt-5">
@@ -17,7 +16,7 @@ export default function confirmation(): JSX.Element {
       <SvgSuccessIcon className="ml-[29%] mt-[50px] mb-20" />
       <p className="text-2xl">Thank you for your purchase!</p>
       <p className="mt-4 font-light text-gray-500">Invoice sent to your email</p>
-        <div className="border text-start rounded-3xl shadow-xl w-[85%] p-6 ml-[6%] bg-white mt-10"> 
+        <div className="border text-start rounded-3xl shadow-xl w-[85%] p-6 ml-[6%] bg-white mt-10">
         <p className="text-xl">{DemoData.eventName}</p>
         <p className="font-light text-lg my-2"> {DemoData.eventCompanionName}</p>
         <hr />
@@ -40,8 +39,8 @@ export default function confirmation(): JSX.Element {
       <Link href="/content-discovery">
         <p className="mt-5 text-lg text-primary">Explore more events</p>
       </Link>
-      
+
     </div>
     </MobileLayout>
-  );
+  )
 }

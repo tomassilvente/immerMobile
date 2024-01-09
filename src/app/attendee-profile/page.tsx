@@ -17,8 +17,8 @@ const Page = (): JSX.Element => {
   const [userId, setUserId] = useState<any>('')
   const auth = true
   const router = useRouter()
-  useEffect(() => { setUserId(localStorage.getItem('userId'))} , [])
-  const { data, isPending, error } = useFetch(`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/users/${userId}`)
+  useEffect(() => { setUserId(localStorage.getItem('userId')) }, [])
+  const [data, isPending, error] = useFetch(`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/users/${userId}`)
 
   const TABS = ['Events', 'Interests', 'Subscriptions']
 
@@ -33,8 +33,9 @@ const Page = (): JSX.Element => {
     }
   }
 
-  //console.log(data, error)
-  if (error) {
+  // console.log(data, error)
+  // ! I do not understand exactly this function
+  if (error !== undefined) {
     router.push('/signin/email')
   }
 

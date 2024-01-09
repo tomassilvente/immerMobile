@@ -1,12 +1,13 @@
-type pricingProps ={
-    name: string,
-    price: number,
-    availability:number,
+import React from 'react'
+
+interface pricingProps {
+  name: string
+  price: number
+  availability: number
 }
 
-export default function CompanionCards({name, price, availability} : pricingProps) {
-
-    return(
+export default function CompanionCards ({ name, price, availability }: pricingProps): JSX.Element {
+  return (
         <div className="mt-3">
             <div key={name}
             className="rounded-xl text-center mx-2 content-end rounded-b-xl bg-gray-100 p-2"
@@ -15,4 +16,5 @@ export default function CompanionCards({name, price, availability} : pricingProp
                     <p className=" text-gray-500  font-light ">{availability} seats Available</p>
             </div>
         </div>
-)}
+  )
+}

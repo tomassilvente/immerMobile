@@ -1,10 +1,11 @@
-import Link from "next/link";
-import SvgImmerIconOrange from "../../../../../public/assets/Icons/ImmerIconOrange";
-import { MobileLayout } from "../../../../components/MobileLayout";
-import SvgInboxCheck from "../../../../../public/assets/Icons/InboxCheck";
+import React from 'react'
+import Link from 'next/link'
+import SvgImmerIconOrange from '../../../../../public/assets/Icons/ImmerIconOrange'
+import { MobileLayout } from '../../../../components/MobileLayout'
+import SvgInboxCheck from '../../../../../public/assets/Icons/InboxCheck'
 
-export default function download(): JSX.Element{
-    return(
+export default function download (): JSX.Element {
+  return (
         <MobileLayout>
             <div className="text-center m-5 content-center place-items-center">
                 <SvgImmerIconOrange width={50} height={50} className="mx-[45%]" />
@@ -25,5 +26,5 @@ export default function download(): JSX.Element{
                 </Link>
             </div>
         </MobileLayout>
-    )
+  )
 }

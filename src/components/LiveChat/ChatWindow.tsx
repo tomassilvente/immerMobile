@@ -1,5 +1,5 @@
 import React from 'react'
-import { type ChatWindowProps } from '../../types/livechat.interfaces'
+import { type ChatWindowProps } from '../../types/live-chat.interfaces'
 
 const ChatWindow: React.FC<ChatWindowProps> = ({
   currentChat,

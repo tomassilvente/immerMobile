@@ -51,7 +51,7 @@ export default function PasswordChange (): JSX.Element {
             style={{
               borderColor: correct ? 'green' : wrong ? 'red' : ''
             }}
-            className="border rounded-md w-[100%] mt-3 mb-2 py-2 pl-3 focus:border-black after:border-[5px]"
+            className="border rounded-md w-[100%] mt-3 mb-2 py-4 pl-3 focus:border-black after:border-[5px]"
             placeholder="Enter Your Password"
             id="password"
             name="password"
@@ -82,7 +82,7 @@ export default function PasswordChange (): JSX.Element {
             style={{
               borderColor: equals ? 'green' : differents ? 'red' : ''
             }}
-            className="border rounded-md w-[100%] mt-3 mb-2 py-2 pl-3 focus:border-black"
+            className="border rounded-md w-[100%] mt-3 mb-2 py-4 pl-3 focus:border-black"
             placeholder="Enter Your Password"
             id="confirmPassword"
             name="confirmPassword"

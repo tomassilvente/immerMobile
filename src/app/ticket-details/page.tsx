@@ -1,23 +1,23 @@
-"use client"
-import Image from "next/image"
-import Link from "next/link"
-import { useState } from "react"
-//Components
+'use client'
+import Image from 'next/image'
+import Link from 'next/link'
+import React, { useState } from 'react'
+// Components
 import Details from '../../components/TicketDetails/Details'
 import BottomTicket from '../../components/TicketDetails/BottomTicket'
-import Share from "../../components/EventDetails/Share"
-//Icons
-import SvgBackButtonBlack from "../../../public/assets/Icons/BackButtonBlack"
-import SvgShareButtonBlack from "../../../public/assets/Icons/shareButtonBlack"
-import { MobileLayout } from "../../components/MobileLayout"
+import Share from '../../components/EventDetails/Share'
+// Icons
+import SvgBackButtonBlack from '../../../public/assets/Icons/BackButtonBlack'
+import SvgShareButtonBlack from '../../../public/assets/Icons/shareButtonBlack'
+import { MobileLayout } from '../../components/MobileLayout'
 
-export default function ticketDetails(): JSX.Element{
-    const [ShareOpen, setShareOpen] = useState(false)
+export default function ticketDetails (): JSX.Element {
+  const [ShareOpen, setShareOpen] = useState(false)
 
-    function openShare(){
-      setShareOpen(!ShareOpen)
-    }
-    return(
+  function openShare (): void {
+    setShareOpen(!ShareOpen)
+  }
+  return (
         <MobileLayout>
         <div className="bg-[#FFD6B8] pb-5">
             <div className="grid grid-cols-6">
@@ -35,12 +35,12 @@ export default function ticketDetails(): JSX.Element{
         </div>
         {ShareOpen && (
                 <div
-                   
+
                     className="bg-[#000000d8]"
                     >
                 <Share openShare={openShare}/>
                 </div>
-            )}
+        )}
         </MobileLayout>
   )
 }

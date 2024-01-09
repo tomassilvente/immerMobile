@@ -6,14 +6,14 @@ import React from 'react'
 import { useCookies } from 'react-cookie'
 import { io } from 'socket.io-client'
 
-function CallBtn () {
+function CallBtn (): JSX.Element {
   const router = useRouter()
   const socket = io('https://server-chat-immer-dev-tksm.3.us-1.fl0.io/')
   const [cookie] = useCookies(['user'])
   const selectedUser = useSelectedUser((state) => state.selectedUser)
   const myUser = useUser((state) => state.myUser)
 
-  function handleClick () {
+  function handleClick (): void {
     socket.emit(
       'private message',
       selectedUser.email,

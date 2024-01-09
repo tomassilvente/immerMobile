@@ -1,15 +1,16 @@
-import VerticalCards from "../../components/_common/components/VerticalCards";
-import MusicCard from "./MusicCard";
-import ReelsCards from "./ReelsCard";
-import EventOptions from "./eventOptions";
+import React from 'react'
+import VerticalCards from '../../components/_common/components/VerticalCards'
+import MusicCard from './MusicCard'
+import ReelsCards from './ReelsCard'
+import EventOptions from './eventOptions'
 
-export default function All({cards, videoCards}:any){
-    return (  
+export default function All ({ cards, videoCards }: any): JSX.Element {
+  return (
         <>
             <div className="flex my-4 overflow-x-scroll">
-            {cards.map((card :any) =>(
-                    <VerticalCards image={card.image} title={card.title} price={card.price} />
-                ))}
+            {cards.map((card: any) => (
+                    <VerticalCards key={card.id} image={card.image} title={card.title} price={card.price} />
+            ))}
             </div>
             <EventOptions />
             <div className="grid grid-cols-3 grid-rows-2 m-3 space-y-1">
@@ -34,8 +35,8 @@ export default function All({cards, videoCards}:any){
                 <div className="grid grid-rows-2 space-y-1 mt-1">
                     <MusicCard link={'/content-discovery/content'} title={cards[1].title} image={cards[1].image} views={cards[1].views} />
                     <MusicCard link={'/content-discovery/content'} title={cards[0].title} image={cards[0].image} views={cards[3].views} />
-                </div>  
+                </div>
             </div>
         </>
-    )
-} 
+  )
+}

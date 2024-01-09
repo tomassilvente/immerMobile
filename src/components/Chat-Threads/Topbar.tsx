@@ -5,13 +5,13 @@ import Image from 'next/image'
 import React from 'react'
 import CallBtn from './CallBtn'
 
-function Topbar ({ selectedUser }: { selectedUser: userProps }) {
-  function handleClick () {
+function Topbar ({ selectedUser }: { selectedUser: userProps }): JSX.Element {
+  function handleClick (): void {
     document.querySelector('.messages')?.classList.add('hidden')
     document.querySelector('.sidebar')?.classList.remove('hidden')
   }
   return (
-        <div className={`bg-white ${selectedUser ? ' ' : 'md:hidden'}`}>
+        <div className={`bg-white ${selectedUser != null ? ' ' : 'md:hidden'}`}>
             <div className='w-full px-10 py-3 flex justify-between items-center'>
                 <div className='flex gap-3'>
                     <button onClick={handleClick} className='md:hidden'>

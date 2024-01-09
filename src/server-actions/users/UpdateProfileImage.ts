@@ -1,4 +1,4 @@
-const updateProfileImage = async (data: any) => {
+export const updateProfileImage = async (data: any): Promise<Response> => {
   const token = localStorage.getItem('token')
 
   try {
@@ -13,7 +13,6 @@ const updateProfileImage = async (data: any) => {
     return response
   } catch (err) {
     console.log(err)
+    return new Response(null, { status: 500, statusText: 'Internal Server Error' })
   }
 }
-
-export { updateProfileImage }

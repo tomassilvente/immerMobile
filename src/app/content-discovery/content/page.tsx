@@ -1,62 +1,59 @@
-"use client"
+'use client'
 
-import EventHeader from "../../../components/_common/components/EventHeader";
-import { MobileLayout } from "../../../components/MobileLayout";
+import React, { useState } from 'react'
+import EventHeader from '../../../components/_common/components/EventHeader'
+import { MobileLayout } from '../../../components/MobileLayout'
 import DemoData from '../../../../public/data/DemoData.json'
-import SvgOpenEye from "../../../../public/assets/Icons/OpenEye";
-import SvgLikeButton from "../../../../public/assets/Icons/LikeButton";
-import SimpleButton from "../../../components/SignIn/SimpleButton";
-import SvgCommentButton from "../../../../public/assets/Icons/CommentButton";
-import Link from "next/link";
-import { useState } from "react";
-import BillDetails from "../../../components/TicketPurchase/PaymentDetails/BillDetails";
-import SvgDropDownIcon from "../../../../public/assets/Icons/DropDownIcon";
-import SvgDropDownVector from "../../../../public/assets/Icons/DropDownVector";
-import SvgRedHeart from "../../../../public/assets/Icons/RedHeart";
-import Comments from "../../../components/_common/components/Comments";
-import SvgBackVectorWhite from "../../../../public/assets/Icons/BackVectorWhite";
-import SvgDownload from "../../../../public/assets/Icons/Download";
-import { ClientRequest } from "http";
+import SvgOpenEye from '../../../../public/assets/Icons/OpenEye'
+import SvgLikeButton from '../../../../public/assets/Icons/LikeButton'
+import SimpleButton from '../../../components/SignIn/SimpleButton'
+import SvgCommentButton from '../../../../public/assets/Icons/CommentButton'
+import Link from 'next/link'
+import BillDetails from '../../../components/TicketPurchase/PaymentDetails/BillDetails'
+import SvgDropDownIcon from '../../../../public/assets/Icons/DropDownIcon'
+import SvgDropDownVector from '../../../../public/assets/Icons/DropDownVector'
+import SvgRedHeart from '../../../../public/assets/Icons/RedHeart'
+import Comments from '../../../components/_common/components/Comments'
+import SvgBackVectorWhite from '../../../../public/assets/Icons/BackVectorWhite'
+import SvgDownload from '../../../../public/assets/Icons/Download'
+import { ClientRequest } from 'http'
 
-export default function content({payment=true}: any): JSX.Element{
+export default function content ({ payment = true }: any): JSX.Element {
+  console.log(ClientRequest)
 
-    console.log(ClientRequest)
+  const [isFeedOpen, setIsFeedOpen] = useState(false)
 
-    const [isFeedOpen, setIsFeedOpen] = useState(false);
+  const [LikeButton, setLikeButton] = useState(false)
 
-    const [LikeButton, setLikeButton] = useState(false)
+  function setLiked (): void {
+    setLikeButton(!LikeButton)
+  }
 
-    function setLiked(){
-        setLikeButton(!LikeButton)
-    }
-  
-    const setFeedOpen = () => {
-      setIsFeedOpen(true);
-    };
-  
-    const setFeedClose = () => {
-      setIsFeedOpen(false);
-    };
-  
-    const [CommentOpen, setCommentOpen] = useState(false)
+  const setFeedOpen = (): void => {
+    setIsFeedOpen(true)
+  }
 
-    function openComments(){
-      setCommentOpen(!CommentOpen)
-    }
+  const setFeedClose = (): void => {
+    setIsFeedOpen(false)
+  }
 
+  const [CommentOpen, setCommentOpen] = useState(false)
 
-    return(
-        <div 
+  function openComments (): void {
+    setCommentOpen(!CommentOpen)
+  }
+
+  return (
+        <div
             >
         <MobileLayout >
             {
-                payment
-                    ? 
-                    isFeedOpen? ''
-                    :
-                    <>
+                payment !== null && payment !== undefined
+                  ? isFeedOpen
+                    ? ''
+                    : <>
                         <Link className="hover:cursor-pointer absolute ml-[10px] mt-[10px] z-1" href={'/content-discovery'}><SvgBackVectorWhite width={30} height={30} className=""/></Link>
-                        <video width="480"  className="w-[480px]" controls>
+                        <video width="480" className="w-[480px]" controls>
                             <source
                             src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
                             type="video/mp4"
@@ -64,9 +61,9 @@ export default function content({payment=true}: any): JSX.Element{
                             Your browser does not support the video tag.
                         </video>
                     </>
-                    : <EventHeader eventImg={isFeedOpen ? '../../assets/black.jpg' : '../../assets/piano.jpeg'}/>
+                  : <EventHeader eventImg={isFeedOpen ? '../../assets/black.jpg' : '../../assets/piano.jpeg'}/>
             }
-            
+
             <div className="m-4">
                 <div className="flex">
                     <p className="text-xl font-semibold">{DemoData.eventCompanionName}</p>
@@ -74,7 +71,7 @@ export default function content({payment=true}: any): JSX.Element{
                 </div>
                 <p className="font-light ">{DemoData.eventOrganizer}</p>
                 <p className="text-2xl font-semibold text-gray-600 mt-2">${DemoData.eventPrice}.99</p>
-                <hr className="w-[35px] border-primary border-[2px] mt-2" /> 
+                <hr className="w-[35px] border-primary border-[2px] mt-2" />
                 <div className="flex mt-10 text-2xl">
                     <p className="">About</p>
                     <Link href={'content/download'}><SvgDownload height={40} width={35} className="ml-[355px]"/></Link>
@@ -92,11 +89,11 @@ export default function content({payment=true}: any): JSX.Element{
                     <div onClick={setLiked}>
                         {
                             LikeButton
-                            ?<>
+                              ? <>
                             <SvgRedHeart width={40} height={40} />
                             <p className="">577</p>
                             </>
-                            :<>
+                              : <>
                             <SvgLikeButton width={40} height={40} />
                             <p className=""> 576</p>
                             </>
@@ -108,13 +105,13 @@ export default function content({payment=true}: any): JSX.Element{
                         <p>93</p>
                     </div>
                 </div>
-                {payment
-                    ? ''
-                    : <SimpleButton text='Buy and watch' onClick={setFeedOpen}/>
+                {payment !== null && payment !== undefined
+                  ? ''
+                  : <SimpleButton text='Buy and watch' onClick={setFeedOpen}/>
                 }
                 {
                     isFeedOpen
-                    ? (
+                      ? (
                             <div className=" bg-white absolute h-[100vh] w-[448px] top-6 z-10 items-center">
                                 <SvgDropDownIcon onClick={setFeedClose} className="ml-[45%] mt-2"/>
                                 <div className=" m-5 flex">
@@ -146,6 +143,7 @@ export default function content({payment=true}: any): JSX.Element{
                                             </p>
                                         </div>
                                         <Link
+                                            // eslint-disable-next-line no-return-assign
                                             onClick={() => payment = true}
                                             href="/content-discovery/content/confirmation"
                                             className="w-[100%] grid text-center text-2xl bg-primary text-white mt-24 py-5 rounded-full"
@@ -155,8 +153,8 @@ export default function content({payment=true}: any): JSX.Element{
                                     </div>
                                 </div>
                             </div>
-                      )
-                    : ''
+                        )
+                      : ''
                 }
             </div>
             {CommentOpen && (
@@ -168,5 +166,5 @@ export default function content({payment=true}: any): JSX.Element{
             )}
             </MobileLayout>
         </div>
-    )
+  )
 }

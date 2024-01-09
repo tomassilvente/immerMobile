@@ -57,27 +57,25 @@ export default function SignInWithEmail (): JSX.Element {
 
     // ! It is not correct to call a void function inside another one, I will try to fix it later
     // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
-    const response: {message:string, token: string, user: User } = await loginUser(formData)
+    const response: { message?: string, token: string, user: User } = await loginUser(formData)
     console.log(response)
 
     if (response.token !== undefined && response.token !== null) {
-      localStorage.setItem("userId", response.user._id)
-      localStorage.setItem("token", response.token)
+      localStorage.setItem('userId', response.user._id)
+      localStorage.setItem('token', response.token)
       router.push('/')
-
     } else {
-      setMessage(response.message)
+      setMessage(response.message !== undefined && response.message !== null && response.message !== '' ? response.message : 'Default message')
       setQuant(quant + 1)
       setLeft(left - 1)
       console.log(quant)
       setWrong(true)
     }
-    if(quant === 3){ 
+    if (quant === 3) {
       setIsFeedOpen(true)
-      
     }
-    //const res = await response.json()
-  };
+    // const res = await response.json()
+  }
 
   const toggleAccepted = (): void => { setAccepted((prev) => !prev) }
 
@@ -159,13 +157,14 @@ export default function SignInWithEmail (): JSX.Element {
               Forgot Password?
             </Link>
           </div>
-          {message
-          ? <p className='text-[#ff3c3c]'>{message}</p>
-          :""
+          {
+          message !== ''
+            ? <p className='text-[#ff3c3c]'>{message}</p>
+            : ''
           }
           <SignButton
             onClick={handleSubmit}
-            able={!Object.values(errors).some(Boolean) && left>0}
+            able={!Object.values(errors).some(Boolean) && left > 0}
             title="Login"
           />
         </form>

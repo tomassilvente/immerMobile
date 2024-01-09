@@ -14,7 +14,7 @@ export default function eventDetails ({ eventName, eventDay, eventPrice, eventTi
             <SvgCalendar width={22} height={23}/>
             <p className="ml-3  font-light">{eventDay}</p>
         </div>
-        <div className=" flex"> 
+        <div className=" flex">
             <SvgClockBlack width={22} height={23}/>
             <p className="ml-3  font-light">{eventTime}</p>
          </div>
