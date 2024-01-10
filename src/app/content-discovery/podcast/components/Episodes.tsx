@@ -1,21 +1,22 @@
-import Image from "next/image"
-import SvgShareCircles from "../../../../../public/assets/Icons/ShareCircles"
-import SvgDownload from "../../../../../public/assets/Icons/Download"
-import SvgMoreButton from "../../../../../public/assets/Icons/MoreButton"
-import SvgPlayButtonOrange from "../../../../../public/assets/Icons/PlayButtonOrange"
-import Link from "next/link"
+import React from 'react'
+import Image from 'next/image'
+import SvgShareCircles from '../../../../../public/assets/Icons/ShareCircles'
+import SvgDownload from '../../../../../public/assets/Icons/Download'
+import SvgMoreButton from '../../../../../public/assets/Icons/MoreButton'
+import SvgPlayButtonOrange from '../../../../../public/assets/Icons/PlayButtonOrange'
+import Link from 'next/link'
 
-type EpisodeProps = {
-    title :string,
-    image :string,
-    releaseDay :string,
-    duration : number,
-    about :string,
-    openShare: any
+interface EpisodeProps {
+  title: string
+  image: string
+  releaseDay: string
+  duration: number
+  about: string
+  openShare: any
 }
 
-export default function Episodes({title, image, duration, releaseDay, about, openShare}: EpisodeProps): JSX.Element{
-return(
+export default function Episodes ({ title, image, duration, releaseDay, about, openShare }: EpisodeProps): JSX.Element {
+  return (
     <div>
     <Link href='/content-discovery/podcast/single-episode'>
         <div className="mt-5 flex">
@@ -35,5 +36,5 @@ return(
         </div>
         <hr className="mt-3"/>
     </div>
-)
+  )
 }

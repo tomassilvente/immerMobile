@@ -11,6 +11,7 @@ import { CheckboxAgreement } from '../../../components/SignUp/CheckboxAgreement'
 export default function Create (): JSX.Element {
   const router = useRouter()
 
+  const [message, setMessage] = useState<string>('')
   const [formData, setFormData] = useState({
     fullName: '',
     username: '',
@@ -23,7 +24,7 @@ export default function Create (): JSX.Element {
     fullName: '',
     username: '',
     email: '',
-    password: '',
+    password: 'At least 8 characters, 1 uppercase letter, 1 number, 1 symbol',
     passwordConfirm: ''
   })
 
@@ -43,7 +44,9 @@ export default function Create (): JSX.Element {
             : ''
         break
       case 'password':
-        error = value.length < 8 ? 'Invalid password' : ''
+        error = value.length < 8
+          ? 'Invalid password'
+          : ''
         break
       case 'passwordConfirm':
         error = value !== formData.password ? 'Passwords must match' : ''
@@ -66,18 +69,18 @@ export default function Create (): JSX.Element {
     e.preventDefault()
     // ! The same here, we need to fix the idea of calling a void function inside another one
     // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
-    const response = await registerUser(formData)
-
-    if (response.statusCode === 500) {
+    const response: { status?: number, message: string } = await registerUser(formData)
+    console.log(response)
+    if (response.status === 201) {
       router.push('/signin/email')
-    }
+    } else setMessage(response.message)
   }
 
   const [accepted, setAccepted] = useState(false)
 
   return (
-    <div className="font-Inter relative max-w-[480px] m-5">
-      <div className="text-center">
+    <div className="font-Inter max-w-[480px] m-auto p-5">
+      <div className="text-center min-h-screen">
         <p className="text-2xl mt-8 font-semibold">Create your account</p>
         <p className="text-lg font-light text-[#767676] mt-3">
           Create your personal account now to access all the exclusive benefits we
@@ -133,6 +136,11 @@ export default function Create (): JSX.Element {
             accepted={accepted}
             toggleAccepted={() => { setAccepted(!accepted) }}
           />
+          {
+            message !== ''
+              ? <p className='text-[#ff3c3c]'>{message}</p>
+              : ''
+          }
           <SignButton
             onClick={handleSubmit}
             able={!Object.values(errors).some(Boolean) && accepted}
@@ -141,5 +149,6 @@ export default function Create (): JSX.Element {
         </form>
       </div>
     </div>
+
   )
 }

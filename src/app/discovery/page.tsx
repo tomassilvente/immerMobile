@@ -1,59 +1,59 @@
-"use client"
-import LargeCard from "../../components/_common/components/LargeCard";
-import EventHeader from "../../components/_common/components/EventHeader";
-import DemoData from "../../../public/data/DemoData.json";
-import Link from "next/link";
-import SvgFilterIcon from "../../../public/assets/Icons/FilterIcon";
+'use client'
+import LargeCard from '../../components/_common/components/LargeCard'
+import EventHeader from '../../components/_common/components/EventHeader'
+import DemoData from '../../../public/data/DemoData.json'
+import Link from 'next/link'
+import SvgFilterIcon from '../../../public/assets/Icons/FilterIcon'
 
-import NextDays from "../../components/Discovery/NextDays";
-import { MobileLayout } from "../../components/MobileLayout";
-import { useState } from "react";
-import Share from "../../components/EventDetails/Share";
-let Days = [
+import NextDays from '../../components/Discovery/NextDays'
+import { MobileLayout } from '../../components/MobileLayout'
+import React, { useState } from 'react'
+import Share from '../../components/EventDetails/Share'
+const Days = [
   {
-    day: "Sat",
-    number: "22 Oct",
+    day: 'Sat',
+    number: '22 Oct'
   },
   {
-    day: "Sun",
-    number: "23 Oct",
+    day: 'Sun',
+    number: '23 Oct'
   },
   {
-    day: "Mon",
-    number: "24 Oct",
+    day: 'Mon',
+    number: '24 Oct'
   },
   {
-    day: "Tue",
-    number: "25 Oct",
+    day: 'Tue',
+    number: '25 Oct'
   },
   {
-    day: "Wed",
-    number: "26 Oct",
+    day: 'Wed',
+    number: '26 Oct'
   },
   {
-    day: "Thu",
-    number: "27 Oct",
+    day: 'Thu',
+    number: '27 Oct'
   },
   {
-    day: "Fri",
-    number: "28 Oct",
-  },
-];
+    day: 'Fri',
+    number: '28 Oct'
+  }
+]
 
 interface CardDataProps {
-  title: string;
-  image: string;
-  date: string;
-  time: string;
-  price: number;
+  title: string
+  image: string
+  date: string
+  time: string
+  price: number
 }
 
 const Discovery: React.FC = () => {
   const [ShareOpen, setShareOpen] = useState(false)
 
-    function openShare(){
-      setShareOpen(!ShareOpen)
-    }
+  function openShare (): void {
+    setShareOpen(!ShareOpen)
+  }
   return (
     <MobileLayout >
       <EventHeader openShare={openShare} eventImg={DemoData.eventImg} />
@@ -83,12 +83,12 @@ const Discovery: React.FC = () => {
         </div>
         {ShareOpen && (
                 <div
-                   
+
                     className="bg-[#000000d8]"
                     >
                 <Share openShare={openShare}/>
                 </div>
-            )}    
+        )}
     </MobileLayout>
   )
 }

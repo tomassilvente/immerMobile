@@ -1,54 +1,53 @@
-"use client"
-import EventHeader from "../../../components/_common/components/EventHeader";
-import { MobileLayout } from "../../../components/MobileLayout";
+'use client'
+import React, { useState } from 'react'
+import EventHeader from '../../../components/_common/components/EventHeader'
+import { MobileLayout } from '../../../components/MobileLayout'
 import DemoData from '../../../../public/data/DemoData.json'
-import SvgOpenEye from "../../../../public/assets/Icons/OpenEye";
-import SvgLikeButton from "../../../../public/assets/Icons/LikeButton";
-import SvgCommentButton from "../../../../public/assets/Icons/CommentButton";
-import { useState } from "react";
-import SvgRedHeart from "../../../../public/assets/Icons/RedHeart";
-import SvgBookmark from "../../../../public/assets/Icons/Bookmark";
-import Link from "next/link";
-import Image from "next/image";
-import Share from "../../../components/EventDetails/Share";
-import Comments from "../../../components/_common/components/Comments";
-import SvgBookmarkOrange from "../../../../public/assets/Icons/BookmarkOrange";
+import SvgOpenEye from '../../../../public/assets/Icons/OpenEye'
+import SvgLikeButton from '../../../../public/assets/Icons/LikeButton'
+import SvgCommentButton from '../../../../public/assets/Icons/CommentButton'
+import SvgRedHeart from '../../../../public/assets/Icons/RedHeart'
+import SvgBookmark from '../../../../public/assets/Icons/Bookmark'
+import Link from 'next/link'
+import Image from 'next/image'
+import Share from '../../../components/EventDetails/Share'
+import Comments from '../../../components/_common/components/Comments'
+import SvgBookmarkOrange from '../../../../public/assets/Icons/BookmarkOrange'
 
-export default function content(): JSX.Element{
+export default function content (): JSX.Element {
+  const [ShareOpen, setShareOpen] = useState(false)
 
-    const [ShareOpen, setShareOpen] = useState(false)
+  function openShare (): void {
+    setShareOpen(!ShareOpen)
+  }
 
-    function openShare(){
-      setShareOpen(!ShareOpen)
-    }
+  const [CommentOpen, setCommentOpen] = useState(false)
 
-    const [CommentOpen, setCommentOpen] = useState(false)
+  function openComments (): void {
+    setCommentOpen(!CommentOpen)
+  }
 
-    function openComments(){
-      setCommentOpen(!CommentOpen)
-    }
+  const [BookMarked, setBookMarked] = useState(false)
 
-    const [BookMarked, setBookMarked] = useState(false)
+  function setBookmark (): void {
+    setBookMarked(!BookMarked)
+  }
 
-    function setBookmark(){
-      setBookMarked(!BookMarked)
-    }
+  const [LikeButton, setLikeButton] = useState(false)
 
-    const [LikeButton, setLikeButton] = useState(false)
+  function setLiked (): void {
+    setLikeButton(!LikeButton)
+  }
 
-    function setLiked(){
-        setLikeButton(!LikeButton)
-    }
-
-    return(
-        <div 
+  return (
+        <div
             >
         <MobileLayout >
-            <EventHeader shareOpen={ShareOpen} openShare={openShare} eventImg={'../../assets/piano.jpeg'}/>         
+            <EventHeader shareOpen={ShareOpen} openShare={openShare} eventImg={'../../assets/piano.jpeg'}/>
             <div className="m-4">
                 <p className="text-xl font-semibold">{DemoData.eventCompanionName}</p>
                 <p className="font-light text-xl">{DemoData.eventOrganizer}</p>
-                <hr className="w-[35px] border-primary border-[2px] mt-2" /> 
+                <hr className="w-[35px] border-primary border-[2px] mt-2" />
                 <div className="flex mt-4 text-center font-light">
                     <div>
                         <SvgOpenEye width={40} height={40} />
@@ -57,11 +56,11 @@ export default function content(): JSX.Element{
                     <div className="ml-10" onClick={setLiked}>
                         {
                             LikeButton
-                            ?<>
+                              ? <>
                             <SvgRedHeart width={40} height={40} />
                             <p>577</p>
                             </>
-                            :<>
+                              : <>
                             <SvgLikeButton width={40} height={40} />
                             <p>576</p>
                             </>
@@ -71,13 +70,13 @@ export default function content(): JSX.Element{
                         <SvgCommentButton onClick={openComments} width={40} height={40} />
                         <p>93</p>
                     </div>
-                    <div onClick={setBookmark}  className="ml-[200px] mt-1" >
+                    <div onClick={setBookmark} className="ml-[200px] mt-1" >
                         {
                             BookMarked
-                            ? <SvgBookmarkOrange width={36} height={36} />
-                            : <SvgBookmark width={36} height={36} />
+                              ? <SvgBookmarkOrange width={36} height={36} />
+                              : <SvgBookmark width={36} height={36} />
                         }
-                        
+
                     </div>
                 </div>
                 {/* <div className="flex text-2xl mt-[30px]">
@@ -94,7 +93,7 @@ export default function content(): JSX.Element{
                         src={DemoData.profiles[0].pic}
                         width={50}
                         height={50}
-                        alt={"..."}
+                        alt={'...'}
                     />
                     </Link>
                     <div className=" col-start-3 col-end-10 mt-[5px]">
@@ -103,13 +102,13 @@ export default function content(): JSX.Element{
                             14 videos
                         </span>
                     </div>
-                    <button  className="text-sm col-start-10 col-end-12 w-[100%] text-center mt-[7px] h-[35px] bg-primary text-white rounded-md ml-[28px]"> Follow  </button>
+                    <button className="text-sm col-start-10 col-end-12 w-[100%] text-center mt-[7px] h-[35px] bg-primary text-white rounded-md ml-[28px]"> Follow  </button>
                 </div>
                 <p className="font-light mt-[30px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus tristique bibendum. Sed et ultricies velit. Vestibulum imperdiet turpis id massa pharetra suscipit.</p>
                 <div className="flex font-light mt-3">
                     <p className="text-gray-600"> 58:30 | Valid for 3 months </p>
                 </div>
-                
+
             </div>
             {ShareOpen && (
                 <div
@@ -127,5 +126,5 @@ export default function content(): JSX.Element{
             )}
             </MobileLayout>
         </div>
-    )
+  )
 }

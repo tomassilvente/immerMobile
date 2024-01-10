@@ -1,14 +1,15 @@
-import Link from "next/link";
-//Icons
-import SvgAppleLogo from "../../../public/assets/Icons/AppleLogo";
-import SvgImmerIconOrange from "../../../public/assets/Icons/ImmerIconOrange";
-import SvgGoogleLogo from "../../../public/assets/Icons/GoogleLogo";
-import SvgFacebookLogo from "../../../public/assets/Icons/FacebookLogo";
-import SvgMailLogo from "../../../public/assets/Icons/MailLogo";
+import React from 'react'
+import Link from 'next/link'
+// Icons
+import SvgAppleLogo from '../../../public/assets/Icons/AppleLogo'
+import SvgImmerIconOrange from '../../../public/assets/Icons/ImmerIconOrange'
+import SvgGoogleLogo from '../../../public/assets/Icons/GoogleLogo'
+import SvgFacebookLogo from '../../../public/assets/Icons/FacebookLogo'
+import SvgMailLogo from '../../../public/assets/Icons/MailLogo'
 
-export default function signIn():JSX.Element {
+export default function signIn (): JSX.Element {
   return (
-    <div className="font-Inter relative max-w-[480px] m-auto">
+    <div className="font-Inter relative max-w-[480px]  m-auto p-5">
     <div className="m-14 text-center bg-white text-black sm:invisible overflow-scroll">
       <SvgImmerIconOrange width={50} height={50} className="mx-[45%]" />
       <p className="text-4xl mt-8 font-semibold">Welcome back!</p>

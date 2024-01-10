@@ -38,7 +38,7 @@ export default function PasswordChange (): JSX.Element {
   else able = false
 
   return (
-    <div className="font-Inter relative max-w-[480px] m-5">
+    <div className="font-Inter relative max-w-[480px]  m-auto p-5">
       <div className="m-5 text-center">
         <p className="text-4xl mt-8 font-semibold">Reset your password</p>
         <p className="text-lg font-light text-[#767676] mt-10">
@@ -51,7 +51,7 @@ export default function PasswordChange (): JSX.Element {
             style={{
               borderColor: correct ? 'green' : wrong ? 'red' : ''
             }}
-            className="border rounded-md w-[100%] mt-3 mb-2 py-2 pl-3 focus:border-black after:border-[5px]"
+            className="border rounded-md w-[100%] mt-3 mb-2 py-4 pl-3 focus:border-black after:border-[5px]"
             placeholder="Enter Your Password"
             id="password"
             name="password"
@@ -82,7 +82,7 @@ export default function PasswordChange (): JSX.Element {
             style={{
               borderColor: equals ? 'green' : differents ? 'red' : ''
             }}
-            className="border rounded-md w-[100%] mt-3 mb-2 py-2 pl-3 focus:border-black"
+            className="border rounded-md w-[100%] mt-3 mb-2 py-4 pl-3 focus:border-black"
             placeholder="Enter Your Password"
             id="confirmPassword"
             name="confirmPassword"

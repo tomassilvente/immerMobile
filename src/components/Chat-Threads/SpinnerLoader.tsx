@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SpinnerLoader = () => {
+const SpinnerLoader = (): JSX.Element => {
   return (
     <div
         className="max-w-[480px] m-auto fixed inset-0 text-text-05 bg-[rgba(0,0,0,0.5)] flex-center justify-center"

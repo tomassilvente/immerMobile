@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-import SvgCopyLink from "../../../public/assets/Icons/CopyLink";
-import SvgWhatsApp from "../../../public/assets/Icons/WhatsApp";
-import SvgTwitter from "../../../public/assets/Icons/Twitter";
-import Image from "next/image";
+import SvgCopyLink from '../../../public/assets/Icons/CopyLink'
+import SvgWhatsApp from '../../../public/assets/Icons/WhatsApp'
+import SvgTwitter from '../../../public/assets/Icons/Twitter'
+import Image from 'next/image'
 
 function AppOptions (): JSX.Element {
   return (
@@ -39,7 +39,7 @@ function AppOptions (): JSX.Element {
                         className="rounded-[20px]"
                         width={46}
                         height={46}
-                       
+
                     />
                     <p className="text-[#ABABAB] text-sm">Instagram</p>
                 </div>

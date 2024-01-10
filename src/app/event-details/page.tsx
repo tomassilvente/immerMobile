@@ -1,4 +1,6 @@
 "use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import Location from "../../components/EventDetails/Location";
 import Organized from "../../components/EventDetails/Organizer";
@@ -7,18 +9,17 @@ import EventDetails from "../../components/EventDetails/EventDetails";
 import EventHeader from "../../components/_common/components/EventHeader";
 import data from "../../../public/data/DemoData.json"; // All this data should come as params, including the links or the actions that every button should do
 import { MobileLayout } from "../../components/MobileLayout";
-import { DesktopLayout } from "../../components/DesktopLayout/SideNavbarAttendee";
-import { useState } from "react";
 import Share from "../../components/EventDetails/Share";
 
 export default function eventDetail(): JSX.Element {
   const [ShareOpen, setShareOpen] = useState(false);
 
-  function openShare() {
+  function openShare(): void {
     setShareOpen(!ShareOpen);
   }
+
   return (
-    <DesktopLayout>
+    <MobileLayout>
       <EventHeader openShare={openShare} eventImg={data.eventImg} />
       <EventDetails
         eventName={data.eventName}
@@ -46,6 +47,6 @@ export default function eventDetail(): JSX.Element {
           <Share openShare={openShare} />
         </div>
       )}
-    </DesktopLayout>
+    </MobileLayout>
   );
 }

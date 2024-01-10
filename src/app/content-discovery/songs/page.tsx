@@ -1,50 +1,49 @@
-"use client"
-import { MobileLayout } from "../../../components/MobileLayout"
-import SvgShuffleIcon from "../../../../public/assets/Icons/ShuffleIcon"
-import SvgPlayButtonOrange from "../../../../public/assets/Icons/PlayButtonOrange"
-import { useState } from "react"
-import SvgPauseOrange from "../../../../public/assets/Icons/PauseOrange"
-import SvgShuffleOrange from "../../../../public/assets/Icons/ShuffleOrange"
-import Image from "next/image"
-import SvgMusicLine from "../../../../public/assets/Icons/MusicLine"
-import SvgBackSong from "../../../../public/assets/Icons/BackSong"
-import SvgNextSong from "../../../../public/assets/Icons/NextSong"
-import SvgRePlayWhite from "../../../../public/assets/Icons/RePlayWhite"
-import SvgRePlayOrange from "../../../../public/assets/Icons/RePlayOrange"
-import SvgShareCirclesWhite from "../../../../public/assets/Icons/ShareCirclesWhite"
-import SvgList from "../../../../public/assets/Icons/List"
-import Share from "../../../components/EventDetails/Share";
+'use client'
+import { MobileLayout } from '../../../components/MobileLayout'
+import SvgShuffleIcon from '../../../../public/assets/Icons/ShuffleIcon'
+import SvgPlayButtonOrange from '../../../../public/assets/Icons/PlayButtonOrange'
+import React, { useState } from 'react'
+import SvgPauseOrange from '../../../../public/assets/Icons/PauseOrange'
+import SvgShuffleOrange from '../../../../public/assets/Icons/ShuffleOrange'
+import Image from 'next/image'
+import SvgMusicLine from '../../../../public/assets/Icons/MusicLine'
+import SvgBackSong from '../../../../public/assets/Icons/BackSong'
+import SvgNextSong from '../../../../public/assets/Icons/NextSong'
+import SvgRePlayWhite from '../../../../public/assets/Icons/RePlayWhite'
+import SvgRePlayOrange from '../../../../public/assets/Icons/RePlayOrange'
+import SvgShareCirclesWhite from '../../../../public/assets/Icons/ShareCirclesWhite'
+import SvgList from '../../../../public/assets/Icons/List'
+import Share from '../../../components/EventDetails/Share'
 
-export default function top100(): JSX.Element{
+export default function top100 (): JSX.Element {
+  const [ShareOpen, setShareOpen] = useState(false)
 
-    const [ShareOpen, setShareOpen] = useState(false)
+  function openShare (): void {
+    setShareOpen(!ShareOpen)
+  }
 
-    function openShare(){
-      setShareOpen(!ShareOpen)
-    }
+  const [play, setPlay] = useState(false)
+  const [shuffle, setShuffle] = useState(false)
+  const [replay, setReplay] = useState(false)
 
-    const [play, setPlay] = useState(false)
-    const [shuffle, setShuffle] = useState(false)
-    const [replay, setReplay] = useState(false)
+  function setPlayState (): void {
+    setPlay(!play)
+  }
+  function setShuffleState (): void {
+    setShuffle(!shuffle)
+  }
+  function setReplayState (): void {
+    setReplay(!replay)
+  }
 
-    function setPlayState(){
-        setPlay(!play)
-    }
-    function setShuffleState(){
-        setShuffle(!shuffle)
-    }
-    function setReplayState(){
-        setReplay(!replay)
-    }
-
-    return(
+  return (
         <MobileLayout>
             <div className="h-screen"
                 style={{
-                    background: "linear-gradient(180deg, #E6915B 0%, #6A432B 47%, #2B2B2B 100%)",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
+                  background: 'linear-gradient(180deg, #E6915B 0%, #6A432B 47%, #2B2B2B 100%)',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover'
                 }}>
                 <Image className="mt-[100px] ml-[40px] rounded-lg" src='/assets/podcast.png' alt="..." width={400} height={400} />
                 <p className="text-2xl text-center font-light text-white mt-[20px]">Brooks Davis Live</p>
@@ -57,20 +56,20 @@ export default function top100(): JSX.Element{
                 <div className="flex mt-[50px]">
                     {
                         shuffle
-                        ? <SvgShuffleOrange onClick={setShuffleState} width={50} height={45} className="ml-[60px] "/>
-                        : <SvgShuffleIcon onClick={setShuffleState} width={50} height={45} className="ml-[60px] "/>
+                          ? <SvgShuffleOrange onClick={setShuffleState} width={50} height={45} className="ml-[60px] "/>
+                          : <SvgShuffleIcon onClick={setShuffleState} width={50} height={45} className="ml-[60px] "/>
                     }
                     <SvgBackSong width={40} height={60} className="ml-[30px] "/>
                     {
                         play
-                        ? <SvgPauseOrange onClick={setPlayState} width={70} height={65} className="ml-[25px]"/>
-                        : <SvgPlayButtonOrange onClick={setPlayState} width={70} height={65} className="ml-[25px]"/>
+                          ? <SvgPauseOrange onClick={setPlayState} width={70} height={65} className="ml-[25px]"/>
+                          : <SvgPlayButtonOrange onClick={setPlayState} width={70} height={65} className="ml-[25px]"/>
                     }
                     <SvgNextSong width={40} height={62} className="ml-[25px] "/>
                     {
                         replay
-                        ? <SvgRePlayOrange onClick={setReplayState} width={40} height={62} className="ml-[33px]"/>
-                        : <SvgRePlayWhite onClick={setReplayState} width={40} height={62} className="ml-[33px]"/>
+                          ? <SvgRePlayOrange onClick={setReplayState} width={40} height={62} className="ml-[33px]"/>
+                          : <SvgRePlayWhite onClick={setReplayState} width={40} height={62} className="ml-[33px]"/>
                     }
                </div>
                <div className="grid grid-cols-12 mt-[50px]">
@@ -80,12 +79,12 @@ export default function top100(): JSX.Element{
             </div>
             {ShareOpen && (
                 <div
-                   
+
                     className="bg-[#000000d8]"
                     >
                 <Share openShare={openShare}/>
                 </div>
             )}
         </MobileLayout>
-    )
+  )
 }

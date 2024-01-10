@@ -1,18 +1,16 @@
-// ChatMessageModal.tsx
-// Represents a modal for displaying options for a specific chat message
 import React, { useState } from 'react'
 import Modal from './Modal'
-import { type ChatMessage } from '../../../types/livechatparticipation.interfaces'  // Import the ChatMessage type
+import { type ChatMessage } from '../../../types/livechatparticipation.interfaces'
 
 interface ChatMessageModalProps {
-  message: ChatMessage // The message to display options for
-  onClose: () => void // Callback function for closing the modal
-  onReport: (id: number) => void // Callback function for reporting a message
-  onBlock: (id: number) => void // Callback function for blocking a user
-  onReact: (index: number, reaction: keyof ChatMessage['reactions']) => void // Callback function for reacting to a message
-  index: number | null // Index of the message in the messages array
-  id: number // ID of the message
-  isBlocked: boolean // Indicates whether the user is blocked
+  message: ChatMessage
+  onClose: () => void
+  onReport: (id: number) => void
+  onBlock: (id: number) => void
+  onReact: (index: number, reaction: keyof ChatMessage['reactions']) => void
+  index: number | null
+  id: number
+  isBlocked: boolean
 }
 
 const ChatMessageModal: React.FC<ChatMessageModalProps> = ({
@@ -27,7 +25,6 @@ const ChatMessageModal: React.FC<ChatMessageModalProps> = ({
   keyof ChatMessage['reactions'] | null
   >(null)
 
-  // Handler for handling emoji clicks and updating the selected emoji
   const handleEmojiClick = (reaction: keyof ChatMessage['reactions']): void => {
     if (index !== null) {
       onReact(index, reaction)
@@ -68,9 +65,7 @@ const ChatMessageModal: React.FC<ChatMessageModalProps> = ({
           </button>
         </div>
       </div>
-      {/* ! It is not good to disable eslint, fix it later */}
-      {/*  eslint-disable-next-line @typescript-eslint/strict-boolean-expressions */}
-      {selectedEmoji && (
+      {selectedEmoji !== null && selectedEmoji !== undefined && (
         <div className="absolute top-0 right-0 mt-1 mr-1">
           <span role="img" aria-label="Selected Emoji">
             {selectedEmoji}

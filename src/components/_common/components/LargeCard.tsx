@@ -35,11 +35,11 @@ export default function EventsNearCards ({ eventDay, eventOrganizer, eventTime, 
         width={25} height={25}
         // onClick={likeButton}
         style={{
-            display:
+          display:
                 liked
-                ? 'flex'
-                : 'none'
-        }} 
+                  ? 'flex'
+                  : 'none'
+        }}
         />
         <SvgMoreButton className="col-start-12 ml-2" width={25} height={25}/>
     </div>

@@ -1,17 +1,18 @@
-import Image from "next/image";
-import SvgMoreButton from "../../../public/assets/Icons/MoreButton";
-import Link from "next/link";
+import React from 'react'
+import Image from 'next/image'
+import SvgMoreButton from '../../../public/assets/Icons/MoreButton'
+import Link from 'next/link'
 
-type CardProps ={
-    userImage: string,
-    title: any,
-    price: number,
-    image:any,
-    type:string
+interface CardProps {
+  userImage: string
+  title: any
+  price: number
+  image: any
+  type: string
 }
 
-export default function StreamCards({userImage, image, title, type}: CardProps){
-    return(
+export default function StreamCards ({ userImage, image, title, type }: CardProps): JSX.Element {
+  return (
         <Link href={'/content-discovery/live-stream'}>
             <div className="rounded-xl mr-5 shadow-lg mb-5 w-[320px] flex-none">
                 <Image className="h-[225px] rounded-t-xl mb-3" width={320} height={1} src={image} alt={title}/>
@@ -25,5 +26,5 @@ export default function StreamCards({userImage, image, title, type}: CardProps){
                 </div>
             </div>
         </Link>
-    )
+  )
 }

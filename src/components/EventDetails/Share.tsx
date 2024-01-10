@@ -12,7 +12,7 @@ function Contacts (SendData: shareDataType): JSX.Element {
   )
 }
 
-function Share ({openShare}:any): JSX.Element {
+function Share ({ openShare }: any): JSX.Element {
   return (
     <div className="h-[80%] align-bottom absolute bottom-0 bg-white w-full overflow-x-hidden">
     <div onClick={openShare} className="w-[26px] h-[3px] rounded-[2.5px] bg-[#ABABAB] mx-auto my-[16px]"></div>

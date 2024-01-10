@@ -1,13 +1,17 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
+// ! This file have an eslint rule disabled, this should be corrected
+
 'use client'
 
 import React, { useState } from 'react'
 import Image from 'next/image'
-import SpinnerLoader from '../SpinnerLoader'
+
 import { updateProfileImage } from '../../server-actions/users/UpdateProfileImage'
 import { useRouter } from 'next/navigation'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { type ProfileImageProps } from '../../types/attendeeprofile.interfaces'
+import SpinnerLoader from '../Chat-Threads/SpinnerLoader'
 
 const ProfileImage: React.FC<ProfileImageProps> = ({
   headerImgSrc,
@@ -16,7 +20,7 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
   const router = useRouter()
   const [loading, setLoading] = useState<boolean>(false)
 
-  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>): Promise<void> => {
     let file = null
     const data = new FormData()
     if (e.currentTarget.files !== null) {
@@ -27,7 +31,7 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
       return
     }
     setLoading(true)
-    
+
     const response = await updateProfileImage(data)
     if (response?.ok) {
       toast.success('success! redirecting..')
@@ -90,7 +94,7 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
         style={{ display: 'none' }}
         type="file"
         name="avatar"
-        onChange={(e) => handleImageChange(e)}
+        onChange={async (e) => { await handleImageChange(e) }}
         accept="image/*"
         id="avatar"
         className="hidden"
@@ -113,6 +117,7 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
     { loading && <SpinnerLoader /> }
     <ToastContainer autoClose={2000} position="top-center" />
   </div>
-)}
+  )
+}
 
 export default ProfileImage

@@ -1,4 +1,5 @@
 'use client'
+
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { MobileLayout } from '../../components/MobileLayout'
@@ -8,17 +9,18 @@ import Interests from '../../components/AttendeeProfile/Interests'
 import Subscriptions from '../../components/AttendeeProfile/Subscriptions'
 import BackButton from '../../components/_common/buttons/BackButton'
 import MoreButton from '../../components/_common/buttons/MoreButton'
-import SpinnerLoader from '../../components/SpinnerLoader'
+import SpinnerLoader from '../../components/Chat-Threads/SpinnerLoader'
 import { useRouter } from 'next/navigation'
 import { useFetch } from '../../server-actions/hooks/useFetch'
+import { DEPLOYMENT_LINKS } from '../../constants/deploymentLinks'
 
 const Page = (): JSX.Element => {
   const [selectedTab, setSelectedTab] = useState<number>(0)
   const [userId, setUserId] = useState<any>('')
   const auth = true
   const router = useRouter()
-  useEffect(() => { setUserId(localStorage.getItem('userId'))} , [])
-  const { data, isPending, error } = useFetch(`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/users/${userId}`)
+  useEffect(() => { setUserId(localStorage.getItem('userId')) }, [])
+  const [data, isPending, error] = useFetch(`${DEPLOYMENT_LINKS.immerServer}/${userId}`)
 
   const TABS = ['Events', 'Interests', 'Subscriptions']
 
@@ -33,8 +35,8 @@ const Page = (): JSX.Element => {
     }
   }
 
-  //console.log(data, error)
-  if (error) {
+  // ! I do not understand exactly this function
+  if (error !== undefined) {
     router.push('/signin/email')
   }
 
@@ -45,8 +47,8 @@ const Page = (): JSX.Element => {
 
   return (
     <MobileLayout>
-      {(data !== null && data !== undefined) && <div>
-        <div className="relative flex px-[14px] gap-5 items-center py-5">
+      {(data !== null && data !== undefined) && <main>
+        <header className="relative flex px-[14px] gap-5 items-center py-5">
           <Link href="" className="action-button">
             <BackButton />
           </Link>
@@ -60,8 +62,8 @@ const Page = (): JSX.Element => {
               </div>
             </div>
           </button>
-        </div>
-        <div>
+        </header>
+        <section>
           <div className="pb-0 px-[14px] relative flex flex-col items-center">
             <Image
               className="w-full h-full"
@@ -101,7 +103,7 @@ const Page = (): JSX.Element => {
               </p>
             </div>
           </div>
-        </div>
+        </section>
         {auth && (
           <div className="flex justify-center gap-5 py-3">
             <button className="px-4 py-2 text-white text-xs font-extrabold rounded bg-[#FF6C00]">
@@ -112,7 +114,7 @@ const Page = (): JSX.Element => {
             </button>
           </div>
         )}
-        <div className="mt-5">
+        <section className="mt-5">
           <div className="py-3 border-y-[1px] border-[#7C7C7C] flex items-center justify-around">
             {TABS.map((tab, index) => (
               <button
@@ -128,8 +130,8 @@ const Page = (): JSX.Element => {
             ))}
           </div>
           <div className="px-[14px]">{renderTabContent()}</div>
-        </div>
-      </div>}
+        </section>
+      </main>}
       {isPending && <SpinnerLoader />}
     </MobileLayout>
   )
