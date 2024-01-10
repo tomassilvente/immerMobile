@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
-// ! This file have some errors
 'use client'
-import React, { useEffect, useRef, useState } from 'react'
+
+import React, { useEffect, useState } from 'react'
 import { MobileLayout } from '../../../components/MobileLayout'
 import Link from 'next/link'
 import { updateUser } from '../../../server-actions/users/updateUser'
@@ -11,57 +10,46 @@ import BackButton from '../../../components/_common/buttons/BackButton'
 import { useRouter } from 'next/navigation'
 import { ToastContainer, toast } from 'react-toastify'
 import SpinnerLoader from '../../../components/Chat-Threads/SpinnerLoader'
+import useForm from '../../../server-actions/attendee-profile/hooks/useForm'
+import { formatDate } from '../../../server-actions/attendee-profile/functions/formatDate'
 
 const EditProfile: React.FC = () => {
-  const [data, setData] = useState<any>('')
-  useEffect(() => {
-    const userData = localStorage.getItem('immerUserData')
-    setData((userData != null) ? JSON.parse(userData) : '')
-  }, [])
-  const ref = useRef<HTMLFormElement>(null)
-  const [loading, setLoading] = useState(false)
   const router = useRouter()
-  const [inputData, setInputData] = useState({
-    fullName: data?.fullName,
-    username: data?.username,
-    phoneNumber: data?.phoneNumber,
-    dateOfBirth: data?.dateOfBirth,
-    country: data?.country,
-    state: data?.state,
-    city: data?.city,
-    interests: data?.interests
-  })
+  const [loading, setLoading] = useState(false)
+  const userData = localStorage.getItem('user')
+  const initialData = (userData != null) ? JSON.parse(userData) : {}
+  const { formState, handleInputChange } = useForm(initialData)
 
   useEffect(() => {
-    if (data !== null && data !== undefined) {
+    if (formState !== null && formState !== undefined) {
       router.push('/attendee-profile')
     }
-  }, [data])
+  }, [formState, router])
 
-  const formatDate = (date: string): string => {
-    const shortDate = date?.split('T')[0]
-    return shortDate
-  }
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<any> => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
     setLoading(true)
-    const response = await updateUser(inputData)
-    if (response?.ok) {
-      toast.success('successful! Redirecting..')
-      setTimeout(() => {
-        router.push('/attendee-profile')
-      }, 2000)
-      setLoading(false)
-    } else {
-      toast.error('failed. try again..')
-      setLoading(false)
-    }
+    updateUser(formState)
+      .then(response => {
+        if (response?.ok) {
+          toast.success('successful! Redirecting..')
+          setTimeout(() => {
+            router.push('/attendee-profile')
+          }, 2000)
+        } else {
+          toast.error('failed. try again..')
+        }
+      })
+      .catch(error => {
+        console.log(error)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
   }
 
   return (
-  <MobileLayout>
-    <div>
+    <MobileLayout>
       <div className="relative flex px-[14px] gap-5 items-center py-5">
         <Link href="/attendee-profile">
           <BackButton />
@@ -69,27 +57,24 @@ const EditProfile: React.FC = () => {
         <h1 className="font-bold text-lg">Edit Profile</h1>
       </div>
       <ProfileImage
-        headerImgSrc="/assets/header-img.png"
-        avatarImgSrc={data.image}
-      />
+  headerImgSrc="/assets/header-img.png"
+  avatarImgSrc={formState.image}
+/>
 
-      <div className="px-[14px]">
-        <form onSubmit={handleSubmit} ref={ref} id="form" className="flex flex-col gap-3 my-4">
-          <InputField onChange={(e) => { setInputData({ ...inputData, fullName: e.target.value }) }} value={inputData.fullName} type="text" placeholder="Name" />
-          <InputField onChange={(e) => { setInputData({ ...inputData, username: e.target.value }) }} value={inputData.username} type="text" placeholder="Username" />
-          <InputField onChange={(e) => { setInputData({ ...inputData, phoneNumber: e.target.value }) }} value={inputData.phoneNumber} type="text" placeholder="Phone number" />
-          <InputField onChange={(e) => { setInputData({ ...inputData, dateOfBirth: e.target.value }) }} value={formatDate(inputData.dateOfBirth?.toString())} type="text" placeholder="Date of birth" />
-          <InputField onChange={(e) => { setInputData({ ...inputData, country: e.target.value }) }} value={inputData.country} type="text" placeholder="Country" />
-          <InputField onChange={(e) => { setInputData({ ...inputData, state: e.target.value }) }} value={inputData.state} type="text" placeholder="State" />
-          <InputField onChange={(e) => { setInputData({ ...inputData, city: e.target.value }) }} value={inputData.city} type="text" placeholder="City" />
-          <InputField onChange={(e) => { setInputData({ ...inputData, interests: e?.target.value.split(',') }) }} value={inputData.interests?.toString()} type="text" placeholder="Interests" />
-          <button disabled={loading} className="bg-[#FF6C00] text-white px-5 py-2 rounded">Update</button>
-        </form>
-      </div>
-    </div>
-    {loading && <SpinnerLoader />}
-    <ToastContainer autoClose={2000} position="top-center" />
-  </MobileLayout>
+  <form onSubmit={handleSubmit} id="form" className="flex flex-col gap-3 my-4 px-[14px]">
+    <InputField onChange={handleInputChange} value={formState.fullName} type="text" placeholder="Name" />
+    <InputField onChange={handleInputChange} value={formState.username} type="text" placeholder="Username" />
+    <InputField onChange={handleInputChange} value={formState.phoneNumber} type="text" placeholder="Phone number" />
+    <InputField onChange={handleInputChange} value={formatDate(formState.dateOfBirth?.toString())} type="text" placeholder="Date of birth" />
+    <InputField onChange={handleInputChange} value={formState.country} type="text" placeholder="Country" />
+    <InputField onChange={handleInputChange} value={formState.state} type="text" placeholder="State" />
+    <InputField onChange={handleInputChange} value={formState.city} type="text" placeholder="City" />
+    <InputField onChange={(e) => { handleInputChange(new CustomEvent('interestsChange', { detail: { value: e.target.value } })) }} value={formState.interests?.toString()} type="text" placeholder="Interests" />    <button disabled={loading} className="bg-[#FF6C00] text-white px-5 py-2 rounded">Update</button>
+  </form>
+
+      {loading && <SpinnerLoader />}
+      <ToastContainer autoClose={2000} position="top-center" />
+    </MobileLayout>
   )
 }
 

@@ -13,7 +13,8 @@ export async function handleSubmit (e: any, router: any, avatarId: string, socke
       }),
       headers: {
         'Content-Type': 'application/json'
-      }
+      },
+      credentials: 'include'
     })
     socket.emit('joined', 'new user')
     router.push('/chat')
