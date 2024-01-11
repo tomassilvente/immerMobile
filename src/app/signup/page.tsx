@@ -51,7 +51,7 @@ export default function SignUp (): JSX.Element {
             <p className="mt-[4px]">Sign Up with Email</p>
           </div>
         </Link>
-        <div className={'w-screen mx-15 grid grid-cols-12 mt-10'}>
+        <div className={'mx-15 grid grid-cols-12 mt-10'}>
           <hr className='mt-2 col-start-2 col-end-6'></hr>
           <p className='text-sm text-gray-400 col-start-6 col-end-8'>or</p>
           <hr className='mt-2 col-start-8 col-end-12'></hr>
