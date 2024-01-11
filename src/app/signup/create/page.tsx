@@ -69,9 +69,9 @@ export default function Create (): JSX.Element {
     e.preventDefault()
     // ! The same here, we need to fix the idea of calling a void function inside another one
     // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
-    const response: { status?: number, message: string } = await registerUser(formData)
+    const response: { status?: string, message: string } = await registerUser(formData)
     console.log(response)
-    if (response.status === 201) {
+    if (response.status === '201') {
       router.push('/signin/email')
     } else setMessage(response.message)
   }
