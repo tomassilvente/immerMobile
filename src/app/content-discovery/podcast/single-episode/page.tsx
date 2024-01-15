@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { MobileLayout } from '../../../../components/MobileLayout'
-import SingleHeader from '../components/SingleHeader'
+import SingleHeader from '../../../../components/ContentDiscovery/SingleHeader'
 import Share from '../../../../components/EventDetails/Share'
 
 export default function SingleEpisode (): JSX.Element {

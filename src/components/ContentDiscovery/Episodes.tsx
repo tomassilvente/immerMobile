@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
-import SvgShareCircles from '../../../../../public/assets/Icons/ShareCircles'
-import SvgDownload from '../../../../../public/assets/Icons/Download'
-import SvgMoreButton from '../../../../../public/assets/Icons/MoreButton'
-import SvgPlayButtonOrange from '../../../../../public/assets/Icons/PlayButtonOrange'
+import SvgShareCircles from '../../../public/assets/Icons/ShareCircles'
+import SvgDownload from '../../../public/assets/Icons/Download'
+import SvgMoreButton from '../../../public/assets/Icons/MoreButton'
+import SvgPlayButtonOrange from '../../../public/assets/Icons/PlayButtonOrange'
 import Link from 'next/link'
 
 interface EpisodeProps {

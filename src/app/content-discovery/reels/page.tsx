@@ -15,119 +15,92 @@ import SvgFollowedButton from '../../../../public/assets/Icons/FollowedButton'
 import SvgMagnify from '../../../../public/assets/Icons/Magnify'
 import SvgMoreButton from '../../../../public/assets/Icons/MoreButton'
 import Settings from '../../../components/_common/components/Settings'
+import { State } from '../../../types/content-discovery.interfaces'
 
-export default function reels (): JSX.Element {
-  const [CommentOpen, setCommentOpen] = useState(false)
+export default function Reels(): JSX.Element {
+  const [state, setState] = useState<State>({
+    commentOpen: false,
+    shareOpen: false,
+    likeButton: false,
+    follow: false,
+    settingsOpen: false
+  });
 
-  function openComments (): void {
-    setCommentOpen(!CommentOpen)
+  const toggleState = (key: string) => {
+    setState(prevState => ({ ...prevState, [key]: !prevState[key] }));
   }
 
-  const [ShareOpen, setShareOpen] = useState(false)
-
-  function openShare (): void {
-    setShareOpen(!ShareOpen)
-  }
-
-  const [LikeButton, setLikeButton] = useState(false)
-
-  function setLiked (): void {
-    setLikeButton(!LikeButton)
-  }
-
-  const [Follow, setFollow] = useState(false)
-
-  function setFollowed (): void {
-    setFollow(!Follow)
-  }
-
-  const [SettingsOpen, setSettingsOpen] = useState(false)
-
-  function openSettings (): void {
-    setSettingsOpen(!SettingsOpen)
-  }
 
   return (
-        <MobileLayout>
-            <div className="absolute flex mt-14 ">
-                <Link href={'/content-discovery'}><SvgBackVectorWhite width={35} height={35} className="ml-2"/></Link>
-                <p className="text-white text-xl font-light ml-[140px]">Takes/Reels</p>
-                <SvgMagnify width={20} height={25} className="ml-[120px]"/>
-                <SvgMoreButton onClick={openSettings} width={25} height={25} className="ml-[15px]"/>
-            </div>
-             <div className="absolute flex mt-[715px] text-white">
-                    <Link
-                    className="rounded-full mx-5 mt-[120px]"
-                    href="/"
-                    >
-                        <Image
-                            className="border-white border-[2px] rounded-full"
-                            src={DemoData.profiles[0].pic}
-                            width={50}
-                            height={50}
-                            alt={'...'}
-                        />
-                    </Link>
-                    <div className=" mt-[135px]">
-                        <p>{DemoData.eventOrganizer}</p>
-                    </div>
-
-                    {Follow
-                      ? <SvgFollowedButton width={70} height={35} className="hover:cursor-pointer text-sm w-[70px] text-center mt-[130px] ml-[28px]" onClick={setFollowed}/>
-                      : <button onClick={setFollowed} className="text-sm w-[70px] text-center mt-[130px] h-[35px] bg-primary text-white rounded-md ml-[28px]"> Follow  </button>
-                    }
-                    <div className="ml-[140px] text-center">
-                    <div onClick={setLiked}>
-                        {
-                            LikeButton
-                              ? <>
-                            <SvgRedHeart width={40} height={40} />
-                            <p className="">577</p>
-                            </>
-                              : <>
-                            <SvgLikeButtonWhite width={40} height={40} />
-                            <p className=""> 576</p>
-                            </>
-                        }
-                    </div>
-                        <SvgWhiteCommentButton onClick={openComments} width={40} height={40} />
-                        <p className="text-center">33</p>
-                        <SvgShareCirclesWhite className="ml-[4px] mt-[2px]" onClick={openShare} width={32} height={40} />
-                    </div>
-                </div>
-        <div
-          className="bg-[#000000d8]  items-center"
+    <MobileLayout>
+      <div className="absolute flex mt-14 ">
+        <Link href={'/content-discovery'}><SvgBackVectorWhite width={35} height={35} className="ml-2" /></Link>
+        <p className="text-white text-xl font-light ml-[140px]">Takes/Reels</p>
+        <SvgMagnify width={20} height={25} className="ml-[120px]" />
+        <SvgMoreButton onClick={() => toggleState('settingsOpen')} width={25} height={25} className="ml-[15px]" />
+      </div>
+      <div className="absolute flex mt-[715px] text-white">
+        <Link
+          className="rounded-full mx-5 mt-[120px]"
+          href="/"
         >
-          <video width="480" className="w-[480px] h-[950px]" controls>
-            <source
-              src="/assets/TB.mp4"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
+          <Image
+            className="border-white border-[2px] rounded-full"
+            src={DemoData.profiles[0].pic}
+            width={50}
+            height={50}
+            alt={'...'}
+          />
+        </Link>
+        <div className=" mt-[135px]">
+          <p>{DemoData.eventOrganizer}</p>
         </div>
-        {ShareOpen && (
-                <div
-
-                    className="bg-[#000000d8]"
-                    >
-                <Share openShare={openShare}/>
-                </div>
-        )}
-        {CommentOpen && (
-                <div
-                    className="bg-[#000000d8]"
-                    >
-                <Comments openComments={openComments}/>
-                </div>
-        )}
-        {SettingsOpen && (
-                <div
-                    className="bg-[#000000d8]"
-                    >
-                <Settings openSettings={openSettings}/>
-                </div>
-        )}
-        </MobileLayout>
+        {state.follow
+          ? <SvgFollowedButton width={70} height={35} className="hover:cursor-pointer text-sm w-[70px] text-center mt-[130px] ml-[28px]" onClick={() => toggleState('follow')} />
+          : <button onClick={() => toggleState('follow')} className="text-sm w-[70px] text-center mt-[130px] h-[35px] bg-primary text-white rounded-md ml-[28px]"> Follow  </button>
+        }
+        <div className="ml-[140px] text-center">
+          <div onClick={() => toggleState('likeButton')}>
+            {state.likeButton
+              ? <>
+                <SvgRedHeart width={40} height={40} />
+                <p className="">577</p>
+              </>
+              : <>
+                <SvgLikeButtonWhite width={40} height={40} />
+                <p className=""> 576</p>
+              </>
+            }
+          </div>
+          <SvgWhiteCommentButton onClick={() => toggleState('commentOpen')} width={40} height={40} />
+          <p className="text-center">33</p>
+          <SvgShareCirclesWhite className="ml-[4px] mt-[2px]" onClick={() => toggleState('shareOpen')} width={32} height={40} />
+        </div>
+      </div>
+      <div className="bg-[#000000d8]  items-center">
+        <video width="480" className="w-[480px] h-[950px]" controls>
+          <source
+            src="/assets/TB.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      {state.shareOpen && (
+        <div className="bg-[#000000d8]">
+          <Share openShare={() => toggleState('shareOpen')} />
+        </div>
+      )}
+      {state.commentOpen && (
+        <div className="bg-[#000000d8]">
+          <Comments openComments={() => toggleState('commentOpen')} />
+        </div>
+      )}
+      {state.settingsOpen && (
+        <div className="bg-[#000000d8]">
+          <Settings openSettings={() => toggleState('settingsOpen')} />
+        </div>
+      )}
+    </MobileLayout>
   )
 }

@@ -1,11 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 // Icons
-import SvgMoreButton from '../../../../../public/assets/Icons/MoreButton'
-import SvgBackButton from '../../../../../public/assets/Icons/BackButton'
-import SvgShareCircles from '../../../../../public/assets/Icons/ShareCircles'
-import SvgDownload from '../../../../../public/assets/Icons/Download'
-import SvgPlayButtonOrange from '../../../../../public/assets/Icons/PlayButtonOrange'
+import SvgMoreButton from '../../../public/assets/Icons/MoreButton'
+import SvgBackButton from '../../../public/assets/Icons/BackButton'
+import SvgShareCircles from '../../../public/assets/Icons/ShareCircles'
+import SvgDownload from '../../../public/assets/Icons/Download'
+import SvgPlayButtonOrange from '../../../public/assets/Icons/PlayButtonOrange'
 
 export default function SingleHeader ({ eventImg, eventTitle, releaseDay, duration, openShare }: any): JSX.Element {
   return (

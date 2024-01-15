@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import SvgStar from '../../../../../public/assets/Icons/Star'
+import SvgStar from '../../../public/assets/Icons/Star'
 import Image from 'next/image'
 import Link from 'next/link'
 

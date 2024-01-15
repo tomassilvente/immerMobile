@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import SvgOptionsHorizontal from '../../../../../public/assets/Icons/OptionsHorizontal'
-import SvgBackVectorWhite from '../../../../../public/assets/Icons/BackVectorWhite'
+import SvgOptionsHorizontal from '../../../public/assets/Icons/OptionsHorizontal'
+import SvgBackVectorWhite from '../../../public/assets/Icons/BackVectorWhite'
 
 export default function PodcastHeader ({ eventImg, eventTitle, listeners, category }: any): JSX.Element {
   return (
