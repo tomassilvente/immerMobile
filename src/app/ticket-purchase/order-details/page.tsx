@@ -1,15 +1,14 @@
-import React from 'react'
-import Link from 'next/link'
-import DemoData from '../../../../public/data/DemoData.json'
-import ConfirmationDetails from '../../../components/TicketPurchase/OrderDetails/ConfirmationDetails'
-import ConfirmationHeader from '../../../components/TicketPurchase/OrderDetails/ConfirmationHeader'
-import QuantityCard from '../../../components/TicketPurchase/OrderDetails/QuantityCard'
-import { MobileLayout } from '../../../components/MobileLayout'
+import React from "react";
+import Link from "next/link";
+import DemoData from "../../../../public/data/DemoData.json";
+import ConfirmationDetails from "../../../components/TicketPurchase/OrderDetails/ConfirmationDetails";
+import ConfirmationHeader from "../../../components/TicketPurchase/OrderDetails/ConfirmationHeader";
+import QuantityCard from "../../../components/TicketPurchase/OrderDetails/QuantityCard";
+import { MobileLayout } from "../../../components/MobileLayout";
 
-export default function orderDetails (): JSX.Element {
+export default function orderDetails(): JSX.Element {
   return (
     <MobileLayout>
-    {/* <div className=" m-5 bg-white text-black sm:invisible overflow-scroll"> */}
       <ConfirmationHeader
         eventName={DemoData.eventName}
         location="Floor - Front Standing"
@@ -39,7 +38,6 @@ export default function orderDetails (): JSX.Element {
       >
         Confirm Selection
       </Link>
-    {/* </div> */}
     </MobileLayout>
-  )
+  );
 }

@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import DeleteModal from '../../../components/TicketCancellation/modal/deleteModal'
+import DeleteModal from './modal/deleteModal'
 
 interface Props {
   id: string
@@ -52,7 +52,7 @@ const CancelTicket = ({ id }: Props): JSX.Element => {
     }
   }, [reasons, otherReason])
 
-  // console.log(reasons)
+
 
   return (
     <div>

@@ -3,12 +3,8 @@ import { MobileLayout } from '../../components/MobileLayout'
 import Link from 'next/link'
 import BackButton from '../../components/_common/buttons/BackButton'
 import FAQs from '../../components/Support/FAQs'
-import search from './assets/magnify.svg'
-import mail from './assets/mail.svg'
-import chat from './assets/chat.svg'
-import call from './assets/call.svg'
-import comment from './assets/comment.svg'
 import { Inter } from 'next/font/google'
+
 const inter = Inter({ weight: '400', subsets: ['latin'] })
 const faqs = [
   {
@@ -47,19 +43,19 @@ const Page = (): JSX.Element => {
             </div>
             <div className="mx-auto w-[90%]">
                 <div className="w-full h-10 input-field my-12 rounded-full px-4 py-2.5 flex items-center">
-                    <img src={search.src} alt="Magnify" className="items-center h-6 w-6"/>
+                    <img src="/assets/search.svg" alt="Magnify" className="items-center h-6 w-6"/>
                     <input type="text" className="h-8 input-field border-0 w-full" placeholder="How can we help you?"/>
                 </div>
             </div>
             <div className="px-11 flex gap-4 justify-center">
                 <div className="border border-primary bg-[#FFD6B8] px-3 py-5 rounded-lg flex flex-col items-center gap-2.5 cursor-pointer">
-                    <img src = {mail.src} className="h-6"/>
+                    <img src = '/assets/mail.svg' className="h-6"/>
                     <p className="px-4 font-medium text-base">
                         Send Email
                     </p>
                 </div>
                 <div className="border border-primary bg-[#FFD6B8] px-3 py-5 rounded-lg flex flex-col items-center gap-2.5 cursor-pointer">
-                    <img src = {chat.src} className="h-6"/>
+                    <img src = '/assets/chat.svg' className="h-6"/>
                     <p className="px-4 font-medium text-base">
                         Live Chat
                     </p>
@@ -86,7 +82,7 @@ const Page = (): JSX.Element => {
                 <div className="p-4 flex flex-col gap-2.5">
                     <div className="flex border border-primary/25 rounded-lg bg-[#FFF0E5]/75 px-6 py-4 gap-4 items-center">
                         <div className="">
-                            <img src={call.src}/>
+                            <img src='/assets/call.svg'/>
                         </div>
                         <div className="flex-1 px-4 flex flex-col gap-4">
                             <p className="font-semibold text-lg">
@@ -102,7 +98,7 @@ const Page = (): JSX.Element => {
                     </div>
                     <div className="flex border border-primary/25 rounded-lg bg-[#FFF0E5]/75 px-6 py-4 gap-4 items-center">
                         <div className="">
-                            <img src={comment.src}/>
+                            <img src='/assets/comment.svg'/>
                         </div>
                         <div className="flex-1 px-4 flex flex-col gap-4">
                             <p className="font-semibold text-lg">

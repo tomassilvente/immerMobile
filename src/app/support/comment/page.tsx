@@ -7,6 +7,7 @@ import Submit from '../../../components/Support/Submit'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ weight: '400', subsets: ['latin'] })
+
 const PostComment = (): JSX.Element => {
   return (
         <MobileLayout className={inter.className}>

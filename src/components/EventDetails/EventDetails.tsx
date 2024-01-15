@@ -5,7 +5,7 @@ import { type detailProps } from '../../types/event.details'
 import SvgCalendar from '../../../public/assets/Icons/Calendar'
 import SvgClockBlack from '../../../public/assets/Icons/ClockBlack'
 
-export default function eventDetails ({ eventName, eventDay, eventPrice, eventTime, eventAvailability }: detailProps): JSX.Element {
+export default function EventDetails ({ eventName, eventDay, eventPrice, eventTime, eventAvailability }: detailProps): JSX.Element {
   return (
     <div className="grid grid-cols-4 my-12 mx-5 ">
     <div className="col-start-1 col-end-3 ">

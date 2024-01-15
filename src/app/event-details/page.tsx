@@ -7,7 +7,7 @@ import Organized from "../../components/EventDetails/Organizer";
 import AboutEvent from "../../components/EventDetails/AboutEvent";
 import EventDetails from "../../components/EventDetails/EventDetails";
 import EventHeader from "../../components/_common/components/EventHeader";
-import data from "../../../public/data/DemoData.json"; // All this data should come as params, including the links or the actions that every button should do
+import data from "../../../public/data/DemoData.json";
 import { MobileLayout } from "../../components/MobileLayout";
 import Share from "../../components/EventDetails/Share";
 
@@ -34,7 +34,6 @@ export default function eventDetail(): JSX.Element {
         eventDescription={data.eventDescription}
       />
       <Location eventLocation={data.eventLocation} />
-      {/* I've been having some trouble with making this button sticked on the screen */}
       <Link
         style={{ position: "sticky" }}
         href="/ticket-purchase"

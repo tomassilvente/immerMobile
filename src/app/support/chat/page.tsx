@@ -26,7 +26,7 @@ const dataset = [
 
 const Chat = (): JSX.Element => {
   return (
-        <div className={`max-w-[480px] mx-auto bg-[#FFF6EE] min-h-screen relative ${inter.className}`}>
+        <main className={`max-w-[480px] mx-auto bg-[#FFF6EE] min-h-screen relative ${inter.className}`}>
             <div className="flex px-[14px] gap-5 items-center py-5">
                 <Link href="" className="action-button">
                     <BackButton />
@@ -88,7 +88,7 @@ const Chat = (): JSX.Element => {
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
   )
 }
 

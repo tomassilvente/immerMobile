@@ -1,26 +1,19 @@
-import React from 'react'
-import Search from '../../components/_common/components/Search'
-import LargeCard from '../../components/_common/components/LargeCard'
-// Icons
-import SvgBackVector from '../../../public/assets/Icons/BackVector'
-// Data
-import DemoData from '../../../public/data/DemoData.json'
-import { MobileLayout } from '../../components/MobileLayout'
+import React from "react";
+import Search from "../../components/_common/components/Search";
+import LargeCard from "../../components/_common/components/LargeCard";
+import SvgBackVector from "../../../public/assets/Icons/BackVector";
+import DemoData from "../../../public/data/DemoData.json";
+import { MobileLayout } from "../../components/MobileLayout";
 
-export default function myEvents (): JSX.Element {
+export default function myEvents(): JSX.Element {
   return (
     <MobileLayout>
-    <div className=" mt-5">
-      <div className="grid grid-cols-6">
+      <div className="grid grid-cols-6 mt-5">
         <SvgBackVector className="col-start-1 col-end-1 mt-7" />
-        <p className="text-2xl my-5 ml-5 col-start-3 col-end-6">
-          My events
-        </p>
+        <p className="text-2xl my-5 ml-5 col-start-3 col-end-6">My events</p>
       </div>
-      <Search hold={'Search for artists, venues and events'} />
-      <p className="text-2xl my-5 col-start-3 col-end-6">
-        Upcoming
-      </p>
+      <Search hold={"Search for artists, venues and events"} />
+      <p className="text-2xl my-5 col-start-3 col-end-6">Upcoming</p>
       <LargeCard
         eventImg={DemoData.eventImg}
         eventOrganizer={DemoData.eventOrganizer}
@@ -30,9 +23,7 @@ export default function myEvents (): JSX.Element {
         liked={true}
       />
       <hr className="my-5" />
-      <p className="text-2xl my-5 col-start-3 col-end-6">
-        Past Events
-      </p>
+      <p className="text-2xl my-5 col-start-3 col-end-6">Past Events</p>
       {DemoData.cardData.map((event) => (
         <LargeCard
           key={event.title}
@@ -44,7 +35,6 @@ export default function myEvents (): JSX.Element {
           liked={true}
         />
       ))}
-    </div>
     </MobileLayout>
-  )
+  );
 }

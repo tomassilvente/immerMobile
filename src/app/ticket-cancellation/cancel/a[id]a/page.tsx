@@ -3,7 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { MobileLayout } from '../../../../components/MobileLayout'
-import CancelTicket from '../CancelTicket'
+import CancelTicket from '../../../../components/TicketCancellation/CancelTicket'
 import BackButton from '../../../../components/_common/buttons/BackButton'
 
 const generateStaticParams = (): JSX.Element[] => {
