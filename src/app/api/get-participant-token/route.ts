@@ -3,6 +3,8 @@
 
 // ! This file is under testing
 
+export const dynamic = 'force-static';
+
 import { AccessToken } from 'livekit-server-sdk'
 import { type NextRequest, NextResponse } from 'next/server'
 

@@ -11,17 +11,18 @@ import BackButton from '../../components/_common/buttons/BackButton'
 import MoreButton from '../../components/_common/buttons/MoreButton'
 import SpinnerLoader from '../../components/Chat-Threads/SpinnerLoader'
 import { useRouter } from 'next/navigation'
-import { useFetch } from '../../server-actions/hooks/useFetch'
 import { DEPLOYMENT_LINKS } from '../../constants/deploymentLinks'
+import useFetchUser from '../../server-actions/auth/useFetchUser'
+import { useCookies } from 'react-cookie'
 
 const Page = (): JSX.Element => {
   const [selectedTab, setSelectedTab] = useState<number>(0)
-  const [userId, setUserId] = useState<any>('')
+  const [cookies] = useCookies(['usertoken'])
   const auth = true
   const router = useRouter()
-  useEffect(() => { setUserId(localStorage.getItem('userId')) }, [])
-  const [data, isPending, error] = useFetch(`${DEPLOYMENT_LINKS.immerServer}/${userId}`)
 
+  const userToken = cookies.usertoken || 'defaultUserToken'
+  const { data: userData, loading: userLoading, error } = useFetchUser(userToken)
   const TABS = ['Events', 'Interests', 'Subscriptions']
 
   const renderTabContent = (): React.ReactNode => {
@@ -35,19 +36,20 @@ const Page = (): JSX.Element => {
     }
   }
 
-  // ! I do not understand exactly this function
-  if (error !== undefined) {
-    router.push('/signin/email')
-  }
+  useEffect(() => {
+    if (error !== undefined) {
+      router.push('/signin/email')
+    }
+  }, []) 
 
   useEffect(() => {
     router.refresh()
-    localStorage.setItem('immerUserData', JSON.stringify(data))
-  }, [router, data])
+    localStorage.setItem('immerUserData', JSON.stringify(userData))
+  }, [router, userData])
 
   return (
     <MobileLayout>
-      {(data !== null && data !== undefined) && <main>
+      {(userData !== null && userData !== undefined) && <main>
         <header className="relative flex px-[14px] gap-5 items-center py-5">
           <Link href="" className="action-button">
             <BackButton />
@@ -74,14 +76,14 @@ const Page = (): JSX.Element => {
             />
             <Image
               className="absolute -bottom-10 border-white border-[5px] rounded-full h-20 w-20"
-              src={`https://immer-backend-dev-kenx.2.us-1.fl0.io/api/users/profile-image/${data.image}`}
+              src={`${DEPLOYMENT_LINKS.immerServer}/${userData.image}`}
               alt="avatar"
               width={0}
               height={0}
             />
           </div>
           <div className="flex flex-col gap-3 mt-10 my-3">
-            <h1 className="text-lg font-semibold text-center">{data?.fullName}</h1>
+            <h1 className="text-lg font-semibold text-center">{userData?.fullName}</h1>
             <div className="flex px-5 items-center justify-around">
               <p className="flex flex-col items-center font-semibold gap-[2px]">
                 12{' '}
@@ -132,7 +134,7 @@ const Page = (): JSX.Element => {
           <div className="px-[14px]">{renderTabContent()}</div>
         </section>
       </main>}
-      {isPending && <SpinnerLoader />}
+      {userLoading && <SpinnerLoader />}
     </MobileLayout>
   )
 }
