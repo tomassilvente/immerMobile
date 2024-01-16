@@ -10,9 +10,9 @@ export const DesktopLayout = ({
   className?: string;
 }): JSX.Element => {
   return (
-    <main className={"font-Inter relative m-auto"}>
+    <main className={"font-Inter absolute m-auto w-screen"}>
       <SideNavbarAttendee />
-      <div className={`${className} flex-1`}>{children}</div>
+      <div className={`${className} ml-[200px] flex-1`}>{children}</div>
     </main>
   );
 };
