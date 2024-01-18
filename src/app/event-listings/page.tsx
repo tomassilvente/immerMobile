@@ -1,3 +1,4 @@
+"use client"
 //Layout
 import { DesktopLayout } from "../../components/DesktopLayout/SideNavbarAttendee";
 //Icons
@@ -12,7 +13,30 @@ import EventDisplay from "../../components/eventListing-Desktop/EventsDisplay";
 import SearchBar from "../../components/eventListing-Desktop/SearchBar";
 import StatsCard from "../../components/eventListing-Desktop/StatsCard";
 
+import { useState } from "react";
+
 export default function eventListing (): JSX.Element {
+
+    const buttonData = [
+        {
+          btnName: "2",
+        },
+        {
+          btnName: "3",
+        },
+        {
+          btnName: "4",
+        },
+        {
+          btnName: "...",
+        },
+        {
+          btnName: "8",
+        },
+      ];
+
+      const [currentIndex, setCurrentIndex] = useState('1')
+
     return (
         <DesktopLayout>
             <div className="bg-gray-100 pb-10">
@@ -60,17 +84,37 @@ export default function eventListing (): JSX.Element {
                         </select>
                     </div>
                     <div className="flex ml-[25%] w-[28%] mr-[25%]">
-                        <SvgBackVector height={14} width={14} className="mt-4 mr-[3%]"/>
-                        <div className="flex text-gray-500 font-semibold ">
-                            <button className="bg-primary text-white w-[35px] pt-1 text-center rounded-lg">1</button>
-                            <button className=" w-[35px] pt-1 text-center rounded-lg">2</button>
-                            <button className=" w-[35px] pt-1 text-center rounded-lg">3</button>
-                            <button className=" w-[35px] pt-1 text-center rounded-lg">4</button>
-                            <button className=" w-[35px] pt-1 text-center rounded-lg">5</button>
-                            <button className=" w-[35px] pt-1 text-center rounded-lg">...</button>
-                            <button className=" w-[35px] pt-1 text-center rounded-lg">8</button>
+                        <SvgBackVector height={14} width={14} className="mt-3 mr-[3%]"/>
+                        <div
+                            id="content-buttons"
+                            className="relative flex items-center "
+                            >
+                           
+                                <button
+                                onClick={() => setCurrentIndex('1') }
+                                className={`${currentIndex === '1' ? 'text-white text-center gap-2 not-italic lg:text-base text-sm font-bold bg-primary w-full sm:w-[auto] h-auto p-3 pt-2 pb-2 rounded-[8px] ' : 'text-gray-400 gap-2 not-italic lg:text-base text-sm font-bold  w-full sm:w-[auto] h-auto p-3 pt-2 pb-2 rounded-[8px] hover:bg-primary hover:text-white'}`}
+                                >
+                                <p 
+                                    className="">
+                                    1
+                                </p>
+                                </button>
+                                {buttonData.map((button) => (
+                                    <div onClick={() => {
+                                            setCurrentIndex(button.btnName)
+                                        }}>
+                                        <button
+                                            className={`${currentIndex === button.btnName ? 'text-white text-center gap-2 not-italic lg:text-base text-sm font-bold bg-primary w-full sm:w-[auto] h-auto p-3 pt-2 pb-2 rounded-[8px] ' : ' text-gray-400 gap-2 not-italic lg:text-base text-sm font-bold  w-full sm:w-[auto] h-auto p-3 pt-2 pb-2 rounded-[8px] hover:bg-primary hover:text-white'}`}
+                                            >
+                                            <p>
+                                                {button.btnName}
+                                            </p>
+                                        </button>
+                                    </div>
+                                    ))}
+                            
                         </div>
-                        <SvgNextVector height={12} width={12} className="mt-4 ml-[3%]"/>
+                        <SvgNextVector height={12} width={12} className="mt-3 ml-[3%]"/>
                     </div>
                     <SvgDownloadOrange width={14} height={14} className="mt-3"/>
                     <p className="font-light text-primary text-xs mt-3 ml-2">CVS Export</p>
