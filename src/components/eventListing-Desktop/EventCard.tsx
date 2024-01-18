@@ -19,9 +19,9 @@ type EventCardProps={
 
 export default function EventCard ({name, pic, ticketsSold, totalTickets, people, date, place, time, price, publishment}:EventCardProps): JSX.Element {
     return (
-        <div className="bg-white flex rounded-xl p-5 m-5 h-[150px]">
-            <input className="mt-10 ml-2 w-[3%]" type="checkbox" />
-            <p className="w-[4%] mr-[3%] text-center font-semibold text-primary mt-7">{date}</p>
+        <div className="bg-white flex rounded-xl p-5 m-5 h-[150px] shadow-md">
+            <input className="mt-10 ml-2 w-[4%]" type="checkbox" />
+            <p className="w-[3%] mr-[3%] text-center font-semibold text-primary mt-7">{date}</p>
             <Image className="rounded-lg h-[100px] w-[8%] mt-2" src='https://wololosound.com/wp-content/uploads/Tomorrowland-2023-mainstage-1.jpeg' alt='tomorrowland' height={100} width={100}/>
             <div className="w-[25%] ml-5">
                <div className="flex mt-2">

@@ -11,7 +11,7 @@ type StatsCard={
 
 export default function StatsCard ({ description, quantity, upgrade, percentaje, period }: StatsCard): JSX.Element {
     return (
-        <div className="w-[250px] h-[150px]  rounded-xl bg-white shadow-sm mx-5">
+        <div className="w-[18%] h-[150px]  rounded-xl bg-white shadow-sm ">
             <p className="font-light text-sm text-gray-500 py-4 ml-5">{description}</p>
             <p className={`${upgrade == null ? 'mt-3' : ''} text-center  text-3xl`}>{quantity}</p>
             <div className="pt-3 pb-1">
