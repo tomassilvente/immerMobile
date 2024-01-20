@@ -1,8 +1,11 @@
 'use client'
 import React, { useState } from 'react'
 import SignButton from '../../../../components/SignUp/SignButton'
+import { useRouter } from 'next/navigation'
+import { newPassword } from '../../../../server-actions/auth/newPassword'
 
 export default function PasswordChange (): JSX.Element {
+  const router = useRouter()
   // First Password Validations
   const [wrong, setWrong] = useState(false)
   const [correct, setCorrect] = useState(false)
@@ -33,9 +36,21 @@ export default function PasswordChange (): JSX.Element {
     }
   }
 
+  let token = ''
   let able = false
   if (equals && correct) able = true
   else able = false
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault()
+
+    const response: { message?:string , status: number} = await newPassword(password, token)
+  
+    if (response.status === 201) {
+      router.push('/signin/password-forgot/reset/success')
+    }
+  }
+
 
   return (
     <div className="font-Inter relative max-w-[480px]  m-auto p-5">
@@ -44,7 +59,7 @@ export default function PasswordChange (): JSX.Element {
         <p className="text-lg font-light text-[#767676] mt-10">
           Please enter the new password for your account
         </p>
-        <form className="text-start mt-10">
+        <form className="text-start mt-10" onSubmit={handleSubmit}>
           <p className="text-xl mt-5">New password</p>
           <input
             onChange={(e) => { setIsCorrect(e.target.value) }}
@@ -97,7 +112,12 @@ export default function PasswordChange (): JSX.Element {
           >
             Both passowrds must match
           </span>
-          <SignButton title={'Change Password'} able={able} />
+          <button
+          type="submit"
+          className="w-[100%] text-center text-2xl bg-primary text-white mt-12  py-5 rounded-full"
+        >
+          Reset My Password
+        </button>
         </form>
       </div>
     </div>

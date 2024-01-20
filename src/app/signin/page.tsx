@@ -10,7 +10,7 @@ import SvgMailLogo from '../../../public/assets/Icons/MailLogo'
 export default function signIn (): JSX.Element {
   return (
     <div className="font-Inter relative max-w-[480px]  m-auto p-5">
-    <div className="m-14 text-center bg-white text-black sm:invisible overflow-scroll">
+    <div className="m-14 text-center bg-white text-black overflow-scroll">
       <SvgImmerIconOrange width={50} height={50} className="mx-[45%]" />
       <p className="text-4xl mt-8 font-semibold">Welcome back!</p>
       <p className="text-lg font-light text-[#767676] mt-3">
@@ -21,7 +21,7 @@ export default function signIn (): JSX.Element {
         href="/"
       >
         <div className="flex col-start-1 col-end-6">
-          <SvgAppleLogo height={35} width={35} className="mt-1 mr-5" />
+          <SvgAppleLogo height={35} width={35} className="mt-1 ml-5" />
           <p className="mt-[5px] ">Sign In with Apple</p>
         </div>
       </Link>
@@ -30,8 +30,8 @@ export default function signIn (): JSX.Element {
         href="/"
       >
         <div className="flex col-start-1 col-end-6">
-          <SvgGoogleLogo height={35} width={35} className="mt-1 " />
-          <p className="mt-[4px] ml-4">Sign In with Google</p>
+          <SvgGoogleLogo height={35} width={35} className="mt-1 ml-5" />
+          <p className="mt-[4px] ">Sign In with Google</p>
         </div>
       </Link>
       <Link
@@ -39,8 +39,8 @@ export default function signIn (): JSX.Element {
         href="/"
       >
         <div className="flex col-start-1 col-end-6">
-          <SvgFacebookLogo height={35} width={35} className="mt-1 ml-5" />
-          <p className="mt-[4px] ml-4">Sign In with Facebook</p>
+          <SvgFacebookLogo height={35} width={32} className="mt-1 ml-5" />
+          <p className="mt-[4px] text-[16px]">Sign In with Facebook</p>
         </div>
       </Link>
       <Link
@@ -48,8 +48,8 @@ export default function signIn (): JSX.Element {
         href="/signin/email"
       >
         <div className="flex col-start-1 col-end-6">
-          <SvgMailLogo height={35} width={35} className="mt-1" />
-          <p className="mt-[2px] ml-4">Sign In with Email</p>
+          <SvgMailLogo height={35} width={35} className="mt-1 ml-5" />
+          <p className="mt-[2px]">Sign In with Email</p>
         </div>
       </Link>
     </div>

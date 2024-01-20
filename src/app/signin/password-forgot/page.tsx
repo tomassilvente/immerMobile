@@ -6,10 +6,16 @@ import SignButton from '../../../components/SignUp/SignButton'
 import Feed from '../../../components/SignIn/Feed'
 import ErrorMessage from '../../../components/SignIn/ErrorMessage'
 import ModalMessage from '../../../components/SignIn/ModalMessage'
+import { resetPassword } from '../../../server-actions/auth/resetPassword'
+import { useRouter } from 'next/navigation'
 
 export default function PasswordForgot (): JSX.Element {
+
+  const router = useRouter()
+
   const [isFeedOpen, setIsFeedOpen] = useState(false)
   const [wrong, setWrong] = useState(false)
+  const [email, setEmail] =  useState<string>('')
 
   const setFeedOpen = (): void => {
     setIsFeedOpen(true)
@@ -24,12 +30,28 @@ export default function PasswordForgot (): JSX.Element {
   const [emailIncompleted, setEmailIncompleted] = useState(false)
 
   const isEmailCompleted = (email: string): void => {
+    setEmail(email)
     if (email.length > 2 && email.includes('@' && '.')) {
       setEmailCompleted(true)
       setEmailIncompleted(false)
     } else {
       setEmailCompleted(false)
       setEmailIncompleted(true)
+    }
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault()
+
+    const response: { message?:string, token:string } = await resetPassword(email)
+  
+    if (response.token !== undefined && response.token !== null) {
+      localStorage.setItem('token', response.token)
+      router.push('/signin/password-forgot/email-sent')
+    }
+  
+    else{
+      setFeedOpen()
     }
   }
 
@@ -51,7 +73,7 @@ export default function PasswordForgot (): JSX.Element {
         : (
             ''
           )}
-      <form className="text-start mt-16">
+      <form onSubmit={handleSubmit} className="text-start mt-16">
         <p className="text-xl mt-5">Email</p>
         <input
           style={{
@@ -81,11 +103,27 @@ export default function PasswordForgot (): JSX.Element {
             : (
                 ''
               )}
-        <SignButton
+        {/* <SignButton
           title="Reset my password"
           able={emailCompleted}
           onClick={setFeedOpen}
-        />
+        /> */}
+        <div className="pb-8">
+      {emailCompleted
+        ? (
+        <button
+          type="submit"
+          className="w-[100%] text-center text-2xl bg-primary text-white mt-12  py-5 rounded-full"
+        >
+          Reset My Password
+        </button>
+          )
+        : (
+        <div className="w-[100%] text-center text-2xl bg-[#b8b8b8] text-white mt-12  py-5 rounded-full">
+          Reset My Password
+        </div>
+          )}
+    </div>
       </form>
       <ModalMessage isOpen={isFeedOpen} onClose={setFeedClose} />
       <Feed
